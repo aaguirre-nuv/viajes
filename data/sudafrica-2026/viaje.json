@@ -75,7 +75,7 @@
           "eventos": [
             {
               "hora": "15:45",
-              "texto": "Vuelo MAD → DOH · Qatar · 15:45 → 23:55 · 7 h 10",
+              "texto": "Vuelo MAD → DOH · QR150 · 15:45 → 23:30 · 6 h 45",
               "clave": true
             }
           ]
@@ -85,16 +85,21 @@
           "etiqueta": "En ruta",
           "eventos": [
             {
+              "hora": "01:40",
+              "texto": "Vuelo DOH → JNB · QR1363 · 01:40 → 09:10 · 8 h 30",
+              "clave": true
+            },
+            {
               "hora": "09:10",
-              "texto": "Llegada a Johannesburgo · escala de 3 h 20"
+              "texto": "Llegada a Johannesburgo · inmigración, maletas y facturar de nuevo"
             },
             {
               "hora": "12:30",
-              "texto": "Vuelo JNB → HDS · Qatar · 12:30 → 13:30 · 1 h 00",
+              "texto": "Vuelo JNB → HDS · QR5696, opera Airlink · 12:30 → 13:30 · 1 h 00",
               "clave": true
             }
           ],
-          "aviso": "La llegada a JNB se movió de 9:00 a 9:10. La conexión sigue holgada: 3 h 20."
+          "aviso": "Doha ha mejorado: llegas a las 23:30 y sales a la 01:40, así que la escala pasa de 1 h 35 a 2 h 10. Johannesburgo sigue igual, 3 h 20, pero ahí es donde hay trabajo: es tu entrada a Sudáfrica, así que pasas inmigración, recoges las maletas y vuelves a facturar para Hoedspruit."
         }
       ]
     },
@@ -244,7 +249,7 @@
             },
             {
               "hora": "14:10",
-              "texto": "Vuelo HDS → CPT · Airlink · 14:10 → 16:55 · 2 h 45",
+              "texto": "Vuelo HDS → CPT · Airlink 4Z656 · 14:10 → 16:55 · 2 h 45",
               "clave": true
             },
             {
@@ -310,7 +315,7 @@
             },
             {
               "hora": "13:15",
-              "texto": "Vuelo CPT → DOH · Qatar · 13:15 → 23:50 · 9 h 35",
+              "texto": "Vuelo CPT → DOH · QR1370 · 13:15 → 23:50 · 9 h 35",
               "clave": true
             }
           ]
@@ -429,15 +434,23 @@
       "filas": [
         [
           "MAD → DOH · 7 ago",
-          "15:45–23:55 · 7h10"
+          "15:45–23:30 · 6h45"
+        ],
+        [
+          "Qatar QR150",
+          "T4S · puerta S41"
         ],
         [
           "Escala en Doha",
-          "1h35"
+          "2h10"
         ],
         [
           "DOH → JNB · 8 ago",
-          "01:30–09:10 · 8h40"
+          "01:40–09:10 · 8h30"
+        ],
+        [
+          "Qatar QR1363",
+          "asientos 19D 19E"
         ],
         [
           "Escala en Johannesburgo",
@@ -448,11 +461,19 @@
           "12:30–13:30 · 1h00"
         ],
         [
+          "QR5696, opera Airlink",
+          "asientos 12A 12C"
+        ],
+        [
           "Puerta a puerta",
           "21h45"
+        ],
+        [
+          "Localizador Qatar",
+          "8LIZM8"
         ]
       ],
-      "nota": "Los tres tramos van en el mismo billete de Qatar. La escala de Doha es la justa: 1 h 35 cumple el mínimo de conexión del aeropuerto, pero no hay margen para paseos. En Johannesburgo sí toca trabajo: es tu entrada a Sudáfrica, así que pasas inmigración, recoges las maletas y vuelves a facturar para Hoedspruit. Con 3 h 20 da de sobra siempre que el vuelo de Doha llegue en hora."
+      "nota": "Los tres tramos van en el mismo billete, incluido el de Hoedspruit aunque lo vuele Airlink. Eso significa que si algo se retrasa, Qatar te reacomoda. En Johannesburgo tienes 3 h 20, que dan de sobra para inmigración, maletas y volver a facturar, pero no es una escala para sentarse a desayunar tranquilo."
     },
     {
       "titulo": "Vuelo · interno",
@@ -462,15 +483,15 @@
           "14:10–16:55 · 2h45"
         ],
         [
-          "Compañía",
-          "Airlink, directo"
+          "Airlink 4Z656",
+          "asientos 9A 9C"
         ],
         [
-          "Billete",
-          "aparte del de Qatar"
+          "Localizador",
+          "969DJ4"
         ]
       ],
-      "nota": "Sale de Hoedspruit el mismo día del check-out de Moholoholo. Entrega el coche con tiempo: es un aeropuerto pequeño, pero el billete es independiente y si lo pierdes no hay reacomodo por parte de Qatar."
+      "nota": "Este va en billete aparte, con su propio localizador. Si lo pierdes no hay reacomodo por parte de Qatar: entrega el coche con margen."
     },
     {
       "titulo": "Vuelos · vuelta",
@@ -478,6 +499,10 @@
         [
           "CPT → DOH · 21 ago",
           "13:15–23:50 · 9h35"
+        ],
+        [
+          "Qatar QR1370",
+          "asientos 19D 19E"
         ],
         [
           "Escala en Doha",
@@ -488,11 +513,19 @@
           "01:25–07:35 · 7h10"
         ],
         [
+          "Qatar QR147",
+          "asientos 17E 17D"
+        ],
+        [
           "Puerta a puerta",
           "18h20"
+        ],
+        [
+          "Localizador Qatar",
+          "8LIZM8"
         ]
       ],
-      "nota": "Otra vez 1 h 35 en Doha. Al ser el mismo billete, si el primer tramo se retrasa Qatar te reacomoda; aun así, ve mirando la puerta de embarque nada más aterrizar."
+      "nota": "Aquí la escala de Doha sigue siendo de 1 h 35, la más justa del viaje. Mismo billete, así que estás cubierto, pero mira la puerta de embarque nada más aterrizar."
     },
     {
       "titulo": "Kruger",
