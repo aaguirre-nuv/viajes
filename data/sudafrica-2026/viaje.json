@@ -39,10 +39,10 @@
   ],
   "bases": {
     "2026-08-07": "Madrid",
-    "2026-08-08": "Timbavati",
-    "2026-08-09": "Timbavati",
-    "2026-08-10": "Timbavati",
-    "2026-08-11": "Timbavati",
+    "2026-08-08": "Moditlo",
+    "2026-08-09": "Moditlo",
+    "2026-08-10": "Moditlo",
+    "2026-08-11": "Moditlo",
     "2026-08-12": "Skukuza",
     "2026-08-13": "Skukuza",
     "2026-08-14": "Skukuza",
@@ -105,7 +105,7 @@
     },
     {
       "marca": "02",
-      "nombre": "Timbavati",
+      "nombre": "Moditlo · Vuyani",
       "fechas": "8–12 ago",
       "dias": [
         {
@@ -116,36 +116,60 @@
               "hora": "14:00",
               "texto": "Check-in Vuyani Safari Lodge",
               "clave": true
+            },
+            {
+              "hora": "16:00",
+              "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
+              "clave": true
             }
-          ]
+          ],
+          "aviso": "Llegas a las 14:00 y el safari de tarde sale sobre las 16:00, así que da tiempo justo. Avisa al reservar el traslado desde Hoedspruit."
         },
         {
           "fecha": "2026-08-09",
-          "etiqueta": "Vuyani",
+          "etiqueta": "Vuyani · Moditlo",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Día en la reserva"
+              "hora": "06:00",
+              "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
+              "clave": true
+            },
+            {
+              "hora": "16:00",
+              "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
+              "clave": true
             }
           ]
         },
         {
           "fecha": "2026-08-10",
-          "etiqueta": "Vuyani",
+          "etiqueta": "Vuyani · Moditlo",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Día en la reserva"
+              "hora": "06:00",
+              "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
+              "clave": true
+            },
+            {
+              "hora": "16:00",
+              "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
+              "clave": true
             }
           ]
         },
         {
           "fecha": "2026-08-11",
-          "etiqueta": "Vuyani",
+          "etiqueta": "Vuyani · Moditlo",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Día en la reserva"
+              "hora": "06:00",
+              "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
+              "clave": true
+            },
+            {
+              "hora": "16:00",
+              "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
+              "clave": true
             }
           ]
         }
@@ -160,6 +184,10 @@
           "fecha": "2026-08-12",
           "etiqueta": "Traslado + Skukuza",
           "eventos": [
+            {
+              "hora": "06:00",
+              "texto": "Safari de mañana en Vuyani · opcional, vuelta sobre las 10:00"
+            },
             {
               "hora": "12:00",
               "texto": "Check-out Vuyani y recogida del coche en Hoedspruit",
@@ -176,7 +204,7 @@
               "clave": true
             }
           ],
-          "aviso": "El día apretado. De Hoedspruit a Skukuza son unas 4 h al límite de 50 km/h del parque. Saliendo a las 12:00 llegas justo para el Sunset Drive. Además hay que pagar las tasas de conservación en la puerta."
+          "aviso": "Decisión del día: si haces el safari de mañana en Vuyani no puedes salir antes de las 12:00, y de Hoedspruit a Skukuza son unas 4 h al límite de 50 km/h del parque. Llegarías justo para el Sunset Drive de las 16:30. Si renuncias a ese safari y sales a las 9:00, vas holgado. Además hay que pagar las tasas de conservación en la puerta."
         },
         {
           "fecha": "2026-08-13",
@@ -526,6 +554,36 @@
         ]
       ],
       "nota": "Aquí la escala de Doha sigue siendo de 1 h 35, la más justa del viaje. Mismo billete, así que estás cubierto, pero mira la puerta de embarque nada más aterrizar."
+    },
+    {
+      "titulo": "Vuyani Safari Lodge",
+      "filas": [
+        [
+          "Reserva",
+          "Moditlo, Blue Canyon"
+        ],
+        [
+          "Safari de mañana",
+          "06:00 – 10:00"
+        ],
+        [
+          "Safari de tarde",
+          "16:00 – 19:00"
+        ],
+        [
+          "Horarios",
+          "por confirmar al llegar"
+        ],
+        [
+          "Suites en el lodge",
+          "10"
+        ],
+        [
+          "Actividades extra",
+          "avisar con 24 h"
+        ]
+      ],
+      "nota": "El lodge no publica los horarios exactos de los safaris: los de arriba son los habituales de invierno según huéspedes, confírmalos en recepción el primer día. Las excursiones (Kruger, Blyde, Moholoholo, globo) solo se contratan en el propio lodge, mínimo dos personas y con 24 h de antelación, y cada una te hace perder uno o dos safaris."
     },
     {
       "titulo": "Kruger",
