@@ -1,0 +1,20 @@
+[
+  {
+    "id": "a-20260807-1240",
+    "fecha": "2026-08-07",
+    "categoria": "Transporte",
+    "concepto": "Uber a Barajas",
+    "importe": 14.95,
+    "moneda": "EUR",
+    "nota": "Apple Pay Visa ...3797"
+  },
+  {
+    "id": "a-20260807-1358",
+    "fecha": "2026-08-07",
+    "categoria": "Comida",
+    "concepto": "Flax&Kale, T4S Barajas",
+    "importe": 35.75,
+    "moneda": "EUR",
+    "nota": "Factura MRB-93137"
+  }
+]
