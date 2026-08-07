@@ -15,14 +15,28 @@
     }
   ],
   "viajeros": [
-    { "id": "alvaro", "nombre": "Álvaro", "fichero": "gastos-alvaro.json" },
-    { "id": "laura", "nombre": "Laura", "fichero": "gastos-laura.json" }
+    {
+      "id": "alvaro",
+      "nombre": "Álvaro",
+      "fichero": "gastos-alvaro.json"
+    },
+    {
+      "id": "laura",
+      "nombre": "Laura",
+      "fichero": "gastos-laura.json"
+    }
   ],
   "categorias": [
-    "Comida", "Transporte", "Combustible", "Actividades",
-    "Tasas", "Propinas", "Souvenirs", "Salud", "Otros"
+    "Comida",
+    "Transporte",
+    "Combustible",
+    "Actividades",
+    "Tasas",
+    "Propinas",
+    "Souvenirs",
+    "Salud",
+    "Otros"
   ],
-
   "bases": {
     "2026-08-07": "Madrid",
     "2026-08-08": "Timbavati",
@@ -41,7 +55,6 @@
     "2026-08-21": "Ciudad del Cabo",
     "2026-08-22": "Madrid"
   },
-
   "franjas": [
     {
       "desde": "2026-08-12",
@@ -50,7 +63,6 @@
       "detalle": "abren 06:00 · cierran 18:00"
     }
   ],
-
   "tramos": [
     {
       "marca": "01",
@@ -61,15 +73,26 @@
           "fecha": "2026-08-07",
           "etiqueta": "Madrid",
           "eventos": [
-            { "hora": "15:45", "texto": "Vuelo MAD → DOH, Qatar Airways", "clave": true }
+            {
+              "hora": "15:45",
+              "texto": "Vuelo MAD → DOH · Qatar · 15:45 → 23:55 · 7 h 10",
+              "clave": true
+            }
           ]
         },
         {
           "fecha": "2026-08-08",
           "etiqueta": "En ruta",
           "eventos": [
-            { "hora": "09:10", "texto": "Llegada a Johannesburgo" },
-            { "hora": "12:30", "texto": "Vuelo JNB → HDS, llegada 13:30", "clave": true }
+            {
+              "hora": "09:10",
+              "texto": "Llegada a Johannesburgo · escala de 3 h 20"
+            },
+            {
+              "hora": "12:30",
+              "texto": "Vuelo JNB → HDS · Qatar · 12:30 → 13:30 · 1 h 00",
+              "clave": true
+            }
           ],
           "aviso": "La llegada a JNB se movió de 9:00 a 9:10. La conexión sigue holgada: 3 h 20."
         }
@@ -84,12 +107,43 @@
           "fecha": "2026-08-08",
           "etiqueta": "Vuyani Safari Lodge",
           "eventos": [
-            { "hora": "14:00", "texto": "Check-in Vuyani Safari Lodge", "clave": true }
+            {
+              "hora": "14:00",
+              "texto": "Check-in Vuyani Safari Lodge",
+              "clave": true
+            }
           ]
         },
-        { "fecha": "2026-08-09", "etiqueta": "Vuyani", "eventos": [ { "hora": "", "texto": "Día en la reserva" } ] },
-        { "fecha": "2026-08-10", "etiqueta": "Vuyani", "eventos": [ { "hora": "", "texto": "Día en la reserva" } ] },
-        { "fecha": "2026-08-11", "etiqueta": "Vuyani", "eventos": [ { "hora": "", "texto": "Día en la reserva" } ] }
+        {
+          "fecha": "2026-08-09",
+          "etiqueta": "Vuyani",
+          "eventos": [
+            {
+              "hora": "",
+              "texto": "Día en la reserva"
+            }
+          ]
+        },
+        {
+          "fecha": "2026-08-10",
+          "etiqueta": "Vuyani",
+          "eventos": [
+            {
+              "hora": "",
+              "texto": "Día en la reserva"
+            }
+          ]
+        },
+        {
+          "fecha": "2026-08-11",
+          "etiqueta": "Vuyani",
+          "eventos": [
+            {
+              "hora": "",
+              "texto": "Día en la reserva"
+            }
+          ]
+        }
       ]
     },
     {
@@ -101,9 +155,21 @@
           "fecha": "2026-08-12",
           "etiqueta": "Traslado + Skukuza",
           "eventos": [
-            { "hora": "12:00", "texto": "Check-out Vuyani y recogida del coche en Hoedspruit", "clave": true },
-            { "hora": "14:00", "texto": "Check-in tienda safari CTT2, Skukuza", "clave": true },
-            { "hora": "16:30", "texto": "Sunset Drive, unas 3 h", "clave": true }
+            {
+              "hora": "12:00",
+              "texto": "Check-out Vuyani y recogida del coche en Hoedspruit",
+              "clave": true
+            },
+            {
+              "hora": "14:00",
+              "texto": "Check-in tienda safari CTT2, Skukuza",
+              "clave": true
+            },
+            {
+              "hora": "16:30",
+              "texto": "Sunset Drive, unas 3 h",
+              "clave": true
+            }
           ],
           "aviso": "El día apretado. De Hoedspruit a Skukuza son unas 4 h al límite de 50 km/h del parque. Saliendo a las 12:00 llegas justo para el Sunset Drive. Además hay que pagar las tasas de conservación en la puerta."
         },
@@ -111,8 +177,15 @@
           "fecha": "2026-08-13",
           "etiqueta": "Skukuza",
           "eventos": [
-            { "hora": "05:00", "texto": "Sunrise Drive, unas 3 h", "clave": true },
-            { "hora": "", "texto": "Resto del día libre por el parque" }
+            {
+              "hora": "05:00",
+              "texto": "Sunrise Drive, unas 3 h",
+              "clave": true
+            },
+            {
+              "hora": "",
+              "texto": "Resto del día libre por el parque"
+            }
           ],
           "aviso": "Confirma la hora exacta en recepción la tarde anterior."
         },
@@ -120,8 +193,15 @@
           "fecha": "2026-08-14",
           "etiqueta": "Skukuza",
           "eventos": [
-            { "hora": "", "texto": "Día libre por el parque" },
-            { "hora": "20:00", "texto": "Night Drive, unas 2 h", "clave": true }
+            {
+              "hora": "",
+              "texto": "Día libre por el parque"
+            },
+            {
+              "hora": "20:00",
+              "texto": "Night Drive, unas 2 h",
+              "clave": true
+            }
           ]
         }
       ]
@@ -135,8 +215,15 @@
           "fecha": "2026-08-15",
           "etiqueta": "Moholoholo Forest Camp",
           "eventos": [
-            { "hora": "10:00", "texto": "Check-out Skukuza", "clave": true },
-            { "hora": "", "texto": "Ruta hacia Moholoholo Forest Camp" }
+            {
+              "hora": "10:00",
+              "texto": "Check-out Skukuza",
+              "clave": true
+            },
+            {
+              "hora": "",
+              "texto": "Ruta hacia Moholoholo Forest Camp"
+            }
           ],
           "aviso": "Otro traslado largo hacia el oeste. Sal pronto: en agosto las puertas cierran a las 18:00."
         }
@@ -151,15 +238,61 @@
           "fecha": "2026-08-16",
           "etiqueta": "Traslado + Casa on Kei",
           "eventos": [
-            { "hora": "", "texto": "Check-out y entrega del coche en Hoedspruit" },
-            { "hora": "14:10", "texto": "Vuelo HDS → CPT, Airlink, llegada 16:55", "clave": true },
-            { "hora": "", "texto": "Recogida del Toyota Corolla Quest y check-in en Casa on Kei" }
+            {
+              "hora": "",
+              "texto": "Check-out y entrega del coche en Hoedspruit"
+            },
+            {
+              "hora": "14:10",
+              "texto": "Vuelo HDS → CPT · Airlink · 14:10 → 16:55 · 2 h 45",
+              "clave": true
+            },
+            {
+              "hora": "",
+              "texto": "Recogida del Toyota Corolla Quest y check-in en Casa on Kei"
+            }
           ]
         },
-        { "fecha": "2026-08-17", "etiqueta": "Ciudad del Cabo", "eventos": [ { "hora": "", "texto": "Libre" } ] },
-        { "fecha": "2026-08-18", "etiqueta": "Ciudad del Cabo", "eventos": [ { "hora": "", "texto": "Libre" } ] },
-        { "fecha": "2026-08-19", "etiqueta": "Ciudad del Cabo", "eventos": [ { "hora": "", "texto": "Libre" } ] },
-        { "fecha": "2026-08-20", "etiqueta": "Ciudad del Cabo", "eventos": [ { "hora": "", "texto": "Libre" } ] }
+        {
+          "fecha": "2026-08-17",
+          "etiqueta": "Ciudad del Cabo",
+          "eventos": [
+            {
+              "hora": "",
+              "texto": "Libre"
+            }
+          ]
+        },
+        {
+          "fecha": "2026-08-18",
+          "etiqueta": "Ciudad del Cabo",
+          "eventos": [
+            {
+              "hora": "",
+              "texto": "Libre"
+            }
+          ]
+        },
+        {
+          "fecha": "2026-08-19",
+          "etiqueta": "Ciudad del Cabo",
+          "eventos": [
+            {
+              "hora": "",
+              "texto": "Libre"
+            }
+          ]
+        },
+        {
+          "fecha": "2026-08-20",
+          "etiqueta": "Ciudad del Cabo",
+          "eventos": [
+            {
+              "hora": "",
+              "texto": "Libre"
+            }
+          ]
+        }
       ]
     },
     {
@@ -171,53 +304,219 @@
           "fecha": "2026-08-21",
           "etiqueta": "Ciudad del Cabo",
           "eventos": [
-            { "hora": "", "texto": "Check-out Casa on Kei y entrega del coche" },
-            { "hora": "13:15", "texto": "Vuelo CPT → DOH", "clave": true }
+            {
+              "hora": "",
+              "texto": "Check-out Casa on Kei y entrega del coche"
+            },
+            {
+              "hora": "13:15",
+              "texto": "Vuelo CPT → DOH · Qatar · 13:15 → 23:50 · 9 h 35",
+              "clave": true
+            }
           ]
         },
         {
           "fecha": "2026-08-22",
           "etiqueta": "Madrid",
           "eventos": [
-            { "hora": "07:35", "texto": "Llegada a Madrid", "clave": true }
+            {
+              "hora": "07:35",
+              "texto": "Llegada a Madrid · vuelta de 18 h 20 puerta a puerta",
+              "clave": true
+            }
           ]
         }
       ]
     }
   ],
-
   "reservas": [
-    { "concepto": "Vuelos Qatar (ida y vuelta, 2 pax)", "proveedor": "Qatar Airways", "importe": 3296.28, "moneda": "EUR", "estado": "pagado" },
-    { "concepto": "Vuyani Safari Lodge, 8–12 ago", "proveedor": "Booking", "importe": 2744.22, "moneda": "EUR", "estado": "pagado" },
-    { "concepto": "Skukuza, tienda safari CTT2, 3 noches", "proveedor": "SANParks", "importe": 2698.95, "moneda": "ZAR", "estado": "pagado" },
-    { "concepto": "Sunset Drive, 12 ago", "proveedor": "SANParks", "importe": 900.00, "moneda": "ZAR", "estado": "pagado" },
-    { "concepto": "Sunrise Drive, 13 ago", "proveedor": "SANParks", "importe": 900.00, "moneda": "ZAR", "estado": "pagado" },
-    { "concepto": "Night Drive, 14 ago", "proveedor": "SANParks", "importe": 686.00, "moneda": "ZAR", "estado": "pagado" },
-    { "concepto": "Community Fund", "proveedor": "SANParks", "importe": 51.85, "moneda": "ZAR", "estado": "pagado" },
-    { "concepto": "Moholoholo Forest Camp, 15–16 ago", "proveedor": "Booking", "importe": 148.81, "moneda": "EUR", "estado": "pagado" },
-    { "concepto": "Vuelo HDS → CPT, 16 ago", "proveedor": "Airlink", "importe": 296.00, "moneda": "EUR", "estado": "pagado" },
-    { "concepto": "Casa on Kei, 16–21 ago", "proveedor": "Booking", "importe": 720.16, "moneda": "EUR", "estado": "pagado" },
-    { "concepto": "Coche Kruger, 12–16 ago", "proveedor": "Avis", "importe": 238.84, "moneda": "EUR", "estado": "pagado" },
-    { "concepto": "Coche Ciudad del Cabo, 16–21 ago", "proveedor": "Avis", "importe": 185.65, "moneda": "EUR", "estado": "pagado" },
+    {
+      "concepto": "Vuelos Qatar (ida y vuelta, 2 pax)",
+      "proveedor": "Qatar Airways",
+      "importe": 3296.28,
+      "moneda": "EUR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Vuyani Safari Lodge, 8–12 ago",
+      "proveedor": "Booking",
+      "importe": 2744.22,
+      "moneda": "EUR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Skukuza, tienda safari CTT2, 3 noches",
+      "proveedor": "SANParks",
+      "importe": 2698.95,
+      "moneda": "ZAR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Sunset Drive, 12 ago",
+      "proveedor": "SANParks",
+      "importe": 900.0,
+      "moneda": "ZAR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Sunrise Drive, 13 ago",
+      "proveedor": "SANParks",
+      "importe": 900.0,
+      "moneda": "ZAR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Night Drive, 14 ago",
+      "proveedor": "SANParks",
+      "importe": 686.0,
+      "moneda": "ZAR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Community Fund",
+      "proveedor": "SANParks",
+      "importe": 51.85,
+      "moneda": "ZAR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Moholoholo Forest Camp, 15–16 ago",
+      "proveedor": "Booking",
+      "importe": 148.81,
+      "moneda": "EUR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Vuelo HDS → CPT, 16 ago",
+      "proveedor": "Airlink",
+      "importe": 296.0,
+      "moneda": "EUR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Casa on Kei, 16–21 ago",
+      "proveedor": "Booking",
+      "importe": 720.16,
+      "moneda": "EUR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Coche Kruger, 12–16 ago",
+      "proveedor": "Avis",
+      "importe": 238.84,
+      "moneda": "EUR",
+      "estado": "pagado"
+    },
+    {
+      "concepto": "Coche Ciudad del Cabo, 16–21 ago",
+      "proveedor": "Avis",
+      "importe": 185.65,
+      "moneda": "EUR",
+      "estado": "pagado"
+    },
     {
       "concepto": "Tasas de conservación Kruger",
       "proveedor": "SANParks",
-      "importe": 4816.00,
+      "importe": 4816.0,
       "moneda": "ZAR",
       "estado": "pendiente",
       "nota": "602 ZAR por adulto y día · 2 adultos · 4 días · se pagan en la puerta el 12 ago"
     }
   ],
-
   "referencias": [
+    {
+      "titulo": "Vuelos · ida",
+      "filas": [
+        [
+          "MAD → DOH · 7 ago",
+          "15:45–23:55 · 7h10"
+        ],
+        [
+          "Escala en Doha",
+          "1h35"
+        ],
+        [
+          "DOH → JNB · 8 ago",
+          "01:30–09:10 · 8h40"
+        ],
+        [
+          "Escala en Johannesburgo",
+          "3h20"
+        ],
+        [
+          "JNB → HDS · 8 ago",
+          "12:30–13:30 · 1h00"
+        ],
+        [
+          "Puerta a puerta",
+          "21h45"
+        ]
+      ],
+      "nota": "Los tres tramos van en el mismo billete de Qatar. La escala de Doha es la justa: 1 h 35 cumple el mínimo de conexión del aeropuerto, pero no hay margen para paseos. En Johannesburgo sí toca trabajo: es tu entrada a Sudáfrica, así que pasas inmigración, recoges las maletas y vuelves a facturar para Hoedspruit. Con 3 h 20 da de sobra siempre que el vuelo de Doha llegue en hora."
+    },
+    {
+      "titulo": "Vuelo · interno",
+      "filas": [
+        [
+          "HDS → CPT · 16 ago",
+          "14:10–16:55 · 2h45"
+        ],
+        [
+          "Compañía",
+          "Airlink, directo"
+        ],
+        [
+          "Billete",
+          "aparte del de Qatar"
+        ]
+      ],
+      "nota": "Sale de Hoedspruit el mismo día del check-out de Moholoholo. Entrega el coche con tiempo: es un aeropuerto pequeño, pero el billete es independiente y si lo pierdes no hay reacomodo por parte de Qatar."
+    },
+    {
+      "titulo": "Vuelos · vuelta",
+      "filas": [
+        [
+          "CPT → DOH · 21 ago",
+          "13:15–23:50 · 9h35"
+        ],
+        [
+          "Escala en Doha",
+          "1h35"
+        ],
+        [
+          "DOH → MAD · 22 ago",
+          "01:25–07:35 · 7h10"
+        ],
+        [
+          "Puerta a puerta",
+          "18h20"
+        ]
+      ],
+      "nota": "Otra vez 1 h 35 en Doha. Al ser el mismo billete, si el primer tramo se retrasa Qatar te reacomoda; aun así, ve mirando la puerta de embarque nada más aterrizar."
+    },
     {
       "titulo": "Kruger",
       "filas": [
-        ["Reserva SANParks", "RR300902"],
-        ["Código de cliente", "AGUI0097"],
-        ["Puertas en agosto", "06:00 – 18:00"],
-        ["Límite de velocidad", "50 km/h"],
-        ["Check-in / check-out", "14:00 / 10:00"]
+        [
+          "Reserva SANParks",
+          "RR300902"
+        ],
+        [
+          "Código de cliente",
+          "AGUI0097"
+        ],
+        [
+          "Puertas en agosto",
+          "06:00 – 18:00"
+        ],
+        [
+          "Límite de velocidad",
+          "50 km/h"
+        ],
+        [
+          "Check-in / check-out",
+          "14:00 / 10:00"
+        ]
       ],
       "nota": "Lleva la carta de confirmación impresa: hay que presentarla al llegar. Todos los mayores de 18 años necesitan pasaporte para escanear al entrar y al salir. Entra por la puerta de Phabeni, no por Numbi."
     },
