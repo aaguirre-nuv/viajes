@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16362A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Diario de viaje</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bone:#DDD6C3; --bone2:#EAE5D6; --bone3:#F2EEE2;
+  --green:#16362A; --green2:#24503E; --green3:#3A6B54;
+  --ochre:#C68A2E; --ochre2:#8F6118;
+  --ink:#1A1B17; --mute:#6B6A5E;
+  --red:#A8382A;
+  --line:rgba(22,54,42,.18);
+  --disp:"Barlow Condensed",-apple-system,"Helvetica Neue",sans-serif;
+  --body:"IBM Plex Sans",-apple-system,"Helvetica Neue",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bone);color:var(--ink);font-family:var(--body);
+  font-size:15px;line-height:1.5;padding-bottom:56px;
+  padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right);
+}
+.wrap{max-width:640px;margin:0 auto;padding:0 14px}
+
+header{padding:20px 0 12px}
+.eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre2);font-weight:600}
+h1{font-family:var(--disp);font-weight:700;font-size:38px;line-height:.95;margin:5px 0 0;text-transform:uppercase;color:var(--green)}
+.sub{font-family:var(--mono);font-size:11.5px;color:var(--mute);margin-top:6px}
+
+/* placa */
+.plate{
+  background:var(--green);color:var(--bone3);border-radius:3px;padding:16px 16px 14px;margin:14px 0 0;
+  box-shadow:inset 0 0 0 2px var(--green),inset 0 0 0 3.5px rgba(242,238,226,.45);
+  position:relative;overflow:hidden
+}
+.plate::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(120% 80% at 78% 0%,rgba(198,138,46,.16),transparent 62%)}
+.plate-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.plate-day{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;opacity:.72}
+.plate-base{font-family:var(--disp);font-weight:700;font-size:29px;line-height:1;text-transform:uppercase;margin:7px 0 0}
+.plate-next{margin-top:13px;padding-top:12px;border-top:1px solid rgba(242,238,226,.28);display:flex;gap:12px;align-items:flex-start}
+.plate-time{font-family:var(--disp);font-weight:700;font-size:31px;line-height:.9;color:var(--ochre);flex:0 0 auto;min-width:62px}
+.plate-what{font-size:14px;line-height:1.35;padding-top:2px}
+.plate-when{font-family:var(--mono);font-size:10.5px;opacity:.66;margin-top:3px;letter-spacing:.04em}
+.plate-gate{margin-top:12px;padding-top:11px;border-top:1px solid rgba(242,238,226,.28);
+  font-family:var(--mono);font-size:11px;display:flex;justify-content:space-between;gap:8px;opacity:.88}
+.plate-gate b{color:var(--ochre);font-weight:600}
+
+nav{position:sticky;top:0;z-index:20;background:var(--bone);padding:12px 0 9px;margin-top:16px;border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font-family:var(--disp);font-weight:600;font-size:15.5px;letter-spacing:.05em;text-transform:uppercase;
+  padding:6px 12px;border-radius:2px;border:1px solid var(--line);background:transparent;color:var(--green2);
+  cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--green);color:var(--bone3);border-color:var(--green)}
+.tab:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+
+section[hidden]{display:none}
+section{padding-top:16px;animation:fade .22s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){section{animation:none}*{transition:none!important}}
+
+h2{font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ochre2);margin:24px 0 9px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+h2:first-child{margin-top:2px}
+
+.leg{margin-bottom:20px}
+.leg-head{display:flex;align-items:baseline;gap:9px;margin-bottom:8px}
+.leg-mark{font-family:var(--mono);font-weight:600;font-size:10px;letter-spacing:.1em;
+  background:var(--green2);color:var(--bone3);padding:3px 6px;border-radius:2px;flex:0 0 auto}
+.leg-name{font-family:var(--disp);font-weight:700;font-size:21px;text-transform:uppercase;line-height:1;color:var(--green)}
+.leg-dates{font-family:var(--mono);font-size:10.5px;color:var(--mute);margin-left:auto;flex:0 0 auto}
+
+.day{background:var(--bone2);border-left:3px solid var(--green3);border-radius:0 3px 3px 0;padding:10px 12px;margin-bottom:6px}
+.day.today{border-left-color:var(--ochre);background:var(--bone3);box-shadow:0 1px 0 var(--line)}
+.day.past{opacity:.5}
+.day-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.day-date{font-family:var(--disp);font-weight:600;font-size:17px;text-transform:uppercase}
+.day-tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ochre2)}
+.ev{display:flex;gap:10px;margin-top:7px;font-size:13.5px;line-height:1.4}
+.ev-t{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--green2);flex:0 0 44px;padding-top:2px}
+.ev-x{flex:1}
+.ev.key .ev-x{font-weight:600}
+.warn{margin-top:8px;background:rgba(168,56,42,.09);border-left:2px solid var(--red);
+  padding:7px 9px;font-size:12.5px;line-height:1.4;color:#7A2A20;border-radius:0 2px 2px 0}
+
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.fig{background:var(--bone2);border-radius:3px;padding:11px 12px}
+.fig.wide{grid-column:1/-1}
+.fig.dark{background:var(--green);color:var(--bone3)}
+.fig-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.fig.dark .fig-k{color:rgba(242,238,226,.62)}
+.fig-v{font-family:var(--disp);font-weight:700;font-size:26px;line-height:1.08;margin-top:3px;font-feature-settings:"tnum"}
+.fig.dark .fig-v{color:var(--ochre)}
+.fig-n{font-size:11.5px;color:var(--mute);margin-top:2px;line-height:1.35}
+.fig.dark .fig-n{color:rgba(242,238,226,.7)}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);
+  text-align:left;font-weight:600;padding:0 0 6px;border-bottom:1px solid var(--line)}
+th.r,td.r{text-align:right}
+td{padding:7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.num{font-family:var(--mono);font-size:12.5px;white-space:nowrap;font-feature-settings:"tnum"}
+tr.total td{border-bottom:none;border-top:2px solid var(--green);font-weight:600;padding-top:9px}
+.pend{color:var(--red);font-weight:500}
+
+.form{background:var(--bone2);border-radius:3px;padding:12px;margin-bottom:12px}
+.row{display:flex;gap:7px;margin-bottom:7px}
+.row>*{min-width:0}
+label{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:3px}
+input,select,textarea{width:100%;font-family:var(--body);font-size:16px;padding:9px 10px;
+  border:1px solid var(--line);border-radius:2px;background:var(--bone3);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--ochre);outline-offset:-1px;border-color:transparent}
+textarea{resize:vertical;min-height:76px;line-height:1.45;font-family:var(--mono);font-size:13px}
+button.go{width:100%;font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.09em;text-transform:uppercase;
+  padding:11px;border:none;border-radius:2px;background:var(--green);color:var(--bone3);cursor:pointer}
+button.go.ghost{background:transparent;color:var(--green2);border:1px solid var(--line)}
+button.go:active{background:var(--green2)}
+button.go:disabled{opacity:.45;cursor:default}
+button.go:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+
+.item{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.item-m{flex:1;min-width:0}
+.item-c{font-size:14px;line-height:1.35;word-break:break-word}
+.item-d{font-family:var(--mono);font-size:10.5px;color:var(--mute);margin-top:2px;letter-spacing:.03em}
+.item-a{font-family:var(--mono);font-size:13.5px;font-weight:500;white-space:nowrap;padding-top:1px;font-feature-settings:"tnum"}
+.item-x{background:none;border:none;color:var(--mute);cursor:pointer;font-size:17px;line-height:1;padding:2px 0 2px 7px;flex:0 0 auto}
+.item-x:hover{color:var(--red)}
+.item.cola{opacity:.62}
+
+.empty{text-align:center;padding:26px 16px;background:var(--bone2);border-radius:3px;font-size:13.5px;color:var(--mute);line-height:1.5}
+.note{font-size:12.5px;color:var(--mute);line-height:1.5;margin:9px 0 0}
+.msg{font-family:var(--mono);font-size:11px;padding:8px 10px;border-radius:2px;margin-bottom:10px;line-height:1.5}
+.msg.bad{background:rgba(168,56,42,.11);color:#7A2A20}
+.msg.ok{background:rgba(36,80,62,.11);color:var(--green2)}
+.msg.info{background:rgba(198,138,46,.15);color:var(--ochre2)}
+.pill{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;
+  padding:2px 6px;border-radius:2px;background:var(--green2);color:var(--bone3);margin-right:5px}
+.pill.warnp{background:var(--red)}
+.pill.who{background:var(--ochre2)}
+
+.estado{
+  position:fixed;left:0;right:0;bottom:0;z-index:30;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;text-align:center;
+  padding:7px 10px calc(7px + env(safe-area-inset-bottom));
+  background:var(--green);color:rgba(242,238,226,.85)
+}
+.estado.pend{background:var(--ochre2);color:#fff}
+.estado.off{background:var(--red);color:#fff}
+
+footer{margin-top:34px;padding:16px 0 8px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:10.5px;color:var(--mute);line-height:1.6}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1 id="titulo">&#8230;</h1>
+    <div class="sub" id="sub"></div>
+    <div class="plate" id="plate"></div>
+  </header>
+
+  <nav>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" data-p="hoy" aria-selected="true">Hoy</button>
+      <button class="tab" role="tab" data-p="ruta" aria-selected="false">Ruta</button>
+      <button class="tab" role="tab" data-p="gastos" aria-selected="false">Gastos</button>
+      <button class="tab" role="tab" data-p="dinero" aria-selected="false">Dinero</button>
+      <button class="tab" role="tab" data-p="datos" aria-selected="false">Datos</button>
+      <button class="tab" role="tab" data-p="ajustes" aria-selected="false">Ajustes</button>
+    </div>
+  </nav>
+
+  <section id="p-hoy"></section>
+  <section id="p-ruta" hidden></section>
+  <section id="p-gastos" hidden></section>
+  <section id="p-dinero" hidden></section>
+  <section id="p-datos" hidden></section>
+  <section id="p-ajustes" hidden></section>
+
+  <footer>
+    Itinerario y reservas en <code>data/&lt;viaje&gt;/viaje.json</code>.<br>
+    Gastos en <code>gastos-&lt;persona&gt;.json</code>, uno por viajero.
+  </footer>
+</div>
+<div class="estado" id="estado"></div>
+<script>
+/* =========================================================
+   Diario de viaje — motor genérico
+   Los datos viven en /data/<viaje>/viaje.json y gastos-<persona>.json
+   ========================================================= */
+
+const params    = new URLSearchParams(location.search);
+const VIAJE_ID  = params.get("viaje") || "sudafrica-2026";
+const BASE_DATA = "../data/" + VIAJE_ID + "/";
+
+const LS_CFG  = "diario:cfg";
+const LS_COLA = "diario:cola:" + VIAJE_ID;
+
+let V = null;               // viaje.json
+let gastos = [];            // confirmados, de todos los viajeros
+let cola = [];              // pendientes de subir
+let cfg = { owner:"", repo:"", rama:"main", quien:"", token:"" };
+let mensaje = null;
+
+/* ---------------- utilidades ---------------- */
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g,
+  c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
+
+const n2 = n => Number(n).toLocaleString("es-ES",
+  { minimumFractionDigits:2, maximumFractionDigits:2 });
+
+function base(n){ return n2(n) + " €"; }
+
+function cambio(codigo){
+  if(!V || codigo === V.monedaBase) return 1;
+  const c = (V.cambios || []).find(x => x.codigo === codigo);
+  return c ? c.porUnidadBase : 1;
+}
+function aBase(importe, moneda){ return importe / cambio(moneda); }
+function fmtMoneda(importe, moneda){
+  if(!V || moneda === V.monedaBase) return base(importe);
+  const c = (V.cambios || []).find(x => x.codigo === moneda);
+  return (c && c.simbolo ? c.simbolo + " " : moneda + " ") + n2(importe);
+}
+
+function hoyISO(){
+  const d = new Date();
+  return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0")
+       + "-" + String(d.getDate()).padStart(2,"0");
+}
+function fmtFecha(iso){
+  const [y,m,d] = String(iso).split("-").map(Number);
+  const dt = new Date(y, m-1, d);
+  const dias = ["dom","lun","mar","mié","jue","vie","sáb"];
+  const mes  = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+  return dias[dt.getDay()] + " " + d + " " + mes[m-1];
+}
+
+/* ---------------- configuración local ---------------- */
+function cargarCfg(){
+  try{
+    const raw = localStorage.getItem(LS_CFG);
+    if(raw) cfg = Object.assign(cfg, JSON.parse(raw));
+  }catch(e){}
+}
+function guardarCfg(){
+  try{ localStorage.setItem(LS_CFG, JSON.stringify(cfg)); }catch(e){}
+}
+function cargarCola(){
+  try{ cola = JSON.parse(localStorage.getItem(LS_COLA) || "[]"); }catch(e){ cola = []; }
+}
+function guardarCola(){
+  try{ localStorage.setItem(LS_COLA, JSON.stringify(cola)); }catch(e){}
+}
+const configurado = () => cfg.owner && cfg.repo && cfg.quien;
+
+/* ---------------- GitHub ---------------- */
+const API = "https://api.github.com";
+
+function rutaGastos(quien){
+  const v = (V.viajeros || []).find(x => x.id === quien);
+  return "data/" + VIAJE_ID + "/" + (v && v.fichero ? v.fichero : "gastos-" + quien + ".json");
+}
+function cabeceras(){
+  const h = { "Accept":"application/vnd.github+json" };
+  if(cfg.token) h["Authorization"] = "Bearer " + cfg.token;
+  return h;
+}
+function b64(str){
+  return btoa(String.fromCharCode(...new TextEncoder().encode(str)));
+}
+function deB64(str){
+  const bin = atob(String(str).replace(/\n/g, ""));
+  return new TextDecoder().decode(Uint8Array.from(bin, c => c.charCodeAt(0)));
+}
+
+async function leerFicheroRepo(ruta){
+  const url = API + "/repos/" + cfg.owner + "/" + cfg.repo + "/contents/"
+            + ruta + "?ref=" + encodeURIComponent(cfg.rama || "main");
+  const r = await fetch(url, { headers: cabeceras(), cache:"no-store" });
+  if(r.status === 404) return { contenido: [], sha: null };
+  if(!r.ok) throw new Error("GitHub " + r.status);
+  const j = await r.json();
+  return { contenido: JSON.parse(deB64(j.content) || "[]"), sha: j.sha };
+}
+
+async function escribirFicheroRepo(ruta, datos, sha, msg){
+  const url = API + "/repos/" + cfg.owner + "/" + cfg.repo + "/contents/" + ruta;
+  const r = await fetch(url, {
+    method:"PUT",
+    headers: Object.assign({ "Content-Type":"application/json" }, cabeceras()),
+    body: JSON.stringify({
+      message: msg,
+      content: b64(JSON.stringify(datos, null, 2) + "\n"),
+      sha: sha || undefined,
+      branch: cfg.rama || "main"
+    })
+  });
+  if(!r.ok){
+    const t = await r.text();
+    throw new Error("GitHub " + r.status + ": " + t.slice(0,200));
+  }
+  return r.json();
+}
+
+/* ---------------- carga de datos ---------------- */
+async function cargarViaje(){
+  const r = await fetch(BASE_DATA + "viaje.json", { cache:"no-cache" });
+  if(!r.ok) throw new Error("No se pudo leer viaje.json");
+  V = await r.json();
+}
+
+async function cargarGastos(){
+  gastos = [];
+  const viajeros = V.viajeros || [];
+  for(const v of viajeros){
+    let lista = [];
+    if(configurado()){
+      try{
+        const r = await leerFicheroRepo(rutaGastos(v.id));
+        lista = r.contenido || [];
+      }catch(e){
+        try{
+          const r2 = await fetch(BASE_DATA + v.fichero, { cache:"no-cache" });
+          lista = r2.ok ? await r2.json() : [];
+        }catch(e2){ lista = []; }
+      }
+    }else{
+      try{
+        const r2 = await fetch(BASE_DATA + v.fichero, { cache:"no-cache" });
+        lista = r2.ok ? await r2.json() : [];
+      }catch(e2){ lista = []; }
+    }
+    lista.forEach(g => gastos.push(Object.assign({ quien: v.id }, g)));
+  }
+}
+
+/* ---------------- cola sin conexión ---------------- */
+async function vaciarCola(){
+  if(!cola.length || !configurado() || !cfg.token || !navigator.onLine) return;
+  const mios = cola.slice();
+  try{
+    const ruta = rutaGastos(cfg.quien);
+    const { contenido, sha } = await leerFicheroRepo(ruta);
+    const ids = new Set(contenido.map(g => g.id));
+    const nuevos = mios.filter(g => !ids.has(g.id));
+    const salida = contenido.concat(nuevos)
+      .sort((a,b) => String(a.fecha).localeCompare(b.fecha) || String(a.id).localeCompare(b.id));
+    await escribirFicheroRepo(ruta, salida, sha,
+      nuevos.length === 1
+        ? "Gasto: " + nuevos[0].concepto
+        : nuevos.length + " gastos de " + cfg.quien);
+    cola = [];
+    guardarCola();
+    await cargarGastos();
+  }catch(e){
+    mensaje = { tipo:"bad", texto:"No se pudo subir: " + e.message };
+  }
+}
+
+/* =========================================================
+   RENDER
+   ========================================================= */
+function todosLosDias(){
+  const out = [];
+  (V.tramos || []).forEach(t => (t.dias || []).forEach(d => out.push(d)));
+  return out;
+}
+function proximoEvento(){
+  const ahora = new Date(), lista = [];
+  todosLosDias().forEach(d => (d.eventos || []).forEach(e => {
+    if(!e.hora) return;
+    const [y,mo,da] = d.fecha.split("-").map(Number);
+    const [h,mi]    = e.hora.split(":").map(Number);
+    lista.push({ when:new Date(y,mo-1,da,h,mi), texto:e.texto, fecha:d.fecha, hora:e.hora });
+  }));
+  lista.sort((a,b) => a.when - b.when);
+  return lista.find(e => e.when > ahora) || null;
+}
+function cuentaAtras(when){
+  const ms = when - new Date();
+  if(ms < 0) return "";
+  const h = Math.floor(ms/3600000), m = Math.floor(ms % 3600000 / 60000);
+  if(h >= 48) return "en " + Math.floor(h/24) + " días";
+  if(h >= 1)  return "en " + h + " h " + String(m).padStart(2,"0") + " min";
+  return "en " + m + " min";
+}
+
+function pintarCabecera(){
+  document.getElementById("eyebrow").textContent = V.eyebrow || "";
+  document.getElementById("titulo").textContent  = V.titulo || "Viaje";
+  document.getElementById("sub").textContent     = V.subtitulo || "";
+  document.title = V.titulo || "Diario de viaje";
+  pintarPlaca();
+}
+
+function pintarPlaca(){
+  const hoy   = hoyISO();
+  const bases = V.bases || {};
+  const lugar = bases[hoy] || "Fuera de fechas";
+  const ev    = proximoEvento();
+
+  let next = '<div class="plate-next"><div class="plate-what">Sin nada más en la agenda.</div></div>';
+  if(ev){
+    next = '<div class="plate-next"><div class="plate-time">' + esc(ev.hora) + '</div><div>'
+         + '<div class="plate-what">' + esc(ev.texto) + '</div>'
+         + '<div class="plate-when">' + (ev.fecha === hoy ? "hoy" : fmtFecha(ev.fecha))
+         + " · " + cuentaAtras(ev.when) + '</div></div></div>';
+  }
+
+  let franja = "";
+  (V.franjas || []).forEach(f => {
+    if(hoy >= f.desde && hoy <= f.hasta){
+      franja = '<div class="plate-gate"><span>' + esc(f.etiqueta) + '</span><span>'
+             + esc(f.detalle).replace(/(\d{2}:\d{2})/g, "<b>$1</b>") + '</span></div>';
+    }
+  });
+
+  document.getElementById("plate").innerHTML =
+    '<div class="plate-top"><span class="plate-day">' + fmtFecha(hoy) + '</span>'
+    + '<span class="plate-day">' + (bases[hoy] ? "base" : "") + '</span></div>'
+    + '<div class="plate-base">' + esc(lugar) + '</div>' + next + franja;
+}
+
+function tarjetaDia(d, hoy){
+  const cls = d.fecha === hoy ? "day today" : (d.fecha < hoy ? "day past" : "day");
+  const evs = (d.eventos || []).map(e =>
+    '<div class="ev' + (e.clave ? " key" : "") + '">'
+    + '<div class="ev-t">' + esc(e.hora || "—") + '</div>'
+    + '<div class="ev-x">' + esc(e.texto) + '</div></div>').join("");
+  const w = d.aviso ? '<div class="warn">' + esc(d.aviso) + '</div>' : "";
+  return '<div class="' + cls + '"><div class="day-h">'
+       + '<span class="day-date">' + fmtFecha(d.fecha) + '</span>'
+       + '<span class="day-tag">' + esc(d.etiqueta || "") + '</span></div>' + evs + w + '</div>';
+}
+
+function listaGastos(){
+  return gastos.concat(cola.map(g => Object.assign({ quien:cfg.quien, _cola:true }, g)));
+}
+function totalGastos(f){
+  return listaGastos().filter(f || (() => true))
+    .reduce((s,g) => s + aBase(g.importe, g.moneda), 0);
+}
+
+function pintarHoy(){
+  const hoy  = hoyISO();
+  const dias = todosLosDias().filter(d => d.fecha === hoy);
+  const plan = dias.length
+    ? dias.map(d => tarjetaDia(d, hoy)).join("")
+    : '<div class="empty">Hoy no cae dentro del viaje.<br>Mira la pestaña Ruta.</div>';
+  const sigDia = todosLosDias().find(d => d.fecha > hoy);
+
+  document.getElementById("p-hoy").innerHTML =
+    '<h2>Plan de hoy</h2>' + plan
+    + '<h2>Gasto</h2><div class="figs">'
+      + '<div class="fig"><div class="fig-k">Hoy</div><div class="fig-v">'
+        + base(totalGastos(g => g.fecha === hoy)) + '</div></div>'
+      + '<div class="fig"><div class="fig-k">Viaje entero</div><div class="fig-v">'
+        + base(totalGastos()) + '</div></div>'
+    + '</div>'
+    + (sigDia ? '<h2>Lo siguiente</h2>' + tarjetaDia(sigDia, hoy) : "");
+}
+
+function pintarRuta(){
+  const hoy = hoyISO();
+  document.getElementById("p-ruta").innerHTML = (V.tramos || []).map(t =>
+    '<div class="leg"><div class="leg-head">'
+    + '<span class="leg-mark">' + esc(t.marca) + '</span>'
+    + '<span class="leg-name">' + esc(t.nombre) + '</span>'
+    + '<span class="leg-dates">' + esc(t.fechas || "") + '</span></div>'
+    + (t.dias || []).map(d => tarjetaDia(d, hoy)).join("") + '</div>').join("");
+}
+
+function nombreDe(id){
+  const v = (V.viajeros || []).find(x => x.id === id);
+  return v ? v.nombre : id;
+}
+
+function pintarGastos(){
+  const hoy   = hoyISO();
+  const todos = listaGastos().slice()
+    .sort((a,b) => String(b.fecha).localeCompare(a.fecha) || String(b.id).localeCompare(a.id));
+
+  const aviso = mensaje ? '<div class="msg ' + mensaje.tipo + '">' + esc(mensaje.texto) + '</div>' : "";
+  const sinCfg = !configurado()
+    ? '<div class="msg info">Solo lectura. Ve a Ajustes y di quién eres para poder apuntar gastos.</div>' : "";
+
+  const lista = todos.length ? todos.map(g =>
+      '<div class="item' + (g._cola ? " cola" : "") + '"><div class="item-m">'
+      + '<div class="item-c">' + esc(g.concepto) + '</div>'
+      + '<div class="item-d">' + fmtFecha(g.fecha) + " · " + esc(g.categoria)
+        + " · " + esc(nombreDe(g.quien))
+        + (g.moneda !== V.monedaBase ? " · " + fmtMoneda(g.importe, g.moneda) : "")
+        + (g._cola ? " · sin subir" : "") + '</div></div>'
+      + '<div class="item-a">' + base(aBase(g.importe, g.moneda)) + '</div>'
+      + (g._cola ? '<button class="item-x" data-del="' + esc(g.id) + '" aria-label="Quitar">×</button>' : "")
+      + '</div>').join("")
+    : '<div class="empty">Todavía no hay gastos apuntados.</div>';
+
+  const cats = (V.categorias || ["Otros"]).map(c => '<option>' + esc(c) + '</option>').join("");
+  const mons = [V.monedaBase].concat((V.cambios || []).map(c => c.codigo))
+    .map(m => '<option' + (m !== V.monedaBase ? " selected" : "") + '>' + esc(m) + '</option>').join("");
+
+  document.getElementById("p-gastos").innerHTML =
+    aviso + sinCfg
+    + '<div class="fig dark wide" style="margin-bottom:12px">'
+      + '<div class="fig-k">Gastado en destino</div>'
+      + '<div class="fig-v">' + base(totalGastos()) + '</div>'
+      + '<div class="fig-n">' + todos.length + ' apuntes'
+        + (cola.length ? ' · ' + cola.length + ' sin subir' : '') + '</div></div>'
+    + (configurado() ? '<div class="form">'
+      + '<div class="row"><div style="flex:1"><label for="g-c">Concepto</label>'
+        + '<input id="g-c" placeholder="Cena en el camp" autocomplete="off"></div></div>'
+      + '<div class="row">'
+        + '<div style="flex:1"><label for="g-i">Importe</label>'
+          + '<input id="g-i" type="number" inputmode="decimal" step="0.01" placeholder="0,00"></div>'
+        + '<div style="flex:.7"><label for="g-m">Moneda</label><select id="g-m">' + mons + '</select></div>'
+      + '</div>'
+      + '<div class="row">'
+        + '<div style="flex:1"><label for="g-cat">Categoría</label><select id="g-cat">' + cats + '</select></div>'
+        + '<div style="flex:1"><label for="g-f">Fecha</label>'
+          + '<input id="g-f" type="date" value="' + hoy + '"></div>'
+      + '</div>'
+      + '<button class="go" id="g-add">Apuntar gasto</button></div>' : "")
+    + '<h2>Apuntes</h2>' + lista;
+
+  const add = document.getElementById("g-add");
+  if(add){
+    add.onclick = anadirGasto;
+    document.getElementById("g-c").addEventListener("keydown",
+      e => { if(e.key === "Enter") anadirGasto(); });
+  }
+  document.querySelectorAll("[data-del]").forEach(b =>
+    b.onclick = () => { cola = cola.filter(g => g.id !== b.dataset.del); guardarCola(); repintar(); });
+}
+
+async function anadirGasto(){
+  const c = document.getElementById("g-c").value.trim();
+  const i = parseFloat(document.getElementById("g-i").value);
+  if(!c || !isFinite(i) || i <= 0){
+    mensaje = { tipo:"bad", texto:"Escribe un concepto y un importe mayor que cero." };
+    return pintarGastos();
+  }
+  mensaje = null;
+  cola.push({
+    id: cfg.quien.slice(0,1) + "-" + Date.now(),
+    fecha: document.getElementById("g-f").value || hoyISO(),
+    categoria: document.getElementById("g-cat").value,
+    concepto: c,
+    importe: i,
+    moneda: document.getElementById("g-m").value
+  });
+  guardarCola();
+  repintar();
+  await vaciarCola();
+  repintar();
+}
+
+function pintarDinero(){
+  const R = V.reservas || [];
+  const pagado    = R.filter(r => r.estado === "pagado").reduce((s,r) => s + aBase(r.importe, r.moneda), 0);
+  const pendiente = R.filter(r => r.estado === "pendiente").reduce((s,r) => s + aBase(r.importe, r.moneda), 0);
+  const destino   = totalGastos();
+  const total     = pagado + pendiente + destino;
+  const pax       = (V.viajeros || []).length || 1;
+
+  const porCat = {}, porQuien = {};
+  listaGastos().forEach(g => {
+    const e = aBase(g.importe, g.moneda);
+    porCat[g.categoria]  = (porCat[g.categoria] || 0) + e;
+    porQuien[g.quien]    = (porQuien[g.quien] || 0) + e;
+  });
+  const cats  = Object.entries(porCat).sort((a,b) => b[1] - a[1]);
+  const quien = Object.entries(porQuien).sort((a,b) => b[1] - a[1]);
+
+  document.getElementById("p-dinero").innerHTML =
+    '<div class="figs">'
+      + '<div class="fig dark wide"><div class="fig-k">Total del viaje</div>'
+        + '<div class="fig-v">' + base(total) + '</div>'
+        + '<div class="fig-n">' + base(total/pax) + ' por persona</div></div>'
+      + '<div class="fig"><div class="fig-k">Reservas pagadas</div><div class="fig-v">' + base(pagado) + '</div></div>'
+      + '<div class="fig"><div class="fig-k">Pendiente</div><div class="fig-v">' + base(pendiente) + '</div></div>'
+      + '<div class="fig wide"><div class="fig-k">Gastado en destino</div><div class="fig-v">' + base(destino) + '</div></div>'
+    + '</div>'
+
+    + '<h2>Reservas</h2><table><thead><tr><th>Concepto</th><th class="r">Origen</th><th class="r">Base</th></tr></thead><tbody>'
+      + R.map(r =>
+        '<tr><td>' + esc(r.concepto)
+        + (r.estado === "pendiente" ? '<br><span class="pill warnp">pendiente</span>' : "")
+        + (r.nota ? '<div class="item-d">' + esc(r.nota) + '</div>' : "") + '</td>'
+        + '<td class="num r">' + (r.moneda !== V.monedaBase ? fmtMoneda(r.importe, r.moneda) : "—") + '</td>'
+        + '<td class="num r' + (r.estado === "pendiente" ? " pend" : "") + '">'
+          + base(aBase(r.importe, r.moneda)) + '</td></tr>').join("")
+      + '<tr class="total"><td>Total reservas</td><td></td><td class="num r">'
+        + base(pagado + pendiente) + '</td></tr></tbody></table>'
+
+    + '<h2>Destino por categoría</h2>'
+    + (cats.length
+        ? '<table><tbody>' + cats.map(([c,v]) =>
+            '<tr><td>' + esc(c) + '</td><td class="num r">' + base(v) + '</td></tr>').join("")
+          + '<tr class="total"><td>Total</td><td class="num r">' + base(destino) + '</td></tr></tbody></table>'
+        : '<div class="empty">Nada apuntado todavía.</div>')
+
+    + (quien.length > 1
+        ? '<h2>Quién ha pagado qué</h2><table><tbody>' + quien.map(([q,v]) =>
+            '<tr><td>' + esc(nombreDe(q)) + '</td><td class="num r">' + base(v) + '</td></tr>').join("")
+          + '</tbody></table>'
+          + '<p class="note">Para cuadrar entre vosotros: la diferencia entre lo que ha puesto cada uno '
+          + 'es lo que hay que compensar al volver.</p>'
+        : "")
+
+    + '<p class="note">' + (V.cambios || []).map(c =>
+        "1 " + V.monedaBase + " = " + n2(c.porUnidadBase) + " " + c.codigo).join(" · ")
+      + '. Para cambiarlo, edita <code>viaje.json</code>.</p>';
+}
+
+function pintarDatos(){
+  const refs = (V.referencias || []).map(r =>
+    '<h2>' + esc(r.titulo) + '</h2>'
+    + (r.filas && r.filas.length
+        ? '<table><tbody>' + r.filas.map(f =>
+            '<tr><td>' + esc(f[0]) + '</td><td class="num r">' + esc(f[1]) + '</td></tr>').join("")
+          + '</tbody></table>' : "")
+    + (r.nota ? '<p class="note">' + esc(r.nota) + '</p>' : "")).join("");
+  document.getElementById("p-datos").innerHTML = refs || '<div class="empty">Sin datos de referencia.</div>';
+}
+
+function pintarAjustes(){
+  const viajeros = (V.viajeros || []).map(v =>
+    '<option value="' + esc(v.id) + '"' + (cfg.quien === v.id ? " selected" : "") + '>'
+    + esc(v.nombre) + '</option>').join("");
+
+  document.getElementById("p-ajustes").innerHTML =
+    '<h2>Quién eres</h2><div class="form">'
+      + '<div class="row"><div style="flex:1"><label for="c-quien">Viajero</label>'
+        + '<select id="c-quien"><option value="">— elige —</option>' + viajeros + '</select></div></div>'
+      + '<p class="note">Cada uno escribe solo en su propio fichero de gastos. '
+        + 'Así nunca hay conflictos aunque apuntéis a la vez.</p></div>'
+
+    + '<h2>Repositorio</h2><div class="form">'
+      + '<div class="row">'
+        + '<div style="flex:1"><label for="c-owner">Usuario u organización</label>'
+          + '<input id="c-owner" value="' + esc(cfg.owner) + '" placeholder="tu-usuario" autocapitalize="off"></div></div>'
+      + '<div class="row">'
+        + '<div style="flex:1.3"><label for="c-repo">Repositorio</label>'
+          + '<input id="c-repo" value="' + esc(cfg.repo) + '" placeholder="viajes" autocapitalize="off"></div>'
+        + '<div style="flex:.7"><label for="c-rama">Rama</label>'
+          + '<input id="c-rama" value="' + esc(cfg.rama || "main") + '" autocapitalize="off"></div></div>'
+      + '<div class="row"><div style="flex:1"><label for="c-token">Token de acceso</label>'
+        + '<input id="c-token" type="password" value="' + esc(cfg.token) + '" placeholder="github_pat_..." autocapitalize="off"></div></div>'
+      + '<button class="go" id="c-save">Guardar ajustes</button>'
+      + '<div style="height:7px"></div>'
+      + '<button class="go ghost" id="c-test">Probar conexión</button>'
+      + '<div id="c-msg"></div></div>'
+
+    + '<h2>Sobre el token</h2>'
+    + '<p class="note">Necesitas un <em>fine-grained personal access token</em> limitado a este único '
+      + 'repositorio, con permiso de <strong>Contents: Read and write</strong>. Se guarda solo en este '
+      + 'teléfono, nunca sale hacia otro sitio que no sea GitHub. Si pierdes el móvil, revócalo desde '
+      + 'github.com y listo: no da acceso a nada más.</p>'
+
+    + '<h2>Sin conexión</h2>'
+    + '<p class="note">Si apuntas un gasto sin cobertura se queda en cola en el teléfono y se sube solo '
+      + 'en cuanto vuelvas a tener red. Los apuntes en cola salen en gris con la marca «sin subir».</p>'
+
+    + '<h2>Este viaje</h2>'
+    + '<table><tbody>'
+      + '<tr><td>Identificador</td><td class="num r">' + esc(VIAJE_ID) + '</td></tr>'
+      + '<tr><td>Apuntes en cola</td><td class="num r">' + cola.length + '</td></tr>'
+    + '</tbody></table>'
+    + '<p class="note">Para otro viaje: crea <code>data/mi-viaje/</code> con su '
+      + '<code>viaje.json</code> y entra con <code>?viaje=mi-viaje</code>.</p>';
+
+  document.getElementById("c-save").onclick = () => {
+    cfg.quien = document.getElementById("c-quien").value;
+    cfg.owner = document.getElementById("c-owner").value.trim();
+    cfg.repo  = document.getElementById("c-repo").value.trim();
+    cfg.rama  = document.getElementById("c-rama").value.trim() || "main";
+    cfg.token = document.getElementById("c-token").value.trim();
+    guardarCfg();
+    document.getElementById("c-msg").innerHTML =
+      '<div class="msg ok" style="margin-top:10px">Ajustes guardados.</div>';
+    cargarGastos().then(repintar);
+  };
+
+  document.getElementById("c-test").onclick = async () => {
+    const box = document.getElementById("c-msg");
+    box.innerHTML = '<div class="msg info" style="margin-top:10px">Probando…</div>';
+    try{
+      const r = await leerFicheroRepo(rutaGastos(cfg.quien || "alvaro"));
+      box.innerHTML = '<div class="msg ok" style="margin-top:10px">Conexión correcta. '
+        + (r.contenido.length) + ' gastos en tu fichero.</div>';
+    }catch(e){
+      box.innerHTML = '<div class="msg bad" style="margin-top:10px">' + esc(e.message) + '</div>';
+    }
+  };
+}
+
+/* ---------------- estado de sincronización ---------------- */
+function pintarEstado(){
+  const el = document.getElementById("estado");
+  if(!navigator.onLine){
+    el.className = "estado off";
+    el.textContent = "Sin conexión · " + cola.length + " apuntes en espera";
+  }else if(cola.length){
+    el.className = "estado pend";
+    el.textContent = cola.length + " apuntes sin subir · toca para reintentar";
+    el.onclick = async () => { await vaciarCola(); repintar(); };
+  }else if(configurado()){
+    el.className = "estado";
+    el.textContent = "Al día · " + nombreDe(cfg.quien);
+  }else{
+    el.className = "estado pend";
+    el.textContent = "Sin configurar · ve a Ajustes";
+  }
+}
+
+/* ---------------- arranque ---------------- */
+const paneles = {
+  hoy:pintarHoy, ruta:pintarRuta, gastos:pintarGastos,
+  dinero:pintarDinero, datos:pintarDatos, ajustes:pintarAjustes
+};
+let actual = "hoy";
+
+function repintar(){
+  pintarPlaca();
+  paneles[actual]();
+  pintarEstado();
+}
+
+document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
+  actual = t.dataset.p;
+  document.querySelectorAll(".tab").forEach(x => x.setAttribute("aria-selected", x === t));
+  Object.keys(paneles).forEach(k => document.getElementById("p-" + k).hidden = (k !== actual));
+  paneles[actual]();
+  window.scrollTo({ top:0, behavior:"smooth" });
+});
+
+window.addEventListener("online", async () => { await vaciarCola(); repintar(); });
+window.addEventListener("offline", pintarEstado);
+
+(async function(){
+  cargarCfg(); cargarCola();
+  try{
+    await cargarViaje();
+  }catch(e){
+    document.querySelector(".wrap").innerHTML =
+      '<div class="empty" style="margin-top:40px">No se pudo cargar <code>viaje.json</code>.<br>'
+      + esc(e.message) + '</div>';
+    return;
+  }
+  pintarCabecera();
+  await cargarGastos();
+  await vaciarCola();
+  Object.values(paneles).forEach(f => f());
+  document.getElementById("p-hoy").hidden = false;
+  pintarEstado();
+  setInterval(() => { pintarPlaca(); pintarEstado(); }, 60000);
+
+  if("serviceWorker" in navigator){
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
+  }
+})();
+</script>
+</body>
+</html>
