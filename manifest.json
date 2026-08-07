@@ -1,0 +1,9 @@
+{
+  "name": "Diario de viaje",
+  "short_name": "Viaje",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#DDD6C3",
+  "theme_color": "#16362A",
+  "icons": []
+}
