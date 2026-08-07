@@ -119,11 +119,11 @@
             },
             {
               "hora": "16:00",
-              "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
+              "texto": "Safari de tarde · 16:00 a 19:00, con sundowner",
               "clave": true
             }
           ],
-          "aviso": "Llegas a las 14:00 y el safari de tarde sale sobre las 16:00, así que da tiempo justo. Avisa al reservar el traslado desde Hoedspruit."
+          "aviso": "Llegas a las 14:00 y el safari sale sobre las 16:00. Da tiempo, pero avisa al pedir el traslado desde Hoedspruit para que no te dejen justo."
         },
         {
           "fecha": "2026-08-09",
@@ -186,15 +186,21 @@
           "eventos": [
             {
               "hora": "06:00",
-              "texto": "Safari de mañana en Vuyani · opcional, vuelta sobre las 10:00"
-            },
-            {
-              "hora": "12:00",
-              "texto": "Check-out Vuyani y recogida del coche en Hoedspruit",
+              "texto": "Safari de mañana en Vuyani · vuelta sobre las 10:00",
               "clave": true
             },
             {
-              "hora": "14:00",
+              "hora": "11:00",
+              "texto": "Salida por la R40 hacia Hazyview y Paul Kruger Gate · 3 h 30",
+              "clave": true
+            },
+            {
+              "hora": "14:30",
+              "texto": "Puerta Paul Kruger · pago de tasas de conservación",
+              "clave": true
+            },
+            {
+              "hora": "15:00",
               "texto": "Check-in tienda safari CTT2, Skukuza",
               "clave": true
             },
@@ -204,7 +210,7 @@
               "clave": true
             }
           ],
-          "aviso": "Decisión del día: si haces el safari de mañana en Vuyani no puedes salir antes de las 12:00, y de Hoedspruit a Skukuza son unas 4 h al límite de 50 km/h del parque. Llegarías justo para el Sunset Drive de las 16:30. Si renuncias a ese safari y sales a las 9:00, vas holgado. Además hay que pagar las tasas de conservación en la puerta."
+          "aviso": "Entra por Paul Kruger, no por Orpen. Orpen queda más cerca de Hoedspruit pero te deja al otro extremo del parque: de allí a Skukuza son 4 h 30 a 50 km/h y llegarías tarde al Sunset Drive. Por la R40 hasta Hazyview y luego la R536 son 3 h 30, y de la puerta al campamento solo 12 km. Deja el equipaje en el coche antes del safari de las 06:00 para poder salir a las 11:00."
         },
         {
           "fecha": "2026-08-13",
@@ -563,6 +569,10 @@
           "Moditlo, Blue Canyon"
         ],
         [
+          "Safaris",
+          "incluidos en la habitación"
+        ],
+        [
           "Safari de mañana",
           "06:00 – 10:00"
         ],
@@ -575,15 +585,41 @@
           "por confirmar al llegar"
         ],
         [
-          "Suites en el lodge",
-          "10"
-        ],
-        [
           "Actividades extra",
           "avisar con 24 h"
         ]
       ],
-      "nota": "El lodge no publica los horarios exactos de los safaris: los de arriba son los habituales de invierno según huéspedes, confírmalos en recepción el primer día. Las excursiones (Kruger, Blyde, Moholoholo, globo) solo se contratan en el propio lodge, mínimo dos personas y con 24 h de antelación, y cada una te hace perder uno o dos safaris."
+      "nota": "Los safaris del lodge entran en el precio de la habitación: los únicos que pagas aparte son los tres de Skukuza. El lodge no publica los horarios exactos, los de arriba son los habituales de invierno; confírmalos en recepción el primer día. Las excursiones sí se cobran, solo se contratan allí, mínimo dos personas y con 24 h de aviso."
+    },
+    {
+      "titulo": "Ruta del 12 · a Skukuza",
+      "filas": [
+        [
+          "Por Paul Kruger",
+          "3h30 – 4h"
+        ],
+        [
+          "R40 hasta Hazyview",
+          "unos 153 km"
+        ],
+        [
+          "R536 a la puerta",
+          "10 km de Hazyview"
+        ],
+        [
+          "Puerta a Skukuza",
+          "12 km · 30 min"
+        ],
+        [
+          "Por Orpen",
+          "5h30 · descartada"
+        ],
+        [
+          "Cierre de puertas",
+          "18:00"
+        ]
+      ],
+      "nota": "La R40 es de carril único y atraviesa Acornhoek y Bushbuckridge: baches, badenes grandes, peatones y ganado. Cuenta una hora más de la que diga Google y no dejes que te desvíe por pistas de tierra, que salen más lentas. La alternativa por Orpen mete 4 h 30 dentro del parque vía Satara y Tshokwane: es un safari en sí mismo y merece la pena si algún día renuncias al safari de la mañana en Vuyani y sales a las 07:00."
     },
     {
       "titulo": "Kruger",
