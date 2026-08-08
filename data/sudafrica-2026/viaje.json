@@ -252,19 +252,66 @@
       "dias": [
         {
           "fecha": "2026-08-15",
-          "etiqueta": "Moholoholo Forest Camp",
+          "etiqueta": "Panorama Route",
           "eventos": [
             {
-              "hora": "10:00",
-              "texto": "Check-out Skukuza",
+              "hora": "07:00",
+              "texto": "Salida de Skukuza · última mañana de fauna hasta Paul Kruger Gate",
               "clave": true
             },
             {
-              "hora": "",
-              "texto": "Ruta hacia Moholoholo Forest Camp"
+              "hora": "08:15",
+              "texto": "Hazyview · repostar y subir el Kowyn's Pass"
+            },
+            {
+              "hora": "08:50",
+              "texto": "Graskop · desayuno en Harrie's Pancakes",
+              "clave": true
+            },
+            {
+              "hora": "09:45",
+              "texto": "Pinnacle Rock · parada de diez minutos",
+              "pte": true
+            },
+            {
+              "hora": "10:15",
+              "texto": "God's Window · 800 m de caída sobre el lowveld",
+              "clave": true,
+              "pte": true
+            },
+            {
+              "hora": "11:15",
+              "texto": "Lisbon Falls · 94 m en cuatro saltos",
+              "pte": true
+            },
+            {
+              "hora": "11:50",
+              "texto": "Berlin Falls · parada corta",
+              "pte": true
+            },
+            {
+              "hora": "12:40",
+              "texto": "Bourke's Luck Potholes · pasarelas y comida",
+              "clave": true,
+              "pte": true
+            },
+            {
+              "hora": "14:30",
+              "texto": "Three Rondavels · la mejor vista de la ruta",
+              "clave": true,
+              "pte": true
+            },
+            {
+              "hora": "15:45",
+              "texto": "Abel Erasmus Pass y túnel J.G. Strijdom · bajada al lowveld"
+            },
+            {
+              "hora": "17:00",
+              "texto": "Llegada a Moholoholo Forest Camp",
+              "clave": true
             }
           ],
-          "aviso": "Otro traslado largo hacia el oeste. Sal pronto: en agosto las puertas cierran a las 18:00."
+          "aviso": "Día largo: unos 270 km de carretera de montaña más las paradas. Sal a las 07:00 aunque el check-out sea a las 10:00, con el equipaje ya en el coche. Lleva efectivo: cada parada cobra su entrada aparte y los datáfonos fallan a menudo. Si God's Window amanece con niebla no esperes, que los Three Rondavels son mejor vista. Y si vas justo de tiempo, sacrifica Berlin Falls antes que los Rondavels."
         }
       ]
     },
@@ -278,8 +325,13 @@
           "etiqueta": "Llegada + Casa on Kei",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Check-out y entrega del coche en Hoedspruit"
+              "hora": "08:00",
+              "texto": "Desayuno sin prisa en el Forest Camp, al pie del Mariepskop"
+            },
+            {
+              "hora": "12:00",
+              "texto": "Salida hacia el aeropuerto de Hoedspruit · unos 40 min",
+              "clave": true
             },
             {
               "hora": "14:10",
@@ -293,9 +345,10 @@
             },
             {
               "hora": "20:00",
-              "texto": "Cena tranquila por el V&A Waterfront o Sea Point"
+              "texto": "Cena tranquila por Sea Point"
             }
-          ]
+          ],
+          "aviso": "Es domingo y el centro de rehabilitación de Moholoholo cierra los domingos, así que la mañana da poco de sí. Con el vuelo a las 14:10 y la entrega del coche, hay que salir sobre las 12:00. Si queréis meter algo, preguntad en el camp por el Hoedspruit Endangered Species Centre, pero comprobad horario y duración antes: dos horas de visita salen muy justas."
         },
         {
           "fecha": "2026-08-17",
@@ -811,6 +864,40 @@
         ]
       ],
       "nota": "La R40 es de carril único y atraviesa Acornhoek y Bushbuckridge: baches, badenes grandes, peatones y ganado. Cuenta una hora más de la que diga Google y no dejes que te desvíe por pistas de tierra, que salen más lentas. La alternativa por Orpen mete 4 h 30 dentro del parque vía Satara y Tshokwane: es un safari en sí mismo y merece la pena si algún día renuncias al safari de la mañana en Vuyani y sales a las 07:00."
+    },
+    {
+      "titulo": "Panorama Route · día 15",
+      "filas": [
+        [
+          "Recorrido",
+          "unos 270 km"
+        ],
+        [
+          "Bourke's Luck",
+          "R65 a R130 por persona"
+        ],
+        [
+          "Three Rondavels",
+          "R25 a R75 por persona"
+        ],
+        [
+          "Cascadas",
+          "de R5 a R40 cada una"
+        ],
+        [
+          "Presupuesto del día",
+          "R150 a R400 por persona"
+        ],
+        [
+          "Graskop Gorge, opcional",
+          "R240 por persona"
+        ],
+        [
+          "Forma de pago",
+          "efectivo"
+        ]
+      ],
+      "nota": "Cada parada cobra su propia entrada y los datáfonos fallan a menudo, así que saca efectivo en Hazyview. En la primera parada pregunta por el Panorama Route Pass, un bono conjunto que puede ahorrar hasta un 40%. Agosto es estación seca: mejor probabilidad de ver despejados God's Window y los Rondavels, aunque las cascadas bajan con menos agua. Mac Mac Falls se puede saltar sin pena, se ve desde detrás de una valla y de lejos. Pilgrim's Rest, el pueblo minero, solo si vais sobrados."
     },
     {
       "titulo": "Kruger",
