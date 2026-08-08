@@ -160,13 +160,33 @@ button.go:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
 
 footer{margin-top:34px;padding:16px 0 8px;border-top:1px solid var(--line);
   font-family:var(--mono);font-size:10.5px;color:var(--mute);line-height:1.6}
+
+/* Marcado de lo que aún no está contratado */
+.ev.pte{
+  background:rgba(198,138,46,.15);border-left:2px solid var(--ochre);
+  margin-left:-8px;padding:5px 8px;border-radius:0 2px 2px 0
+}
+.ev.pte .ev-t{color:var(--ochre2)}
+.ev.pte .ev-x::after{
+  content:" · sin cerrar";font-family:var(--mono);font-size:9.5px;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ochre2);white-space:nowrap
+}
+.pill.sinp{background:var(--ochre2)}
+.leyenda{
+  display:flex;align-items:center;gap:7px;margin-bottom:12px;
+  font-family:var(--mono);font-size:10.5px;color:var(--mute);letter-spacing:.03em
+}
+.leyenda i{
+  width:13px;height:13px;border-radius:2px;flex:0 0 auto;display:inline-block;
+  background:rgba(198,138,46,.35);border-left:2px solid var(--ochre)
+}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <div class="eyebrow" id="eyebrow"></div>
-    <h1 id="titulo">&#8230;</h1>
+    <h1 id="titulo">…</h1>
     <div class="sub" id="sub"></div>
     <div class="plate" id="plate"></div>
   </header>
@@ -207,6 +227,23 @@ const BASE_DATA = "../data/" + VIAJE_ID + "/";
 
 const LS_CFG  = "diario:cfg";
 const LS_COLA = "diario:cola:" + VIAJE_ID;
+const LS_SNAP = "diario:snap:" + VIAJE_ID;
+
+/* Instantánea local: lo último que se cargó bien.
+   Es lo que se usa cuando no hay cobertura. */
+let snap = { viaje:null, gastos:[], ts:null };
+function cargarSnap(){
+  try{
+    const raw = localStorage.getItem(LS_SNAP);
+    if(raw) snap = Object.assign(snap, JSON.parse(raw));
+  }catch(e){}
+}
+function guardarSnap(){
+  try{
+    snap.ts = Date.now();
+    localStorage.setItem(LS_SNAP, JSON.stringify(snap));
+  }catch(e){}
+}
 
 let V = null;               // viaje.json
 let gastos = [];            // confirmados, de todos los viajeros
@@ -317,34 +354,55 @@ async function escribirFicheroRepo(ruta, datos, sha, msg){
 
 /* ---------------- carga de datos ---------------- */
 async function cargarViaje(){
-  const r = await fetch(BASE_DATA + "viaje.json", { cache:"no-cache" });
-  if(!r.ok) throw new Error("No se pudo leer viaje.json");
-  V = await r.json();
+  try{
+    const r = await fetch(BASE_DATA + "viaje.json", { cache:"no-cache" });
+    if(!r.ok) throw new Error("respuesta " + r.status);
+    V = await r.json();
+    snap.viaje = V;
+    guardarSnap();
+  }catch(e){
+    if(snap.viaje){ V = snap.viaje; }
+    else throw new Error("No se pudo leer viaje.json y no hay copia guardada");
+  }
 }
 
 async function cargarGastos(){
-  gastos = [];
   const viajeros = V.viajeros || [];
+  const salida = [];
+  let fallo = false;
+
   for(const v of viajeros){
-    let lista = [];
+    let lista = null;
     if(configurado()){
-      try{
-        const r = await leerFicheroRepo(rutaGastos(v.id));
-        lista = r.contenido || [];
-      }catch(e){
-        try{
-          const r2 = await fetch(BASE_DATA + v.fichero, { cache:"no-cache" });
-          lista = r2.ok ? await r2.json() : [];
-        }catch(e2){ lista = []; }
-      }
-    }else{
-      try{
-        const r2 = await fetch(BASE_DATA + v.fichero, { cache:"no-cache" });
-        lista = r2.ok ? await r2.json() : [];
-      }catch(e2){ lista = []; }
+      try{ lista = (await leerFicheroRepo(rutaGastos(v.id))).contenido || []; }catch(e){}
     }
-    lista.forEach(g => gastos.push(Object.assign({ quien: v.id }, g)));
+    if(lista === null){
+      try{
+        const r = await fetch(BASE_DATA + v.fichero, { cache:"no-cache" });
+        if(r.ok) lista = await r.json();
+      }catch(e){}
+    }
+    if(lista === null){ fallo = true; continue; }
+    lista.forEach(g => salida.push(Object.assign({ quien: v.id }, g)));
   }
+
+  if(fallo && snap.gastos && snap.gastos.length){
+    gastos = snap.gastos;               // sin red: lo último que sabíamos
+  }else{
+    gastos = salida;
+    snap.gastos = salida;
+    guardarSnap();
+  }
+}
+
+/* Deja en caché todo lo necesario para abrir sin cobertura */
+async function prepararSinConexion(){
+  const rutas = [BASE_DATA + "viaje.json"]
+    .concat((V.viajeros || []).map(v => BASE_DATA + v.fichero));
+  for(const r of rutas){
+    try{ await fetch(r, { cache:"reload" }); }catch(e){}
+  }
+  await cargarGastos();
 }
 
 /* ---------------- cola sin conexión ---------------- */
@@ -437,7 +495,7 @@ function pintarPlaca(){
 function tarjetaDia(d, hoy){
   const cls = d.fecha === hoy ? "day today" : (d.fecha < hoy ? "day past" : "day");
   const evs = (d.eventos || []).map(e =>
-    '<div class="ev' + (e.clave ? " key" : "") + '">'
+    '<div class="ev' + (e.clave ? " key" : "") + (e.pte ? " pte" : "") + '">'
     + '<div class="ev-t">' + esc(e.hora || "—") + '</div>'
     + '<div class="ev-x">' + esc(e.texto) + '</div></div>').join("");
   const w = d.aviso ? '<div class="warn">' + esc(d.aviso) + '</div>' : "";
@@ -475,7 +533,10 @@ function pintarHoy(){
 
 function pintarRuta(){
   const hoy = hoyISO();
-  document.getElementById("p-ruta").innerHTML = (V.tramos || []).map(t =>
+  const hayPte = todosLosDias().some(d => (d.eventos || []).some(e => e.pte));
+  const leyenda = hayPte
+    ? '<div class="leyenda"><i></i> En naranja, lo que todavía no está contratado</div>' : "";
+  document.getElementById("p-ruta").innerHTML = leyenda + (V.tramos || []).map(t =>
     '<div class="leg"><div class="leg-head">'
     + '<span class="leg-mark">' + esc(t.marca) + '</span>'
     + '<span class="leg-name">' + esc(t.nombre) + '</span>'
@@ -602,7 +663,8 @@ function pintarDinero(){
         + (r.nota ? '<div class="item-d">' + esc(r.nota) + '</div>' : "") + '</td>'
         + '<td class="num r">' + (r.moneda !== V.monedaBase ? fmtMoneda(r.importe, r.moneda) : "—") + '</td>'
         + '<td class="num r' + (r.estado === "pendiente" ? " pend" : "") + '">'
-          + base(aBase(r.importe, r.moneda)) + '</td></tr>').join("")
+          + (r.estado === "sin contratar" ? "—" : base(aBase(r.importe, r.moneda)))
+          + '</td></tr>').join("")
       + '<tr class="total"><td>Total reservas</td><td></td><td class="num r">'
         + base(pagado + pendiente) + '</td></tr></tbody></table>'
 
@@ -672,8 +734,15 @@ function pintarAjustes(){
       + 'github.com y listo: no da acceso a nada más.</p>'
 
     + '<h2>Sin conexión</h2>'
-    + '<p class="note">Si apuntas un gasto sin cobertura se queda en cola en el teléfono y se sube solo '
-      + 'en cuanto vuelvas a tener red. Los apuntes en cola salen en gris con la marca «sin subir».</p>'
+    + '<div class="form">'
+      + '<button class="go" id="c-off">Preparar para sin conexión</button>'
+      + '<div id="c-offmsg"></div>'
+      + '<p class="note">Púlsalo con buena cobertura antes de entrar en el parque. Guarda el '
+        + 'itinerario y los gastos en el móvil para que la app abra igual sin señal.</p>'
+      + '<p class="note">Última copia guardada: <strong>'
+        + (snap.ts ? new Date(snap.ts).toLocaleString("es-ES") : "ninguna todavía") + '</strong></p>'
+      + '<p class="note">Lo que apuntes sin cobertura se queda en cola y sube solo al recuperar red. '
+        + 'Sale en gris con la marca «sin subir».</p></div>'
 
     + '<h2>Este viaje</h2>'
     + '<table><tbody>'
@@ -695,6 +764,20 @@ function pintarAjustes(){
     cargarGastos().then(repintar);
   };
 
+  document.getElementById("c-off").onclick = async () => {
+    const box = document.getElementById("c-offmsg");
+    box.innerHTML = '<div class="msg info" style="margin-top:10px">Guardando…</div>';
+    try{
+      await prepararSinConexion();
+      box.innerHTML = '<div class="msg ok" style="margin-top:10px">Listo. La app abrirá sin '
+        + 'cobertura con los datos de ahora mismo.</div>';
+      repintar();
+    }catch(e){
+      box.innerHTML = '<div class="msg bad" style="margin-top:10px">No se pudo guardar: '
+        + esc(e.message) + '</div>';
+    }
+  };
+
   document.getElementById("c-test").onclick = async () => {
     const box = document.getElementById("c-msg");
     box.innerHTML = '<div class="msg info" style="margin-top:10px">Probando…</div>';
@@ -713,7 +796,9 @@ function pintarEstado(){
   const el = document.getElementById("estado");
   if(!navigator.onLine){
     el.className = "estado off";
-    el.textContent = "Sin conexión · " + cola.length + " apuntes en espera";
+    el.textContent = "Sin conexión · copia del "
+      + (snap.ts ? new Date(snap.ts).toLocaleDateString("es-ES") : "?")
+      + (cola.length ? " · " + cola.length + " en espera" : "");
   }else if(cola.length){
     el.className = "estado pend";
     el.textContent = cola.length + " apuntes sin subir · toca para reintentar";
@@ -752,7 +837,7 @@ window.addEventListener("online", async () => { await vaciarCola(); repintar(); 
 window.addEventListener("offline", pintarEstado);
 
 (async function(){
-  cargarCfg(); cargarCola();
+  cargarCfg(); cargarCola(); cargarSnap();
   try{
     await cargarViaje();
   }catch(e){
