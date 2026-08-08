@@ -213,11 +213,30 @@ footer{margin-top:34px;padding:16px 0 8px;border-top:1px solid var(--line);
   display:block;font-family:var(--mono);font-size:9px;color:var(--mute);
   margin-top:4px;letter-spacing:.03em;line-height:1.4
 }
-.tdet .cat{
-  display:inline-block;font-size:8.5px;font-weight:600;letter-spacing:.07em;
-  padding:1px 4px;border-radius:2px;background:var(--green2);color:var(--bone3);
+.cat{
+  display:inline-block;font-family:var(--mono);font-size:8.5px;font-weight:600;
+  letter-spacing:.07em;text-transform:uppercase;padding:1px 4px;border-radius:2px;
   margin-right:5px;vertical-align:1px
 }
+/* Cinco familias, tonos atenuados de la propia paleta */
+.cat.mov{background:rgba(43,50,71,.15);color:#2B3247}
+.cat.est{background:rgba(36,80,62,.16);color:#1E4433}
+.cat.exp{background:rgba(143,97,24,.18);color:#7A5214}
+.cat.tas{background:rgba(168,56,42,.14);color:#8C2F24}
+.cat.dia{background:rgba(107,106,94,.18);color:#55544B}
+
+.fams{
+  display:flex;flex-wrap:wrap;align-items:center;gap:3px 12px;margin-top:14px;
+  padding-top:11px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:9.5px;color:var(--mute);letter-spacing:.03em
+}
+.fams .cat{margin-right:3px}
+
+.barra.mov i{background:#2B3247}
+.barra.est i{background:#24503E}
+.barra.exp i{background:#8F6118}
+.barra.tas i{background:#A8382A}
+.barra.dia i{background:#6B6A5E}
 th.sortable{cursor:pointer;user-select:none;text-decoration:underline;text-underline-offset:3px}
 th.sortable:hover{color:var(--green2)}
 .filtros{display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap}
@@ -330,6 +349,17 @@ const CAT3 = {
   "Propinas":"PRO", "Souvenirs":"SOU", "Salud":"SAL", "Otros":"OTR"
 };
 const cat3 = c => CAT3[c] || String(c).slice(0,3).toUpperCase();
+
+/* Familias de categoría. Cinco tonos en vez de doce: el color dice
+   de qué tipo de gasto se trata, no cuál exactamente. */
+const CATFAM = {
+  "Vuelos":"mov", "Coche":"mov", "Transporte":"mov", "Combustible":"mov",
+  "Alojamiento":"est",
+  "Actividades":"exp",
+  "Tasas":"tas",
+  "Comida":"dia", "Propinas":"dia", "Souvenirs":"dia", "Salud":"dia", "Otros":"dia"
+};
+const catFam = c => CATFAM[c] || "dia";
 
 function cambio(codigo){
   if(!V || codigo === V.monedaBase) return 1;
@@ -783,7 +813,8 @@ function pintarDetalle(){
     + (filas.length ? filas.map(x =>
         '<tr><td class="c-fec">' + fmtCorta(x.fecha) + '</td>'
         + '<td class="c-con">' + esc(x.concepto)
-          + '<span class="sub"><b class="cat">' + cat3(x.categoria) + '</b>'
+          + '<span class="sub"><b class="cat ' + catFam(x.categoria) + '">'
+          + cat3(x.categoria) + '</b>'
           + esc(x.tercero !== "—" ? x.tercero : "")
           + (x.estado !== "pagado"
               ? ' · <b style="color:' + (colorEstado[x.estado] || "var(--mute)") + '">'
@@ -797,6 +828,13 @@ function pintarDetalle(){
       + '<td class="c-zar">' + n0(totZ) + '</td>'
       + '<td class="c-eur">' + n0(tot) + '</td></tr>'
     + '</tbody></table>'
+    + '<div class="fams">'
+      + '<span class="cat mov">mov</span> movimiento'
+      + '<span class="cat est">est</span> estancia'
+      + '<span class="cat exp">exp</span> experiencias'
+      + '<span class="cat tas">tas</span> tasas'
+      + '<span class="cat dia">día</span> día a día'
+    + '</div>'
     + '<p class="note">Los importes van redondeados para que quepan; los totales exactos están '
       + 'arriba. Toca una cabecera subrayada para ordenar, y otra vez para invertir.</p>';
 
@@ -844,7 +882,8 @@ function pintarDinero(){
     + (cats.length
         ? '<table><tbody>' + cats.map(([c,v]) =>
             '<tr><td>' + esc(c)
-            + '<div class="barra"><i style="width:' + Math.round(v/maxc*100) + '%"></i></div></td>'
+            + '<div class="barra ' + catFam(c) + '"><i style="width:'
+              + Math.round(v/maxc*100) + '%"></i></div></td>'
             + '<td class="num r">' + base(v) + '</td></tr>').join("")
           + '<tr class="total"><td>Total</td><td class="num r">' + base(total) + '</td></tr></tbody></table>'
         : '<div class="empty">Nada todavía.</div>')
