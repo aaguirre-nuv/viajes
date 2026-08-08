@@ -459,84 +459,108 @@
       "proveedor": "Qatar Airways",
       "importe": 3296.28,
       "moneda": "EUR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-07",
+      "categoria": "Vuelos"
     },
     {
       "concepto": "Vuyani Safari Lodge, 8–12 ago",
       "proveedor": "Booking",
       "importe": 2744.22,
       "moneda": "EUR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-08",
+      "categoria": "Alojamiento"
     },
     {
       "concepto": "Skukuza, tienda safari CTT2, 3 noches",
       "proveedor": "SANParks",
       "importe": 2698.95,
       "moneda": "ZAR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-12",
+      "categoria": "Alojamiento"
     },
     {
       "concepto": "Sunset Drive, 12 ago",
       "proveedor": "SANParks",
       "importe": 900.0,
       "moneda": "ZAR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-12",
+      "categoria": "Actividades"
     },
     {
       "concepto": "Sunrise Drive, 13 ago",
       "proveedor": "SANParks",
       "importe": 900.0,
       "moneda": "ZAR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-13",
+      "categoria": "Actividades"
     },
     {
       "concepto": "Night Drive, 14 ago",
       "proveedor": "SANParks",
       "importe": 686.0,
       "moneda": "ZAR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-14",
+      "categoria": "Actividades"
     },
     {
       "concepto": "Community Fund",
       "proveedor": "SANParks",
       "importe": 51.85,
       "moneda": "ZAR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-12",
+      "categoria": "Tasas"
     },
     {
       "concepto": "Moholoholo Forest Camp, 15–16 ago",
       "proveedor": "Booking",
       "importe": 148.81,
       "moneda": "EUR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-15",
+      "categoria": "Alojamiento"
     },
     {
       "concepto": "Vuelo HDS → CPT, 16 ago",
       "proveedor": "Airlink",
       "importe": 296.0,
       "moneda": "EUR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-16",
+      "categoria": "Vuelos"
     },
     {
       "concepto": "Casa on Kei, 16–21 ago",
       "proveedor": "Booking",
       "importe": 720.16,
       "moneda": "EUR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-16",
+      "categoria": "Alojamiento"
     },
     {
       "concepto": "Coche Kruger, 12–16 ago",
       "proveedor": "Avis",
       "importe": 238.84,
       "moneda": "EUR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-12",
+      "categoria": "Coche"
     },
     {
       "concepto": "Coche Ciudad del Cabo, 16–21 ago",
       "proveedor": "Avis",
       "importe": 185.65,
       "moneda": "EUR",
-      "estado": "pagado"
+      "estado": "pagado",
+      "fecha": "2026-08-16",
+      "categoria": "Coche"
     },
     {
       "concepto": "Tasas de conservación Kruger",
@@ -544,42 +568,89 @@
       "importe": 4816.0,
       "moneda": "ZAR",
       "estado": "pendiente",
-      "nota": "602 ZAR por adulto y día · 2 adultos · 4 días · se pagan en la puerta el 12 ago"
+      "nota": "602 ZAR por adulto y día · 2 adultos · 4 días · se pagan en la puerta el 12 ago",
+      "fecha": "2026-08-12",
+      "categoria": "Tasas"
     },
     {
-      "concepto": "Tranvía de los viñedos de Franschhoek",
-      "proveedor": "—",
-      "importe": 0,
-      "moneda": "EUR",
-      "estado": "sin contratar"
+      "concepto": "Cabo de Buena Esperanza · entrada",
+      "proveedor": "SANParks",
+      "fecha": "2026-08-17",
+      "categoria": "Tasas",
+      "importe": 1000,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. Tarifa internacional por adulto y día, dos personas"
     },
     {
-      "concepto": "Entradas a Boulders Beach",
-      "proveedor": "—",
-      "importe": 0,
-      "moneda": "EUR",
-      "estado": "sin contratar"
+      "concepto": "Barco a Duiker Island",
+      "proveedor": "Hout Bay",
+      "fecha": "2026-08-17",
+      "categoria": "Actividades",
+      "importe": 300,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. Travesía corta de unos 40 min, dos personas"
     },
     {
-      "concepto": "Barco a Duiker Island, Hout Bay",
-      "proveedor": "—",
-      "importe": 0,
-      "moneda": "EUR",
-      "estado": "sin contratar"
+      "concepto": "Boulders Beach · entrada",
+      "proveedor": "SANParks",
+      "fecha": "2026-08-17",
+      "categoria": "Tasas",
+      "importe": 490,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "R245 por adulto extranjero, dos personas. Solo tarjeta"
+    },
+    {
+      "concepto": "Chapman's Peak · peaje",
+      "proveedor": "Entilini",
+      "fecha": "2026-08-17",
+      "categoria": "Coche",
+      "importe": 70,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. Peaje por vehículo, ida"
+    },
+    {
+      "concepto": "Tranvía de Franschhoek y catas",
+      "proveedor": "Wine Tram",
+      "fecha": "2026-08-18",
+      "categoria": "Actividades",
+      "importe": 1600,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. Billete de tranvía más catas en tres bodegas, dos personas"
+    },
+    {
+      "concepto": "Stony Point · entrada",
+      "proveedor": "CapeNature",
+      "fecha": "2026-08-19",
+      "categoria": "Tasas",
+      "importe": 160,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. Entrada por persona, dos personas"
     },
     {
       "concepto": "Barco de ballenas en Hermanus",
-      "proveedor": "—",
-      "importe": 0,
-      "moneda": "EUR",
-      "estado": "sin contratar"
+      "proveedor": "New Harbour",
+      "fecha": "2026-08-19",
+      "categoria": "Actividades",
+      "importe": 2600,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado y opcional. Salida de unas 2 h, dos personas"
     },
     {
-      "concepto": "Table Mountain y entradas sueltas",
-      "proveedor": "—",
-      "importe": 0,
-      "moneda": "EUR",
-      "estado": "sin contratar"
+      "concepto": "Table Mountain · teleférico",
+      "proveedor": "Cableway",
+      "fecha": "2026-08-20",
+      "categoria": "Actividades",
+      "importe": 1000,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. Billete de ida y vuelta, dos personas"
     }
   ],
   "referencias": [
