@@ -180,6 +180,20 @@ footer{margin-top:34px;padding:16px 0 8px;border-top:1px solid var(--line);
   width:13px;height:13px;border-radius:2px;flex:0 0 auto;display:inline-block;
   background:rgba(198,138,46,.35);border-left:2px solid var(--ochre)
 }
+
+/* Tabla de detalle, con desplazamiento lateral en móvil */
+.tabla-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -14px;padding:0 14px}
+.tabla-scroll table{min-width:580px}
+.tabla-scroll td{white-space:nowrap}
+.tabla-scroll td:nth-child(2){white-space:normal;min-width:150px}
+th.sortable{cursor:pointer;user-select:none;text-decoration:underline;text-underline-offset:3px}
+th.sortable:hover{color:var(--green2)}
+.filtros{display:flex;gap:7px;margin-bottom:12px;flex-wrap:wrap}
+.filtros select{width:auto;flex:1 1 150px;font-size:14px;padding:8px 9px}
+/* Barra proporcional por categoría */
+.barra{height:3px;background:var(--line);border-radius:2px;margin-top:5px;max-width:190px}
+.barra i{display:block;height:100%;background:var(--green3);border-radius:2px}
+.pill{font-size:9px;padding:1px 5px;vertical-align:1px}
 </style>
 </head>
 <body>
@@ -197,6 +211,7 @@ footer{margin-top:34px;padding:16px 0 8px;border-top:1px solid var(--line);
       <button class="tab" role="tab" data-p="ruta" aria-selected="false">Ruta</button>
       <button class="tab" role="tab" data-p="gastos" aria-selected="false">Gastos</button>
       <button class="tab" role="tab" data-p="dinero" aria-selected="false">Dinero</button>
+      <button class="tab" role="tab" data-p="detalle" aria-selected="false">Detalle</button>
       <button class="tab" role="tab" data-p="datos" aria-selected="false">Datos</button>
       <button class="tab" role="tab" data-p="ajustes" aria-selected="false">Ajustes</button>
     </div>
@@ -206,6 +221,7 @@ footer{margin-top:34px;padding:16px 0 8px;border-top:1px solid var(--line);
   <section id="p-ruta" hidden></section>
   <section id="p-gastos" hidden></section>
   <section id="p-dinero" hidden></section>
+  <section id="p-detalle" hidden></section>
   <section id="p-datos" hidden></section>
   <section id="p-ajustes" hidden></section>
 
@@ -255,8 +271,14 @@ let mensaje = null;
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g,
   c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]));
 
-const n2 = n => Number(n).toLocaleString("es-ES",
-  { minimumFractionDigits:2, maximumFractionDigits:2 });
+/* El formato español no agrupa los números de cuatro cifras, así que
+   se agrupa a mano para que 7909,70 salga como 7.909,70 */
+function n2(v){
+  const x = Number(v) || 0;
+  const p = Math.abs(x).toFixed(2).split(".");
+  const ent = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return (x < 0 ? "-" : "") + ent + "," + p[1];
+}
 
 function base(n){ return n2(n) + " €"; }
 
@@ -584,6 +606,8 @@ function pintarGastos(){
     + (configurado() ? '<div class="form">'
       + '<div class="row"><div style="flex:1"><label for="g-c">Concepto</label>'
         + '<input id="g-c" placeholder="Cena en el camp" autocomplete="off"></div></div>'
+      + '<div class="row"><div style="flex:1"><label for="g-ter">Tercero</label>'
+        + '<input id="g-ter" placeholder="Nombre del sitio" autocomplete="off"></div></div>'
       + '<div class="row">'
         + '<div style="flex:1"><label for="g-i">Importe</label>'
           + '<input id="g-i" type="number" inputmode="decimal" step="0.01" placeholder="0,00"></div>'
@@ -620,6 +644,7 @@ async function anadirGasto(){
     fecha: document.getElementById("g-f").value || hoyISO(),
     categoria: document.getElementById("g-cat").value,
     concepto: c,
+    tercero: (document.getElementById("g-ter").value || "").trim(),
     importe: i,
     moneda: document.getElementById("g-m").value
   });
@@ -629,63 +654,151 @@ async function anadirGasto(){
   repintar();
 }
 
-function pintarDinero(){
-  const R = V.reservas || [];
-  const pagado    = R.filter(r => r.estado === "pagado").reduce((s,r) => s + aBase(r.importe, r.moneda), 0);
-  const pendiente = R.filter(r => r.estado === "pendiente").reduce((s,r) => s + aBase(r.importe, r.moneda), 0);
-  const destino   = totalGastos();
-  const total     = pagado + pendiente + destino;
-  const pax       = (V.viajeros || []).length || 1;
+/* Libro unificado: reservas y gastos en una sola lista */
+function libro(){
+  const R = (V.reservas || []).map((r,i) => ({
+    id:"r"+i, tipo:"Reserva", fecha:r.fecha || V.inicio, concepto:r.concepto,
+    tercero:r.proveedor || "—", categoria:r.categoria || "Otros",
+    importe:r.importe, moneda:r.moneda, estado:r.estado, nota:r.nota || ""
+  }));
+  const G = listaGastos().map(g => ({
+    id:g.id, tipo:"Gasto", fecha:g.fecha, concepto:g.concepto,
+    tercero:g.tercero || "—", categoria:g.categoria,
+    importe:g.importe, moneda:g.moneda,
+    estado: g._cola ? "sin subir" : "pagado", nota:""
+  }));
+  return R.concat(G);
+}
+function sumaPorEstado(est){
+  return libro().filter(x => x.estado === est)
+                .reduce((s,x) => s + aBase(x.importe, x.moneda), 0);
+}
 
-  const porCat = {}, porQuien = {};
-  listaGastos().forEach(g => {
-    const e = aBase(g.importe, g.moneda);
-    porCat[g.categoria]  = (porCat[g.categoria] || 0) + e;
-    porQuien[g.quien]    = (porQuien[g.quien] || 0) + e;
+/* ---------- pestaña Detalle ---------- */
+let ordCol = "fecha", ordDir = 1, fCat = "", fTipo = "", fEstado = "";
+
+function pintarDetalle(){
+  let filas = libro();
+  if(fCat)    filas = filas.filter(x => x.categoria === fCat);
+  if(fTipo)   filas = filas.filter(x => x.tipo === fTipo);
+  if(fEstado) filas = filas.filter(x => x.estado === fEstado);
+
+  filas.sort((a,b) => {
+    let d;
+    if(ordCol === "importe")        d = aBase(a.importe,a.moneda) - aBase(b.importe,b.moneda);
+    else if(ordCol === "concepto")  d = a.concepto.localeCompare(b.concepto,"es");
+    else if(ordCol === "categoria") d = a.categoria.localeCompare(b.categoria,"es");
+    else                            d = String(a.fecha).localeCompare(String(b.fecha));
+    return d * ordDir || String(a.fecha).localeCompare(String(b.fecha));
   });
-  const cats  = Object.entries(porCat).sort((a,b) => b[1] - a[1]);
-  const quien = Object.entries(porQuien).sort((a,b) => b[1] - a[1]);
 
-  document.getElementById("p-dinero").innerHTML =
-    '<div class="figs">'
-      + '<div class="fig dark wide"><div class="fig-k">Total del viaje</div>'
-        + '<div class="fig-v">' + base(total) + '</div>'
-        + '<div class="fig-n">' + base(total/pax) + ' por persona</div></div>'
-      + '<div class="fig"><div class="fig-k">Reservas pagadas</div><div class="fig-v">' + base(pagado) + '</div></div>'
-      + '<div class="fig"><div class="fig-k">Pendiente</div><div class="fig-v">' + base(pendiente) + '</div></div>'
-      + '<div class="fig wide"><div class="fig-k">Gastado en destino</div><div class="fig-v">' + base(destino) + '</div></div>'
+  const tot  = filas.reduce((s,x) => s + aBase(x.importe,x.moneda), 0);
+  const totZ = filas.filter(x => x.moneda === "ZAR").reduce((s,x) => s + x.importe, 0);
+
+  const cats = [...new Set(libro().map(x => x.categoria))].sort((a,b)=>a.localeCompare(b,"es"));
+  const opt = (v,txt,sel) => '<option value="' + esc(v) + '"'
+    + (sel === v ? " selected" : "") + '>' + esc(txt) + '</option>';
+
+  const flecha = c => ordCol === c ? (ordDir === 1 ? " ↑" : " ↓") : "";
+  const th = (c,txt,cls) => '<th class="sortable ' + (cls||"") + '" data-ord="' + c + '">'
+    + esc(txt) + flecha(c) + '</th>';
+
+  document.getElementById("p-detalle").innerHTML =
+    '<div class="filtros">'
+      + '<select id="f-cat">' + opt("","Todas las categorías",fCat)
+        + cats.map(c => opt(c,c,fCat)).join("") + '</select>'
+      + '<select id="f-tipo">' + opt("","Reservas y gastos",fTipo)
+        + opt("Reserva","Solo reservas",fTipo) + opt("Gasto","Solo gastos",fTipo) + '</select>'
+      + '<select id="f-est">' + opt("","Cualquier estado",fEstado)
+        + opt("pagado","Pagado",fEstado) + opt("pendiente","Pendiente",fEstado)
+        + opt("estimado","Estimado",fEstado) + opt("sin subir","Sin subir",fEstado) + '</select>'
     + '</div>'
 
-    + '<h2>Reservas</h2><table><thead><tr><th>Concepto</th><th class="r">Origen</th><th class="r">Base</th></tr></thead><tbody>'
-      + R.map(r =>
-        '<tr><td>' + esc(r.concepto)
-        + (r.estado === "pendiente" ? '<br><span class="pill warnp">pendiente</span>' : "")
-        + (r.nota ? '<div class="item-d">' + esc(r.nota) + '</div>' : "") + '</td>'
-        + '<td class="num r">' + (r.moneda !== V.monedaBase ? fmtMoneda(r.importe, r.moneda) : "—") + '</td>'
-        + '<td class="num r' + (r.estado === "pendiente" ? " pend" : "") + '">'
-          + (r.estado === "sin contratar" ? "—" : base(aBase(r.importe, r.moneda)))
-          + '</td></tr>').join("")
-      + '<tr class="total"><td>Total reservas</td><td></td><td class="num r">'
-        + base(pagado + pendiente) + '</td></tr></tbody></table>'
+    + '<div class="figs" style="margin-bottom:12px">'
+      + '<div class="fig"><div class="fig-k">' + filas.length + ' apuntes</div>'
+        + '<div class="fig-v">' + base(tot) + '</div></div>'
+      + '<div class="fig"><div class="fig-k">De ello en rands</div>'
+        + '<div class="fig-v">R ' + n2(totZ) + '</div></div>'
+    + '</div>'
 
-    + '<h2>Destino por categoría</h2>'
+    + '<div class="tabla-scroll"><table><thead><tr>'
+      + th("fecha","Fecha") + th("concepto","Concepto") + '<th>Tercero</th>'
+      + th("categoria","Categoría") + '<th class="r">ZAR</th>' + th("importe","Euros","r")
+    + '</tr></thead><tbody>'
+    + (filas.length ? filas.map(x =>
+        '<tr><td class="num">' + fmtFecha(x.fecha) + '</td>'
+        + '<td>' + esc(x.concepto)
+          + (x.estado !== "pagado"
+              ? ' <span class="pill ' + (x.estado === "pendiente" ? "warnp"
+                  : x.estado === "estimado" ? "sinp" : "") + '">' + esc(x.estado) + '</span>'
+              : "") + '</td>'
+        + '<td>' + esc(x.tercero) + '</td>'
+        + '<td>' + esc(x.categoria) + '</td>'
+        + '<td class="num r">' + (x.moneda === "ZAR" ? n2(x.importe) : "—") + '</td>'
+        + '<td class="num r">' + base(aBase(x.importe,x.moneda)) + '</td></tr>').join("")
+      : '<tr><td colspan="6" style="text-align:center;padding:22px;color:var(--mute)">'
+        + 'Nada con esos filtros.</td></tr>')
+    + '<tr class="total"><td colspan="4">Total filtrado</td>'
+      + '<td class="num r">' + n2(totZ) + '</td>'
+      + '<td class="num r">' + base(tot) + '</td></tr>'
+    + '</tbody></table></div>'
+    + '<p class="note">Desliza la tabla a los lados para ver todas las columnas. '
+      + 'Toca una cabecera subrayada para ordenar por ella.</p>';
+
+  document.getElementById("f-cat").onchange  = e => { fCat = e.target.value; pintarDetalle(); };
+  document.getElementById("f-tipo").onchange = e => { fTipo = e.target.value; pintarDetalle(); };
+  document.getElementById("f-est").onchange  = e => { fEstado = e.target.value; pintarDetalle(); };
+  document.querySelectorAll("[data-ord]").forEach(h => h.onclick = () => {
+    const c = h.dataset.ord;
+    if(ordCol === c) ordDir = -ordDir; else { ordCol = c; ordDir = 1; }
+    pintarDetalle();
+  });
+}
+
+function pintarDinero(){
+  const pagado    = sumaPorEstado("pagado");
+  const pendiente = sumaPorEstado("pendiente");
+  const estimado  = sumaPorEstado("estimado");
+  const enCola    = sumaPorEstado("sin subir");
+  const total     = pagado + pendiente + estimado + enCola;
+  const pax       = (V.viajeros || []).length || 1;
+
+  const porCat = {};
+  libro().forEach(x => {
+    porCat[x.categoria] = (porCat[x.categoria] || 0) + aBase(x.importe, x.moneda);
+  });
+  const cats = Object.entries(porCat).sort((a,b) => b[1] - a[1]);
+  const maxc = cats.length ? cats[0][1] : 1;
+
+  document.getElementById("p-dinero").innerHTML =
+    '<div class="fig dark wide"><div class="fig-k">Coste total del viaje</div>'
+      + '<div class="fig-v" style="font-size:34px">' + base(total) + '</div>'
+      + '<div class="fig-n">' + base(total/pax) + ' por persona</div></div>'
+
+    + '<h2>En qué situación está</h2><table><tbody>'
+      + '<tr><td>Ya pagado</td><td class="num r">' + base(pagado) + '</td></tr>'
+      + '<tr><td>Pendiente de pagar<div class="item-d">tasas de conservación, en la puerta</div></td>'
+        + '<td class="num r pend">' + base(pendiente) + '</td></tr>'
+      + '<tr><td>Estimado, sin contratar<div class="item-d">entradas y actividades del Cabo</div></td>'
+        + '<td class="num r" style="color:var(--ochre2)">' + base(estimado) + '</td></tr>'
+      + (enCola ? '<tr><td>Apuntado y sin subir</td><td class="num r">' + base(enCola) + '</td></tr>' : "")
+      + '<tr class="total"><td>Total</td><td class="num r">' + base(total) + '</td></tr>'
+    + '</tbody></table>'
+
+    + '<h2>Por categoría</h2>'
     + (cats.length
         ? '<table><tbody>' + cats.map(([c,v]) =>
-            '<tr><td>' + esc(c) + '</td><td class="num r">' + base(v) + '</td></tr>').join("")
-          + '<tr class="total"><td>Total</td><td class="num r">' + base(destino) + '</td></tr></tbody></table>'
-        : '<div class="empty">Nada apuntado todavía.</div>')
-
-    + (quien.length > 1
-        ? '<h2>Quién ha pagado qué</h2><table><tbody>' + quien.map(([q,v]) =>
-            '<tr><td>' + esc(nombreDe(q)) + '</td><td class="num r">' + base(v) + '</td></tr>').join("")
-          + '</tbody></table>'
-          + '<p class="note">Para cuadrar entre vosotros: la diferencia entre lo que ha puesto cada uno '
-          + 'es lo que hay que compensar al volver.</p>'
-        : "")
+            '<tr><td>' + esc(c)
+            + '<div class="barra"><i style="width:' + Math.round(v/maxc*100) + '%"></i></div></td>'
+            + '<td class="num r">' + base(v) + '</td></tr>').join("")
+          + '<tr class="total"><td>Total</td><td class="num r">' + base(total) + '</td></tr></tbody></table>'
+        : '<div class="empty">Nada todavía.</div>')
 
     + '<p class="note">' + (V.cambios || []).map(c =>
         "1 " + V.monedaBase + " = " + n2(c.porUnidadBase) + " " + c.codigo).join(" · ")
-      + '. Para cambiarlo, edita <code>viaje.json</code>.</p>';
+      + '. Los importes estimados son orientativos, para hacerte una idea del gasto que queda; '
+      + 'sustitúyelos por los reales según vayas contratando. El desglose apunte a apunte, '
+      + 'con filtros, está en la pestaña Detalle.</p>';
 }
 
 function pintarDatos(){
@@ -815,7 +928,7 @@ function pintarEstado(){
 /* ---------------- arranque ---------------- */
 const paneles = {
   hoy:pintarHoy, ruta:pintarRuta, gastos:pintarGastos,
-  dinero:pintarDinero, datos:pintarDatos, ajustes:pintarAjustes
+  dinero:pintarDinero, detalle:pintarDetalle, datos:pintarDatos, ajustes:pintarAjustes
 };
 let actual = "hoy";
 
