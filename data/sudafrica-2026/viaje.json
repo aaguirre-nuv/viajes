@@ -275,7 +275,7 @@
       "dias": [
         {
           "fecha": "2026-08-16",
-          "etiqueta": "Traslado + Casa on Kei",
+          "etiqueta": "Llegada + Casa on Kei",
           "eventos": [
             {
               "hora": "",
@@ -287,50 +287,123 @@
               "clave": true
             },
             {
-              "hora": "",
-              "texto": "Recogida del Toyota Corolla Quest y check-in en Casa on Kei"
+              "hora": "17:30",
+              "texto": "Recogida del Toyota Corolla Quest y check-in en Casa on Kei",
+              "clave": true
+            },
+            {
+              "hora": "20:00",
+              "texto": "Cena tranquila por el V&A Waterfront o Sea Point"
             }
           ]
         },
         {
           "fecha": "2026-08-17",
-          "etiqueta": "Ciudad del Cabo",
+          "etiqueta": "Península del Cabo",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Libre"
+              "hora": "08:30",
+              "texto": "Salida hacia Hout Bay",
+              "clave": true
+            },
+            {
+              "hora": "10:00",
+              "texto": "Barco a Duiker Island · colonia de lobos marinos, unos 40 min",
+              "clave": true
+            },
+            {
+              "hora": "11:30",
+              "texto": "Chapman's Peak Drive · carretera de peaje"
+            },
+            {
+              "hora": "12:30",
+              "texto": "Cabo de Buena Esperanza y Cape Point",
+              "clave": true
+            },
+            {
+              "hora": "15:30",
+              "texto": "Boulders Beach · pingüinos africanos, R245 por adulto, solo tarjeta",
+              "clave": true
+            },
+            {
+              "hora": "17:00",
+              "texto": "Vuelta por Muizenberg y Kalk Bay"
             }
-          ]
+          ],
+          "aviso": "Comprueba antes de salir si Chapman's Peak está abierto: cierra con mal tiempo y hay que rodear por Ou Kaapse Weg. El barco de Duiker Island también depende del estado del mar. Anochece sobre las 18:00, así que no dejes Boulders para más tarde de las 16:00."
         },
         {
           "fecha": "2026-08-18",
-          "etiqueta": "Ciudad del Cabo",
+          "etiqueta": "Franschhoek",
           "eventos": [
             {
+              "hora": "09:00",
+              "texto": "Salida hacia Franschhoek · una hora de coche"
+            },
+            {
+              "hora": "10:00",
+              "texto": "Tranvía de los viñedos · reservado con antelación",
+              "clave": true
+            },
+            {
               "hora": "",
-              "texto": "Libre"
+              "texto": "Tres bodegas y no más · dos horas en cada una"
+            },
+            {
+              "hora": "17:00",
+              "texto": "Fin del recorrido"
             }
-          ]
+          ],
+          "aviso": "El billete del tranvía no incluye las catas. Y decide antes de salir quién conduce a la vuelta: o uno no bebe, o escupís, o contratáis el paquete con transporte desde Ciudad del Cabo y dejáis el coche aparcado. Esto último es lo sensato."
         },
         {
           "fecha": "2026-08-19",
-          "etiqueta": "Ciudad del Cabo",
+          "etiqueta": "Hermanus · ballenas",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Libre"
+              "hora": "08:00",
+              "texto": "Salida por la R44, la costera desde Gordon's Bay",
+              "clave": true
+            },
+            {
+              "hora": "10:00",
+              "texto": "Stony Point, Betty's Bay · pingüinos, mucha menos gente que Boulders",
+              "clave": true
+            },
+            {
+              "hora": "11:30",
+              "texto": "Hermanus · Cliff Path, 12 km de miradores sobre Walker Bay",
+              "clave": true
+            },
+            {
+              "hora": "14:00",
+              "texto": "Opcional: barco desde el New Harbour · reservar antes"
+            },
+            {
+              "hora": "17:00",
+              "texto": "Regreso a Ciudad del Cabo · unas 2 h"
             }
-          ]
+          ],
+          "aviso": "Agosto es temporada de partos: se ven madres con crías y hay menos gente que en septiembre. Desde el Cliff Path pasan a veces a cinco metros de la orilla, así que el plan de tierra ya vale por sí solo. Si haces el barco, llama esa misma mañana para saber cómo está el mar, y ten en cuenta que no devuelven el dinero si no hay avistamientos."
         },
         {
           "fecha": "2026-08-20",
-          "etiqueta": "Ciudad del Cabo",
+          "etiqueta": "Comodín",
           "eventos": [
             {
               "hora": "",
-              "texto": "Libre"
+              "texto": "Table Mountain si amanece despejado · el teleférico cierra con viento"
+            },
+            {
+              "hora": "",
+              "texto": "Bo-Kaap, Kirstenbosch o el V&A Waterfront"
+            },
+            {
+              "hora": "",
+              "texto": "Lo que se haya caído de los días anteriores por el tiempo"
             }
-          ]
+          ],
+          "aviso": "Este día está sin cerrar a propósito. Mira el parte cada noche y mete Table Mountain en la mañana que amanezca despejada, sea la que sea, aunque tengas que mover otro plan."
         }
       ]
     },
@@ -344,15 +417,21 @@
           "etiqueta": "Ciudad del Cabo",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Check-out Casa on Kei y entrega del coche"
+              "hora": "09:00",
+              "texto": "Check-out Casa on Kei"
+            },
+            {
+              "hora": "10:15",
+              "texto": "Entrega del coche en el aeropuerto de Ciudad del Cabo",
+              "clave": true
             },
             {
               "hora": "13:15",
               "texto": "Vuelo CPT → DOH · QR1370 · 13:15 → 23:50 · 9 h 35",
               "clave": true
             }
-          ]
+          ],
+          "aviso": "Vuelo internacional: en el aeropuerto sobre las 11:00. Deja margen para la entrega del coche, que se hace en la terminal."
         },
         {
           "fecha": "2026-08-22",
@@ -651,6 +730,40 @@
       "titulo": "Salud",
       "filas": [],
       "nota": "Kruger está en zona de malaria. Si no lo has consultado ya con tu médico, hazlo antes de entrar el 12 de agosto."
+    },
+    {
+      "titulo": "Ciudad del Cabo · qué reservar",
+      "filas": [
+        [
+          "Tranvía Franschhoek",
+          "winetram.co.za"
+        ],
+        [
+          "Líneas",
+          "cinco, por colores"
+        ],
+        [
+          "Boulders Beach",
+          "R245 · solo tarjeta"
+        ],
+        [
+          "Barco Hermanus",
+          "New Harbour · reservar"
+        ],
+        [
+          "Duiker Island",
+          "desde Hout Bay"
+        ],
+        [
+          "Chapman's Peak",
+          "peaje · cierra con viento"
+        ],
+        [
+          "Table Mountain",
+          "cierra con viento"
+        ]
+      ],
+      "nota": "Agosto es invierno en el Cabo: lluvia, viento y tiempo imprevisible. El teleférico, los barcos y Chapman's Peak se cancelan sin aviso. Reserva solo el tranvía con antelación y deja lo demás abierto para poder mover los días según el parte. Del tranvía, la recomendación unánime es elegir tres bodegas y no correr por toda la línea; las catas se pagan aparte del billete."
     }
   ]
 }
