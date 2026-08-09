@@ -214,7 +214,7 @@
         },
         {
           "fecha": "2026-08-13",
-          "etiqueta": "Skukuza",
+          "etiqueta": "Skukuza · cerca del campamento",
           "eventos": [
             {
               "hora": "05:00",
@@ -222,26 +222,78 @@
               "clave": true
             },
             {
-              "hora": "",
-              "texto": "Resto del día libre por el parque"
+              "hora": "08:30",
+              "texto": "Desayuno en el campamento"
+            },
+            {
+              "hora": "09:30",
+              "texto": "Lake Panic · escondite sobre el agua, por la H11 y pista de tierra",
+              "clave": true
+            },
+            {
+              "hora": "12:30",
+              "texto": "Comida en el Skukuza Golf Club · sin vallar, los animales entran"
+            },
+            {
+              "hora": "15:00",
+              "texto": "S3, Sabie River Road · pista de tierra junto al río hacia Paul Kruger",
+              "clave": true
+            },
+            {
+              "hora": "17:30",
+              "texto": "Vuelta al campamento antes del cierre"
             }
           ],
-          "aviso": "Confirma la hora exacta en recepción la tarde anterior."
+          "aviso": "Día suave, que venís de madrugar. Lake Panic es de los pocos sitios donde puedes bajarte del coche: cocodrilos, hipopótamos y nenúfares, y con suerte el leopardo que ronda la zona. Se llega por la H11 hacia Paul Kruger y una pista de tierra que pasa por el campo de golf y el vivero."
         },
         {
           "fecha": "2026-08-14",
-          "etiqueta": "Skukuza",
+          "etiqueta": "Skukuza · Lower Sabie",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Día libre por el parque"
+              "hora": "06:00",
+              "texto": "Salida al abrir la puerta del campamento · H4-1 hacia el este",
+              "clave": true
+            },
+            {
+              "hora": "07:30",
+              "texto": "Desvíos de grava hacia el río · los mejores avistamientos"
+            },
+            {
+              "hora": "09:00",
+              "texto": "Nkuhlu · área de picnic junto al Sabie, café y piernas estiradas",
+              "clave": true
+            },
+            {
+              "hora": "11:00",
+              "texto": "Sunset Dam · hipopótamos, cocodrilos y aves acuáticas",
+              "clave": true
+            },
+            {
+              "hora": "11:30",
+              "texto": "Lower Sabie · comida en la terraza sobre el río",
+              "clave": true
+            },
+            {
+              "hora": "14:00",
+              "texto": "Vuelta por la S30, Salitje Road · pista de tierra, menos coches",
+              "clave": true
+            },
+            {
+              "hora": "17:00",
+              "texto": "Llegada a Skukuza"
+            },
+            {
+              "hora": "18:30",
+              "texto": "Cena temprana en el campamento"
             },
             {
               "hora": "20:00",
               "texto": "Night Drive, unas 2 h",
               "clave": true
             }
-          ]
+          ],
+          "aviso": "El día grande. La H4-1 son solo 43 km pero se van dos o tres horas con paradas: sigue el Sabie y es donde mejores opciones hay de león, leopardo y hiena, porque el bosque de ribera tiene casi cien impalas por kilómetro cuadrado. También es la carretera más transitada del parque, así que sal a las 06:00 y evita las caravanas. A la vuelta, la S30 va por tierra y con mucho menos tráfico."
         }
       ]
     },
@@ -894,6 +946,40 @@
         ]
       ],
       "nota": "La R40 es de carril único y atraviesa Acornhoek y Bushbuckridge: baches, badenes grandes, peatones y ganado. Cuenta una hora más de la que diga Google y no dejes que te desvíe por pistas de tierra, que salen más lentas. La alternativa por Orpen mete 4 h 30 dentro del parque vía Satara y Tshokwane: es un safari en sí mismo y merece la pena si algún día renuncias al safari de la mañana en Vuyani y sales a las 07:00."
+    },
+    {
+      "titulo": "Kruger por libre",
+      "filas": [
+        [
+          "Bajarse del coche",
+          "solo campamentos, picnic e hides"
+        ],
+        [
+          "Asfalto",
+          "50 km/h"
+        ],
+        [
+          "Tierra",
+          "40 km/h"
+        ],
+        [
+          "Puertas en agosto",
+          "06:00 – 18:00"
+        ],
+        [
+          "H4-1 a Lower Sabie",
+          "43 km · 2 a 3 h"
+        ],
+        [
+          "Lake Panic",
+          "10 min del campamento"
+        ],
+        [
+          "Efectivo",
+          "para las áreas de picnic"
+        ]
+      ],
+      "nota": "Las distancias engañan: 43 km con paradas se van en tres horas. Lo mejor del día es de 06:00 a 09:00 y de 16:00 a 18:00; al mediodía los animales se esconden y es el momento de Lake Panic, del campamento o de un área de picnic. En Nkuhlu, Tshokwane y Afsaal se alquilan hornillos de gas si queréis cocinar. Llevad prismáticos, agua y algo de efectivo. Llegar tarde al campamento se multa, así que calcula siempre una hora más de la que creas."
     },
     {
       "titulo": "Panorama Route · día 15",
