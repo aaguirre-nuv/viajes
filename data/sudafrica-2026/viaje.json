@@ -704,6 +704,36 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. Billete de ida y vuelta, dos personas"
+    },
+    {
+      "concepto": "Bourke's Luck Potholes · entrada",
+      "proveedor": "MTPA",
+      "fecha": "2026-08-15",
+      "categoria": "Tasas",
+      "importe": 260,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. De R65 a R130 por persona según temporada, dos personas. Efectivo"
+    },
+    {
+      "concepto": "Three Rondavels · mirador",
+      "proveedor": "MTPA",
+      "fecha": "2026-08-15",
+      "categoria": "Tasas",
+      "importe": 150,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. De R25 a R75 por persona, dos personas. Efectivo"
+    },
+    {
+      "concepto": "Miradores y cascadas de la Panorama Route",
+      "proveedor": "MTPA",
+      "fecha": "2026-08-15",
+      "categoria": "Tasas",
+      "importe": 240,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "nota": "Estimado. God's Window, Pinnacle Rock, Lisbon y Berlin Falls, dos personas"
     }
   ],
   "referencias": [
@@ -1027,6 +1057,40 @@
         ]
       ],
       "nota": "Sea Point es una de las zonas más tranquilas para un turista, y el paseo marítimo y Regent Road están llenos de gente hasta tarde. Dicho eso: el riesgo real no es dramático, es el tirón de móvil. No vayas con el teléfono en la mano por la calle. Kloof Road es residencial y cuesta arriba; bajar andando a cenar de día está bien, pero de noche coge un Uber, que cuesta poco más que un café. En agosto anochece sobre las 18:00, así que cualquier cena es ya de noche. En el coche no dejes absolutamente nada visible, ni una bolsa vacía. Y si subes a Lion's Head o a la montaña, hazlo de día y por rutas con gente: los asaltos en senderos solitarios sí ocurren."
+    },
+    {
+      "titulo": "Wild Card · no compensa",
+      "filas": [
+        [
+          "Wild Card pareja",
+          "R7.310"
+        ],
+        [
+          "Kruger · 4 días",
+          "R4.816"
+        ],
+        [
+          "Cape Point",
+          "R1.000 est."
+        ],
+        [
+          "Boulders Beach",
+          "R490"
+        ],
+        [
+          "Stony Point",
+          "R160 est."
+        ],
+        [
+          "Suma sin tarjeta",
+          "R6.466"
+        ],
+        [
+          "Diferencia",
+          "pierdes R844"
+        ]
+      ],
+      "nota": "Los extranjeros solo pueden comprar el International All Parks Cluster, a R7.310 la tarifa de pareja para el periodo de vuestro viaje. El punto de equilibrio está en unos cinco días de Kruger y vosotros hacéis cuatro. No cubre el teleférico de Table Mountain, que es concesión privada, ni las paradas de la Panorama Route, que son de la agencia de Mpumalanga, ni los safaris de Skukuza, que son actividades y no tasas de entrada. Solo perdona las tasas diarias de conservación."
     }
   ]
 }
