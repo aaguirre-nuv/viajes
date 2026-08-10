@@ -441,28 +441,23 @@
         },
         {
           "fecha": "2026-08-18",
-          "etiqueta": "Franschhoek",
+          "etiqueta": "Comodín",
           "eventos": [
             {
-              "hora": "09:00",
-              "texto": "Salida hacia Franschhoek · una hora de coche"
-            },
-            {
-              "hora": "10:00",
-              "texto": "Tranvía de los viñedos · reservado con antelación",
-              "clave": true,
+              "hora": "",
+              "texto": "Table Mountain si amanece despejado · el teleférico cierra con viento",
               "pte": true
             },
             {
               "hora": "",
-              "texto": "Tres bodegas y no más · dos horas en cada una"
+              "texto": "Bo-Kaap, Kirstenbosch o el V&A Waterfront"
             },
             {
-              "hora": "17:00",
-              "texto": "Fin del recorrido"
+              "hora": "",
+              "texto": "Lo que se haya caído por el tiempo los días anteriores"
             }
           ],
-          "aviso": "El billete del tranvía no incluye las catas. Y decide antes de salir quién conduce a la vuelta: o uno no bebe, o escupís, o contratáis el paquete con transporte desde Ciudad del Cabo y dejáis el coche aparcado. Esto último es lo sensato."
+          "aviso": "Día sin cerrar a propósito. Mira el parte cada noche y mete Table Mountain en la mañana que amanezca despejada. Ahora que el tranvía está fijado el 20, este es el único día que puedes mover, así que guárdalo para eso."
         },
         {
           "fecha": "2026-08-19",
@@ -498,23 +493,40 @@
         },
         {
           "fecha": "2026-08-20",
-          "etiqueta": "Comodín",
+          "etiqueta": "Franschhoek · tranvía",
           "eventos": [
             {
-              "hora": "",
-              "texto": "Table Mountain si amanece despejado · el teleférico cierra con viento",
+              "hora": "07:45",
+              "texto": "Recogida del chófer en Casa on Kei · confirmar hora la víspera",
+              "clave": true
+            },
+            {
+              "hora": "09:05",
+              "texto": "Salida del tranvía · Groot Drakenstein Terminal, Orange Line",
+              "clave": true
+            },
+            {
+              "hora": "09:30",
+              "texto": "Primera cata corta · Noble Hill o Backsberg"
+            },
+            {
+              "hora": "11:30",
+              "texto": "Babylonstoren · jardín de ocho acres y comida en Babel",
+              "clave": true,
               "pte": true
             },
             {
-              "hora": "",
-              "texto": "Bo-Kaap, Kirstenbosch o el V&A Waterfront"
+              "hora": "15:00",
+              "texto": "Última parada · Boschendal o Solms Delta",
+              "pte": true
             },
             {
-              "hora": "",
-              "texto": "Lo que se haya caído de los días anteriores por el tiempo"
+              "hora": "17:00",
+              "texto": "Vuelta a Ciudad del Cabo con el chófer",
+              "clave": true
             }
           ],
-          "aviso": "Este día está sin cerrar a propósito. Mira el parte cada noche y mete Table Mountain en la mañana que amanezca despejada, sea la que sea, aunque tengas que mover otro plan."
+          "aviso": "Reserva mesa por teléfono en la finca donde vayáis a comer: el propio tranvía avisa de que algún restaurante puede estar cerrado ese día. Babylonstoren es la parada que más se llena. Recoged los billetes quince minutos antes y confirmad con el tranvía dónde se entregan, que la Orange Line no sale del terminal de Franschhoek sino del de Groot Drakenstein. Las catas se pagan en cada bodega, aparte del billete."
         }
       ]
     },
@@ -718,14 +730,14 @@
       "nota": "Estimado. Peaje por vehículo, ida"
     },
     {
-      "concepto": "Tranvía de Franschhoek y catas",
+      "concepto": "Tranvía de Franschhoek · Orange Line y chófer",
       "proveedor": "Wine Tram",
-      "fecha": "2026-08-18",
+      "fecha": "2026-08-20",
       "categoria": "Actividades",
-      "importe": 1600,
+      "importe": 2680.0,
       "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. Billete de tranvía más catas en tres bodegas, dos personas"
+      "estado": "pagado",
+      "nota": "Reserva F6FA-5E38 · factura 0410209 · R700 el tranvía y R1.980 el chófer"
     },
     {
       "concepto": "Stony Point · entrada",
@@ -1177,6 +1189,40 @@
         ]
       ],
       "nota": "Los extranjeros solo pueden comprar el International All Parks Cluster, a R7.310 la tarifa de pareja para el periodo de vuestro viaje. El punto de equilibrio está en unos cinco días de Kruger y vosotros hacéis cuatro. No cubre el teleférico de Table Mountain, que es concesión privada, ni las paradas de la Panorama Route, que son de la agencia de Mpumalanga, ni los safaris de Skukuza, que son actividades y no tasas de entrada. Solo perdona las tasas diarias de conservación."
+    },
+    {
+      "titulo": "Franschhoek · día 20",
+      "filas": [
+        [
+          "Reserva",
+          "F6FA-5E38"
+        ],
+        [
+          "Línea",
+          "Orange · 09:05"
+        ],
+        [
+          "Terminal",
+          "Groot Drakenstein"
+        ],
+        [
+          "Pagado",
+          "R2.680"
+        ],
+        [
+          "Comer",
+          "Babylonstoren, Babel"
+        ],
+        [
+          "Alternativas",
+          "Boschendal · Solms Delta"
+        ],
+        [
+          "Catas",
+          "aparte, en cada bodega"
+        ]
+      ],
+      "nota": "Ocho paradas: Noble Hill, Babylonstoren, Backsberg, Vrede en Lust, Plaisir de Merle, Allée Bleue, Solms Delta y Boschendal. Con salida a las 09:05 dan para tres o cuatro sin agobios. Reserva mesa por teléfono cuanto antes. Sin devolución por no presentarse ni por llegar tarde; cancelar con más de 24 h sí devuelve el importe."
     }
   ]
 }
