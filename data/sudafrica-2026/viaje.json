@@ -865,6 +865,28 @@
       "estado": "pendiente",
       "medio": "Efectivo",
       "nota": "A la caja común de recepción, no a personas sueltas"
+    },
+    {
+      "concepto": "Comidas y combustible en Kruger",
+      "proveedor": "varios",
+      "fecha": "2026-08-12",
+      "categoria": "Comida",
+      "importe": 2500,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "medio": "Tarjeta",
+      "nota": "Estimado grueso. Cuatro días, restaurante del campamento, Lower Sabie y gasolina"
+    },
+    {
+      "concepto": "Comidas y combustible en el Cabo",
+      "proveedor": "varios",
+      "fecha": "2026-08-16",
+      "categoria": "Comida",
+      "importe": 5500,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "medio": "Tarjeta",
+      "nota": "Estimado grueso. Cinco días, cenas, catas de Franschhoek y gasolina"
     }
   ],
   "referencias": [

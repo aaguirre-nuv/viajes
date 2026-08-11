@@ -1,5 +1,16 @@
 [
   {
+    "id": "a-20260118-krw",
+    "fecha": "2026-01-18",
+    "categoria": "Otros",
+    "concepto": "Cambio de wones sobrantes a rands",
+    "tercero": "Revolut",
+    "importe": 14.63,
+    "moneda": "ZAR",
+    "medio": "Recarga",
+    "nota": "1.339 KRW que quedaban de otro viaje"
+  },
+  {
     "id": "a-20260807-1240",
     "fecha": "2026-08-07",
     "categoria": "Transporte",
@@ -20,6 +31,17 @@
     "moneda": "EUR",
     "medio": "Tarjeta",
     "nota": "Factura MRB-93137"
+  },
+  {
+    "id": "a-20260807-eur",
+    "fecha": "2026-08-07",
+    "categoria": "Otros",
+    "concepto": "Cambio de 300 € a rands",
+    "tercero": "Revolut",
+    "importe": 5591.06,
+    "moneda": "ZAR",
+    "medio": "Recarga",
+    "nota": "300 € al cambio de 18,64. No es gasto: alimenta la cuenta en rands"
   },
   {
     "id": "a-20260811-1037",
