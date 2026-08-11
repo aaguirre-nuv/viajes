@@ -832,6 +832,39 @@
       "estado": "estimado",
       "medio": "Efectivo",
       "nota": "Estimado. De 5 a 10 rands por aparcacoches y propinas de restaurante"
+    },
+    {
+      "concepto": "Propina al ranger de Vuyani",
+      "proveedor": "Vuyani",
+      "fecha": "2026-08-12",
+      "categoria": "Propinas",
+      "importe": 850.0,
+      "moneda": "ZAR",
+      "estado": "pendiente",
+      "medio": "Efectivo",
+      "nota": "En sobre y en mano, tras el safari de la mañana. Ocho salidas en cuatro noches"
+    },
+    {
+      "concepto": "Propina al tracker de Vuyani",
+      "proveedor": "Vuyani",
+      "fecha": "2026-08-12",
+      "categoria": "Propinas",
+      "importe": 500.0,
+      "moneda": "ZAR",
+      "estado": "pendiente",
+      "medio": "Efectivo",
+      "nota": "En sobre aparte. Si no hay tracker, repartir entre ranger y staff"
+    },
+    {
+      "concepto": "Propina al staff de Vuyani",
+      "proveedor": "Vuyani",
+      "fecha": "2026-08-12",
+      "categoria": "Propinas",
+      "importe": 350.0,
+      "moneda": "ZAR",
+      "estado": "pendiente",
+      "medio": "Efectivo",
+      "nota": "A la caja común de recepción, no a personas sueltas"
     }
   ],
   "referencias": [

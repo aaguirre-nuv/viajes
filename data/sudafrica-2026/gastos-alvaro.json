@@ -33,25 +33,36 @@
     "nota": "Leadwood Corner, Kudu Street"
   },
   {
+    "id": "a-20260811-1047c1",
+    "fecha": "2026-08-11",
+    "categoria": "Comisiones",
+    "concepto": "Comisión fija del cajero",
+    "tercero": "Hoedspruit Branch",
+    "importe": 50.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "nota": "Cargo fijo del banco del cajero, independiente del importe"
+  },
+  {
+    "id": "a-20260811-1047c2",
+    "fecha": "2026-08-11",
+    "categoria": "Comisiones",
+    "concepto": "Comisión Revolut por exceso de franquicia",
+    "tercero": "Revolut",
+    "importe": 18.67,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "nota": "Porcentaje sobre la parte que supera la retirada gratuita mensual"
+  },
+  {
     "id": "a-20260811-1047r",
     "fecha": "2026-08-11",
     "categoria": "Otros",
     "concepto": "Retirada de efectivo",
     "tercero": "Hoedspruit Branch",
-    "importe": 4000.00,
+    "importe": 4000.0,
     "moneda": "ZAR",
     "medio": "Retirada",
     "nota": "No es gasto: pasa de la tarjeta al bolsillo"
-  },
-  {
-    "id": "a-20260811-1047c",
-    "fecha": "2026-08-11",
-    "categoria": "Comisiones",
-    "concepto": "Comisión del cajero",
-    "tercero": "Hoedspruit Branch",
-    "importe": 68.67,
-    "moneda": "ZAR",
-    "medio": "Tarjeta",
-    "nota": "1,72% sobre R4.000"
   }
 ]
