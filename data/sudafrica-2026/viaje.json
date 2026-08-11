@@ -10,8 +10,8 @@
     {
       "codigo": "ZAR",
       "simbolo": "R",
-      "porUnidadBase": 18.64,
-      "nota": "Cambio real de Revolut el 7 de agosto: 300 € = 5.591,06 R. Actualizar si el de la tarjeta cambia mucho."
+      "porUnidadBase": 18.62,
+      "nota": "Media de las recargas reales de Revolut: 300 € a 18,64 el 7 de agosto y 500 € a 18,62 el día 11."
     }
   ],
   "viajeros": [

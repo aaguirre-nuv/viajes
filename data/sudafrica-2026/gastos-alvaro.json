@@ -86,5 +86,16 @@
     "moneda": "ZAR",
     "medio": "Retirada",
     "nota": "No es gasto: pasa de la tarjeta al bolsillo"
+  },
+  {
+    "id": "a-20260811-eur2",
+    "fecha": "2026-08-11",
+    "categoria": "Otros",
+    "concepto": "Cambio de 500 € a rands",
+    "tercero": "Revolut",
+    "importe": 9308.21,
+    "moneda": "ZAR",
+    "medio": "Recarga",
+    "nota": "500 € al cambio de 18,62. Recarga antes de entrar en Kruger"
   }
 ]
