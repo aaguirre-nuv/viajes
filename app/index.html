@@ -250,6 +250,37 @@ th.sortable:hover{color:var(--green2)}
 
 .fig.alerta{background:rgba(198,138,46,.20);box-shadow:inset 0 0 0 1px rgba(198,138,46,.5)}
 .fig.alerta .fig-v{color:var(--ochre2)}
+
+/* Movimientos de efectivo con saldo acumulado */
+.tefe{width:100%;border-collapse:collapse;table-layout:fixed;margin-top:4px}
+.tefe col.w-fec{width:42px}
+.tefe col.w-imp{width:54px}
+.tefe col.w-sal{width:56px}
+.tefe th{
+  font-family:var(--mono);font-size:8.5px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--mute);text-align:left;font-weight:600;padding:0 0 6px;
+  border-bottom:1px solid var(--line)
+}
+.tefe th.r{text-align:right}
+.tefe td{padding:7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tefe .c-fec{font-family:var(--mono);font-size:10px;color:var(--green2);padding-right:6px;white-space:nowrap}
+.tefe .c-con{font-size:12px;line-height:1.3;padding-right:8px;word-break:break-word}
+.tefe .c-imp{
+  text-align:right;font-family:var(--mono);font-size:11px;color:var(--mute);
+  padding-right:9px;white-space:nowrap;font-feature-settings:"tnum"
+}
+.tefe .c-sal{
+  text-align:right;font-family:var(--mono);font-size:12.5px;font-weight:600;
+  white-space:nowrap;font-feature-settings:"tnum"
+}
+.tefe .sub{
+  display:block;font-family:var(--mono);font-size:8.5px;color:var(--ochre2);
+  letter-spacing:.08em;text-transform:uppercase;margin-top:3px
+}
+.tefe tr.hecho .c-con{color:var(--mute)}
+.tefe tr.hecho .c-sal{font-weight:500}
+.tefe tr.seco .c-sal{color:var(--red)}
+.tefe tr.seco{background:rgba(168,56,42,.08)}
 </style>
 </head>
 <body>
@@ -617,6 +648,29 @@ function listaGastos(){
    Lo que sí es gasto es la comisión, que se apunta aparte. */
 const esRetirada = g => g.medio === "Retirada";
 function soloGastos(){ return listaGastos().filter(g => !esRetirada(g)); }
+/* Movimientos de efectivo en orden de fecha, con el saldo tras cada uno.
+   Mezcla lo ya hecho (retiradas y pagos) con lo previsto (reservas pendientes). */
+function libroEfectivo(){
+  const m = [];
+  listaGastos().forEach(g => {
+    const zar = g.moneda === "ZAR" ? g.importe : g.importe * cambio("ZAR");
+    if(esRetirada(g))         m.push({ f:g.fecha, c:g.concepto, i: zar,  hecho:true });
+    else if(g.medio === "Efectivo") m.push({ f:g.fecha, c:g.concepto, i:-zar, hecho:true });
+  });
+  (V.reservas || []).forEach(r => {
+    if((r.estado === "pendiente" || r.estado === "estimado") && r.medio === "Efectivo"){
+      m.push({ f:r.fecha, c:r.concepto,
+               i: -(r.moneda === "ZAR" ? r.importe : r.importe * cambio("ZAR")),
+               hecho:false });
+    }
+  });
+  m.sort((a,b) => String(a.f).localeCompare(String(b.f))
+                || (b.i - a.i));          // las entradas antes que las salidas del mismo día
+  let s = 0;
+  m.forEach(x => { s += x.i; x.saldo = s; });
+  return m;
+}
+
 /* Lo que queda por pagar en metálico, según el medio previsto en cada reserva */
 function efectivoPendiente(){
   return (V.reservas || [])
@@ -947,19 +1001,31 @@ function pintarDinero(){
                 + "Saca unos R" + n2(sacar).replace(",00","")
                 + " la próxima vez que pases por un cajero.</div>"
               : "")
-          + '<table><tbody>'
-            + '<tr><td>Sacado del cajero</td><td class="num r">R ' + n2(e.sacado) + '</td></tr>'
-            + '<tr><td>Ya pagado en efectivo</td><td class="num r">−R ' + n2(e.gastado) + '</td></tr>'
-            + '<tr><td>En el bolsillo</td><td class="num r">R ' + n2(e.mano) + '</td></tr>'
-            + lista.map(x => '<tr><td style="padding-left:12px;color:var(--mute)">'
-                + fmtCorta(x.fecha) + " · " + esc(x.concepto) + '</td>'
-                + '<td class="num r" style="color:var(--mute)">−R ' + n2(x.zar) + '</td></tr>').join("")
-            + '<tr class="total"><td>Margen final</td><td class="num r"'
-              + (e.margen < 500 ? ' style="color:var(--ochre2)"' : "") + '>R '
-              + n2(e.margen) + '</td></tr>'
-          + '</tbody></table>'
-          + '<p class="note">Cada reserva pendiente lleva marcado si se espera pagar en efectivo '
-            + 'o con tarjeta, así que esta previsión se ajusta sola según vayas contratando.</p>';
+          + (function(){
+              const mov = libroEfectivo();
+              let seco = null;
+              mov.forEach(x => { if(seco === null && x.saldo < 0) seco = x.f; });
+              return '<table class="tefe">'
+                + '<colgroup><col class="w-fec"><col><col class="w-imp"><col class="w-sal"></colgroup>'
+                + '<thead><tr><th>Fecha</th><th>Movimiento</th>'
+                + '<th class="r">Importe</th><th class="r">Saldo</th></tr></thead><tbody>'
+                + mov.map(x =>
+                    '<tr class="' + (x.hecho ? "hecho" : "prev")
+                      + (x.saldo < 0 ? " seco" : "") + '">'
+                    + '<td class="c-fec">' + fmtCorta(x.f) + '</td>'
+                    + '<td class="c-con">' + esc(x.c)
+                      + (x.hecho ? "" : '<span class="sub">previsto</span>') + '</td>'
+                    + '<td class="c-imp">' + (x.i > 0 ? "+" : "−") + n0(Math.abs(x.i)) + '</td>'
+                    + '<td class="c-sal">' + n0(x.saldo) + '</td></tr>').join("")
+                + '</tbody></table>'
+                + (seco
+                    ? '<div class="msg bad">Con esta previsión te quedas sin efectivo el '
+                      + fmtFecha(seco) + '.</div>'
+                    : '')
+                + '<p class="note">Las líneas en gris ya han pasado; las demás son previsión. '
+                  + 'Cada reserva pendiente lleva marcado si esperas pagarla en efectivo o con '
+                  + 'tarjeta, así que el saldo se recalcula solo según vayas contratando.</p>';
+            })();
       })()
     + '<h2>Por categoría</h2>'
     + (cats.length
