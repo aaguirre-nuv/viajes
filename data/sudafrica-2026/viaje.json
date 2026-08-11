@@ -688,7 +688,8 @@
       "estado": "pendiente",
       "nota": "602 ZAR por adulto y día · 2 adultos · 4 días · se pagan en la puerta el 12 ago",
       "fecha": "2026-08-12",
-      "categoria": "Tasas"
+      "categoria": "Tasas",
+      "medio": "Tarjeta"
     },
     {
       "concepto": "Cabo de Buena Esperanza · entrada",
@@ -698,7 +699,8 @@
       "importe": 1000,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado. Tarifa internacional por adulto y día, dos personas"
+      "nota": "Estimado. Tarifa internacional por adulto y día, dos personas",
+      "medio": "Tarjeta"
     },
     {
       "concepto": "Barco a Duiker Island",
@@ -708,7 +710,8 @@
       "importe": 300,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado. Travesía corta de unos 40 min, dos personas"
+      "nota": "Estimado. Travesía corta de unos 40 min, dos personas",
+      "medio": "Efectivo"
     },
     {
       "concepto": "Boulders Beach · entrada",
@@ -718,7 +721,8 @@
       "importe": 490,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "R245 por adulto extranjero, dos personas. Solo tarjeta"
+      "nota": "R245 por adulto extranjero, dos personas. Solo tarjeta",
+      "medio": "Tarjeta"
     },
     {
       "concepto": "Chapman's Peak · peaje",
@@ -728,7 +732,8 @@
       "importe": 70,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado. Peaje por vehículo, ida"
+      "nota": "Estimado. Peaje por vehículo, ida",
+      "medio": "Tarjeta"
     },
     {
       "concepto": "Tranvía de Franschhoek · Orange Line y chófer",
@@ -748,7 +753,8 @@
       "importe": 160,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado. Entrada por persona, dos personas"
+      "nota": "Estimado. Entrada por persona, dos personas",
+      "medio": "Efectivo"
     },
     {
       "concepto": "Barco de ballenas en Hermanus",
@@ -758,7 +764,8 @@
       "importe": 2600,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado y opcional. Salida de unas 2 h, dos personas"
+      "nota": "Estimado y opcional. Salida de unas 2 h, dos personas",
+      "medio": "Tarjeta"
     },
     {
       "concepto": "Table Mountain · teleférico",
@@ -768,7 +775,8 @@
       "importe": 1000,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado. Billete de ida y vuelta, dos personas"
+      "nota": "Estimado. Billete de ida y vuelta, dos personas",
+      "medio": "Tarjeta"
     },
     {
       "concepto": "Bourke's Luck Potholes · entrada",
@@ -778,7 +786,8 @@
       "importe": 260,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado. De R65 a R130 por persona según temporada, dos personas. Efectivo"
+      "nota": "Estimado. De R65 a R130 por persona según temporada, dos personas. Efectivo",
+      "medio": "Efectivo"
     },
     {
       "concepto": "Three Rondavels · mirador",
@@ -788,7 +797,8 @@
       "importe": 150,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado. De R25 a R75 por persona, dos personas. Efectivo"
+      "nota": "Estimado. De R25 a R75 por persona, dos personas. Efectivo",
+      "medio": "Efectivo"
     },
     {
       "concepto": "Miradores y cascadas de la Panorama Route",
@@ -798,7 +808,30 @@
       "importe": 240,
       "moneda": "ZAR",
       "estado": "estimado",
-      "nota": "Estimado. God's Window, Pinnacle Rock, Lisbon y Berlin Falls, dos personas"
+      "nota": "Estimado. God's Window, Pinnacle Rock, Lisbon y Berlin Falls, dos personas",
+      "medio": "Efectivo"
+    },
+    {
+      "concepto": "Áreas de picnic y extras en Kruger",
+      "proveedor": "SANParks",
+      "fecha": "2026-08-13",
+      "categoria": "Comida",
+      "importe": 300,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "medio": "Efectivo",
+      "nota": "Estimado. Cafés, hornillos y compras en los picnics"
+    },
+    {
+      "concepto": "Propinas y aparcacoches en el Cabo",
+      "proveedor": "varios",
+      "fecha": "2026-08-17",
+      "categoria": "Propinas",
+      "importe": 700,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "medio": "Efectivo",
+      "nota": "Estimado. De 5 a 10 rands por aparcacoches y propinas de restaurante"
     }
   ],
   "referencias": [
@@ -1226,19 +1259,27 @@
       "nota": "Ocho paradas: Noble Hill, Babylonstoren, Backsberg, Vrede en Lust, Plaisir de Merle, Allée Bleue, Solms Delta y Boschendal. Con salida a las 09:05 dan para tres o cuatro sin agobios. Reserva mesa por teléfono cuanto antes. Sin devolución por no presentarse ni por llegar tarde; cancelar con más de 24 h sí devuelve el importe."
     },
     {
-      "titulo": "Efectivo · dónde hace falta",
+      "titulo": "Efectivo · cómo funciona",
       "filas": [
         [
           "Panorama Route",
-          "R650 · imprescindible"
+          "imprescindible"
         ],
         [
           "Áreas de picnic Kruger",
-          "R300 aprox."
+          "efectivo"
+        ],
+        [
+          "Barco de Duiker Island",
+          "efectivo"
+        ],
+        [
+          "Stony Point",
+          "efectivo"
         ],
         [
           "Propinas y aparcacoches",
-          "R700 aprox."
+          "efectivo"
         ],
         [
           "Boulders Beach",
@@ -1247,13 +1288,9 @@
         [
           "Tasas de Kruger",
           "tarjeta en la puerta"
-        ],
-        [
-          "Comisión de cajero",
-          "1,7% aprox."
         ]
       ],
-      "nota": "El efectivo hace falta sobre todo el día 15 en la Panorama Route, donde cada parada cobra aparte y los datáfonos fallan, y para propinas y aparcacoches. En Boulders Beach es al revés: solo aceptan tarjeta. Las tasas de conservación de Kruger se pueden pagar con tarjeta en la puerta, que es lo aconsejable para no quedarse sin metálico antes de la Panorama Route. Saca pocas veces y cantidades grandes: la comisión es porcentual."
+      "nota": "La pestaña Dinero calcula sola cuánto te falta por pagar en metálico y si el margen da o no. Cada reserva pendiente lleva marcado si se espera pagar en efectivo o con tarjeta, así que la previsión se ajusta según vas contratando. La comisión del cajero son unos R50 fijos más el porcentaje de Revolut, y con la franquicia mensual gastada la siguiente retirada sale cara: saca una sola vez y de sobra. Y si un cajero o un datáfono ofrece cobrar en euros, di siempre que no y paga en rands."
     }
   ]
 }
