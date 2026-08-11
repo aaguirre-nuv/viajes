@@ -647,7 +647,38 @@ function listaGastos(){
 /* Una retirada no es un gasto: solo mueve dinero de la tarjeta al bolsillo.
    Lo que sí es gasto es la comisión, que se apunta aparte. */
 const esRetirada = g => g.medio === "Retirada";
-function soloGastos(){ return listaGastos().filter(g => !esRetirada(g)); }
+const esRecarga  = g => g.medio === "Recarga";
+const esMovim    = g => esRetirada(g) || esRecarga(g);
+function soloGastos(){ return listaGastos().filter(g => !esMovim(g)); }
+const zarDe = x => x.moneda === "ZAR" ? x.importe : x.importe * cambio("ZAR");
+/* Cuenta en rands de la tarjeta: recargas menos retiradas y menos pagos en rands.
+   Los gastos en euros van por otra tarjeta, así que no cuentan aquí. */
+function libroTarjeta(){
+  const m = [];
+  listaGastos().forEach(g => {
+    if(esRecarga(g))                  m.push({ f:g.fecha, c:g.concepto, i: zarDe(g),  hecho:true });
+    else if(esRetirada(g))            m.push({ f:g.fecha, c:g.concepto, i:-zarDe(g),  hecho:true });
+    else if(g.medio === "Tarjeta" && g.moneda === "ZAR")
+                                      m.push({ f:g.fecha, c:g.concepto, i:-zarDe(g),  hecho:true });
+  });
+  (V.reservas || []).forEach(r => {
+    if((r.estado === "pendiente" || r.estado === "estimado")
+       && r.medio === "Tarjeta" && r.moneda === "ZAR"){
+      m.push({ f:r.fecha, c:r.concepto, i:-zarDe(r), hecho:false });
+    }
+  });
+  m.sort((a,b) => String(a.f).localeCompare(String(b.f)) || (b.i - a.i));
+  let s = 0;
+  m.forEach(x => { s += x.i; x.saldo = s; });
+  return m;
+}
+function tarjeta(){
+  const m = libroTarjeta();
+  const saldo = m.filter(x => x.hecho).reduce((s,x) => s + x.i, 0);
+  const pend  = -m.filter(x => !x.hecho).reduce((s,x) => s + x.i, 0);
+  return { saldo, pend, margen: saldo - pend, mov: m };
+}
+
 /* Movimientos de efectivo en orden de fecha, con el saldo tras cada uno.
    Mezcla lo ya hecho (retiradas y pagos) con lo previsto (reservas pendientes). */
 function libroEfectivo(){
@@ -794,7 +825,7 @@ function pintarGastos(){
       + '</div>'
       + '<div class="row"><div style="flex:1"><label for="g-med">Cómo se paga</label>'
         + '<select id="g-med"><option>Tarjeta</option><option>Efectivo</option>'
-        + '<option>Retirada</option></select></div></div>'
+        + '<option>Retirada</option><option>Recarga</option></select></div></div>'
       + '<button class="go" id="g-add">Apuntar gasto</button></div>' : "")
     + '<h2>Apuntes</h2>' + lista;
 
@@ -947,6 +978,26 @@ function pintarDetalle(){
   });
 }
 
+/* Tabla de movimientos con saldo acumulado, para efectivo y para tarjeta */
+function tablaSaldo(mov){
+  let seco = null;
+  mov.forEach(x => { if(seco === null && x.saldo < 0) seco = x.f; });
+  return '<table class="tefe">'
+    + '<colgroup><col class="w-fec"><col><col class="w-imp"><col class="w-sal"></colgroup>'
+    + '<thead><tr><th>Fecha</th><th>Movimiento</th>'
+    + '<th class="r">Importe</th><th class="r">Saldo</th></tr></thead><tbody>'
+    + mov.map(x =>
+        '<tr class="' + (x.hecho ? "hecho" : "prev") + (x.saldo < 0 ? " seco" : "") + '">'
+        + '<td class="c-fec">' + fmtCorta(x.f) + '</td>'
+        + '<td class="c-con">' + esc(x.c)
+          + (x.hecho ? "" : '<span class="sub">previsto</span>') + '</td>'
+        + '<td class="c-imp">' + (x.i > 0 ? "+" : "−") + n0(Math.abs(x.i)) + '</td>'
+        + '<td class="c-sal">' + n0(x.saldo) + '</td></tr>').join("")
+    + '</tbody></table>'
+    + (seco ? '<div class="msg bad">Con esta previsión te quedas a cero el '
+              + fmtFecha(seco) + '.</div>' : '');
+}
+
 function pintarDinero(){
   const pagado    = sumaPorEstado("pagado");
   const pendiente = sumaPorEstado("pendiente");
@@ -1001,31 +1052,33 @@ function pintarDinero(){
                 + "Saca unos R" + n2(sacar).replace(",00","")
                 + " la próxima vez que pases por un cajero.</div>"
               : "")
-          + (function(){
-              const mov = libroEfectivo();
-              let seco = null;
-              mov.forEach(x => { if(seco === null && x.saldo < 0) seco = x.f; });
-              return '<table class="tefe">'
-                + '<colgroup><col class="w-fec"><col><col class="w-imp"><col class="w-sal"></colgroup>'
-                + '<thead><tr><th>Fecha</th><th>Movimiento</th>'
-                + '<th class="r">Importe</th><th class="r">Saldo</th></tr></thead><tbody>'
-                + mov.map(x =>
-                    '<tr class="' + (x.hecho ? "hecho" : "prev")
-                      + (x.saldo < 0 ? " seco" : "") + '">'
-                    + '<td class="c-fec">' + fmtCorta(x.f) + '</td>'
-                    + '<td class="c-con">' + esc(x.c)
-                      + (x.hecho ? "" : '<span class="sub">previsto</span>') + '</td>'
-                    + '<td class="c-imp">' + (x.i > 0 ? "+" : "−") + n0(Math.abs(x.i)) + '</td>'
-                    + '<td class="c-sal">' + n0(x.saldo) + '</td></tr>').join("")
-                + '</tbody></table>'
-                + (seco
-                    ? '<div class="msg bad">Con esta previsión te quedas sin efectivo el '
-                      + fmtFecha(seco) + '.</div>'
-                    : '')
-                + '<p class="note">Las líneas en gris ya han pasado; las demás son previsión. '
-                  + 'Cada reserva pendiente lleva marcado si esperas pagarla en efectivo o con '
-                  + 'tarjeta, así que el saldo se recalcula solo según vayas contratando.</p>';
-            })();
+          + tablaSaldo(libroEfectivo())
+          + '<p class="note">Las líneas en gris ya han pasado; las demás son previsión. '
+            + 'Cada reserva pendiente lleva marcado si esperas pagarla en efectivo o con '
+            + 'tarjeta, así que el saldo se recalcula solo.</p>';
+      })()
+    + (function(){
+        const t = tarjeta();
+        if(!t.mov.length) return "";
+        const falta = t.margen < 0 ? Math.ceil((-t.margen + 1000)/500)*500 : 0;
+        return '<h2>Tarjeta en rands</h2>'
+          + '<div class="figs" style="margin-bottom:10px">'
+            + '<div class="fig"><div class="fig-k">Saldo ahora</div>'
+              + '<div class="fig-v">R ' + n2(t.saldo) + '</div>'
+              + '<div class="fig-n">' + base(t.saldo/cambio("ZAR")) + '</div></div>'
+            + '<div class="fig' + (t.margen < 0 ? " alerta" : "") + '">'
+              + '<div class="fig-k">' + (t.margen < 0 ? "Te falta" : "Margen") + '</div>'
+              + '<div class="fig-v">R ' + n2(Math.abs(t.margen)) + '</div>'
+              + '<div class="fig-n">' + base(Math.abs(t.margen)/cambio("ZAR")) + '</div></div>'
+          + '</div>'
+          + (falta
+              ? '<div class="msg bad">Recarga unos ' + n0(falta/cambio("ZAR"))
+                + ' € mientras tengas cobertura. En Kruger puede que no la haya.</div>'
+              : "")
+          + tablaSaldo(t.mov)
+          + '<p class="note">Solo cuenta los pagos en rands: lo que pagues en euros con otra '
+            + 'tarjeta no toca este saldo. Las comidas y el combustible van como estimación '
+            + 'gruesa por tramo, ajústalos cuando veas el ritmo real.</p>';
       })()
     + '<h2>Por categoría</h2>'
     + (cats.length
