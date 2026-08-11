@@ -10,8 +10,8 @@
     {
       "codigo": "ZAR",
       "simbolo": "R",
-      "porUnidadBase": 18.72,
-      "nota": "Deducido de la hoja original: 2.698,95 ZAR = 144,17 €. Actualizar con el cambio real de la tarjeta."
+      "porUnidadBase": 18.64,
+      "nota": "Cambio real de Revolut el 7 de agosto: 300 € = 5.591,06 R. Actualizar si el de la tarjeta cambia mucho."
     }
   ],
   "viajeros": [
@@ -35,6 +35,7 @@
     "Propinas",
     "Souvenirs",
     "Salud",
+    "Comisiones",
     "Otros"
   ],
   "bases": {
@@ -1223,6 +1224,36 @@
         ]
       ],
       "nota": "Ocho paradas: Noble Hill, Babylonstoren, Backsberg, Vrede en Lust, Plaisir de Merle, Allée Bleue, Solms Delta y Boschendal. Con salida a las 09:05 dan para tres o cuatro sin agobios. Reserva mesa por teléfono cuanto antes. Sin devolución por no presentarse ni por llegar tarde; cancelar con más de 24 h sí devuelve el importe."
+    },
+    {
+      "titulo": "Efectivo · dónde hace falta",
+      "filas": [
+        [
+          "Panorama Route",
+          "R650 · imprescindible"
+        ],
+        [
+          "Áreas de picnic Kruger",
+          "R300 aprox."
+        ],
+        [
+          "Propinas y aparcacoches",
+          "R700 aprox."
+        ],
+        [
+          "Boulders Beach",
+          "solo tarjeta"
+        ],
+        [
+          "Tasas de Kruger",
+          "tarjeta en la puerta"
+        ],
+        [
+          "Comisión de cajero",
+          "1,7% aprox."
+        ]
+      ],
+      "nota": "El efectivo hace falta sobre todo el día 15 en la Panorama Route, donde cada parada cobra aparte y los datáfonos fallan, y para propinas y aparcacoches. En Boulders Beach es al revés: solo aceptan tarjeta. Las tasas de conservación de Kruger se pueden pagar con tarjeta en la puerta, que es lo aconsejable para no quedarse sin metálico antes de la Panorama Route. Saca pocas veces y cantidades grandes: la comisión es porcentual."
     }
   ]
 }

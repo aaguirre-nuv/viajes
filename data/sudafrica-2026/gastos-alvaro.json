@@ -4,8 +4,10 @@
     "fecha": "2026-08-07",
     "categoria": "Transporte",
     "concepto": "Uber a Barajas",
+    "tercero": "Uber",
     "importe": 14.95,
     "moneda": "EUR",
+    "medio": "Tarjeta",
     "nota": "Apple Pay Visa ...3797"
   },
   {
@@ -13,8 +15,43 @@
     "fecha": "2026-08-07",
     "categoria": "Comida",
     "concepto": "Flax&Kale, T4S Barajas",
+    "tercero": "Areas",
     "importe": 35.75,
     "moneda": "EUR",
+    "medio": "Tarjeta",
     "nota": "Factura MRB-93137"
+  },
+  {
+    "id": "a-20260811-1037",
+    "fecha": "2026-08-11",
+    "categoria": "Comida",
+    "concepto": "Sándwich y wrap de pollo para el viaje",
+    "tercero": "Spar Hoedspruit",
+    "importe": 72.98,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "nota": "Leadwood Corner, Kudu Street"
+  },
+  {
+    "id": "a-20260811-1047r",
+    "fecha": "2026-08-11",
+    "categoria": "Otros",
+    "concepto": "Retirada de efectivo",
+    "tercero": "Hoedspruit Branch",
+    "importe": 4000.00,
+    "moneda": "ZAR",
+    "medio": "Retirada",
+    "nota": "No es gasto: pasa de la tarjeta al bolsillo"
+  },
+  {
+    "id": "a-20260811-1047c",
+    "fecha": "2026-08-11",
+    "categoria": "Comisiones",
+    "concepto": "Comisión del cajero",
+    "tercero": "Hoedspruit Branch",
+    "importe": 68.67,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "nota": "1,72% sobre R4.000"
   }
 ]
