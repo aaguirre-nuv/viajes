@@ -245,6 +245,8 @@ th.sortable:hover{color:var(--green2)}
 .barra{height:3px;background:var(--line);border-radius:2px;margin-top:5px;max-width:190px}
 .barra i{display:block;height:100%;background:var(--green3);border-radius:2px}
 .pill{font-size:9px;padding:1px 5px;vertical-align:1px}
+
+.item.ret{background:rgba(198,138,46,.09);border-radius:2px;padding-left:7px;padding-right:7px}
 </style>
 </head>
 <body>
@@ -608,8 +610,19 @@ function tarjetaDia(d, hoy){
 function listaGastos(){
   return gastos.concat(cola.map(g => Object.assign({ quien:cfg.quien, _cola:true }, g)));
 }
+/* Una retirada no es un gasto: solo mueve dinero de la tarjeta al bolsillo.
+   Lo que sí es gasto es la comisión, que se apunta aparte. */
+const esRetirada = g => g.medio === "Retirada";
+function soloGastos(){ return listaGastos().filter(g => !esRetirada(g)); }
+function efectivo(){
+  const sacado  = listaGastos().filter(esRetirada)
+    .reduce((s,g) => s + (g.moneda === "ZAR" ? g.importe : g.importe * cambio("ZAR")), 0);
+  const gastado = listaGastos().filter(g => g.medio === "Efectivo")
+    .reduce((s,g) => s + (g.moneda === "ZAR" ? g.importe : g.importe * cambio("ZAR")), 0);
+  return { sacado, gastado, mano: sacado - gastado };
+}
 function totalGastos(f){
-  return listaGastos().filter(f || (() => true))
+  return soloGastos().filter(f || (() => true))
     .reduce((s,g) => s + aBase(g.importe, g.moneda), 0);
 }
 
@@ -628,6 +641,11 @@ function pintarHoy(){
         + base(totalGastos(g => g.fecha === hoy)) + '</div></div>'
       + '<div class="fig"><div class="fig-k">Viaje entero</div><div class="fig-v">'
         + base(totalGastos()) + '</div></div>'
+      + (efectivo().sacado
+          ? '<div class="fig wide"><div class="fig-k">Efectivo en el bolsillo</div>'
+            + '<div class="fig-v">R ' + n2(efectivo().mano) + '</div>'
+            + '<div class="fig-n">' + base(efectivo().mano/cambio("ZAR")) + '</div></div>'
+          : "")
     + '</div>'
     + (sigDia ? '<h2>Lo siguiente</h2>' + tarjetaDia(sigDia, hoy) : "");
 }
@@ -697,6 +715,9 @@ function pintarGastos(){
         + '<div style="flex:1"><label for="g-f">Fecha</label>'
           + '<input id="g-f" type="date" value="' + hoy + '"></div>'
       + '</div>'
+      + '<div class="row"><div style="flex:1"><label for="g-med">Cómo se paga</label>'
+        + '<select id="g-med"><option>Tarjeta</option><option>Efectivo</option>'
+        + '<option>Retirada</option></select></div></div>'
       + '<button class="go" id="g-add">Apuntar gasto</button></div>' : "")
     + '<h2>Apuntes</h2>' + lista;
 
@@ -724,6 +745,7 @@ async function anadirGasto(){
     categoria: document.getElementById("g-cat").value,
     concepto: c,
     tercero: (document.getElementById("g-ter").value || "").trim(),
+    medio: document.getElementById("g-med").value,
     importe: i,
     moneda: document.getElementById("g-m").value
   });
@@ -740,7 +762,7 @@ function libro(){
     tercero:r.proveedor || "—", categoria:r.categoria || "Otros",
     importe:r.importe, moneda:r.moneda, estado:r.estado, nota:r.nota || ""
   }));
-  const G = listaGastos().map(g => ({
+  const G = soloGastos().map(g => ({
     id:g.id, tipo:"Gasto", fecha:g.fecha, concepto:g.concepto,
     tercero:g.tercero || "—", categoria:g.categoria,
     importe:g.importe, moneda:g.moneda,
@@ -878,6 +900,16 @@ function pintarDinero(){
       + '<tr class="total"><td>Total</td><td class="num r">' + base(total) + '</td></tr>'
     + '</tbody></table>'
 
+    + (function(){
+        const e = efectivo();
+        if(!e.sacado) return "";
+        return '<h2>Efectivo</h2><table><tbody>'
+          + '<tr><td>Sacado del cajero</td><td class="num r">R ' + n2(e.sacado) + '</td></tr>'
+          + '<tr><td>Gastado en efectivo</td><td class="num r">R ' + n2(e.gastado) + '</td></tr>'
+          + '<tr class="total"><td>En el bolsillo</td><td class="num r">R ' + n2(e.mano)
+            + '<div class="item-d">' + base(e.mano/cambio("ZAR")) + '</div></td></tr>'
+          + '</tbody></table>';
+      })()
     + '<h2>Por categoría</h2>'
     + (cats.length
         ? '<table><tbody>' + cats.map(([c,v]) =>
