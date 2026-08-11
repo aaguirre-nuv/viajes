@@ -247,6 +247,9 @@ th.sortable:hover{color:var(--green2)}
 .pill{font-size:9px;padding:1px 5px;vertical-align:1px}
 
 .item.ret{background:rgba(198,138,46,.09);border-radius:2px;padding-left:7px;padding-right:7px}
+
+.fig.alerta{background:rgba(198,138,46,.20);box-shadow:inset 0 0 0 1px rgba(198,138,46,.5)}
+.fig.alerta .fig-v{color:var(--ochre2)}
 </style>
 </head>
 <body>
@@ -614,12 +617,27 @@ function listaGastos(){
    Lo que sí es gasto es la comisión, que se apunta aparte. */
 const esRetirada = g => g.medio === "Retirada";
 function soloGastos(){ return listaGastos().filter(g => !esRetirada(g)); }
+/* Lo que queda por pagar en metálico, según el medio previsto en cada reserva */
+function efectivoPendiente(){
+  return (V.reservas || [])
+    .filter(r => (r.estado === "pendiente" || r.estado === "estimado") && r.medio === "Efectivo")
+    .map(r => ({ concepto:r.concepto, fecha:r.fecha,
+                 zar: r.moneda === "ZAR" ? r.importe : r.importe * cambio("ZAR") }))
+    .sort((a,b) => String(a.fecha).localeCompare(String(b.fecha)));
+}
 function efectivo(){
   const sacado  = listaGastos().filter(esRetirada)
     .reduce((s,g) => s + (g.moneda === "ZAR" ? g.importe : g.importe * cambio("ZAR")), 0);
   const gastado = listaGastos().filter(g => g.medio === "Efectivo")
     .reduce((s,g) => s + (g.moneda === "ZAR" ? g.importe : g.importe * cambio("ZAR")), 0);
-  return { sacado, gastado, mano: sacado - gastado };
+  const pend = efectivoPendiente().reduce((s,x) => s + x.zar, 0);
+  const mano = sacado - gastado;
+  return { sacado, gastado, mano, pend, margen: mano - pend };
+}
+/* Cuánto sacar la próxima vez: lo que falta, más un colchón, redondeado a 500 */
+function sugerirRetirada(margen, colchon){
+  const falta = -margen + (colchon || 800);
+  return falta <= 0 ? 0 : Math.ceil(falta / 500) * 500;
 }
 function totalGastos(f){
   return soloGastos().filter(f || (() => true))
@@ -641,11 +659,16 @@ function pintarHoy(){
         + base(totalGastos(g => g.fecha === hoy)) + '</div></div>'
       + '<div class="fig"><div class="fig-k">Viaje entero</div><div class="fig-v">'
         + base(totalGastos()) + '</div></div>'
-      + (efectivo().sacado
-          ? '<div class="fig wide"><div class="fig-k">Efectivo en el bolsillo</div>'
-            + '<div class="fig-v">R ' + n2(efectivo().mano) + '</div>'
-            + '<div class="fig-n">' + base(efectivo().mano/cambio("ZAR")) + '</div></div>'
-          : "")
+      + (function(){
+          const e = efectivo();
+          if(!e.sacado && !e.pend) return "";
+          return '<div class="fig wide' + (e.margen < 500 ? " alerta" : "") + '">'
+            + '<div class="fig-k">Efectivo en el bolsillo</div>'
+            + '<div class="fig-v">R ' + n2(e.mano) + '</div>'
+            + '<div class="fig-n">quedan R' + n2(e.pend).replace(",00","")
+              + ' por pagar en metálico · margen R' + n2(e.margen).replace(",00","")
+              + '</div></div>';
+        })()
     + '</div>'
     + (sigDia ? '<h2>Lo siguiente</h2>' + tarjetaDia(sigDia, hoy) : "");
 }
@@ -902,13 +925,41 @@ function pintarDinero(){
 
     + (function(){
         const e = efectivo();
-        if(!e.sacado) return "";
-        return '<h2>Efectivo</h2><table><tbody>'
-          + '<tr><td>Sacado del cajero</td><td class="num r">R ' + n2(e.sacado) + '</td></tr>'
-          + '<tr><td>Gastado en efectivo</td><td class="num r">R ' + n2(e.gastado) + '</td></tr>'
-          + '<tr class="total"><td>En el bolsillo</td><td class="num r">R ' + n2(e.mano)
-            + '<div class="item-d">' + base(e.mano/cambio("ZAR")) + '</div></td></tr>'
-          + '</tbody></table>';
+        if(!e.sacado && !e.pend) return "";
+        const lista = efectivoPendiente();
+        const apurado = e.margen < 500;
+        const sacar = sugerirRetirada(e.margen);
+        return '<h2>Efectivo</h2>'
+          + '<div class="figs" style="margin-bottom:10px">'
+            + '<div class="fig"><div class="fig-k">En el bolsillo</div>'
+              + '<div class="fig-v">R ' + n2(e.mano) + '</div>'
+              + '<div class="fig-n">' + base(e.mano/cambio("ZAR")) + '</div></div>'
+            + '<div class="fig' + (apurado ? " alerta" : "") + '">'
+              + '<div class="fig-k">' + (e.margen < 0 ? "Te falta" : "Margen") + '</div>'
+              + '<div class="fig-v">R ' + n2(Math.abs(e.margen)) + '</div>'
+              + '<div class="fig-n">tras pagar lo previsto</div></div>'
+          + '</div>'
+          + (apurado
+              ? '<div class="msg ' + (e.margen < 0 ? "bad" : "info") + '">'
+                + (e.margen < 0
+                    ? "No llegas con lo que llevas. "
+                    : "El margen es muy justo. ")
+                + "Saca unos R" + n2(sacar).replace(",00","")
+                + " la próxima vez que pases por un cajero.</div>"
+              : "")
+          + '<table><tbody>'
+            + '<tr><td>Sacado del cajero</td><td class="num r">R ' + n2(e.sacado) + '</td></tr>'
+            + '<tr><td>Ya pagado en efectivo</td><td class="num r">−R ' + n2(e.gastado) + '</td></tr>'
+            + '<tr><td>En el bolsillo</td><td class="num r">R ' + n2(e.mano) + '</td></tr>'
+            + lista.map(x => '<tr><td style="padding-left:12px;color:var(--mute)">'
+                + fmtCorta(x.fecha) + " · " + esc(x.concepto) + '</td>'
+                + '<td class="num r" style="color:var(--mute)">−R ' + n2(x.zar) + '</td></tr>').join("")
+            + '<tr class="total"><td>Margen final</td><td class="num r"'
+              + (e.margen < 500 ? ' style="color:var(--ochre2)"' : "") + '>R '
+              + n2(e.margen) + '</td></tr>'
+          + '</tbody></table>'
+          + '<p class="note">Cada reserva pendiente lleva marcado si se espera pagar en efectivo '
+            + 'o con tarjeta, así que esta previsión se ajusta sola según vayas contratando.</p>';
       })()
     + '<h2>Por categoría</h2>'
     + (cats.length
