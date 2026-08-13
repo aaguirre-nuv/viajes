@@ -8,7 +8,8 @@
     "importe": 14.63,
     "moneda": "ZAR",
     "medio": "Recarga",
-    "nota": "1.339 KRW que quedaban de otro viaje"
+    "nota": "1.339 KRW que quedaban de otro viaje",
+    "pagadoPor": "alvaro"
   },
   {
     "id": "a-20260807-1240",
@@ -19,7 +20,8 @@
     "importe": 14.95,
     "moneda": "EUR",
     "medio": "Tarjeta",
-    "nota": "Apple Pay Visa ...3797"
+    "nota": "Apple Pay Visa ...3797",
+    "pagadoPor": "alvaro"
   },
   {
     "id": "a-20260807-1358",
@@ -30,7 +32,8 @@
     "importe": 35.75,
     "moneda": "EUR",
     "medio": "Tarjeta",
-    "nota": "Factura MRB-93137"
+    "nota": "Factura MRB-93137",
+    "pagadoPor": "alvaro"
   },
   {
     "id": "a-20260807-eur",
@@ -41,7 +44,8 @@
     "importe": 5591.06,
     "moneda": "ZAR",
     "medio": "Recarga",
-    "nota": "300 € al cambio de 18,64. No es gasto: alimenta la cuenta en rands"
+    "nota": "300 € al cambio de 18,64. No es gasto: alimenta la cuenta en rands",
+    "pagadoPor": "alvaro"
   },
   {
     "id": "a-20260811-1037",
@@ -52,7 +56,8 @@
     "importe": 72.98,
     "moneda": "ZAR",
     "medio": "Tarjeta",
-    "nota": "Leadwood Corner, Kudu Street"
+    "nota": "Leadwood Corner, Kudu Street",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260811-1047c1",
@@ -63,7 +68,8 @@
     "importe": 50.0,
     "moneda": "ZAR",
     "medio": "Tarjeta",
-    "nota": "Cargo fijo del banco del cajero, independiente del importe"
+    "nota": "Cargo fijo del banco del cajero, independiente del importe",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260811-1047c2",
@@ -74,7 +80,8 @@
     "importe": 18.67,
     "moneda": "ZAR",
     "medio": "Tarjeta",
-    "nota": "Porcentaje sobre la parte que supera la retirada gratuita mensual"
+    "nota": "Porcentaje sobre la parte que supera la retirada gratuita mensual",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260811-1047r",
@@ -85,7 +92,8 @@
     "importe": 4000.0,
     "moneda": "ZAR",
     "medio": "Retirada",
-    "nota": "No es gasto: pasa de la tarjeta al bolsillo"
+    "nota": "No es gasto: pasa de la tarjeta al bolsillo",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260811-eur2",
@@ -96,7 +104,8 @@
     "importe": 9308.21,
     "moneda": "ZAR",
     "medio": "Recarga",
-    "nota": "500 € al cambio de 18,62. Recarga antes de entrar en Kruger"
+    "nota": "500 € al cambio de 18,62. Recarga antes de entrar en Kruger",
+    "pagadoPor": "laura"
   },
   {
     "id": "a-20260812-fb",
@@ -107,7 +116,8 @@
     "importe": 1200.0,
     "moneda": "ZAR",
     "medio": "Ingreso",
-    "nota": "Parte no consumida del fondo común. Entra como efectivo, no reduce ningún gasto anotado"
+    "nota": "Parte no consumida del fondo común. Entra como efectivo, no reduce ningún gasto anotado",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260812-ks",
@@ -118,7 +128,8 @@
     "importe": 595.0,
     "moneda": "ZAR",
     "medio": "Tarjeta",
-    "nota": "Cerveza Darling Draught y limonada. Sin propina incluida"
+    "nota": "Cerveza Darling Draught y limonada. Sin propina incluida",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260812-p1",
@@ -129,7 +140,8 @@
     "importe": 600.0,
     "moneda": "ZAR",
     "medio": "Efectivo",
-    "nota": "En mano, tras el safari de la mañana"
+    "nota": "En mano, tras el safari de la mañana",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260812-p2",
@@ -140,7 +152,8 @@
     "importe": 400.0,
     "moneda": "ZAR",
     "medio": "Efectivo",
-    "nota": "En sobre aparte"
+    "nota": "En sobre aparte",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260812-p3",
@@ -151,7 +164,8 @@
     "importe": 300.0,
     "moneda": "ZAR",
     "medio": "Efectivo",
-    "nota": "Caja común de recepción"
+    "nota": "Caja común de recepción",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260812-ps1",
@@ -162,7 +176,8 @@
     "importe": 164.0,
     "moneda": "ZAR",
     "medio": "Tarjeta",
-    "nota": "Visa ...8993 · ref SKUKP/3/000382619"
+    "nota": "Visa ...8993 · ref SKUKP/3/000382619",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260812-ps2",
@@ -173,7 +188,8 @@
     "importe": 160.0,
     "moneda": "ZAR",
     "medio": "Tarjeta",
-    "nota": "Visa ...8993 · ref SKUKP/3/000382620"
+    "nota": "Visa ...8993 · ref SKUKP/3/000382620",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260812-tasas",
@@ -184,6 +200,7 @@
     "importe": 3612.0,
     "moneda": "ZAR",
     "medio": "Tarjeta",
-    "nota": "Tres días, no cuatro: R602 por adulto y día. R1.204 menos de lo previsto"
+    "nota": "Tres días, no cuatro: R602 por adulto y día. R1.204 menos de lo previsto",
+    "pagadoPor": "comun"
   }
 ]
