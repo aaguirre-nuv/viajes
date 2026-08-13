@@ -648,7 +648,8 @@ function listaGastos(){
    Lo que sí es gasto es la comisión, que se apunta aparte. */
 const esRetirada = g => g.medio === "Retirada";
 const esRecarga  = g => g.medio === "Recarga";
-const esMovim    = g => esRetirada(g) || esRecarga(g);
+const esIngreso  = g => g.medio === "Ingreso";   // efectivo que entra de fuera
+const esMovim    = g => esRetirada(g) || esRecarga(g) || esIngreso(g);
 function soloGastos(){ return listaGastos().filter(g => !esMovim(g)); }
 const zarDe = x => x.moneda === "ZAR" ? x.importe : x.importe * cambio("ZAR");
 /* Cuenta en rands de la tarjeta: recargas menos retiradas y menos pagos en rands.
@@ -685,8 +686,8 @@ function libroEfectivo(){
   const m = [];
   listaGastos().forEach(g => {
     const zar = g.moneda === "ZAR" ? g.importe : g.importe * cambio("ZAR");
-    if(esRetirada(g))         m.push({ f:g.fecha, c:g.concepto, i: zar,  hecho:true });
-    else if(g.medio === "Efectivo") m.push({ f:g.fecha, c:g.concepto, i:-zar, hecho:true });
+    if(esRetirada(g) || esIngreso(g)) m.push({ f:g.fecha, c:g.concepto, i: zar,  hecho:true });
+    else if(g.medio === "Efectivo")   m.push({ f:g.fecha, c:g.concepto, i:-zar, hecho:true });
   });
   (V.reservas || []).forEach(r => {
     if((r.estado === "pendiente" || r.estado === "estimado") && r.medio === "Efectivo"){
@@ -711,7 +712,7 @@ function efectivoPendiente(){
     .sort((a,b) => String(a.fecha).localeCompare(String(b.fecha)));
 }
 function efectivo(){
-  const sacado  = listaGastos().filter(esRetirada)
+  const sacado  = listaGastos().filter(g => esRetirada(g) || esIngreso(g))
     .reduce((s,g) => s + (g.moneda === "ZAR" ? g.importe : g.importe * cambio("ZAR")), 0);
   const gastado = listaGastos().filter(g => g.medio === "Efectivo")
     .reduce((s,g) => s + (g.moneda === "ZAR" ? g.importe : g.importe * cambio("ZAR")), 0);
@@ -825,7 +826,8 @@ function pintarGastos(){
       + '</div>'
       + '<div class="row"><div style="flex:1"><label for="g-med">Cómo se paga</label>'
         + '<select id="g-med"><option>Tarjeta</option><option>Efectivo</option>'
-        + '<option>Retirada</option><option>Recarga</option></select></div></div>'
+        + '<option>Retirada</option><option>Recarga</option>'
+        + '<option>Ingreso</option></select></div></div>'
       + '<button class="go" id="g-add">Apuntar gasto</button></div>' : "")
     + '<h2>Apuntes</h2>' + lista;
 
@@ -865,10 +867,11 @@ async function anadirGasto(){
 
 /* Libro unificado: reservas y gastos en una sola lista */
 function libro(){
-  const R = (V.reservas || []).map((r,i) => ({
+  const R = (V.reservas || []).filter(r => r.estado !== "deposito").map((r,i) => ({
     id:"r"+i, tipo:"Reserva", fecha:r.fecha || V.inicio, concepto:r.concepto,
     tercero:r.proveedor || "—", categoria:r.categoria || "Otros",
-    importe:r.importe, moneda:r.moneda, estado:r.estado, nota:r.nota || ""
+    importe:r.importe, moneda:r.moneda, estado:r.estado, nota:r.nota || "",
+    quien:r.pagadoPor || null
   }));
   const G = soloGastos().map(g => ({
     id:g.id, tipo:"Gasto", fecha:g.fecha, concepto:g.concepto,
@@ -946,6 +949,7 @@ function pintarDetalle(){
           + '<span class="sub"><b class="cat ' + catFam(x.categoria) + '">'
           + cat3(x.categoria) + '</b>'
           + esc(x.tercero !== "—" ? x.tercero : "")
+          + (x.quien ? " · " + esc(nombreDe(x.quien)) : "")
           + (x.estado !== "pagado"
               ? ' · <b style="color:' + (colorEstado[x.estado] || "var(--mute)") + '">'
                 + esc(x.estado) + '</b>' : "")
@@ -1012,6 +1016,14 @@ function pintarDinero(){
   });
   const cats = Object.entries(porCat).sort((a,b) => b[1] - a[1]);
   const maxc = cats.length ? cats[0][1] : 1;
+
+  const porQuien = {};
+  libro().forEach(x => {
+    const k = x.quien || "sin asignar";
+    porQuien[k] = (porQuien[k] || 0) + aBase(x.importe, x.moneda);
+  });
+  const quienes = Object.entries(porQuien).sort((a,b) => b[1] - a[1]);
+  const dosOmas = quienes.filter(q => q[0] !== "sin asignar").length > 1;
 
   document.getElementById("p-dinero").innerHTML =
     '<div class="fig dark wide"><div class="fig-k">Coste total del viaje</div>'
@@ -1090,6 +1102,33 @@ function pintarDinero(){
           + '<tr class="total"><td>Total</td><td class="num r">' + base(total) + '</td></tr></tbody></table>'
         : '<div class="empty">Nada todavía.</div>')
 
+    + (function(){
+        const dep = (V.reservas || []).filter(r => r.estado === "deposito");
+        if(!dep.length) return "";
+        const t = dep.reduce((s,r) => s + aBase(r.importe, r.moneda), 0);
+        return '<h2>Depósitos retenidos</h2><table><tbody>'
+          + dep.map(r => '<tr><td>' + esc(r.concepto)
+              + (r.nota ? '<div class="item-d">' + esc(r.nota) + '</div>' : "")
+              + '</td><td class="num r">' + base(aBase(r.importe, r.moneda)) + '</td></tr>').join("")
+          + '<tr class="total"><td>Total retenido</td><td class="num r">' + base(t) + '</td></tr>'
+          + '</tbody></table>'
+          + '<p class="note">No son gasto del viaje y por eso no suman en el total: es dinero '
+            + 'bloqueado que debería liberarse al devolver el coche sin incidencias. '
+            + 'Compruébalo en el extracto de la tarjeta cuando toque.</p>';
+      })()
+    + (quienes.length
+        ? '<h2>Quién ha pagado qué</h2><table><tbody>'
+          + quienes.map(([q,v]) =>
+              '<tr><td>' + (q === "sin asignar"
+                  ? '<span style="color:var(--ochre2)">Sin asignar</span>' : esc(nombreDe(q)))
+              + '</td><td class="num r">' + base(v) + '</td></tr>').join("")
+          + '<tr class="total"><td>Total</td><td class="num r">' + base(total) + '</td></tr>'
+          + '</tbody></table>'
+          + (dosOmas
+              ? '<p class="note">Para cuadrar al volver: la mitad del total es '
+                + base(total/pax) + ', así que quien haya puesto de más recupera la diferencia.</p>'
+              : "")
+        : "")
     + '<p class="note">' + (V.cambios || []).map(c =>
         "1 " + V.monedaBase + " = " + n2(c.porUnidadBase) + " " + c.codigo).join(" · ")
       + '. Los importes estimados son orientativos, para hacerte una idea del gasto que queda; '
