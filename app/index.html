@@ -877,7 +877,8 @@ function libro(){
     id:g.id, tipo:"Gasto", fecha:g.fecha, concepto:g.concepto,
     tercero:g.tercero || "—", categoria:g.categoria,
     importe:g.importe, moneda:g.moneda,
-    estado: g._cola ? "sin subir" : "pagado", nota:""
+    estado: g._cola ? "sin subir" : "pagado", nota:"",
+    quien: g.pagadoPor || g.quien
   }));
   return R.concat(G);
 }
@@ -1002,6 +1003,31 @@ function tablaSaldo(mov){
               + fmtFecha(seco) + '.</div>' : '');
 }
 
+/* Reparto real: cuenta lo que cada uno ha puesto de su bolsillo,
+   sea aportando al fondo común o pagando cosas directamente. */
+function reparto(){
+  const puesto = {}, aport = {}, directo = {};
+  const sumar = (o,k,v) => { o[k] = (o[k] || 0) + v; };
+
+  listaGastos().filter(esRecarga).forEach(g => {
+    const k = g.pagadoPor || g.quien;
+    sumar(aport, k, aBase(g.importe, g.moneda));
+    sumar(puesto, k, aBase(g.importe, g.moneda));
+  });
+  libro().forEach(x => {
+    if(!x.quien || x.quien === "comun") return;
+    if(x.estado === "estimado" || x.estado === "pendiente") return;
+    sumar(directo, x.quien, aBase(x.importe, x.moneda));
+    sumar(puesto,  x.quien, aBase(x.importe, x.moneda));
+  });
+
+  const total = Object.values(puesto).reduce((s,v) => s + v, 0);
+  const pax   = (V.viajeros || []).length || 1;
+  const mitad = total / pax;
+  const e = efectivo(), t = tarjeta();
+  return { puesto, aport, directo, total, mitad, fondo: e.mano + t.saldo };
+}
+
 function pintarDinero(){
   const pagado    = sumaPorEstado("pagado");
   const pendiente = sumaPorEstado("pendiente");
@@ -1116,19 +1142,34 @@ function pintarDinero(){
             + 'bloqueado que debería liberarse al devolver el coche sin incidencias. '
             + 'Compruébalo en el extracto de la tarjeta cuando toque.</p>';
       })()
-    + (quienes.length
-        ? '<h2>Quién ha pagado qué</h2><table><tbody>'
-          + quienes.map(([q,v]) =>
-              '<tr><td>' + (q === "sin asignar"
-                  ? '<span style="color:var(--ochre2)">Sin asignar</span>' : esc(nombreDe(q)))
-              + '</td><td class="num r">' + base(v) + '</td></tr>').join("")
-          + '<tr class="total"><td>Total</td><td class="num r">' + base(total) + '</td></tr>'
+    + (function(){
+        const r = reparto();
+        const gente = Object.keys(r.puesto);
+        if(gente.length < 2) return "";
+        const fila = q =>
+          '<tr><td>' + esc(nombreDe(q))
+          + '<div class="item-d">'
+            + (r.aport[q]   ? 'al fondo ' + base(r.aport[q]) : 'sin aportar al fondo')
+            + (r.directo[q] ? ' · directo ' + base(r.directo[q]) : '')
+          + '</div></td>'
+          + '<td class="num r">' + base(r.puesto[q] || 0) + '</td></tr>';
+        const deudas = gente.map(q => [q, (r.puesto[q] || 0) - r.mitad])
+                            .sort((a,b) => a[1] - b[1]);
+        const debe = deudas[0], cobra = deudas[deudas.length - 1];
+        return '<h2>Reparto entre los dos</h2>'
+          + '<table><tbody>' + gente.map(fila).join("")
+          + '<tr class="total"><td>Puesto entre los dos</td>'
+            + '<td class="num r">' + base(r.total) + '</td></tr>'
+          + '<tr><td>Mitad cada uno</td><td class="num r">' + base(r.mitad) + '</td></tr>'
           + '</tbody></table>'
-          + (dosOmas
-              ? '<p class="note">Para cuadrar al volver: la mitad del total es '
-                + base(total/pax) + ', así que quien haya puesto de más recupera la diferencia.</p>'
+          + (Math.abs(debe[1]) > 1
+              ? '<div class="msg info">' + esc(nombreDe(debe[0])) + ' le debe '
+                + base(Math.abs(debe[1])) + ' a ' + esc(nombreDe(cobra[0])) + '.</div>'
               : "")
-        : "")
+          + '<p class="note">Quedan ' + base(r.fondo) + ' sin gastar en el fondo común, '
+            + 'entre tarjeta y efectivo. Ese dinero es de los dos: si sobra al final, '
+            + 'se reparte y no altera el cálculo de arriba.</p>';
+      })()
     + '<p class="note">' + (V.cambios || []).map(c =>
         "1 " + V.monedaBase + " = " + n2(c.porUnidadBase) + " " + c.codigo).join(" · ")
       + '. Los importes estimados son orientativos, para hacerte una idea del gasto que queda; '
