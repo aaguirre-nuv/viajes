@@ -579,7 +579,8 @@
       "moneda": "EUR",
       "estado": "pagado",
       "fecha": "2026-08-07",
-      "categoria": "Vuelos"
+      "categoria": "Vuelos",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Vuyani Safari Lodge, 8–12 ago",
@@ -588,7 +589,8 @@
       "moneda": "EUR",
       "estado": "pagado",
       "fecha": "2026-08-08",
-      "categoria": "Alojamiento"
+      "categoria": "Alojamiento",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Skukuza, tienda safari CTT2, 3 noches",
@@ -597,7 +599,8 @@
       "moneda": "ZAR",
       "estado": "pagado",
       "fecha": "2026-08-12",
-      "categoria": "Alojamiento"
+      "categoria": "Alojamiento",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Sunset Drive, 12 ago",
@@ -606,7 +609,8 @@
       "moneda": "ZAR",
       "estado": "pagado",
       "fecha": "2026-08-12",
-      "categoria": "Actividades"
+      "categoria": "Actividades",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Sunrise Drive, 13 ago",
@@ -615,7 +619,8 @@
       "moneda": "ZAR",
       "estado": "pagado",
       "fecha": "2026-08-13",
-      "categoria": "Actividades"
+      "categoria": "Actividades",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Night Drive, 14 ago",
@@ -624,7 +629,8 @@
       "moneda": "ZAR",
       "estado": "pagado",
       "fecha": "2026-08-14",
-      "categoria": "Actividades"
+      "categoria": "Actividades",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Community Fund",
@@ -633,7 +639,8 @@
       "moneda": "ZAR",
       "estado": "pagado",
       "fecha": "2026-08-12",
-      "categoria": "Tasas"
+      "categoria": "Tasas",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Moholoholo Forest Camp, 15–16 ago",
@@ -642,7 +649,8 @@
       "moneda": "EUR",
       "estado": "pagado",
       "fecha": "2026-08-15",
-      "categoria": "Alojamiento"
+      "categoria": "Alojamiento",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Vuelo HDS → CPT, 16 ago",
@@ -651,7 +659,8 @@
       "moneda": "EUR",
       "estado": "pagado",
       "fecha": "2026-08-16",
-      "categoria": "Vuelos"
+      "categoria": "Vuelos",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Casa on Kei, 16–21 ago",
@@ -660,7 +669,8 @@
       "moneda": "EUR",
       "estado": "pagado",
       "fecha": "2026-08-16",
-      "categoria": "Alojamiento"
+      "categoria": "Alojamiento",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Coche Kruger, 12–16 ago",
@@ -669,7 +679,8 @@
       "moneda": "EUR",
       "estado": "pagado",
       "fecha": "2026-08-12",
-      "categoria": "Coche"
+      "categoria": "Coche",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Coche Ciudad del Cabo, 16–21 ago",
@@ -678,18 +689,8 @@
       "moneda": "EUR",
       "estado": "pagado",
       "fecha": "2026-08-16",
-      "categoria": "Coche"
-    },
-    {
-      "concepto": "Tasas de conservación Kruger",
-      "proveedor": "SANParks",
-      "importe": 4816.0,
-      "moneda": "ZAR",
-      "estado": "pendiente",
-      "nota": "602 ZAR por adulto y día · 2 adultos · 4 días · se pagan en la puerta el 12 ago",
-      "fecha": "2026-08-12",
-      "categoria": "Tasas",
-      "medio": "Tarjeta"
+      "categoria": "Coche",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Cabo de Buena Esperanza · entrada",
@@ -700,7 +701,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. Tarifa internacional por adulto y día, dos personas",
-      "medio": "Tarjeta"
+      "medio": "Tarjeta",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Barco a Duiker Island",
@@ -711,7 +713,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. Travesía corta de unos 40 min, dos personas",
-      "medio": "Efectivo"
+      "medio": "Efectivo",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Boulders Beach · entrada",
@@ -722,7 +725,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "R245 por adulto extranjero, dos personas. Solo tarjeta",
-      "medio": "Tarjeta"
+      "medio": "Tarjeta",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Chapman's Peak · peaje",
@@ -733,17 +737,20 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. Peaje por vehículo, ida",
-      "medio": "Tarjeta"
+      "medio": "Tarjeta",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Tranvía de Franschhoek · Orange Line y chófer",
       "proveedor": "Wine Tram",
       "fecha": "2026-08-20",
       "categoria": "Actividades",
-      "importe": 2680.0,
-      "moneda": "ZAR",
+      "importe": 149.69,
+      "moneda": "EUR",
       "estado": "pagado",
-      "nota": "Reserva F6FA-5E38 · factura 0410209 · R700 el tranvía y R1.980 el chófer"
+      "nota": "Reserva F6FA-5E38 · factura R2.680 · cargados 149,69 € en MyCard *7231. La tarjeta convirtió a 17,90, peor que los 18,62 de Revolut",
+      "pagadoPor": "alvaro",
+      "medio": "Tarjeta"
     },
     {
       "concepto": "Stony Point · entrada",
@@ -754,7 +761,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. Entrada por persona, dos personas",
-      "medio": "Efectivo"
+      "medio": "Efectivo",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Barco de ballenas en Hermanus",
@@ -765,7 +773,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado y opcional. Salida de unas 2 h, dos personas",
-      "medio": "Tarjeta"
+      "medio": "Tarjeta",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Table Mountain · teleférico",
@@ -776,7 +785,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. Billete de ida y vuelta, dos personas",
-      "medio": "Tarjeta"
+      "medio": "Tarjeta",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Bourke's Luck Potholes · entrada",
@@ -787,7 +797,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. De R65 a R130 por persona según temporada, dos personas. Efectivo",
-      "medio": "Efectivo"
+      "medio": "Efectivo",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Three Rondavels · mirador",
@@ -798,7 +809,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. De R25 a R75 por persona, dos personas. Efectivo",
-      "medio": "Efectivo"
+      "medio": "Efectivo",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Miradores y cascadas de la Panorama Route",
@@ -809,7 +821,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "nota": "Estimado. God's Window, Pinnacle Rock, Lisbon y Berlin Falls, dos personas",
-      "medio": "Efectivo"
+      "medio": "Efectivo",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Áreas de picnic y extras en Kruger",
@@ -820,7 +833,8 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "medio": "Efectivo",
-      "nota": "Estimado. Cafés, hornillos y compras en los picnics"
+      "nota": "Estimado. Cafés, hornillos y compras en los picnics",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Propinas y aparcacoches en el Cabo",
@@ -831,51 +845,20 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "medio": "Efectivo",
-      "nota": "Estimado. De 5 a 10 rands por aparcacoches y propinas de restaurante"
+      "nota": "Estimado. De 5 a 10 rands por aparcacoches y propinas de restaurante",
+      "pagadoPor": "alvaro"
     },
     {
-      "concepto": "Propina al ranger de Vuyani",
-      "proveedor": "Vuyani",
-      "fecha": "2026-08-12",
-      "categoria": "Propinas",
-      "importe": 850.0,
-      "moneda": "ZAR",
-      "estado": "pendiente",
-      "medio": "Efectivo",
-      "nota": "En sobre y en mano, tras el safari de la mañana. Ocho salidas en cuatro noches"
-    },
-    {
-      "concepto": "Propina al tracker de Vuyani",
-      "proveedor": "Vuyani",
-      "fecha": "2026-08-12",
-      "categoria": "Propinas",
-      "importe": 500.0,
-      "moneda": "ZAR",
-      "estado": "pendiente",
-      "medio": "Efectivo",
-      "nota": "En sobre aparte. Si no hay tracker, repartir entre ranger y staff"
-    },
-    {
-      "concepto": "Propina al staff de Vuyani",
-      "proveedor": "Vuyani",
-      "fecha": "2026-08-12",
-      "categoria": "Propinas",
-      "importe": 350.0,
-      "moneda": "ZAR",
-      "estado": "pendiente",
-      "medio": "Efectivo",
-      "nota": "A la caja común de recepción, no a personas sueltas"
-    },
-    {
-      "concepto": "Comidas y combustible en Kruger",
+      "concepto": "Comidas y combustible · resto de Kruger",
       "proveedor": "varios",
-      "fecha": "2026-08-12",
+      "fecha": "2026-08-13",
       "categoria": "Comida",
-      "importe": 2500,
+      "importe": 2200.0,
       "moneda": "ZAR",
       "estado": "estimado",
       "medio": "Tarjeta",
-      "nota": "Estimado grueso. Cuatro días, restaurante del campamento, Lower Sabie y gasolina"
+      "nota": "Estimado. Días 13 a 16, incluida gasolina. El 12 ya está anotado como real",
+      "pagadoPor": "alvaro"
     },
     {
       "concepto": "Comidas y combustible en el Cabo",
@@ -886,7 +869,20 @@
       "moneda": "ZAR",
       "estado": "estimado",
       "medio": "Tarjeta",
-      "nota": "Estimado grueso. Cinco días, cenas, catas de Franschhoek y gasolina"
+      "nota": "Estimado grueso. Cinco días, cenas, catas de Franschhoek y gasolina",
+      "pagadoPor": "alvaro"
+    },
+    {
+      "concepto": "Depósito del coche de Kruger",
+      "proveedor": "Avis",
+      "fecha": "2026-08-12",
+      "categoria": "Coche",
+      "importe": 197.75,
+      "moneda": "EUR",
+      "estado": "deposito",
+      "medio": "Tarjeta",
+      "pagadoPor": "alvaro",
+      "nota": "Retención en MyCard *7231. Se cargaría el 1 de septiembre si no se libera"
     }
   ],
   "referencias": [

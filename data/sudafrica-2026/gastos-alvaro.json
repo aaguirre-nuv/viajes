@@ -97,5 +97,93 @@
     "moneda": "ZAR",
     "medio": "Recarga",
     "nota": "500 € al cambio de 18,62. Recarga antes de entrar en Kruger"
+  },
+  {
+    "id": "a-20260812-fb",
+    "fecha": "2026-08-12",
+    "categoria": "Otros",
+    "concepto": "Devolución del fondo de bebida",
+    "tercero": "Vuyani",
+    "importe": 1200.0,
+    "moneda": "ZAR",
+    "medio": "Ingreso",
+    "nota": "Parte no consumida del fondo común. Entra como efectivo, no reduce ningún gasto anotado"
+  },
+  {
+    "id": "a-20260812-ks",
+    "fecha": "2026-08-12",
+    "categoria": "Comida",
+    "concepto": "Cena: hamburguesa de venado y escalope de cocodrilo",
+    "tercero": "Kruger Station, Skukuza",
+    "importe": 595.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "nota": "Cerveza Darling Draught y limonada. Sin propina incluida"
+  },
+  {
+    "id": "a-20260812-p1",
+    "fecha": "2026-08-12",
+    "categoria": "Propinas",
+    "concepto": "Propina al ranger",
+    "tercero": "Vuyani",
+    "importe": 600.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "nota": "En mano, tras el safari de la mañana"
+  },
+  {
+    "id": "a-20260812-p2",
+    "fecha": "2026-08-12",
+    "categoria": "Propinas",
+    "concepto": "Propina al tracker",
+    "tercero": "Vuyani",
+    "importe": 400.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "nota": "En sobre aparte"
+  },
+  {
+    "id": "a-20260812-p3",
+    "fecha": "2026-08-12",
+    "categoria": "Propinas",
+    "concepto": "Propina al staff",
+    "tercero": "Vuyani",
+    "importe": 300.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "nota": "Caja común de recepción"
+  },
+  {
+    "id": "a-20260812-ps1",
+    "fecha": "2026-08-12",
+    "categoria": "Comida",
+    "concepto": "Agua, rusks, quesitos y aceite de trufa",
+    "tercero": "The Park's Shop, Skukuza",
+    "importe": 164.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "nota": "Visa ...8993 · ref SKUKP/3/000382619"
+  },
+  {
+    "id": "a-20260812-ps2",
+    "fecha": "2026-08-12",
+    "categoria": "Souvenirs",
+    "concepto": "Mapa y guía del Kruger",
+    "tercero": "The Park's Shop, Skukuza",
+    "importe": 160.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "nota": "Visa ...8993 · ref SKUKP/3/000382620"
+  },
+  {
+    "id": "a-20260812-tasas",
+    "fecha": "2026-08-12",
+    "categoria": "Tasas",
+    "concepto": "Tasas de conservación de Kruger",
+    "tercero": "SANParks Skukuza",
+    "importe": 3612.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "nota": "Tres días, no cuatro: R602 por adulto y día. R1.204 menos de lo previsto"
   }
 ]
