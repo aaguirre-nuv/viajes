@@ -253,22 +253,16 @@
           "eventos": [
             {
               "hora": "06:00",
-              "texto": "Salida al abrir la puerta del campamento · H4-1 hacia el este",
+              "texto": "Salida al abrir la puerta · H4-1 hacia el este",
               "clave": true
-            },
-            {
-              "hora": "07:30",
-              "texto": "Desvíos de grava hacia el río · los mejores avistamientos"
             },
             {
               "hora": "09:00",
-              "texto": "Nkuhlu · área de picnic junto al Sabie, café y piernas estiradas",
-              "clave": true
+              "texto": "Nkuhlu · área de picnic junto al Sabie"
             },
             {
               "hora": "11:00",
-              "texto": "Sunset Dam · hipopótamos, cocodrilos y aves acuáticas",
-              "clave": true
+              "texto": "Sunset Dam · hipopótamos, cocodrilos y aves acuáticas"
             },
             {
               "hora": "11:30",
@@ -277,24 +271,23 @@
             },
             {
               "hora": "14:00",
-              "texto": "Vuelta por la S30, Salitje Road · pista de tierra, menos coches",
+              "texto": "Vuelta por la S30, Salitje Road"
+            },
+            {
+              "hora": "16:30",
+              "texto": "Mathekenyane Hill · mirador de 360° sobre el bosque",
               "clave": true
             },
             {
-              "hora": "17:00",
-              "texto": "Llegada a Skukuza"
-            },
-            {
-              "hora": "18:30",
-              "texto": "Cena temprana en el campamento"
+              "hora": "19:00",
+              "texto": "Cena en el Cattle Baron"
             },
             {
               "hora": "20:00",
-              "texto": "Night Drive, unas 2 h",
-              "clave": true
+              "texto": "Night Drive · ANULADO, se cambia por descansar"
             }
           ],
-          "aviso": "El día grande. La H4-1 son solo 43 km pero se van dos o tres horas con paradas: sigue el Sabie y es donde mejores opciones hay de león, leopardo y hiena, porque el bosque de ribera tiene casi cien impalas por kilómetro cuadrado. También es la carretera más transitada del parque, así que sal a las 06:00 y evita las caravanas. A la vuelta, la S30 va por tierra y con mucho menos tráfico."
+          "aviso": "El Night Drive queda anulado: mucho cansancio, poca visibilidad y frío. Está pagado y lo normal es que SANParks no devuelva nada, pero avisa en recepción por si acaso y para liberar la plaza."
         }
       ]
     },
@@ -630,7 +623,8 @@
       "estado": "pagado",
       "fecha": "2026-08-14",
       "categoria": "Actividades",
-      "pagadoPor": "alvaro"
+      "pagadoPor": "alvaro",
+      "nota": "No realizado. Se decidió descansar antes del día largo de la Panorama Route"
     },
     {
       "concepto": "Community Fund",

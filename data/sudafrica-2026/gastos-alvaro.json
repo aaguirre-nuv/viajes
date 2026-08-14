@@ -242,5 +242,41 @@
     "medio": "Tarjeta",
     "pagadoPor": "comun",
     "nota": "R448 más R22 de propina · parada del día en la H4-1"
+  },
+  {
+    "id": "a-20260814-cb",
+    "fecha": "2026-08-14",
+    "categoria": "Comida",
+    "concepto": "Cena: chateaubriand, ensalada de solomillo, cerveza y agua",
+    "tercero": "Cattle Baron, Skukuza",
+    "importe": 633.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R576 más R57 de propina · factura 02492690 · Nedbank"
+  },
+  {
+    "id": "a-20260814-ps1",
+    "fecha": "2026-08-14",
+    "categoria": "Comida",
+    "concepto": "Agua, limonadas y zumo de piña",
+    "tercero": "The Park's Shop, Skukuza",
+    "importe": 86.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Parte de la compra de R421 · ref SKUKP/4/000289404"
+  },
+  {
+    "id": "a-20260814-ps2",
+    "fecha": "2026-08-14",
+    "categoria": "Souvenirs",
+    "concepto": "Imán de cebra y juego de posavasos",
+    "tercero": "The Park's Shop, Skukuza",
+    "importe": 335.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Parte de la compra de R421 · ref SKUKP/4/000289404"
   }
 ]
