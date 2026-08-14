@@ -44,8 +44,10 @@
     "importe": 5591.06,
     "moneda": "ZAR",
     "medio": "Recarga",
-    "nota": "300 € al cambio de 18,64. No es gasto: alimenta la cuenta en rands",
-    "pagadoPor": "alvaro"
+    "nota": "300 € que entraron como R5.591,06, a 18,6369",
+    "pagadoPor": "alvaro",
+    "aporte": 300.0,
+    "monedaAporte": "EUR"
   },
   {
     "id": "a-20260811-1037",
@@ -104,8 +106,10 @@
     "importe": 9308.21,
     "moneda": "ZAR",
     "medio": "Recarga",
-    "nota": "500 € al cambio de 18,62. Recarga antes de entrar en Kruger",
-    "pagadoPor": "laura"
+    "nota": "500 € de Laura que entraron como R9.308,21, a 18,6164",
+    "pagadoPor": "laura",
+    "aporte": 500.0,
+    "monedaAporte": "EUR"
   },
   {
     "id": "a-20260812-fb",
@@ -202,5 +206,41 @@
     "medio": "Tarjeta",
     "nota": "Tres días, no cuatro: R602 por adulto y día. R1.204 menos de lo previsto",
     "pagadoPor": "comun"
+  },
+  {
+    "id": "a-20260813-cb",
+    "fecha": "2026-08-13",
+    "categoria": "Comida",
+    "concepto": "Cena: tabla de carnes, cerveza y agua",
+    "tercero": "Cattle Baron, Skukuza",
+    "importe": 700.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R648 más R52 de propina · factura 02492029"
+  },
+  {
+    "id": "a-20260813-golf",
+    "fecha": "2026-08-13",
+    "categoria": "Comida",
+    "concepto": "Almuerzo: wrap de pollo, sándwich y refrescos",
+    "tercero": "Golf Club de Skukuza",
+    "importe": 322.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R312 más R10 de propina"
+  },
+  {
+    "id": "a-20260814-bd",
+    "fecha": "2026-08-14",
+    "categoria": "Comida",
+    "concepto": "Comida: dos Big Daddy y dos limonadas",
+    "tercero": "Lower Sabie",
+    "importe": 470.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R448 más R22 de propina · parada del día en la H4-1"
   }
 ]

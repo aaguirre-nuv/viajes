@@ -849,15 +849,15 @@
       "pagadoPor": "alvaro"
     },
     {
-      "concepto": "Comidas y combustible · resto de Kruger",
+      "concepto": "Comidas y combustible · días 15 y 16",
       "proveedor": "varios",
-      "fecha": "2026-08-13",
+      "fecha": "2026-08-15",
       "categoria": "Comida",
-      "importe": 2200.0,
+      "importe": 1500.0,
       "moneda": "ZAR",
       "estado": "estimado",
       "medio": "Tarjeta",
-      "nota": "Estimado. Días 13 a 16, incluida gasolina. El 12 ya está anotado como real",
+      "nota": "Estimado. Comidas del traslado y gasolina para devolver el coche",
       "pagadoPor": "alvaro"
     },
     {
