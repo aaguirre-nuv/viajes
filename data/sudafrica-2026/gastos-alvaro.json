@@ -127,7 +127,7 @@
     "id": "a-20260812-ks",
     "fecha": "2026-08-12",
     "categoria": "Comida",
-    "concepto": "Cena: hamburguesa de venado y escalope de cocodrilo",
+    "concepto": "Cena: hamburguesa de venado, escalope de cocodrilo, cerveza Darling Draught y limonada",
     "tercero": "Kruger Station, Skukuza",
     "importe": 595.0,
     "moneda": "ZAR",
@@ -236,12 +236,12 @@
     "fecha": "2026-08-14",
     "categoria": "Comida",
     "concepto": "Comida: dos Big Daddy y dos limonadas",
-    "tercero": "Lower Sabie",
+    "tercero": "Mugg & Bean On The Move, Lower Sabie",
     "importe": 470.0,
     "moneda": "ZAR",
     "medio": "Tarjeta",
     "pagadoPor": "comun",
-    "nota": "R448 más R22 de propina · parada del día en la H4-1"
+    "nota": "R448 más R22 de propina · Apple Pay"
   },
   {
     "id": "a-20260814-cb",
@@ -254,6 +254,18 @@
     "medio": "Tarjeta",
     "pagadoPor": "comun",
     "nota": "R576 más R57 de propina · factura 02492690 · Nedbank"
+  },
+  {
+    "id": "a-20260814-nkuhlu",
+    "fecha": "2026-08-14",
+    "categoria": "Comida",
+    "concepto": "Parada en el área de picnic",
+    "tercero": "Nkuhlu Picnic Site",
+    "importe": 160.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Apple Pay · parada de media mañana en la H4-1"
   },
   {
     "id": "a-20260814-ps1",
@@ -278,5 +290,101 @@
     "medio": "Tarjeta",
     "pagadoPor": "comun",
     "nota": "Parte de la compra de R421 · ref SKUKP/4/000289404"
+  },
+  {
+    "id": "a-20260815-cp",
+    "fecha": "2026-08-15",
+    "categoria": "Comida",
+    "concepto": "Comida: costillas, ensalada griega, pancakes y dos cervezas",
+    "tercero": "The Chubby Pig, Bourke's Luck",
+    "importe": 525.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R475 más R50 de propina · factura INV_00/1/005770"
+  },
+  {
+    "id": "a-20260815-gw",
+    "fecha": "2026-08-15",
+    "categoria": "Tasas",
+    "concepto": "Entrada a God's Window",
+    "tercero": "MTPA",
+    "importe": 162.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Dos adultos internacionales · recibo 573625 · confirmado en el extracto de Revolut"
+  },
+  {
+    "id": "a-20260815-numbi",
+    "fecha": "2026-08-15",
+    "categoria": "Combustible",
+    "concepto": "Repostaje camino de la Panorama Route",
+    "tercero": "Total, Numbi Gate · Hazyview",
+    "importe": 1327.76,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Depósito lleno antes de subir al cañón"
+  },
+  {
+    "id": "a-20260815-pin",
+    "fecha": "2026-08-15",
+    "categoria": "Tasas",
+    "concepto": "Entrada a Pinnacle Rock",
+    "tercero": "MTPA",
+    "importe": 138.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Visa ...8993 · 10:25 · sí aceptaban tarjeta"
+  },
+  {
+    "id": "a-20260815-potholes",
+    "fecha": "2026-08-15",
+    "categoria": "Tasas",
+    "concepto": "Entrada a Bourke's Luck Potholes",
+    "tercero": "MTPA",
+    "importe": 346.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Dos adultos internacionales"
+  },
+  {
+    "id": "a-20260815-rondavels",
+    "fecha": "2026-08-15",
+    "categoria": "Tasas",
+    "concepto": "Entrada al mirador de los Three Rondavels",
+    "tercero": "MTPA",
+    "importe": 200.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "En efectivo, sin recibo. La mejor vista de la ruta"
+  },
+  {
+    "id": "a-20260815-safcol",
+    "fecha": "2026-08-15",
+    "categoria": "Tasas",
+    "concepto": "Entrada a Lisbon Falls",
+    "tercero": "SAFCOL",
+    "importe": 130.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Recibo 028424 · 11:00 · tarifa por vehículo, no por persona"
+  },
+  {
+    "id": "a-20260816-total",
+    "fecha": "2026-08-16",
+    "categoria": "Combustible",
+    "concepto": "Repostaje antes de devolver el coche",
+    "tercero": "TotalEnergies, Hoedspruit",
+    "importe": 609.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Depósito lleno para la entrega en el aeropuerto"
   }
 ]
