@@ -458,32 +458,35 @@
           "etiqueta": "Hermanus · ballenas",
           "eventos": [
             {
-              "hora": "08:00",
+              "hora": "06:30",
               "texto": "Salida por la R44, la costera desde Gordon's Bay",
               "clave": true
             },
             {
-              "hora": "10:00",
-              "texto": "Stony Point, Betty's Bay · pingüinos, mucha menos gente que Boulders",
+              "hora": "08:15",
+              "texto": "Hermanus · Cliff Path desde Gearing Point, en plena ventana buena",
+              "clave": true
+            },
+            {
+              "hora": "11:00",
+              "texto": "Old Harbour y el pregonero de ballenas con su cuerno de kelp"
+            },
+            {
+              "hora": "12:30",
+              "texto": "Comida en Hermanus"
+            },
+            {
+              "hora": "14:00",
+              "texto": "Stony Point, Betty's Bay · pingüinos, de vuelta",
               "clave": true,
               "pte": true
             },
             {
-              "hora": "11:30",
-              "texto": "Hermanus · Cliff Path, 12 km de miradores sobre Walker Bay",
-              "clave": true
-            },
-            {
-              "hora": "14:00",
-              "texto": "Opcional: barco desde el New Harbour · reservar antes",
-              "pte": true
-            },
-            {
-              "hora": "17:00",
-              "texto": "Regreso a Ciudad del Cabo · unas 2 h"
+              "hora": "16:00",
+              "texto": "Regreso a Ciudad del Cabo"
             }
           ],
-          "aviso": "Agosto es temporada de partos: se ven madres con crías y hay menos gente que en septiembre. Desde el Cliff Path pasan a veces a cinco metros de la orilla, así que el plan de tierra ya vale por sí solo. Si haces el barco, llama esa misma mañana para saber cómo está el mar, y ten en cuenta que no devuelven el dinero si no hay avistamientos."
+          "aviso": "El orden importa: la ventana buena de ballenas es de 8 a 10 de la mañana y a partir de la una el viento del oeste estropea la visibilidad. Por eso Hermanus va primero y Stony Point a la vuelta, aunque quede de paso a la ida. Lleva prismáticos y algo de abrigo: el acantilado está expuesto."
         },
         {
           "fecha": "2026-08-20",
@@ -756,18 +759,6 @@
       "estado": "estimado",
       "nota": "Estimado. Entrada por persona, dos personas",
       "medio": "Efectivo",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Barco de ballenas en Hermanus",
-      "proveedor": "New Harbour",
-      "fecha": "2026-08-19",
-      "categoria": "Actividades",
-      "importe": 2600,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado y opcional. Salida de unas 2 h, dos personas",
-      "medio": "Tarjeta",
       "pagadoPor": "alvaro"
     },
     {
@@ -1169,7 +1160,7 @@
           "cierra con viento"
         ]
       ],
-      "nota": "Agosto es invierno en el Cabo: lluvia, viento y tiempo imprevisible. El teleférico, los barcos y Chapman's Peak se cancelan sin aviso. Reserva solo el tranvía con antelación y deja lo demás abierto para poder mover los días según el parte. Del tranvía, la recomendación unánime es elegir tres bodegas y no correr por toda la línea; las catas se pagan aparte del billete."
+      "nota": "Agosto es invierno en el Cabo: lluvia, viento y tiempo imprevisible. El teleférico, los barcos y Chapman's Peak se cancelan sin aviso. Reserva solo el tranvía con antelación y deja lo demás abierto. En Hermanus el Cliff Path es gratis y da doce kilómetros con más de veinte miradores: en temporada de partos las ballenas pasan a metros de la orilla y el barco no añade gran cosa."
     },
     {
       "titulo": "Cenas · Sea Point",
