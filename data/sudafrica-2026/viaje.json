@@ -499,22 +499,29 @@
             },
             {
               "hora": "09:05",
-              "texto": "Salida del tranvía · Groot Drakenstein Terminal, Orange Line",
+              "texto": "Salida del tranvía · Groot Drakenstein, Orange Line",
               "clave": true
             },
             {
               "hora": "09:30",
-              "texto": "Primera cata corta · Noble Hill o Backsberg"
+              "texto": "Babylonstoren · jardín de ocho acres y cata",
+              "clave": true,
+              "pte": true
             },
             {
-              "hora": "11:30",
-              "texto": "Babylonstoren · jardín de ocho acres y comida en Babel",
+              "hora": "12:15",
+              "texto": "Salir hacia Boschendal con un vehículo de margen",
+              "clave": true
+            },
+            {
+              "hora": "13:00",
+              "texto": "Comida en The Deli, Boschendal · reservado a nombre de Laura",
               "clave": true,
               "pte": true
             },
             {
               "hora": "15:00",
-              "texto": "Última parada · Boschendal o Solms Delta",
+              "texto": "Última parada · Solms Delta o Allée Bleue",
               "pte": true
             },
             {
@@ -523,7 +530,7 @@
               "clave": true
             }
           ],
-          "aviso": "Reserva mesa por teléfono en la finca donde vayáis a comer: el propio tranvía avisa de que algún restaurante puede estar cerrado ese día. Babylonstoren es la parada que más se llena. Recoged los billetes quince minutos antes y confirmad con el tranvía dónde se entregan, que la Orange Line no sale del terminal de Franschhoek sino del de Groot Drakenstein. Las catas se pagan en cada bodega, aparte del billete."
+          "aviso": "La comida está reservada a las 13:00 en Boschendal, que es una parada de la propia línea, así que el horario manda sobre el recorrido. Al recoger los billetes pregunta la frecuencia exacta y calcula un vehículo entero de margen para llegar: si lo pierdes, el siguiente puede tardar una hora. Una parada antes de comer y otra después, no más."
         }
       ]
     },
@@ -868,6 +875,18 @@
       "medio": "Tarjeta",
       "pagadoPor": "alvaro",
       "nota": "Retención en MyCard *7231. Se cargaría el 1 de septiembre si no se libera"
+    },
+    {
+      "concepto": "Comida en The Deli y catas de Franschhoek",
+      "proveedor": "Boschendal",
+      "fecha": "2026-08-20",
+      "categoria": "Comida",
+      "importe": 1400.0,
+      "moneda": "ZAR",
+      "estado": "estimado",
+      "medio": "Tarjeta",
+      "pagadoPor": "laura",
+      "nota": "Estimado. Comida para dos más las catas, que se pagan en cada bodega aparte del billete"
     }
   ],
   "referencias": [
@@ -1264,7 +1283,7 @@
       "titulo": "Franschhoek · día 20",
       "filas": [
         [
-          "Reserva",
+          "Reserva del tranvía",
           "F6FA-5E38"
         ],
         [
@@ -1276,23 +1295,23 @@
           "Groot Drakenstein"
         ],
         [
-          "Pagado",
-          "R2.680"
+          "Comida",
+          "The Deli, Boschendal"
         ],
         [
-          "Comer",
-          "Babylonstoren, Babel"
+          "Hora",
+          "13:00 · 2 personas"
         ],
         [
-          "Alternativas",
-          "Boschendal · Solms Delta"
+          "Teléfono",
+          "+27 21 870 4273"
         ],
         [
           "Catas",
           "aparte, en cada bodega"
         ]
       ],
-      "nota": "Ocho paradas: Noble Hill, Babylonstoren, Backsberg, Vrede en Lust, Plaisir de Merle, Allée Bleue, Solms Delta y Boschendal. Con salida a las 09:05 dan para tres o cuatro sin agobios. Reserva mesa por teléfono cuanto antes. Sin devolución por no presentarse ni por llegar tarde; cancelar con más de 24 h sí devuelve el importe."
+      "nota": "Boschendal es una de las ocho paradas de la línea, así que la reserva de las 13:00 fija el recorrido: una parada antes y otra después. Babylonstoren es la mejor candidata para la mañana por su jardín, pero sal de allí a las 12:15 para no ir con lo justo. Sin devolución por no presentarse ni por llegar tarde al tranvía; cancelar con más de 24 h sí devuelve el importe."
     },
     {
       "titulo": "Efectivo · cómo funciona",
