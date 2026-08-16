@@ -504,33 +504,48 @@
             },
             {
               "hora": "09:30",
-              "texto": "Babylonstoren · jardín de ocho acres y cata",
+              "texto": "Babylonstoren · huertos e invernaderos primero, cata después",
               "clave": true,
               "pte": true
             },
             {
-              "hora": "12:15",
-              "texto": "Salir hacia Boschendal con un vehículo de margen",
+              "hora": "11:30",
+              "texto": "Transporte hacia Boschendal",
               "clave": true
+            },
+            {
+              "hora": "11:45",
+              "texto": "Boschendal · paseo por el werf y copa de Cap Classique",
+              "pte": true
             },
             {
               "hora": "13:00",
-              "texto": "Comida en The Deli, Boschendal · reservado a nombre de Laura",
+              "texto": "Comida en The Deli · reservado a nombre de Laura",
               "clave": true,
               "pte": true
             },
             {
-              "hora": "15:00",
-              "texto": "Última parada · Solms Delta o Allée Bleue",
+              "hora": "14:45",
+              "texto": "Sobremesa sin prisa y hasta la plataforma del tranvía"
+            },
+            {
+              "hora": "15:15",
+              "texto": "Vrede en Lust · terraza cubierta con vistas a la montaña",
+              "clave": true,
               "pte": true
             },
             {
+              "hora": "16:30",
+              "texto": "Último transporte de vuelta · no lo pierdas",
+              "clave": true
+            },
+            {
               "hora": "17:00",
-              "texto": "Vuelta a Ciudad del Cabo con el chófer",
+              "texto": "Terminal y recogida del chófer",
               "clave": true
             }
           ],
-          "aviso": "La comida está reservada a las 13:00 en Boschendal, que es una parada de la propia línea, así que el horario manda sobre el recorrido. Al recoger los billetes pregunta la frecuencia exacta y calcula un vehículo entero de margen para llegar: si lo pierdes, el siguiente puede tardar una hora. Una parada antes de comer y otra después, no más."
+          "aviso": "Tres bodegas y comida sin reloj, en vez de cuatro a la carrera. El único enlace crítico es el de las 16:30: si lo pierdes, el siguiente tarda una hora y descuadra la recogida. Al recoger los billetes por la mañana pregunta la frecuencia real de la línea y ajusta las horas de la tarde: lo de que pasa cada 60 minutos está sin confirmar. En Babylonstoren se paga una entrada pequeña al jardín, lleva la tarjeta a mano."
         }
       ]
     },
@@ -1295,23 +1310,23 @@
           "Groot Drakenstein"
         ],
         [
-          "Comida",
-          "The Deli, Boschendal"
+          "Bodegas",
+          "Babylonstoren · Boschendal · Vrede en Lust"
         ],
         [
-          "Hora",
-          "13:00 · 2 personas"
+          "Comida",
+          "The Deli · 13:00 · 2 personas"
         ],
         [
           "Teléfono",
           "+27 21 870 4273"
         ],
         [
-          "Catas",
-          "aparte, en cada bodega"
+          "Enlace crítico",
+          "16:30 de vuelta"
         ]
       ],
-      "nota": "Boschendal es una de las ocho paradas de la línea, así que la reserva de las 13:00 fija el recorrido: una parada antes y otra después. Babylonstoren es la mejor candidata para la mañana por su jardín, pero sal de allí a las 12:15 para no ir con lo justo. Sin devolución por no presentarse ni por llegar tarde al tranvía; cancelar con más de 24 h sí devuelve el importe."
+      "nota": "Tres bodegas, no cuatro: la cuarta obligaba a comer en una hora y a encadenar tres enlaces seguidos. Así tenéis hora y tres cuartos de mesa y un solo enlace que no se puede perder. Confirma la frecuencia de la línea al recoger los billetes. Sin devolución por no presentarse ni por llegar tarde al tranvía; cancelar con más de 24 h sí devuelve el importe."
     },
     {
       "titulo": "Efectivo · cómo funciona",
