@@ -396,10 +396,53 @@
               "texto": "Cena tranquila por Sea Point"
             }
           ],
-          "aviso": "Es domingo y el centro de rehabilitación de Moholoholo cierra los domingos, así que la mañana da poco de sí. Con el vuelo a las 14:10 y la entrega del coche, hay que salir sobre las 12:00. Si queréis meter algo, preguntad en el camp por el Hoedspruit Endangered Species Centre, pero comprobad horario y duración antes: dos horas de visita salen muy justas."
+          "aviso": "Día de tránsito. El centro de rehabilitación de Moholoholo cierra los domingos, así que la mañana dio para desayunar sin prisa y poco más."
         },
         {
           "fecha": "2026-08-17",
+          "etiqueta": "Médico + Table Mountain",
+          "eventos": [
+            {
+              "hora": "08:00",
+              "texto": "Última media pastilla de Apocard con el desayuno",
+              "clave": true
+            },
+            {
+              "hora": "08:35",
+              "texto": "Llamar a Sunset Pharmacy · +27 21 434 3333 · preguntar stock de flecainida",
+              "clave": true,
+              "pte": true
+            },
+            {
+              "hora": "10:30",
+              "texto": "Dra. Orit Laskov · MyFamilyGP · Sea Point Medical Centre, 11 Kloof Rd, suite 404",
+              "clave": true
+            },
+            {
+              "hora": "11:15",
+              "texto": "Sunset Pharmacy · mismo edificio, planta baja · retirar la medicación",
+              "clave": true,
+              "pte": true
+            },
+            {
+              "hora": "12:30",
+              "texto": "Comida por Sea Point"
+            },
+            {
+              "hora": "14:00",
+              "texto": "Table Mountain · teleférico · comprobar estado en la web antes de salir",
+              "clave": true,
+              "pte": true
+            },
+            {
+              "hora": "17:00",
+              "texto": "Bajada y paseo por Camps Bay o el promenade"
+            }
+          ],
+          "aviso": "Table Mountain va hoy porque es el día más flojo de viento de la semana: 14 km/h del noreste, frente a los 21–23 del sur del martes y el jueves. Con ese viento del sur el teleférico cierra. Va a estar nublado, así que mira las cámaras del cableway antes de subir: si la mesa está tapada, no merece la pena el billete. Plan B a mano: Bo-Kaap, Kirstenbosch o el V&A."
+        },
+        {
+          "fecha": "2026-08-18",
           "etiqueta": "Península del Cabo",
           "eventos": [
             {
@@ -433,27 +476,7 @@
               "texto": "Vuelta por Muizenberg y Kalk Bay"
             }
           ],
-          "aviso": "Comprueba antes de salir si Chapman's Peak está abierto: cierra con mal tiempo y hay que rodear por Ou Kaapse Weg. El barco de Duiker Island también depende del estado del mar. Anochece sobre las 18:00, así que no dejes Boulders para más tarde de las 16:00."
-        },
-        {
-          "fecha": "2026-08-18",
-          "etiqueta": "Comodín",
-          "eventos": [
-            {
-              "hora": "",
-              "texto": "Table Mountain si amanece despejado · el teleférico cierra con viento",
-              "pte": true
-            },
-            {
-              "hora": "",
-              "texto": "Bo-Kaap, Kirstenbosch o el V&A Waterfront"
-            },
-            {
-              "hora": "",
-              "texto": "Lo que se haya caído por el tiempo los días anteriores"
-            }
-          ],
-          "aviso": "Día sin cerrar a propósito. Mira el parte cada noche y mete Table Mountain en la mañana que amanezca despejada. Ahora que el tranvía está fijado el 20, este es el único día que puedes mover, así que guárdalo para eso."
+          "aviso": "Comprueba antes de salir si Chapman's Peak está abierto: cierra con mal tiempo y hay que rodear por Ou Kaapse Weg. El barco de Duiker Island depende del estado del mar y hoy sopla del sur a 21 km/h, así que puede caerse. Anochece sobre las 18:00: no dejes Boulders para después de las 16:00. Al perder el día comodín, si algo se cae aquí ya no hay hueco donde recolocarlo."
         },
         {
           "fecha": "2026-08-19",
@@ -560,6 +583,10 @@
           "fecha": "2026-08-21",
           "etiqueta": "Ciudad del Cabo",
           "eventos": [
+            {
+              "hora": "07:20",
+              "texto": "Amanecer en el promenade de Sea Point · el único día despejado de la semana"
+            },
             {
               "hora": "09:00",
               "texto": "Check-out Casa on Kei"
@@ -1315,6 +1342,44 @@
         ]
       ],
       "nota": "La pestaña Dinero calcula sola cuánto te falta por pagar en metálico y si el margen da o no. Cada reserva pendiente lleva marcado si se espera pagar en efectivo o con tarjeta, así que la previsión se ajusta según vas contratando. La comisión del cajero son unos R50 fijos más el porcentaje de Revolut, y con la franquicia mensual gastada la siguiente retirada sale cara: saca una sola vez y de sobra. Y si un cajero o un datáfono ofrece cobrar en euros, di siempre que no y paga en rands."
+    },
+    {
+      "titulo": "Salud · Ciudad del Cabo",
+      "filas": [
+        [
+          "Medicación",
+          "Apocard (flecainida) 100 mg"
+        ],
+        [
+          "Pauta",
+          "½ desayuno + ½ cena"
+        ],
+        [
+          "Dra. Orit Laskov",
+          "17 ago · 10:30 · ZAR 915"
+        ],
+        [
+          "MyFamilyGP",
+          "+27 21 439 6060"
+        ],
+        [
+          "Sea Point Medical Centre",
+          "11 Kloof Rd, suite 404"
+        ],
+        [
+          "Sunset Pharmacy",
+          "+27 21 434 3333 · 8:30–21:00"
+        ],
+        [
+          "Urgencias 24 h",
+          "New Somerset Hospital, Green Point"
+        ],
+        [
+          "Hoja SaludMadrid",
+          "nº 24080433 · CIPA 1553346074"
+        ]
+      ],
+      "nota": "El neceser con la medicación se quedó en Moholoholo. Pide en la consulta receta para dos semanas y una carta breve en inglés: te vale para llevar las pastillas en cabina de vuelta a Madrid. Guarda la factura para el seguro de viaje."
     }
   ],
   "etiquetasDiario": [
