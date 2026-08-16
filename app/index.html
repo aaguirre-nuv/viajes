@@ -1013,7 +1013,8 @@ function pintarDiario(){
       + '<div class="row"><div style="flex:1"><label for="d-l">Dónde</label>'
         + '<input id="d-l" placeholder="Lower Sabie" autocomplete="off"></div></div>'
       + '<button class="go" id="d-add">Apuntar</button></div>'
-      : '<div class="msg info">Solo lectura. Ve a Ajustes para poder escribir.</div>')
+      : '<div class="msg info">Las entradas se escriben en el fichero del repositorio. '
+        + 'Si quieres apuntarlas desde aquí, configura el acceso en Ajustes.</div>')
 
     + (listaDiario().length
         ? '<div class="filtros" style="margin-top:14px">'
