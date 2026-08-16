@@ -18,12 +18,14 @@
     {
       "id": "alvaro",
       "nombre": "Álvaro",
-      "fichero": "gastos-alvaro.json"
+      "fichero": "gastos-alvaro.json",
+      "ficheroDiario": "diario-alvaro.json"
     },
     {
       "id": "laura",
       "nombre": "Laura",
-      "fichero": "gastos-laura.json"
+      "fichero": "gastos-laura.json",
+      "ficheroDiario": "diario-laura.json"
     }
   ],
   "categorias": [
@@ -407,7 +409,7 @@
             },
             {
               "hora": "10:00",
-              "texto": "Barco a Duiker Island · Drumbeat, taquilla en el puerto, R150 por adulto, 40 min",
+              "texto": "Barco a Duiker Island · colonia de lobos marinos, unos 40 min",
               "clave": true,
               "pte": true
             },
@@ -431,7 +433,7 @@
               "texto": "Vuelta por Muizenberg y Kalk Bay"
             }
           ],
-          "aviso": "Comprueba antes de salir si Chapman's Peak está abierto: cierra con mal tiempo y hay que rodear por Ou Kaapse Weg. El barco de Duiker Island no se reserva: se compra en la caseta del puerto, pero llama antes por si el mar lo cancela. Anochece sobre las 18:00, así que no dejes Boulders para más tarde de las 16:00."
+          "aviso": "Comprueba antes de salir si Chapman's Peak está abierto: cierra con mal tiempo y hay que rodear por Ou Kaapse Weg. El barco de Duiker Island también depende del estado del mar. Anochece sobre las 18:00, así que no dejes Boulders para más tarde de las 16:00."
         },
         {
           "fecha": "2026-08-18",
@@ -796,42 +798,6 @@
       "pagadoPor": "alvaro"
     },
     {
-      "concepto": "Bourke's Luck Potholes · entrada",
-      "proveedor": "MTPA",
-      "fecha": "2026-08-15",
-      "categoria": "Tasas",
-      "importe": 260,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. De R65 a R130 por persona según temporada, dos personas. Efectivo",
-      "medio": "Efectivo",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Three Rondavels · mirador",
-      "proveedor": "MTPA",
-      "fecha": "2026-08-15",
-      "categoria": "Tasas",
-      "importe": 150,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. De R25 a R75 por persona, dos personas. Efectivo",
-      "medio": "Efectivo",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Miradores y cascadas de la Panorama Route",
-      "proveedor": "MTPA",
-      "fecha": "2026-08-15",
-      "categoria": "Tasas",
-      "importe": 240,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. God's Window, Pinnacle Rock, Lisbon y Berlin Falls, dos personas",
-      "medio": "Efectivo",
-      "pagadoPor": "alvaro"
-    },
-    {
       "concepto": "Áreas de picnic y extras en Kruger",
       "proveedor": "SANParks",
       "fecha": "2026-08-13",
@@ -853,18 +819,6 @@
       "estado": "estimado",
       "medio": "Efectivo",
       "nota": "Estimado. De 5 a 10 rands por aparcacoches y propinas de restaurante",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Comidas y combustible · días 15 y 16",
-      "proveedor": "varios",
-      "fecha": "2026-08-15",
-      "categoria": "Comida",
-      "importe": 1500.0,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "medio": "Tarjeta",
-      "nota": "Estimado. Comidas del traslado y gasolina para devolver el coche",
       "pagadoPor": "alvaro"
     },
     {
@@ -1183,7 +1137,7 @@
         ],
         [
           "Duiker Island",
-          "Hout Bay · taquilla, sin reserva"
+          "desde Hout Bay"
         ],
         [
           "Chapman's Peak",
@@ -1195,44 +1149,6 @@
         ]
       ],
       "nota": "Agosto es invierno en el Cabo: lluvia, viento y tiempo imprevisible. El teleférico, los barcos y Chapman's Peak se cancelan sin aviso. Reserva solo el tranvía con antelación y deja lo demás abierto. En Hermanus el Cliff Path es gratis y da doce kilómetros con más de veinte miradores: en temporada de partos las ballenas pasan a metros de la orilla y el barco no añade gran cosa."
-    },
-    {
-      "titulo": "Duiker Island · el barco",
-      "filas": [
-        [
-          "Dónde",
-          "puerto de Hout Bay"
-        ],
-        [
-          "Operador",
-          "Drumbeat Charters"
-        ],
-        [
-          "Precio",
-          "R150 adulto · 40 min"
-        ],
-        [
-          "Salidas",
-          "09:15 · 10:00 · 10:45 · 12:00 · 14:00 · 15:15"
-        ],
-        [
-          "Versión larga",
-          "1 h · focas + naufragio Bos 400"
-        ],
-        [
-          "Teléfono",
-          "+27 82 658 7055 · WhatsApp"
-        ],
-        [
-          "Reserva",
-          "no hace falta · taquilla"
-        ],
-        [
-          "Alternativa",
-          "Nauticat · mínimo 20 personas"
-        ]
-      ],
-      "nota": "No lo reserves online: en el muelle sale más barato que en las plataformas y eliges la salida según cómo esté el mar ese día. Mejor a primera hora, antes de que entre el viento del sureste, y encadenando Chapman's Peak y Cape Point. Nauticat necesita veinte pasajeros para salir, así que Drumbeat es la apuesta segura sin reserva. En agosto no es raro cruzarse con ballenas de camino."
     },
     {
       "titulo": "Cenas · Sea Point",
@@ -1400,5 +1316,14 @@
       ],
       "nota": "La pestaña Dinero calcula sola cuánto te falta por pagar en metálico y si el margen da o no. Cada reserva pendiente lleva marcado si se espera pagar en efectivo o con tarjeta, así que la previsión se ajusta según vas contratando. La comisión del cajero son unos R50 fijos más el porcentaje de Revolut, y con la franquicia mensual gastada la siguiente retirada sale cara: saca una sola vez y de sobra. Y si un cajero o un datáfono ofrece cobrar en euros, di siempre que no y paga en rands."
     }
+  ],
+  "etiquetasDiario": [
+    "Avistamiento",
+    "Anécdota",
+    "Gente",
+    "Lugar",
+    "Comida",
+    "Momento",
+    "Otro"
   ]
 }
