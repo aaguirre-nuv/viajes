@@ -281,6 +281,19 @@ th.sortable:hover{color:var(--green2)}
 .tefe tr.hecho .c-sal{font-weight:500}
 .tefe tr.seco .c-sal{color:var(--red)}
 .tefe tr.seco{background:rgba(168,56,42,.08)}
+
+/* Entradas del diario */
+.nota{
+  position:relative;background:var(--bone2);border-left:3px solid var(--ochre);
+  border-radius:0 3px 3px 0;padding:11px 13px;margin-bottom:7px
+}
+.nota.cola{opacity:.65;border-left-style:dotted}
+.nota-t{font-size:14.5px;line-height:1.5}
+.nota-m{
+  font-family:var(--mono);font-size:9.5px;color:var(--mute);
+  letter-spacing:.04em;margin-top:7px
+}
+.nota .item-x{position:absolute;top:7px;right:7px;padding:0}
 </style>
 </head>
 <body>
@@ -296,6 +309,7 @@ th.sortable:hover{color:var(--green2)}
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" data-p="hoy" aria-selected="true">Hoy</button>
       <button class="tab" role="tab" data-p="ruta" aria-selected="false">Ruta</button>
+      <button class="tab" role="tab" data-p="diario" aria-selected="false">Diario</button>
       <button class="tab" role="tab" data-p="gastos" aria-selected="false">Gastos</button>
       <button class="tab" role="tab" data-p="dinero" aria-selected="false">Dinero</button>
       <button class="tab" role="tab" data-p="detalle" aria-selected="false">Detalle</button>
@@ -306,6 +320,7 @@ th.sortable:hover{color:var(--green2)}
 
   <section id="p-hoy"></section>
   <section id="p-ruta" hidden></section>
+  <section id="p-diario" hidden></section>
   <section id="p-gastos" hidden></section>
   <section id="p-dinero" hidden></section>
   <section id="p-detalle" hidden></section>
@@ -331,6 +346,7 @@ const BASE_DATA = "../data/" + VIAJE_ID + "/";
 const LS_CFG  = "diario:cfg";
 const LS_COLA = "diario:cola:" + VIAJE_ID;
 const LS_SNAP = "diario:snap:" + VIAJE_ID;
+const LS_COLAD = "diario:colad:" + VIAJE_ID;
 
 /* Instantánea local: lo último que se cargó bien.
    Es lo que se usa cuando no hay cobertura. */
@@ -350,7 +366,9 @@ function guardarSnap(){
 
 let V = null;               // viaje.json
 let gastos = [];            // confirmados, de todos los viajeros
-let cola = [];              // pendientes de subir
+let cola = [];              // gastos pendientes de subir
+let diario = [];            // entradas del diario, de todos los viajeros
+let colaD = [];             // entradas del diario pendientes de subir
 let cfg = { owner:"", repo:"", rama:"main", quien:"", token:"" };
 let mensaje = null;
 
@@ -433,10 +451,12 @@ function guardarCfg(){
   try{ localStorage.setItem(LS_CFG, JSON.stringify(cfg)); }catch(e){}
 }
 function cargarCola(){
-  try{ cola = JSON.parse(localStorage.getItem(LS_COLA) || "[]"); }catch(e){ cola = []; }
+  try{ cola  = JSON.parse(localStorage.getItem(LS_COLA)  || "[]"); }catch(e){ cola  = []; }
+  try{ colaD = JSON.parse(localStorage.getItem(LS_COLAD) || "[]"); }catch(e){ colaD = []; }
 }
 function guardarCola(){
-  try{ localStorage.setItem(LS_COLA, JSON.stringify(cola)); }catch(e){}
+  try{ localStorage.setItem(LS_COLA,  JSON.stringify(cola));  }catch(e){}
+  try{ localStorage.setItem(LS_COLAD, JSON.stringify(colaD)); }catch(e){}
 }
 const configurado = () => cfg.owner && cfg.repo && cfg.quien;
 
@@ -446,6 +466,10 @@ const API = "https://api.github.com";
 function rutaGastos(quien){
   const v = (V.viajeros || []).find(x => x.id === quien);
   return "data/" + VIAJE_ID + "/" + (v && v.fichero ? v.fichero : "gastos-" + quien + ".json");
+}
+function rutaDiario(quien){
+  const v = (V.viajeros || []).find(x => x.id === quien);
+  return "data/" + VIAJE_ID + "/" + (v && v.ficheroDiario ? v.ficheroDiario : "diario-" + quien + ".json");
 }
 function cabeceras(){
   const h = { "Accept":"application/vnd.github+json" };
@@ -532,10 +556,58 @@ async function cargarGastos(){
   }
 }
 
+async function cargarDiario(){
+  const salida = [];
+  let fallo = false;
+  for(const v of (V.viajeros || [])){
+    let lista = null;
+    if(configurado()){
+      try{ lista = (await leerFicheroRepo(rutaDiario(v.id))).contenido || []; }catch(e){}
+    }
+    if(lista === null){
+      try{
+        const r = await fetch(BASE_DATA + (v.ficheroDiario || "diario-" + v.id + ".json"),
+                              { cache:"no-cache" });
+        if(r.ok) lista = await r.json();
+      }catch(e){}
+    }
+    if(lista === null){ fallo = true; continue; }
+    lista.forEach(x => salida.push(Object.assign({ quien: v.id }, x)));
+  }
+  if(fallo && snap.diario && snap.diario.length){
+    diario = snap.diario;
+  }else{
+    diario = salida;
+    snap.diario = salida;
+    guardarSnap();
+  }
+}
+
+async function vaciarColaDiario(){
+  if(!colaD.length || !configurado() || !cfg.token || !navigator.onLine) return;
+  try{
+    const ruta = rutaDiario(cfg.quien);
+    const { contenido, sha } = await leerFicheroRepo(ruta);
+    const ids = new Set(contenido.map(x => x.id));
+    const nuevos = colaD.filter(x => !ids.has(x.id));
+    const salida = contenido.concat(nuevos)
+      .sort((a,b) => String(a.fecha).localeCompare(b.fecha) || String(a.id).localeCompare(b.id));
+    await escribirFicheroRepo(ruta, salida, sha,
+      nuevos.length === 1 ? "Diario: " + nuevos[0].texto.slice(0,50)
+                          : nuevos.length + " entradas de diario");
+    colaD = [];
+    guardarCola();
+    await cargarDiario();
+  }catch(e){
+    mensaje = { tipo:"bad", texto:"No se pudo subir el diario: " + e.message };
+  }
+}
+
 /* Deja en caché todo lo necesario para abrir sin cobertura */
 async function prepararSinConexion(){
   const rutas = [BASE_DATA + "viaje.json"]
-    .concat((V.viajeros || []).map(v => BASE_DATA + v.fichero));
+    .concat((V.viajeros || []).map(v => BASE_DATA + v.fichero))
+    .concat((V.viajeros || []).map(v => BASE_DATA + (v.ficheroDiario || "")).filter(x => x.slice(-5) === ".json"));
   for(const r of rutas){
     try{ await fetch(r, { cache:"reload" }); }catch(e){}
   }
@@ -887,6 +959,96 @@ function sumaPorEstado(est){
                 .reduce((s,x) => s + aBase(x.importe, x.moneda), 0);
 }
 
+/* ---------- pestaña Diario ---------- */
+let fEtiq = "";
+
+function listaDiario(){
+  return diario.concat(colaD.map(x => Object.assign({ quien:cfg.quien, _cola:true }, x)));
+}
+
+function pintarDiario(){
+  const hoy = hoyISO();
+  let items = listaDiario();
+  if(fEtiq) items = items.filter(x => x.etiqueta === fEtiq);
+  items.sort((a,b) => String(b.fecha).localeCompare(a.fecha)
+                   || String(b.id).localeCompare(a.id));
+
+  const etiqs = V.etiquetasDiario || ["Otro"];
+  const opt = (v,txt,sel) => '<option value="' + esc(v) + '"'
+    + (sel === v ? " selected" : "") + '>' + esc(txt) + '</option>';
+
+  // agrupar por día
+  let html = "", ultimo = null;
+  items.forEach(x => {
+    if(x.fecha !== ultimo){
+      html += '<h2>' + fmtFecha(x.fecha) + '</h2>';
+      ultimo = x.fecha;
+    }
+    html += '<div class="nota' + (x._cola ? " cola" : "") + '">'
+      + '<div class="nota-t">' + esc(x.texto).replace(/\n/g,"<br>") + '</div>'
+      + '<div class="nota-m">'
+        + (x.etiqueta ? '<span class="cat exp">' + esc(x.etiqueta) + '</span>' : "")
+        + (x.lugar ? esc(x.lugar) + " · " : "")
+        + esc(nombreDe(x.quien))
+        + (x._cola ? " · sin subir" : "")
+      + '</div>'
+      + (x._cola ? '<button class="item-x" data-deld="' + esc(x.id) + '">×</button>' : "")
+      + '</div>';
+  });
+
+  const aviso = mensaje ? '<div class="msg ' + mensaje.tipo + '">' + esc(mensaje.texto) + '</div>' : "";
+
+  document.getElementById("p-diario").innerHTML =
+    aviso
+    + (configurado() ? '<div class="form">'
+      + '<div class="row"><div style="flex:1"><label for="d-t">Qué ha pasado</label>'
+        + '<textarea id="d-t" placeholder="El leopardo cruzando la S30 delante del coche…"></textarea>'
+      + '</div></div>'
+      + '<div class="row">'
+        + '<div style="flex:1"><label for="d-e">Etiqueta</label><select id="d-e">'
+          + etiqs.map(e => '<option>' + esc(e) + '</option>').join("") + '</select></div>'
+        + '<div style="flex:1"><label for="d-f">Fecha</label>'
+          + '<input id="d-f" type="date" value="' + hoy + '"></div>'
+      + '</div>'
+      + '<div class="row"><div style="flex:1"><label for="d-l">Dónde</label>'
+        + '<input id="d-l" placeholder="Lower Sabie" autocomplete="off"></div></div>'
+      + '<button class="go" id="d-add">Apuntar</button></div>'
+      : '<div class="msg info">Solo lectura. Ve a Ajustes para poder escribir.</div>')
+
+    + (listaDiario().length
+        ? '<div class="filtros" style="margin-top:14px">'
+          + '<select id="d-fil">' + opt("","Todas las etiquetas",fEtiq)
+            + etiqs.map(e => opt(e,e,fEtiq)).join("") + '</select></div>'
+          + (html || '<div class="empty">Nada con esa etiqueta.</div>')
+        : '<div class="empty" style="margin-top:14px">El diario está vacío.<br>'
+          + 'Apunta lo primero que te venga a la cabeza.</div>');
+
+  const add = document.getElementById("d-add");
+  if(add) add.onclick = anadirNota;
+  const fil = document.getElementById("d-fil");
+  if(fil) fil.onchange = e => { fEtiq = e.target.value; pintarDiario(); };
+  document.querySelectorAll("[data-deld]").forEach(b =>
+    b.onclick = () => { colaD = colaD.filter(x => x.id !== b.dataset.deld);
+                        guardarCola(); pintarDiario(); });
+}
+
+async function anadirNota(){
+  const t = document.getElementById("d-t").value.trim();
+  if(!t){ mensaje = { tipo:"bad", texto:"Escribe algo antes de apuntar." }; return pintarDiario(); }
+  mensaje = null;
+  colaD.push({
+    id: cfg.quien.slice(0,1) + "d-" + Date.now(),
+    fecha: document.getElementById("d-f").value || hoyISO(),
+    lugar: (document.getElementById("d-l").value || "").trim(),
+    etiqueta: document.getElementById("d-e").value,
+    texto: t
+  });
+  guardarCola();
+  pintarDiario();
+  await vaciarColaDiario();
+  pintarDiario();
+}
+
 /* ---------- pestaña Detalle ---------- */
 let ordCol = "fecha", ordDir = 1, fCat = "", fTipo = "", fEstado = "";
 
@@ -1011,8 +1173,13 @@ function reparto(){
 
   listaGastos().filter(esRecarga).forEach(g => {
     const k = g.pagadoPor || g.quien;
-    sumar(aport, k, aBase(g.importe, g.moneda));
-    sumar(puesto, k, aBase(g.importe, g.moneda));
+    // Si consta lo que salió del bolsillo, se usa eso: es un dato exacto
+    // y no debe depender de ningún tipo de cambio.
+    const v = g.aporte != null
+      ? aBase(g.aporte, g.monedaAporte || V.monedaBase)
+      : aBase(g.importe, g.moneda);
+    sumar(aport, k, v);
+    sumar(puesto, k, v);
   });
   libro().forEach(x => {
     if(!x.quien || x.quien === "comun") return;
@@ -1025,7 +1192,9 @@ function reparto(){
   const pax   = (V.viajeros || []).length || 1;
   const mitad = total / pax;
   const e = efectivo(), t = tarjeta();
-  return { puesto, aport, directo, total, mitad, fondo: e.mano + t.saldo };
+  return { puesto, aport, directo, total, mitad,
+           fondoZar: e.mano + t.saldo,
+           fondo: (e.mano + t.saldo) / cambio("ZAR") };
 }
 
 function pintarDinero(){
@@ -1166,7 +1335,8 @@ function pintarDinero(){
               ? '<div class="msg info">' + esc(nombreDe(debe[0])) + ' le debe '
                 + base(Math.abs(debe[1])) + ' a ' + esc(nombreDe(cobra[0])) + '.</div>'
               : "")
-          + '<p class="note">Quedan ' + base(r.fondo) + ' sin gastar en el fondo común, '
+          + '<p class="note">Quedan R' + n2(r.fondoZar) + ', o sea ' + base(r.fondo)
+            + ', sin gastar en el fondo común, '
             + 'entre tarjeta y efectivo. Ese dinero es de los dos: si sobra al final, '
             + 'se reparte y no altera el cálculo de arriba.</p>';
       })()
@@ -1288,10 +1458,10 @@ function pintarEstado(){
     el.textContent = "Sin conexión · copia del "
       + (snap.ts ? new Date(snap.ts).toLocaleDateString("es-ES") : "?")
       + (cola.length ? " · " + cola.length + " en espera" : "");
-  }else if(cola.length){
+  }else if(cola.length || colaD.length){
     el.className = "estado pend";
-    el.textContent = cola.length + " apuntes sin subir · toca para reintentar";
-    el.onclick = async () => { await vaciarCola(); repintar(); };
+    el.textContent = (cola.length + colaD.length) + " sin subir · toca para reintentar";
+    el.onclick = async () => { await vaciarCola(); await vaciarColaDiario(); repintar(); };
   }else if(configurado()){
     el.className = "estado";
     el.textContent = "Al día · " + nombreDe(cfg.quien);
@@ -1303,7 +1473,7 @@ function pintarEstado(){
 
 /* ---------------- arranque ---------------- */
 const paneles = {
-  hoy:pintarHoy, ruta:pintarRuta, gastos:pintarGastos,
+  hoy:pintarHoy, ruta:pintarRuta, diario:pintarDiario, gastos:pintarGastos,
   dinero:pintarDinero, detalle:pintarDetalle, datos:pintarDatos, ajustes:pintarAjustes
 };
 let actual = "hoy";
@@ -1322,7 +1492,9 @@ document.querySelectorAll(".tab").forEach(t => t.onclick = () => {
   window.scrollTo({ top:0, behavior:"smooth" });
 });
 
-window.addEventListener("online", async () => { await vaciarCola(); repintar(); });
+window.addEventListener("online", async () => {
+  await vaciarCola(); await vaciarColaDiario(); repintar();
+});
 window.addEventListener("offline", pintarEstado);
 
 (async function(){
@@ -1337,7 +1509,9 @@ window.addEventListener("offline", pintarEstado);
   }
   pintarCabecera();
   await cargarGastos();
+  await cargarDiario();
   await vaciarCola();
+  await vaciarColaDiario();
   Object.values(paneles).forEach(f => f());
   document.getElementById("p-hoy").hidden = false;
   pintarEstado();
