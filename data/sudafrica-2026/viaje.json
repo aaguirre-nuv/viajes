@@ -400,6 +400,47 @@
         },
         {
           "fecha": "2026-08-17",
+          "etiqueta": "Médico y ciudad",
+          "eventos": [
+            {
+              "hora": "08:35",
+              "texto": "Llamar a Sunset Pharmacy para confirmar existencias",
+              "clave": true
+            },
+            {
+              "hora": "10:30",
+              "texto": "Cita en Sea Point Medical Centre · 11 Kloof Rd, suite 404",
+              "clave": true
+            },
+            {
+              "hora": "11:30",
+              "texto": "Farmacia en el mismo edificio · abierta de 8:30 a 21:00",
+              "clave": true,
+              "pte": true
+            },
+            {
+              "hora": "13:00",
+              "texto": "Comida por Regent Road"
+            },
+            {
+              "hora": "14:00",
+              "texto": "Mirar tablemountain.net y la montaña desde la calle",
+              "clave": true
+            },
+            {
+              "hora": "14:30",
+              "texto": "Si está despejada, teleférico · si no, Zeitz MOCAA en el V&A",
+              "pte": true
+            },
+            {
+              "hora": "17:00",
+              "texto": "Bo-Kaap o Company's Garden si queda luz"
+            }
+          ],
+          "aviso": "Hoy es el día con menos viento de la semana, 14 km/h del noreste, así que el cable debería operar. Lo que no está garantizado es la vista: nublado toda la jornada. Decidid a las 14:00 mirando la montaña, no el parte. Si tiene el mantel puesto, no subáis y os vais al MOCAA, que está bajo techo y el edificio del silo ya justifica la entrada."
+        },
+        {
+          "fecha": "2026-08-18",
           "etiqueta": "Península del Cabo",
           "eventos": [
             {
@@ -409,22 +450,24 @@
             },
             {
               "hora": "10:00",
-              "texto": "Barco a Duiker Island · colonia de lobos marinos, unos 40 min",
+              "texto": "Barco a Duiker Island · llamar antes al puerto",
               "clave": true,
               "pte": true
             },
             {
               "hora": "11:30",
-              "texto": "Chapman's Peak Drive · carretera de peaje"
+              "texto": "Chapman's Peak Drive · comprobar que está abierta",
+              "pte": true
             },
             {
               "hora": "12:30",
               "texto": "Cabo de Buena Esperanza y Cape Point",
-              "clave": true
+              "clave": true,
+              "pte": true
             },
             {
               "hora": "15:30",
-              "texto": "Boulders Beach · pingüinos africanos, R245 por adulto, solo tarjeta",
+              "texto": "Boulders Beach · pingüinos, R245 por adulto, solo tarjeta",
               "clave": true,
               "pte": true
             },
@@ -433,27 +476,7 @@
               "texto": "Vuelta por Muizenberg y Kalk Bay"
             }
           ],
-          "aviso": "Comprueba antes de salir si Chapman's Peak está abierto: cierra con mal tiempo y hay que rodear por Ou Kaapse Weg. El barco de Duiker Island también depende del estado del mar. Anochece sobre las 18:00, así que no dejes Boulders para más tarde de las 16:00."
-        },
-        {
-          "fecha": "2026-08-18",
-          "etiqueta": "Comodín",
-          "eventos": [
-            {
-              "hora": "",
-              "texto": "Table Mountain si amanece despejado · el teleférico cierra con viento",
-              "pte": true
-            },
-            {
-              "hora": "",
-              "texto": "Bo-Kaap, Kirstenbosch o el V&A Waterfront"
-            },
-            {
-              "hora": "",
-              "texto": "Lo que se haya caído por el tiempo los días anteriores"
-            }
-          ],
-          "aviso": "Día sin cerrar a propósito. Mira el parte cada noche y mete Table Mountain en la mañana que amanezca despejada. Ahora que el tranvía está fijado el 20, este es el único día que puedes mover, así que guárdalo para eso."
+          "aviso": "Nublado pero sin lluvia prevista, y eso no estropea la península: Cape Point con cielo gris sigue mereciendo la pena y a los pingüinos les da igual. El viento sopla del sur a 21 km/h, así que el barco de Duiker Island es lo único con riesgo real. Anochece a las 18:17."
         },
         {
           "fecha": "2026-08-19",
@@ -558,15 +581,20 @@
       "dias": [
         {
           "fecha": "2026-08-21",
-          "etiqueta": "Ciudad del Cabo",
+          "etiqueta": "Vuelta",
           "eventos": [
             {
+              "hora": "07:20",
+              "texto": "Amanecer desde el paseo marítimo de Sea Point",
+              "clave": true
+            },
+            {
               "hora": "09:00",
-              "texto": "Check-out Casa on Kei"
+              "texto": "Check-out de Casa on Kei"
             },
             {
               "hora": "10:15",
-              "texto": "Entrega del coche en el aeropuerto de Ciudad del Cabo",
+              "texto": "Entrega del coche en el aeropuerto",
               "clave": true
             },
             {
@@ -575,7 +603,7 @@
               "clave": true
             }
           ],
-          "aviso": "Vuelo internacional: en el aeropuerto sobre las 11:00. Deja margen para la entrega del coche, que se hace en la terminal."
+          "aviso": "El único día despejado de la semana, y os lo vais a perder volando. Aprovechad al menos el amanecer desde el paseo: sale el sol a las 7:18 y desde Sea Point se ve la montaña limpia. En el aeropuerto sobre las 11:00, con margen para la entrega del coche."
         },
         {
           "fecha": "2026-08-22",
@@ -895,6 +923,32 @@
         }
       ],
       "nota": "El teleférico cierra por viento fuerte, no por nubosidad: puede estar operando y dejarte arriba dentro de una nube. Antes de pagar, mira la montaña desde la calle. Y para los barcos de Hout Bay y Hermanus no hay web fiable: hay que llamar esa misma mañana al puerto."
+    },
+    {
+      "titulo": "Table Mountain · cuándo",
+      "filas": [
+        [
+          "Lun 17",
+          "nublado · viento NE 14"
+        ],
+        [
+          "Mar 18",
+          "nublado · viento S 21"
+        ],
+        [
+          "Mié 19",
+          "nublado · viento S 16"
+        ],
+        [
+          "Jue 20",
+          "nublado · viento S 23"
+        ],
+        [
+          "Vie 21",
+          "despejado · pero voláis"
+        ]
+      ],
+      "nota": "La única ventana con cielo limpio es el viernes, y ese día se descarta por el vuelo. Así que el teleférico queda como plan oportunista: mira la montaña cada mañana y si algún día amanece sin mantel, deja lo que estés haciendo y sube. El lunes por la tarde es la mejor apuesta por viento, aunque no por nubes. Y si no sale, tampoco pasa nada: Lion's Head y Signal Hill dan vistas parecidas sin depender de un cable."
     },
     {
       "titulo": "Vuelos · ida",
