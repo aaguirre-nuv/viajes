@@ -424,20 +424,31 @@
             },
             {
               "hora": "14:00",
-              "texto": "Mirar tablemountain.net y la montaña desde la calle",
+              "texto": "Mirar la montaña desde la calle antes de decidir",
               "clave": true
             },
             {
               "hora": "14:30",
-              "texto": "Si está despejada, teleférico · si no, Zeitz MOCAA en el V&A",
+              "texto": "Si está despejada, teleférico · si no, Zeitz MOCAA",
               "pte": true
             },
             {
-              "hora": "17:00",
-              "texto": "Bo-Kaap o Company's Garden si queda luz"
+              "hora": "15:30",
+              "texto": "Bo-Kaap · Wale Street y los tramos bajos de Rose y Chiappini",
+              "clave": true,
+              "pte": true
+            },
+            {
+              "hora": "16:00",
+              "texto": "Casa rosa en el cruce de Rose con Wale · museo en el 71 de Wale"
+            },
+            {
+              "hora": "17:30",
+              "texto": "Vuelta antes de que caiga la tarde",
+              "clave": true
             }
           ],
-          "aviso": "Hoy es el día con menos viento de la semana, 14 km/h del noreste, así que el cable debería operar. Lo que no está garantizado es la vista: nublado toda la jornada. Decidid a las 14:00 mirando la montaña, no el parte. Si tiene el mantel puesto, no subáis y os vais al MOCAA, que está bajo techo y el edificio del silo ya justifica la entrada."
+          "aviso": "En Bo-Kaap la regla es la altura: pegaos a Buitengracht y no subáis la ladera. Evitad la parte alta de Hout Street y Van Der Meulen. Rose y Chiappini son las de las fotos y las que más tirones registran: haced la foto y guardad el móvil. Si una calle se vacía, dad la vuelta, y no estéis allí al anochecer. Barrio de vecinos, no decorado: pedid permiso antes de fotografiar a nadie. Antes, a las 14:00, decidid lo del teleférico mirando la montaña y no el parte."
         },
         {
           "fecha": "2026-08-18",
@@ -949,6 +960,40 @@
         ]
       ],
       "nota": "La única ventana con cielo limpio es el viernes, y ese día se descarta por el vuelo. Así que el teleférico queda como plan oportunista: mira la montaña cada mañana y si algún día amanece sin mantel, deja lo que estés haciendo y sube. El lunes por la tarde es la mejor apuesta por viento, aunque no por nubes. Y si no sale, tampoco pasa nada: Lion's Head y Signal Hill dan vistas parecidas sin depender de un cable."
+    },
+    {
+      "titulo": "Bo-Kaap · por dónde moverse",
+      "filas": [
+        [
+          "Wale Street",
+          "la espina · lo más seguro"
+        ],
+        [
+          "Rose y Chiappini",
+          "bajas, sí · altas, no"
+        ],
+        [
+          "Casa rosa",
+          "cruce de Rose con Wale"
+        ],
+        [
+          "Museo Bo-Kaap",
+          "71 Wale Street"
+        ],
+        [
+          "Hout Street arriba",
+          "evitar · El Kraal"
+        ],
+        [
+          "Van Der Meulen",
+          "evitar"
+        ],
+        [
+          "De noche",
+          "no, ni un momento"
+        ]
+      ],
+      "nota": "La regla es la altura: cuanto más cerca de Buitengracht y del centro, mejor; cuanto más subes la ladera, más solitario y peor. Si una calle se vacía de gente, date la vuelta. Rose y Chiappini son las de las fotos y tienen presencia policial diaria, pero son también donde más tirones sufren los turistas: haz la foto y guarda el móvil, no camines con él en la mano. Es un barrio de vecinos, no un decorado: pide permiso antes de fotografiar a nadie y no bloquees los portales. Y si aparcáis el coche, no dejéis absolutamente nada a la vista, que los robos en vehículos son el problema recurrente."
     },
     {
       "titulo": "Vuelos · ida",
