@@ -412,6 +412,18 @@
     "nota": ""
   },
   {
+    "id": "a-20260817-funda",
+    "fecha": "2026-08-17",
+    "categoria": "Souvenirs",
+    "concepto": "Funda de gafas · regalo para Mari Carmen",
+    "tercero": "Bo-Kaap",
+    "importe": 100.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": ""
+  },
+  {
     "id": "a-20260817-juno",
     "fecha": "2026-08-17",
     "categoria": "Comida",
@@ -434,6 +446,18 @@
     "medio": "Efectivo",
     "pagadoPor": "comun",
     "nota": "Sustituye al que se quedó en Moholoholo"
+  },
+  {
+    "id": "a-20260817-nn",
+    "fecha": "2026-08-17",
+    "categoria": "Comida",
+    "concepto": "Comida: hummus sabich, koftas de ternera y cordero, schnitzel dipper y dos limonanas",
+    "tercero": "Nish Nush, Bree Street",
+    "importe": 357.5,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R325 más el 10% de propina, R32,50 · mesa 5"
   },
   {
     "id": "a-20260817-rec",
