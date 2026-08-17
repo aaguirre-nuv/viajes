@@ -294,6 +294,22 @@ th.sortable:hover{color:var(--green2)}
   letter-spacing:.04em;margin-top:7px
 }
 .nota .item-x{position:absolute;top:7px;right:7px;padding:0}
+
+/* Enlaces dentro de las fichas de Datos */
+.enlaces{display:flex;flex-direction:column;gap:1px;margin-top:8px}
+.enlaces a{
+  display:block;background:var(--bone2);border-left:3px solid var(--ochre);
+  border-radius:0 3px 3px 0;padding:9px 11px;text-decoration:none;color:var(--ink)
+}
+.enlaces a:active{background:var(--bone3)}
+.enlaces .e-t{
+  display:block;font-size:13.5px;font-weight:500;color:var(--green2);
+  text-decoration:underline;text-underline-offset:2px
+}
+.enlaces .e-n{
+  display:block;font-family:var(--mono);font-size:9.5px;color:var(--mute);
+  margin-top:3px;letter-spacing:.03em;line-height:1.45
+}
 </style>
 </head>
 <body>
@@ -1355,6 +1371,13 @@ function pintarDatos(){
         ? '<table><tbody>' + r.filas.map(f =>
             '<tr><td>' + esc(f[0]) + '</td><td class="num r">' + esc(f[1]) + '</td></tr>').join("")
           + '</tbody></table>' : "")
+    + (r.enlaces && r.enlaces.length
+        ? '<div class="enlaces">' + r.enlaces.map(e =>
+            '<a href="' + esc(e.url) + '" target="_blank" rel="noopener">'
+            + '<span class="e-t">' + esc(e.texto) + '</span>'
+            + (e.nota ? '<span class="e-n">' + esc(e.nota) + '</span>' : "")
+            + '</a>').join("") + '</div>'
+        : "")
     + (r.nota ? '<p class="note">' + esc(r.nota) + '</p>' : "")).join("");
   document.getElementById("p-datos").innerHTML = refs || '<div class="empty">Sin datos de referencia.</div>';
 }
