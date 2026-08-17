@@ -259,13 +259,13 @@
     "id": "a-20260814-nkuhlu",
     "fecha": "2026-08-14",
     "categoria": "Comida",
-    "concepto": "Parada en el área de picnic",
+    "concepto": "Media mañana: dos muffins, un té y un capuchino",
     "tercero": "Nkuhlu Picnic Site",
     "importe": 160.0,
     "moneda": "ZAR",
     "medio": "Tarjeta",
     "pagadoPor": "comun",
-    "nota": "Apple Pay · parada de media mañana en la H4-1"
+    "nota": "Apple Pay · parada en la H4-1 camino de Lower Sabie"
   },
   {
     "id": "a-20260814-ps1",
@@ -361,7 +361,7 @@
     "moneda": "ZAR",
     "medio": "Efectivo",
     "pagadoPor": "comun",
-    "nota": "En efectivo, sin recibo. La mejor vista de la ruta"
+    "nota": "Recibo 065954 por R208, dos adultos extranjeros a R104. Cobrado R200 en efectivo"
   },
   {
     "id": "a-20260815-safcol",
@@ -376,6 +376,18 @@
     "nota": "Recibo 028424 · 11:00 · tarifa por vehículo, no por persona"
   },
   {
+    "id": "a-20260816-si",
+    "fecha": "2026-08-16",
+    "categoria": "Comida",
+    "concepto": "Cena: hamburguesa S&I, hamburguesa de pollo y agua",
+    "tercero": "Sonny and Irene, Station House",
+    "importe": 535.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R485 más R50 de propina · mesa 43 · primera cena en Ciudad del Cabo"
+  },
+  {
     "id": "a-20260816-total",
     "fecha": "2026-08-16",
     "categoria": "Combustible",
@@ -386,5 +398,53 @@
     "medio": "Tarjeta",
     "pagadoPor": "comun",
     "nota": "Depósito lleno para la entrega en el aeropuerto"
+  },
+  {
+    "id": "a-20260817-agua",
+    "fecha": "2026-08-17",
+    "categoria": "Comida",
+    "concepto": "Botella de agua",
+    "tercero": "Sea Point",
+    "importe": 12.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": ""
+  },
+  {
+    "id": "a-20260817-juno",
+    "fecha": "2026-08-17",
+    "categoria": "Comida",
+    "concepto": "Desayuno: dos bagels de bacon y aguacate, americano y chocolate caliente",
+    "tercero": "Juno, 6 Kloof Street",
+    "importe": 30.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Cuenta de R314 cubierta con los dos vales del hotel de R250. Solo se pagó la propina, R30 en efectivo, no los R31 escritos en el ticket"
+  },
+  {
+    "id": "a-20260817-nec",
+    "fecha": "2026-08-17",
+    "categoria": "Otros",
+    "concepto": "Neceser de repuesto",
+    "tercero": "Sea Point",
+    "importe": 250.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Sustituye al que se quedó en Moholoholo"
+  },
+  {
+    "id": "a-20260817-rec",
+    "fecha": "2026-08-17",
+    "categoria": "Otros",
+    "concepto": "Recarga de la cuenta en rands",
+    "tercero": "Revolut",
+    "importe": 9000.0,
+    "moneda": "ZAR",
+    "medio": "Recarga",
+    "pagadoPor": "alvaro",
+    "nota": "Añadidos R9.000 vía Apple Pay a las 13:07. Falta confirmar el importe en euros"
   }
 ]
