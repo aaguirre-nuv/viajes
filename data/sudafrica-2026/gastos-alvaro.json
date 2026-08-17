@@ -412,6 +412,30 @@
     "nota": ""
   },
   {
+    "id": "a-20260817-check1",
+    "fecha": "2026-08-17",
+    "categoria": "Comida",
+    "concepto": "Cena en casa: pizza BBQ, ensaladas de pollo tikka y piña, agua y limonada",
+    "tercero": "Checkers, Sea Point",
+    "importe": 246.35,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Parte de la compra de R416,34 · bolsa incluida"
+  },
+  {
+    "id": "a-20260817-check2",
+    "fecha": "2026-08-17",
+    "categoria": "Otros",
+    "concepto": "Aftershave",
+    "tercero": "Checkers, Sea Point",
+    "importe": 169.99,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Parte de la compra de R416,34"
+  },
+  {
     "id": "a-20260817-funda",
     "fecha": "2026-08-17",
     "categoria": "Souvenirs",
@@ -434,6 +458,30 @@
     "medio": "Efectivo",
     "pagadoPor": "comun",
     "nota": "Cuenta de R314 cubierta con los dos vales del hotel de R250. Solo se pagó la propina, R30 en efectivo, no los R31 escritos en el ticket"
+  },
+  {
+    "id": "a-20260817-mascaras",
+    "fecha": "2026-08-17",
+    "categoria": "Souvenirs",
+    "concepto": "Máscaras de animales",
+    "tercero": "Bo-Kaap",
+    "importe": 400.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": ""
+  },
+  {
+    "id": "a-20260817-mia",
+    "fecha": "2026-08-17",
+    "categoria": "Souvenirs",
+    "concepto": "Compra en Mia Melange · para nosotros, no regalo",
+    "tercero": "Mia Melange, The Watershed",
+    "importe": 345.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Visa 8993 · venta 2026/08/022062 · shop F70 del Watershed"
   },
   {
     "id": "a-20260817-nec",
@@ -470,5 +518,29 @@
     "medio": "Recarga",
     "pagadoPor": "alvaro",
     "nota": "Añadidos R9.000 vía Apple Pay a las 13:07. Falta confirmar el importe en euros"
+  },
+  {
+    "id": "a-20260817-uber1",
+    "fecha": "2026-08-17",
+    "categoria": "Transporte",
+    "concepto": "Uber hasta el centro",
+    "tercero": "Uber",
+    "importe": 76.0,
+    "moneda": "ZAR",
+    "medio": "Otra tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Cuenta común, no la Revolut"
+  },
+  {
+    "id": "a-20260817-uber2",
+    "fecha": "2026-08-17",
+    "categoria": "Transporte",
+    "concepto": "Uber al V&A Waterfront",
+    "tercero": "Uber",
+    "importe": 58.0,
+    "moneda": "ZAR",
+    "medio": "Otra tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Cuenta común, no la Revolut"
   }
 ]
