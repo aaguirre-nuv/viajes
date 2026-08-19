@@ -436,6 +436,31 @@
     "nota": "Parte de la compra de R416,34"
   },
   {
+    "id": "a-20260817-farm1",
+    "fecha": "2026-08-17",
+    "categoria": "Salud",
+    "concepto": "Medicación con receta local",
+    "tercero": "Sunset Pharmacy",
+    "importe": 325.45,
+    "moneda": "ZAR",
+    "medio": "Otra tarjeta",
+    "pagadoPor": "alvaro",
+    "nota": "Cuenta personal. Se habría pagado igual en Madrid",
+    "personal": true
+  },
+  {
+    "id": "a-20260817-farm2",
+    "fecha": "2026-08-17",
+    "categoria": "Otros",
+    "concepto": "Reposición de aseo: espuma, cuchillas, desodorante, cepillo y cacao",
+    "tercero": "Sunset Pharmacy",
+    "importe": 522.0,
+    "moneda": "ZAR",
+    "medio": "Otra tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Cuenta personal de Álvaro. Sustituye lo que se quedó en Moholoholo"
+  },
+  {
     "id": "a-20260817-funda",
     "fecha": "2026-08-17",
     "categoria": "Souvenirs",
@@ -458,6 +483,19 @@
     "medio": "Efectivo",
     "pagadoPor": "comun",
     "nota": "Cuenta de R314 cubierta con los dos vales del hotel de R250. Solo se pagó la propina, R30 en efectivo, no los R31 escritos en el ticket"
+  },
+  {
+    "id": "a-20260817-kway",
+    "fecha": "2026-08-17",
+    "categoria": "Otros",
+    "concepto": "Abrigo K-Way",
+    "tercero": "K-Way",
+    "importe": 1299.0,
+    "moneda": "ZAR",
+    "medio": "Otra tarjeta",
+    "pagadoPor": "alvaro",
+    "nota": "Cuenta personal. Prenda que se queda, no coste del viaje",
+    "personal": true
   },
   {
     "id": "a-20260817-mascaras",
@@ -508,6 +546,18 @@
     "nota": "R325 más el 10% de propina, R32,50 · mesa 5"
   },
   {
+    "id": "a-20260817-ooa",
+    "fecha": "2026-08-17",
+    "categoria": "Souvenirs",
+    "concepto": "Compra en Out of Africa Living",
+    "tercero": "Out of Africa Living, V&A",
+    "importe": 1060.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "15:15 · falta detallar qué se compró"
+  },
+  {
     "id": "a-20260817-rec",
     "fecha": "2026-08-17",
     "categoria": "Otros",
@@ -542,5 +592,101 @@
     "medio": "Otra tarjeta",
     "pagadoPor": "comun",
     "nota": "Cuenta común, no la Revolut"
+  },
+  {
+    "id": "a-20260817-uber3",
+    "fecha": "2026-08-17",
+    "categoria": "Transporte",
+    "concepto": "Uber de vuelta a Sea Point",
+    "tercero": "Uber",
+    "importe": 77.0,
+    "moneda": "ZAR",
+    "medio": "Otra tarjeta",
+    "pagadoPor": "comun",
+    "nota": "Cuenta común, no la Revolut"
+  },
+  {
+    "id": "a-20260818-agua",
+    "fecha": "2026-08-18",
+    "categoria": "Comida",
+    "concepto": "Agua",
+    "tercero": "—",
+    "importe": 30.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": ""
+  },
+  {
+    "id": "a-20260818-boul",
+    "fecha": "2026-08-18",
+    "categoria": "Tasas",
+    "concepto": "Entrada a Boulders Beach",
+    "tercero": "SANParks",
+    "importe": 490.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "11:50 · dos adultos internacionales a R245 · permiso 15520030"
+  },
+  {
+    "id": "a-20260818-chap",
+    "fecha": "2026-08-18",
+    "categoria": "Coche",
+    "concepto": "Peaje de Chapman's Peak Drive",
+    "tercero": "Entilini",
+    "importe": 68.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "09:24 · un solo sentido · el recibo indica pago en efectivo"
+  },
+  {
+    "id": "a-20260818-check",
+    "fecha": "2026-08-18",
+    "categoria": "Comida",
+    "concepto": "Cena en casa: tabla de quesos y embutidos, ensalada caprese, meze, crackers, higos, droëwors, cheesecake y zumos",
+    "tercero": "Checkers, Sea Point",
+    "importe": 616.2,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Total R616,28 con redondeo a R616,20 · pagado con R620, cambio R3,80"
+  },
+  {
+    "id": "a-20260818-juno",
+    "fecha": "2026-08-18",
+    "categoria": "Comida",
+    "concepto": "Desayuno: croissant relleno, focaccia, capuchino y chocolate caliente",
+    "tercero": "Juno, 6 Kloof Street",
+    "importe": 40.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Cuenta de R378 cubierta con los dos vales del hotel de R250. Solo se pagó la propina"
+  },
+  {
+    "id": "a-20260818-mag",
+    "fecha": "2026-08-18",
+    "categoria": "Souvenirs",
+    "concepto": "Imán de pingüino",
+    "tercero": "Boulders Penguin Sanctuary Shop",
+    "importe": 105.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "12:29 · pagado con R110, cambio R5"
+  },
+  {
+    "id": "a-20260818-sea",
+    "fecha": "2026-08-18",
+    "categoria": "Comida",
+    "concepto": "Comida: langostinos tigre, calamares, merluza en costra, cerveza y refresco",
+    "tercero": "Seaforth Restaurant, Simon's Town",
+    "importe": 956.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "13:31 · R866 más R90 de propina · mesa 22"
   }
 ]

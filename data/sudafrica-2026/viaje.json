@@ -456,38 +456,38 @@
           "eventos": [
             {
               "hora": "08:30",
-              "texto": "Salida hacia Hout Bay",
+              "texto": "Salida hacia la península"
+            },
+            {
+              "hora": "09:24",
+              "texto": "Chapman's Peak Drive · peaje de R68, en calma total",
               "clave": true
             },
             {
-              "hora": "10:00",
-              "texto": "Barco a Duiker Island · llamar antes al puerto",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "11:30",
-              "texto": "Chapman's Peak Drive · comprobar que está abierta",
-              "pte": true
-            },
-            {
-              "hora": "12:30",
+              "hora": "11:00",
               "texto": "Cabo de Buena Esperanza y Cape Point",
-              "clave": true,
-              "pte": true
+              "clave": true
             },
             {
-              "hora": "15:30",
-              "texto": "Boulders Beach · pingüinos, R245 por adulto, solo tarjeta",
-              "clave": true,
-              "pte": true
+              "hora": "11:50",
+              "texto": "Boulders Beach · pingüinos, R490 los dos",
+              "clave": true
+            },
+            {
+              "hora": "13:31",
+              "texto": "Comida en el Seaforth, Simon's Town",
+              "clave": true
             },
             {
               "hora": "17:00",
               "texto": "Vuelta por Muizenberg y Kalk Bay"
+            },
+            {
+              "hora": "19:30",
+              "texto": "Cena en casa con compra del Checkers"
             }
           ],
-          "aviso": "Nublado pero sin lluvia prevista, y eso no estropea la península: Cape Point con cielo gris sigue mereciendo la pena y a los pingüinos les da igual. El viento sopla del sur a 21 km/h, así que el barco de Duiker Island es lo único con riesgo real. Anochece a las 18:17."
+          "aviso": "Sin barco a Duiker Island: se fue directo por Chapman's Peak. La carretera abrió con 16 km de visibilidad y viento de 0,04 km/h."
         },
         {
           "fecha": "2026-08-19",
@@ -762,18 +762,6 @@
       "estado": "estimado",
       "nota": "Estimado. Tarifa internacional por adulto y día, dos personas",
       "medio": "Tarjeta",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Barco a Duiker Island",
-      "proveedor": "Hout Bay",
-      "fecha": "2026-08-17",
-      "categoria": "Actividades",
-      "importe": 300,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. Travesía corta de unos 40 min, dos personas",
-      "medio": "Efectivo",
       "pagadoPor": "alvaro"
     },
     {
