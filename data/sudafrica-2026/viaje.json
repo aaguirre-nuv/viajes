@@ -456,22 +456,31 @@
           "eventos": [
             {
               "hora": "08:30",
-              "texto": "Salida hacia la península"
+              "texto": "Salida de Sea Point"
             },
             {
-              "hora": "09:24",
-              "texto": "Chapman's Peak Drive · peaje de R68, en calma total",
+              "hora": "08:50",
+              "texto": "Camps Bay · mirador de los Doce Apóstoles",
               "clave": true
             },
             {
-              "hora": "11:00",
-              "texto": "Cabo de Buena Esperanza y Cape Point",
+              "hora": "09:24",
+              "texto": "Chapman's Peak Drive · peaje de R68, viento en calma",
+              "clave": true
+            },
+            {
+              "hora": "10:00",
+              "texto": "Playas de la costa oeste: Noordhoek, Kommetjie, faro de Slangkop, Witsands y Scarborough",
               "clave": true
             },
             {
               "hora": "11:50",
-              "texto": "Boulders Beach · pingüinos, R490 los dos",
+              "texto": "Boulders Beach · colonia de pingüinos del Cabo, R490",
               "clave": true
+            },
+            {
+              "hora": "12:29",
+              "texto": "Tienda de Boulders · imán de pingüino"
             },
             {
               "hora": "13:31",
@@ -479,15 +488,20 @@
               "clave": true
             },
             {
+              "hora": "14:03",
+              "texto": "Cabo de Buena Esperanza y Cape Point · R1.030, focas",
+              "clave": true
+            },
+            {
               "hora": "17:00",
-              "texto": "Vuelta por Muizenberg y Kalk Bay"
+              "texto": "Vuelta por Muizenberg y sus casetas de colores"
             },
             {
               "hora": "19:30",
               "texto": "Cena en casa con compra del Checkers"
             }
           ],
-          "aviso": "Sin barco a Duiker Island: se fue directo por Chapman's Peak. La carretera abrió con 16 km de visibilidad y viento de 0,04 km/h."
+          "aviso": "Sin barco a Duiker Island: se fue directo por Chapman's Peak y las focas se vieron después en el cabo. El orden se invirtió respecto a la ruta clásica —pingüinos antes que el cabo—, lo que obliga a cruzar la península desde Scarborough hasta Simon's Town y volver luego al sur."
         },
         {
           "fecha": "2026-08-19",

@@ -654,6 +654,18 @@
     "nota": "Total R616,28 con redondeo a R616,20 · pagado con R620, cambio R3,80"
   },
   {
+    "id": "a-20260818-cogh",
+    "fecha": "2026-08-18",
+    "categoria": "Tasas",
+    "concepto": "Entrada al Cabo de Buena Esperanza y Cape Point",
+    "tercero": "SANParks",
+    "importe": 1030.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "14:03 · dos adultos internacionales a R515 · coche sin cargo · permiso 15520936"
+  },
+  {
     "id": "a-20260818-juno",
     "fecha": "2026-08-18",
     "categoria": "Comida",
@@ -688,5 +700,29 @@
     "medio": "Efectivo",
     "pagadoPor": "comun",
     "nota": "13:31 · R866 más R90 de propina · mesa 22"
+  },
+  {
+    "id": "a-20260819-desc",
+    "fecha": "2026-08-19",
+    "categoria": "Otros",
+    "concepto": "Ajuste de efectivo por recuento",
+    "tercero": "—",
+    "importe": 102.8,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Descuadre entre el ledger y el recuento físico. Gasto no identificado, probablemente propinas o aparcacoches sin anotar"
+  },
+  {
+    "id": "a-20260819-juno",
+    "fecha": "2026-08-19",
+    "categoria": "Comida",
+    "concepto": "Desayuno: breakfast bun, huevos con tostada, americano y chocolate caliente",
+    "tercero": "Juno, 6 Kloof Street",
+    "importe": 30.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Cuenta de R264 cubierta con los vales del hotel. Solo se pagó la propina"
   }
 ]
