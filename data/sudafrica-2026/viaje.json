@@ -527,16 +527,15 @@
             },
             {
               "hora": "14:00",
-              "texto": "Stony Point, Betty's Bay · pingüinos, de vuelta",
-              "clave": true,
-              "pte": true
+              "texto": "Stony Point · no se llegó a hacer",
+              "clave": true
             },
             {
               "hora": "16:00",
               "texto": "Regreso a Ciudad del Cabo"
             }
           ],
-          "aviso": "El orden importa: la ventana buena de ballenas es de 8 a 10 de la mañana y a partir de la una el viento del oeste estropea la visibilidad. Por eso Hermanus va primero y Stony Point a la vuelta, aunque quede de paso a la ida. Lleva prismáticos y algo de abrigo: el acantilado está expuesto."
+          "aviso": "Sin parada en Stony Point: el día se quedó en Hermanus. Los pingüinos ya se habían visto en Boulders el día anterior."
         },
         {
           "fecha": "2026-08-20",
@@ -753,42 +752,6 @@
       "pagadoPor": "alvaro"
     },
     {
-      "concepto": "Cabo de Buena Esperanza · entrada",
-      "proveedor": "SANParks",
-      "fecha": "2026-08-17",
-      "categoria": "Tasas",
-      "importe": 1000,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. Tarifa internacional por adulto y día, dos personas",
-      "medio": "Tarjeta",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Boulders Beach · entrada",
-      "proveedor": "SANParks",
-      "fecha": "2026-08-17",
-      "categoria": "Tasas",
-      "importe": 490,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "R245 por adulto extranjero, dos personas. Solo tarjeta",
-      "medio": "Tarjeta",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Chapman's Peak · peaje",
-      "proveedor": "Entilini",
-      "fecha": "2026-08-17",
-      "categoria": "Coche",
-      "importe": 70,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. Peaje por vehículo, ida",
-      "medio": "Tarjeta",
-      "pagadoPor": "alvaro"
-    },
-    {
       "concepto": "Tranvía de Franschhoek · Orange Line y chófer",
       "proveedor": "Wine Tram",
       "fecha": "2026-08-20",
@@ -801,66 +764,6 @@
       "medio": "Tarjeta"
     },
     {
-      "concepto": "Stony Point · entrada",
-      "proveedor": "CapeNature",
-      "fecha": "2026-08-19",
-      "categoria": "Tasas",
-      "importe": 160,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. Entrada por persona, dos personas",
-      "medio": "Efectivo",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Table Mountain · teleférico",
-      "proveedor": "Cableway",
-      "fecha": "2026-08-20",
-      "categoria": "Actividades",
-      "importe": 1000,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "nota": "Estimado. Billete de ida y vuelta, dos personas",
-      "medio": "Tarjeta",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Áreas de picnic y extras en Kruger",
-      "proveedor": "SANParks",
-      "fecha": "2026-08-13",
-      "categoria": "Comida",
-      "importe": 300,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "medio": "Efectivo",
-      "nota": "Estimado. Cafés, hornillos y compras en los picnics",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Propinas y aparcacoches en el Cabo",
-      "proveedor": "varios",
-      "fecha": "2026-08-17",
-      "categoria": "Propinas",
-      "importe": 700,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "medio": "Efectivo",
-      "nota": "Estimado. De 5 a 10 rands por aparcacoches y propinas de restaurante",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Comidas y combustible en el Cabo",
-      "proveedor": "varios",
-      "fecha": "2026-08-16",
-      "categoria": "Comida",
-      "importe": 5500,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "medio": "Tarjeta",
-      "nota": "Estimado grueso. Cinco días, cenas, catas de Franschhoek y gasolina",
-      "pagadoPor": "alvaro"
-    },
-    {
       "concepto": "Depósito del coche de Kruger",
       "proveedor": "Avis",
       "fecha": "2026-08-12",
@@ -871,18 +774,6 @@
       "medio": "Tarjeta",
       "pagadoPor": "alvaro",
       "nota": "Retención en MyCard *7231. Se cargaría el 1 de septiembre si no se libera"
-    },
-    {
-      "concepto": "Comida en The Deli y catas de Franschhoek",
-      "proveedor": "Boschendal",
-      "fecha": "2026-08-20",
-      "categoria": "Comida",
-      "importe": 1400.0,
-      "moneda": "ZAR",
-      "estado": "estimado",
-      "medio": "Tarjeta",
-      "pagadoPor": "laura",
-      "nota": "Estimado. Comida para dos más las catas, que se pagan en cada bodega aparte del billete"
     }
   ],
   "referencias": [
