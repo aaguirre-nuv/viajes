@@ -381,11 +381,11 @@
     "categoria": "Comida",
     "concepto": "Cena: hamburguesa S&I, hamburguesa de pollo y agua",
     "tercero": "Sonny and Irene, Station House",
-    "importe": 535.0,
-    "moneda": "ZAR",
+    "importe": 29.16,
+    "moneda": "EUR",
     "medio": "Tarjeta",
     "pagadoPor": "comun",
-    "nota": "R485 más R50 de propina · mesa 43 · primera cena en Ciudad del Cabo"
+    "nota": "R485 más R50 de propina · cobrado del monedero en euros porque el saldo en rands no llegaba: 535 R a 18,35, peor cambio que el manual"
   },
   {
     "id": "a-20260816-total",
@@ -724,5 +724,77 @@
     "medio": "Efectivo",
     "pagadoPor": "comun",
     "nota": "Cuenta de R264 cubierta con los vales del hotel. Solo se pagó la propina"
+  },
+  {
+    "id": "a-20260820-baby",
+    "fecha": "2026-08-20",
+    "categoria": "Actividades",
+    "concepto": "Babylonstoren: dos Express Tasting, tabla de aperitivos y entradas",
+    "tercero": "Babylonstoren, Tasting Room",
+    "importe": 520.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R470 más R50 de propina · catas R95 cada una, snack platter R240, entradas R20 · solo tarjeta"
+  },
+  {
+    "id": "a-20260820-bolsa",
+    "fecha": "2026-08-20",
+    "categoria": "Otros",
+    "concepto": "Bolsa para transportar botellas de vino",
+    "tercero": "Wine Tram",
+    "importe": 45.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": ""
+  },
+  {
+    "id": "a-20260820-bosch",
+    "fecha": "2026-08-20",
+    "categoria": "Comida",
+    "concepto": "Comida en The Deli: solomillo del carnicero, tabla de quesos, copas de 1685 Merlot y Shiraz, y agua",
+    "tercero": "Boschendal, The Deli",
+    "importe": 910.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R825 más R85 de propina · mesa 36 en la terraza · reserva a nombre de Laura"
+  },
+  {
+    "id": "a-20260820-cellar",
+    "fecha": "2026-08-20",
+    "categoria": "Actividades",
+    "concepto": "Cata en el Cellar Door: dos maridajes de la gama 1685 con chocolate",
+    "tercero": "Boschendal, Cellar Door",
+    "importe": 550.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "R500 más R50 de propina · R250 por persona · 16:06"
+  },
+  {
+    "id": "a-20260820-juno",
+    "fecha": "2026-08-20",
+    "categoria": "Comida",
+    "concepto": "Desayuno: dos breakfast bun, americano y chocolate caliente",
+    "tercero": "Juno, 6 Kloof Street",
+    "importe": 30.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Cuenta de R294 cubierta con los vales del hotel. Solo se pagó la propina"
+  },
+  {
+    "id": "a-20260820-prop1",
+    "fecha": "2026-08-20",
+    "categoria": "Propinas",
+    "concepto": "Propina a Kyle, chófer de ida a Franschhoek",
+    "tercero": "Bluu",
+    "importe": 50.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": ""
   }
 ]

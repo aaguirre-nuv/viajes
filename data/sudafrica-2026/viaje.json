@@ -540,62 +540,48 @@
         },
         {
           "fecha": "2026-08-20",
-          "etiqueta": "Franschhoek · tranvía",
+          "etiqueta": "Franschhoek · Orange Line",
           "eventos": [
             {
-              "hora": "07:45",
-              "texto": "Recogida del chófer en Casa on Kei · confirmar hora la víspera",
+              "hora": "07:35",
+              "texto": "Recogida de Kyle en Sea Point · Toyota Corolla blanco",
               "clave": true
             },
             {
-              "hora": "09:05",
-              "texto": "Salida del tranvía · Groot Drakenstein, Orange Line",
+              "hora": "09:35",
+              "texto": "Salida del tranvía desde Groot Drakenstein",
               "clave": true
             },
             {
-              "hora": "09:30",
-              "texto": "Babylonstoren · huertos e invernaderos primero, cata después",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "11:30",
-              "texto": "Transporte hacia Boschendal",
+              "hora": "10:19",
+              "texto": "Babylonstoren · jardín, Express Tasting y tabla de aperitivos",
               "clave": true
             },
             {
               "hora": "11:45",
-              "texto": "Boschendal · paseo por el werf y copa de Cap Classique",
-              "pte": true
+              "texto": "Enlace hacia Boschendal"
             },
             {
               "hora": "13:00",
-              "texto": "Comida en The Deli · reservado a nombre de Laura",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "14:45",
-              "texto": "Sobremesa sin prisa y hasta la plataforma del tranvía"
-            },
-            {
-              "hora": "15:15",
-              "texto": "Vrede en Lust · terraza cubierta con vistas a la montaña",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "16:30",
-              "texto": "Último transporte de vuelta · no lo pierdas",
+              "texto": "Comida en The Deli · solomillo, tabla de quesos y copas de 1685",
               "clave": true
             },
             {
-              "hora": "17:00",
-              "texto": "Terminal y recogida del chófer",
+              "hora": "15:00",
+              "texto": "Paseo por el werf y la avenida de robles"
+            },
+            {
+              "hora": "16:06",
+              "texto": "Cellar Door · maridaje de la gama 1685 con chocolate",
+              "clave": true
+            },
+            {
+              "hora": "16:45",
+              "texto": "Recogida en el Cellar Door · el restaurante queda lejos",
               "clave": true
             }
           ],
-          "aviso": "Tres bodegas y comida sin reloj, en vez de cuatro a la carrera. El único enlace crítico es el de las 16:30: si lo pierdes, el siguiente tarda una hora y descuadra la recogida. Al recoger los billetes por la mañana pregunta la frecuencia real de la línea y ajusta las horas de la tarde: lo de que pasa cada 60 minutos está sin confirmar. En Babylonstoren se paga una entrada pequeña al jardín, lleva la tarjeta a mano."
+          "aviso": "El tranvía salió en sentido inverso al previsto —Plaisir y Vrede en Lust primero, Babylonstoren después—, así que el plan de tres bodegas no llegó a hacerse. Dos fincas y toda la tarde en Boschendal. El chófer recogió en el Cellar Door, no en el terminal, lo que ahorró el último trayecto de tranvía."
         }
       ]
     },
@@ -1390,35 +1376,35 @@
       "titulo": "Franschhoek · día 20",
       "filas": [
         [
-          "Reserva del tranvía",
-          "F6FA-5E38"
+          "Salida",
+          "09:35 · Groot Drakenstein"
         ],
         [
-          "Línea",
-          "Orange · 09:05"
-        ],
-        [
-          "Terminal",
-          "Groot Drakenstein"
-        ],
-        [
-          "Bodegas",
-          "Babylonstoren · Boschendal · Vrede en Lust"
-        ],
-        [
-          "Comida",
-          "The Deli · 13:00 · 2 personas"
-        ],
-        [
-          "Teléfono",
-          "+27 21 870 4273"
+          "Babylonstoren",
+          "10:10 · entrada R20"
         ],
         [
           "Enlace crítico",
-          "16:30 de vuelta"
+          "11:45"
+        ],
+        [
+          "Boschendal",
+          "12:21 · última parada"
+        ],
+        [
+          "Comida",
+          "The Deli · 13:00"
+        ],
+        [
+          "Vuelta",
+          "16:21 → 16:35"
+        ],
+        [
+          "Pago",
+          "solo tarjeta en las fincas"
         ]
       ],
-      "nota": "Tres bodegas, no cuatro: la cuarta obligaba a comer en una hora y a encadenar tres enlaces seguidos. Así tenéis hora y tres cuartos de mesa y un solo enlace que no se puede perder. Confirma la frecuencia de la línea al recoger los billetes. Sin devolución por no presentarse ni por llegar tarde al tranvía; cancelar con más de 24 h sí devuelve el importe.",
+      "nota": "Frecuencia de una hora exacta y circuito de dos horas. Catas del día: Boschendal 1685 con cuatro vinos R90, Plaisir cuatro vinos R80, Vrede en Lust express R70 o flagship R150, Bacco desde R80. Plaisir y Vrede en Lust están junto al terminal, así que si se puede llegar andando cabe una tercera cata entre las 15:45 y las 17:00. Los vinos que compréis se recogen en la taquilla de Groot Drakenstein al terminar. Asistencia del tranvía: 076 512 6683.",
       "enlaces": [
         {
           "texto": "Franschhoek Wine Tram",
