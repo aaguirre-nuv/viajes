@@ -594,18 +594,43 @@
           "etiqueta": "Vuelta",
           "eventos": [
             {
-              "hora": "07:20",
-              "texto": "Amanecer desde el paseo marítimo de Sea Point",
-              "clave": true
+              "hora": "07:30",
+              "texto": "Despertador"
+            },
+            {
+              "hora": "07:50",
+              "texto": "Desayuno en Juno · ida, desayuno y vuelta"
+            },
+            {
+              "hora": "08:30",
+              "texto": "Maletas"
             },
             {
               "hora": "09:00",
               "texto": "Check-out de Casa on Kei"
             },
             {
-              "hora": "10:15",
-              "texto": "Entrega del coche en el aeropuerto",
+              "hora": "09:15",
+              "texto": "Salida hacia el aeropuerto · 22 km, entre 25 y 40 min",
               "clave": true
+            },
+            {
+              "hora": "09:45",
+              "texto": "Repostar cerca del aeropuerto · Avis lo quiere lleno",
+              "clave": true
+            },
+            {
+              "hora": "10:00",
+              "texto": "Llegada a la terminal"
+            },
+            {
+              "hora": "10:15",
+              "texto": "Entrega del coche en Avis · comprobar la liberación del depósito",
+              "clave": true
+            },
+            {
+              "hora": "10:40",
+              "texto": "Facturación · 2 h 35 antes del vuelo"
             },
             {
               "hora": "13:15",
@@ -613,7 +638,7 @@
               "clave": true
             }
           ],
-          "aviso": "El único día despejado de la semana, y os lo vais a perder volando. Aprovechad al menos el amanecer desde el paseo: sale el sol a las 7:18 y desde Sea Point se ve la montaña limpia. En el aeropuerto sobre las 11:00, con margen para la entrega del coche."
+          "aviso": "Reposta cerca del aeropuerto, no en Sea Point, para que el marcador llegue lleno de verdad: si no, Avis cobra el combustible con recargo. El check-in internacional cierra 60 minutos antes de la salida y la oficina de Avis está en el aparcamiento anexo a la terminal. Comprueba en la tarjeta que liberan el depósito de la recogida."
         },
         {
           "fecha": "2026-08-22",
