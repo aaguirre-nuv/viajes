@@ -8,7 +8,7 @@
     "importe": 14.63,
     "moneda": "ZAR",
     "medio": "Recarga",
-    "nota": "1.339 KRW que quedaban de otro viaje",
+    "nota": "1.339 wones sobrantes de otro viaje, cambiados a rands. Aportación de Álvaro",
     "pagadoPor": "alvaro"
   },
   {
@@ -19,9 +19,9 @@
     "tercero": "Uber",
     "importe": 14.95,
     "moneda": "EUR",
-    "medio": "Tarjeta",
-    "nota": "Apple Pay Visa ...3797",
-    "pagadoPor": "alvaro"
+    "medio": "Otra tarjeta",
+    "nota": "Cuenta común de Madrid, no la Revolut",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260807-1358",
@@ -31,9 +31,9 @@
     "tercero": "Areas",
     "importe": 35.75,
     "moneda": "EUR",
-    "medio": "Tarjeta",
-    "nota": "Factura MRB-93137",
-    "pagadoPor": "alvaro"
+    "medio": "Otra tarjeta",
+    "nota": "Cuenta común de Madrid, no la Revolut · factura MRB-93137",
+    "pagadoPor": "comun"
   },
   {
     "id": "a-20260807-eur",
@@ -702,6 +702,18 @@
     "nota": "13:31 · R866 más R90 de propina · mesa 22"
   },
   {
+    "id": "a-20260819-bien",
+    "fecha": "2026-08-19",
+    "categoria": "Comida",
+    "concepto": "Comida en la cueva sobre el mar",
+    "tercero": "Bientang's Cave, Hermanus",
+    "importe": 810.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "13:32"
+  },
+  {
     "id": "a-20260819-desc",
     "fecha": "2026-08-19",
     "categoria": "Otros",
@@ -714,6 +726,18 @@
     "nota": "Descuadre entre el ledger y el recuento físico. Gasto no identificado, probablemente propinas o aparcacoches sin anotar"
   },
   {
+    "id": "a-20260819-ice",
+    "fecha": "2026-08-19",
+    "categoria": "Comida",
+    "concepto": "Helados",
+    "tercero": "You Scream Ice, Hermanus",
+    "importe": 100.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "13:45"
+  },
+  {
     "id": "a-20260819-juno",
     "fecha": "2026-08-19",
     "categoria": "Comida",
@@ -724,6 +748,18 @@
     "medio": "Efectivo",
     "pagadoPor": "comun",
     "nota": "Cuenta de R264 cubierta con los vales del hotel. Solo se pagó la propina"
+  },
+  {
+    "id": "a-20260819-karibu",
+    "fecha": "2026-08-19",
+    "categoria": "Comida",
+    "concepto": "Cena",
+    "tercero": "Karibu Restaurant, V&A Waterfront",
+    "importe": 946.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "19:53"
   },
   {
     "id": "a-20260820-baby",
@@ -774,6 +810,18 @@
     "nota": "R500 más R50 de propina · R250 por persona · 16:06"
   },
   {
+    "id": "a-20260820-egp",
+    "fecha": "2026-08-20",
+    "categoria": "Otros",
+    "concepto": "Cambio de libras egipcias sobrantes a rands",
+    "tercero": "Revolut",
+    "importe": 1194.56,
+    "moneda": "ZAR",
+    "medio": "Recarga",
+    "pagadoPor": "comun",
+    "nota": "3.802,54 libras egipcias de un viaje anterior. Saldo común, no aportación de nadie"
+  },
+  {
     "id": "a-20260820-juno",
     "fecha": "2026-08-20",
     "categoria": "Comida",
@@ -808,5 +856,77 @@
     "medio": "Efectivo",
     "pagadoPor": "comun",
     "nota": ""
+  },
+  {
+    "id": "a-20260821-bp",
+    "fecha": "2026-08-21",
+    "categoria": "Combustible",
+    "concepto": "Repostaje antes de devolver el coche",
+    "tercero": "BP",
+    "importe": 809.87,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "10:19 · depósito lleno para la entrega en Avis"
+  },
+  {
+    "id": "a-20260821-df1",
+    "fecha": "2026-08-21",
+    "categoria": "Souvenirs",
+    "concepto": "Patés de kudú, impala y avestruz · parte en efectivo",
+    "tercero": "Big Five Duty Free",
+    "importe": 120.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "11:47 · tres tarros de 100 g a R95 · R285 en total"
+  },
+  {
+    "id": "a-20260821-df2",
+    "fecha": "2026-08-21",
+    "categoria": "Souvenirs",
+    "concepto": "Patés de kudú, impala y avestruz · resto con tarjeta",
+    "tercero": "Big Five Duty Free",
+    "importe": 165.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "11:47 · completa los R285 de la compra"
+  },
+  {
+    "id": "a-20260821-juno",
+    "fecha": "2026-08-21",
+    "categoria": "Comida",
+    "concepto": "Desayuno: breakfast bun, croissant relleno, americano y chocolate caliente",
+    "tercero": "Juno, 6 Kloof Street",
+    "importe": 40.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "Cuenta de R339 cubierta con los vales del hotel. Solo se pagó la propina · último desayuno del viaje"
+  },
+  {
+    "id": "a-20260821-ooa",
+    "fecha": "2026-08-21",
+    "categoria": "Souvenirs",
+    "concepto": "Collar de cuentas y cesta ugandesa de 20 cm",
+    "tercero": "Out of Africa, salidas internacionales",
+    "importe": 500.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": "11:39 · pagado con R600, cambio R100"
+  },
+  {
+    "id": "a-20260821-park",
+    "fecha": "2026-08-21",
+    "categoria": "Coche",
+    "concepto": "Parking del aeropuerto por error",
+    "tercero": "Airports Company South Africa",
+    "importe": 28.0,
+    "moneda": "ZAR",
+    "medio": "Tarjeta",
+    "pagadoPor": "comun",
+    "nota": "10:11 · entrada equivocada al parkade, unos diez minutos dentro"
   }
 ]
