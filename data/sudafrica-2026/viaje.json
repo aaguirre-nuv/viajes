@@ -522,28 +522,34 @@
             },
             {
               "hora": "08:15",
-              "texto": "Hermanus · Cliff Path desde Gearing Point, en plena ventana buena",
+              "texto": "Hermanus · Cliff Path desde Gearing Point",
               "clave": true
             },
             {
               "hora": "11:00",
-              "texto": "Old Harbour y el pregonero de ballenas con su cuerno de kelp"
-            },
-            {
-              "hora": "12:30",
-              "texto": "Comida en Hermanus"
-            },
-            {
-              "hora": "14:00",
-              "texto": "Stony Point · no se llegó a hacer",
+              "texto": "Segundo mirador, más alejado · una hora larga con una franca austral y su cría",
               "clave": true
             },
             {
-              "hora": "16:00",
+              "hora": "13:32",
+              "texto": "Comida en Bientang's Cave, en la cueva sobre el mar",
+              "clave": true
+            },
+            {
+              "hora": "13:45",
+              "texto": "Helados en You Scream Ice"
+            },
+            {
+              "hora": "17:00",
               "texto": "Regreso a Ciudad del Cabo"
+            },
+            {
+              "hora": "19:53",
+              "texto": "Cena en el Karibu, V&A Waterfront",
+              "clave": true
             }
           ],
-          "aviso": "Sin parada en Stony Point: el día se quedó en Hermanus. Los pingüinos ya se habían visto en Boulders el día anterior."
+          "aviso": "Sin parada en Stony Point: el día se quedó entero en Hermanus. La mañana empezó floja —un soplido y nada más— y la recompensa llegó en el mirador lejano, ya sin gente."
         },
         {
           "fecha": "2026-08-20",
