@@ -80,6 +80,10 @@
               "hora": "15:45",
               "texto": "Vuelo MAD → DOH · QR150 · 15:45 → 23:30 · 6 h 45",
               "clave": true
+            },
+            {
+              "hora": "23:30",
+              "texto": "Llegada a Doha · escala de 2 h 10"
             }
           ]
         },
@@ -94,12 +98,16 @@
             },
             {
               "hora": "09:10",
-              "texto": "Llegada a Johannesburgo · inmigración, maletas y facturar de nuevo"
+              "texto": "Llegada a Johannesburgo · escala de 3 h 20 · inmigración, maletas y volver a facturar"
             },
             {
               "hora": "12:30",
               "texto": "Vuelo JNB → HDS · QR5696, opera Airlink · 12:30 → 13:30 · 1 h 00",
               "clave": true
+            },
+            {
+              "hora": "13:30",
+              "texto": "Llegada a Hoedspruit · 21 h 45 puerta a puerta desde Madrid"
             }
           ],
           "aviso": "Doha ha mejorado: llegas a las 23:30 y sales a la 01:40, así que la escala pasa de 1 h 35 a 2 h 10. Johannesburgo sigue igual, 3 h 20, pero ahí es donde hay trabajo: es tu entrada a Sudáfrica, así que pasas inmigración, recoges las maletas y vuelves a facturar para Hoedspruit."
@@ -383,7 +391,7 @@
             },
             {
               "hora": "14:10",
-              "texto": "Vuelo HDS → CPT · Airlink 4Z656 · 14:10 → 16:55 · 2 h 45",
+              "texto": "Vuelo HDS → CPT · Airlink 4Z656 · 14:10 → 16:55 · 2 h 45 · directo",
               "clave": true
             },
             {
@@ -636,6 +644,10 @@
               "hora": "13:15",
               "texto": "Vuelo CPT → DOH · QR1370 · 13:15 → 23:50 · 9 h 35",
               "clave": true
+            },
+            {
+              "hora": "23:50",
+              "texto": "Llegada a Doha · escala de 1 h 35"
             }
           ],
           "aviso": "Reposta cerca del aeropuerto, no en Sea Point, para que el marcador llegue lleno de verdad: si no, Avis cobra el combustible con recargo. El check-in internacional cierra 60 minutos antes de la salida y la oficina de Avis está en el aparcamiento anexo a la terminal. Comprueba en la tarjeta que liberan el depósito de la recogida."
@@ -645,8 +657,13 @@
           "etiqueta": "Madrid",
           "eventos": [
             {
+              "hora": "01:25",
+              "texto": "Vuelo DOH → MAD · QR147 · 01:25 → 07:35 · 7 h 10",
+              "clave": true
+            },
+            {
               "hora": "07:35",
-              "texto": "Llegada a Madrid · vuelta de 18 h 20 puerta a puerta",
+              "texto": "Llegada a Madrid · 18 h 20 puerta a puerta desde Ciudad del Cabo",
               "clave": true
             }
           ]

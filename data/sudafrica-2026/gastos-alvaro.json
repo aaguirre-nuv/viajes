@@ -796,5 +796,17 @@
     "medio": "Efectivo",
     "pagadoPor": "comun",
     "nota": ""
+  },
+  {
+    "id": "a-20260820-prop2",
+    "fecha": "2026-08-20",
+    "categoria": "Propinas",
+    "concepto": "Propina a Brian, chófer de vuelta de Franschhoek",
+    "tercero": "Bluu",
+    "importe": 70.0,
+    "moneda": "ZAR",
+    "medio": "Efectivo",
+    "pagadoPor": "comun",
+    "nota": ""
   }
 ]
