@@ -288,6 +288,10 @@ th.sortable:hover{color:var(--green2)}
   border-radius:0 3px 3px 0;padding:11px 13px;margin-bottom:7px
 }
 .nota.cola{opacity:.65;border-left-style:dotted}
+.nota-h{
+  font-family:var(--disp);font-weight:700;font-size:19px;line-height:1.1;
+  text-transform:uppercase;letter-spacing:.02em;color:var(--green);margin-bottom:7px
+}
 .nota-t{font-size:14.5px;line-height:1.5}
 .nota-m{
   font-family:var(--mono);font-size:9.5px;color:var(--mute);
@@ -1001,6 +1005,7 @@ function pintarDiario(){
       ultimo = x.fecha;
     }
     html += '<div class="nota' + (x._cola ? " cola" : "") + '">'
+      + (x.titulo ? '<div class="nota-h">' + esc(x.titulo) + '</div>' : "")
       + '<div class="nota-t">' + esc(x.texto).replace(/\n/g,"<br>") + '</div>'
       + '<div class="nota-m">'
         + (x.etiqueta ? '<span class="cat exp">' + esc(x.etiqueta) + '</span>' : "")
