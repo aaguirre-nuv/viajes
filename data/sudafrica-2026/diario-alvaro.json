@@ -3,6 +3,7 @@
     "id": "ad-0001",
     "fecha": "2026-08-08",
     "lugar": "Vuyani Safari Lodge, Moditlo",
+    "titulo": "Are you ready?",
     "etiqueta": "Anécdota",
     "texto": "Cada noche nos venían a buscar para cenar. Un empleado recorría las habitaciones llamando a las puertas con un «Are you ready?», y desde ahí íbamos todos juntos al comedor. El lodge no está vallado y de noche los animales andan sueltos por el recinto, así que nadie camina solo en la oscuridad."
   },
@@ -10,6 +11,7 @@
     "id": "ad-0002",
     "fecha": "2026-08-08",
     "lugar": "Vuyani Safari Lodge, Moditlo",
+    "titulo": "Leones en el tejado",
     "etiqueta": "Anécdota",
     "texto": "El mismo empleado nos contó que un mes antes habían visto unos leones subidos al tejado de una de las cabañas, y que hacía apenas una semana un leopardo había andado por el jardín. Contado así, lo de venir a buscarnos para cenar dejaba de parecer una formalidad del hotel."
   },
@@ -17,6 +19,7 @@
     "id": "ad-0003",
     "fecha": "2026-08-09",
     "lugar": "Vuyani Safari Lodge, Moditlo",
+    "titulo": "El despertar cantado",
     "etiqueta": "Momento",
     "texto": "Por las mañanas repetían el ritual para el safari, pero cambiando el saludo: «Good morning! Are you ready?», habitación por habitación. La voz era muy grave y agradable, y no llegaba a ser un grito: casi lo cantaba. Despertarse así, todavía de noche, era la mejor manera de empezar el día."
   },
@@ -24,6 +27,7 @@
     "id": "ad-0007",
     "fecha": "2026-08-14",
     "lugar": "Sabie River, Kruger",
+    "titulo": "La jirafa que no podía pasar",
     "etiqueta": "Avistamiento",
     "texto": "Íbamos en nuestro coche por la carretera que serpentea junto al Sabie River cuando vimos saliendo del río una impresionante jirafa. La veíamos perfectamente y ella nos miraba, pero nada más llegar a la orilla se detuvo sin dejar de mirarnos.\n\nNo entendíamos qué pasaba. Fueron unos segundos, pero algo estaba impidiendo que la jirafa continuase con su camino… Nos miramos y dijimos: somos nosotros, estamos donde no debemos.\n\nDimos marcha atrás unos metros y, al detener el 4x4, la jirafa se volvió a poner en marcha. Elegante y a buen ritmo, subió la cuesta desde el río hasta la carretera y cruzó por delante nuestro, agradeciendo, seguramente, el detalle de haberla dejado pasar en su casa."
   },
@@ -31,6 +35,7 @@
     "id": "ad-0004",
     "fecha": "2026-08-16",
     "lugar": "Moholoholo Forest Camp",
+    "titulo": "El escorpión",
     "etiqueta": "Anécdota",
     "texto": "Nos despertamos con un escorpión diminuto en la cama de Laura. Le llegó a picar, y en recepción nos quitaron hierro: dijeron que esa especie no era de las peligrosas. Pasó el día bien, solo cansada, y llegamos a Ciudad del Cabo sin más consecuencia que la anécdota."
   },
@@ -38,6 +43,7 @@
     "id": "ad-0005",
     "fecha": "2026-08-17",
     "lugar": "Sea Point, Ciudad del Cabo",
+    "titulo": "El neceser olvidado",
     "etiqueta": "Anécdota",
     "texto": "El neceser se quedó en Moholoholo con la medicación diaria dentro, y no lo echamos en falta hasta estar ya en Ciudad del Cabo, al otro extremo del país. Se abrieron dos frentes: un envío por mensajería desde el campamento y la búsqueda de recambio aquí. Ganó el recambio.\n\nAsí que el lunes por la mañana el itinerario incluía una actividad que no figuraba en ningún plan: consulta médica en Sea Point, a cuatro minutos andando de casa y con la farmacia en el mismo edificio. Cuatro días nos costó ver un leopardo y una mañana resolver esto. El viaje tiene sus prioridades."
   },
@@ -45,6 +51,7 @@
     "id": "ad-0006",
     "fecha": "2026-08-21",
     "lugar": "Aeropuerto de Ciudad del Cabo",
+    "titulo": "Diez minutos en el parking",
     "etiqueta": "Anécdota",
     "texto": "Última mañana, con el vuelo a las 13:15 y el coche por entregar, y nos metemos por error en el parking del aeropuerto. Subimos hasta la segunda planta buscando una máquina de pago y no hay ninguna en ningún sitio. Bajamos a la salida y la barrera tampoco nos deja pasar, con diez minutos escasos dentro.\n\nAl final la máquina estaba abajo, junto a los carriles. Aparcamos, pagamos los 28 rands y salimos. Diez minutos de angustia por menos de dos euros."
   }
