@@ -61,43 +61,43 @@
  "zonas": {
   "madrid": {
    "nombre": "Madrid",
-   "color": "día"
+   "color": "#6B6A5E"
   },
   "transito": {
    "nombre": "Tránsito y vuelos",
-   "color": "mov"
+   "color": "#2B3247"
   },
   "timbavati": {
    "nombre": "Timbavati · Moditlo",
-   "color": "exp"
+   "color": "#8F6118"
   },
   "kruger-sur": {
    "nombre": "Kruger sur · Skukuza",
-   "color": "exp"
+   "color": "#5C4318"
   },
   "blyde": {
    "nombre": "Blyde · Panorama",
-   "color": "exp"
+   "color": "#A8382A"
   },
   "cabo-centro": {
    "nombre": "Ciudad del Cabo centro",
-   "color": "día"
+   "color": "#16362A"
   },
   "cabo-atlantico": {
    "nombre": "Costa atlántica · Sea Point",
-   "color": "día"
+   "color": "#24503E"
   },
   "peninsula": {
    "nombre": "Península del Cabo",
-   "color": "exp"
+   "color": "#1E6B7A"
   },
   "winelands": {
    "nombre": "Winelands · Franschhoek",
-   "color": "tas"
+   "color": "#7A2F52"
   },
   "overberg": {
    "nombre": "Overberg · Hermanus",
-   "color": "exp"
+   "color": "#3A6B54"
   }
  },
  "lugares": {
@@ -598,6 +598,10 @@
        "texto": "Llegada a Doha · escala de 2 h 10",
        "lugar": "aeropuerto-hamad-doha"
       }
+     ],
+     "lugares": [
+      "aeropuerto-adolfo-suárez-madrid-barajas",
+      "aeropuerto-hamad-doha"
      ]
     },
     {
@@ -629,7 +633,13 @@
        "texto": "Llegada a Hoedspruit · 21 h 45 puerta a puerta desde Madrid"
       }
      ],
-     "aviso": "Doha ha mejorado: llegas a las 23:30 y sales a la 01:40, así que la escala pasa de 1 h 35 a 2 h 10. Johannesburgo sigue igual, 3 h 20, pero ahí es donde hay trabajo: es tu entrada a Sudáfrica, así que pasas inmigración, recoges las maletas y vuelves a facturar para Hoedspruit."
+     "aviso": "Doha ha mejorado: llegas a las 23:30 y sales a la 01:40, así que la escala pasa de 1 h 35 a 2 h 10. Johannesburgo sigue igual, 3 h 20, pero ahí es donde hay trabajo: es tu entrada a Sudáfrica, así que pasas inmigración, recoges las maletas y vuelves a facturar para Hoedspruit.",
+     "lugares": [
+      "aeropuerto-internacional-de-johannesburg",
+      "hoedspruit-airport---eastgate-airport",
+      "vuyani-safari-lodge",
+      "aeropuerto-hamad-doha"
+     ]
     }
    ]
   },
@@ -659,7 +669,12 @@
        "lugar": "vuyani-safari-lodge"
       }
      ],
-     "aviso": "Llegas a las 14:00 y el safari sale sobre las 16:00. Da tiempo, pero avisa al pedir el traslado desde Hoedspruit para que no te dejen justo."
+     "aviso": "Llegas a las 14:00 y el safari sale sobre las 16:00. Da tiempo, pero avisa al pedir el traslado desde Hoedspruit para que no te dejen justo.",
+     "lugares": [
+      "aeropuerto-internacional-de-johannesburg",
+      "hoedspruit-airport---eastgate-airport",
+      "vuyani-safari-lodge"
+     ]
     },
     {
      "fecha": "2026-08-09",
@@ -677,6 +692,10 @@
        "clave": true,
        "lugar": "vuyani-safari-lodge"
       }
+     ],
+     "lugares": [
+      "vuyani-safari-lodge",
+      "moditlo-game-reserve"
      ]
     },
     {
@@ -695,6 +714,10 @@
        "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
        "clave": true
       }
+     ],
+     "lugares": [
+      "moditlo-game-reserve",
+      "vuyani-safari-lodge"
      ]
     },
     {
@@ -713,6 +736,10 @@
        "clave": true,
        "lugar": "vuyani-safari-lodge"
       }
+     ],
+     "lugares": [
+      "vuyani-safari-lodge",
+      "moditlo-game-reserve"
      ]
     }
    ]
@@ -761,7 +788,13 @@
        "lugar": "knp-technical-services-building"
       }
      ],
-     "aviso": "Entra por Paul Kruger, no por Orpen. Orpen queda más cerca de Hoedspruit pero te deja al otro extremo del parque: de allí a Skukuza son 4 h 30 a 50 km/h y llegarías tarde al Sunset Drive. Por la R40 hasta Hazyview y luego la R536 son 3 h 30, y de la puerta al campamento solo 12 km. Deja el equipaje en el coche antes del safari de las 06:00 para poder salir a las 11:00."
+     "aviso": "Entra por Paul Kruger, no por Orpen. Orpen queda más cerca de Hoedspruit pero te deja al otro extremo del parque: de allí a Skukuza son 4 h 30 a 50 km/h y llegarías tarde al Sunset Drive. Por la R40 hasta Hazyview y luego la R536 son 3 h 30, y de la puerta al campamento solo 12 km. Deja el equipaje en el coche antes del safari de las 06:00 para poder salir a las 11:00.",
+     "lugares": [
+      "vuyani-safari-lodge",
+      "knp-technical-services-building",
+      "kruger-station-restaurant---skukuza",
+      "skukuza-rest-camp"
+     ]
     },
     {
      "fecha": "2026-08-13",
@@ -799,7 +832,15 @@
        "texto": "Vuelta al campamento antes del cierre"
       }
      ],
-     "aviso": "Día suave, que venís de madrugar. Lake Panic es de los pocos sitios donde puedes bajarte del coche: cocodrilos, hipopótamos y nenúfares, y con suerte el leopardo que ronda la zona. Se llega por la H11 hacia Paul Kruger y una pista de tierra que pasa por el campo de golf y el vivero."
+     "aviso": "Día suave, que venís de madrugar. Lake Panic es de los pocos sitios donde puedes bajarte del coche: cocodrilos, hipopótamos y nenúfares, y con suerte el leopardo que ronda la zona. Se llega por la H11 hacia Paul Kruger y una pista de tierra que pasa por el campo de golf y el vivero.",
+     "lugares": [
+      "skukuza-rest-camp",
+      "lake-panic-bird-hide",
+      "skukuza-golf-club",
+      "skukuza-golf-club-restaurant",
+      "knp-technical-services-building",
+      "cattle-baron---skukuza-camp"
+     ]
     },
     {
      "fecha": "2026-08-14",
@@ -844,7 +885,12 @@
        "lugar": "knp-technical-services-building"
       }
      ],
-     "aviso": "El Night Drive queda anulado: mucho cansancio, poca visibilidad y frío. Está pagado y lo normal es que SANParks no devuelva nada, pero avisa en recepción por si acaso y para liberar la plaza."
+     "aviso": "El Night Drive queda anulado: mucho cansancio, poca visibilidad y frío. Está pagado y lo normal es que SANParks no devuelva nada, pero avisa en recepción por si acaso y para liberar la plaza.",
+     "lugares": [
+      "mathekenyane-hill--koppie--view-point",
+      "knp-technical-services-building",
+      "cattle-baron---skukuza-camp"
+     ]
     }
    ]
   },
@@ -925,7 +971,18 @@
        "clave": true
       }
      ],
-     "aviso": "Día largo: unos 270 km de carretera de montaña más las paradas. Sal a las 07:00 aunque el check-out sea a las 10:00, con el equipaje ya en el coche. Lleva efectivo: cada parada cobra su entrada aparte y los datáfonos fallan a menudo. Si God's Window amanece con niebla no esperes, que los Three Rondavels son mejor vista. Y si vas justo de tiempo, sacrifica Berlin Falls antes que los Rondavels."
+     "aviso": "Día largo: unos 270 km de carretera de montaña más las paradas. Sal a las 07:00 aunque el check-out sea a las 10:00, con el equipaje ya en el coche. Lleva efectivo: cada parada cobra su entrada aparte y los datáfonos fallan a menudo. Si God's Window amanece con niebla no esperes, que los Three Rondavels son mejor vista. Y si vas justo de tiempo, sacrifica Berlin Falls antes que los Rondavels.",
+     "lugares": [
+      "parque-nacional-kruger",
+      "the-pinnacle-rock",
+      "god-s-window",
+      "lisbon-falls",
+      "the-chubby-pig-eatery",
+      "dinky-falls-hike",
+      "bourke-s-luck-potholes",
+      "three-rondavels-coffee-shop",
+      "moholoholo-forest-camp"
+     ]
     }
    ]
   },
@@ -970,7 +1027,16 @@
        "lugar": "casa-on-kei-by-totalstay"
       }
      ],
-     "aviso": "Es domingo y el centro de rehabilitación de Moholoholo cierra los domingos, así que la mañana da poco de sí. Con el vuelo a las 14:10 y la entrega del coche, hay que salir sobre las 12:00. Si queréis meter algo, preguntad en el camp por el Hoedspruit Endangered Species Centre, pero comprobad horario y duración antes: dos horas de visita salen muy justas."
+     "aviso": "Es domingo y el centro de rehabilitación de Moholoholo cierra los domingos, así que la mañana da poco de sí. Con el vuelo a las 14:10 y la entrega del coche, hay que salir sobre las 12:00. Si queréis meter algo, preguntad en el camp por el Hoedspruit Endangered Species Centre, pero comprobad horario y duración antes: dos horas de visita salen muy justas.",
+     "lugares": [
+      "le-bamba",
+      "hoedspruit-wildlife-estate",
+      "hoedspruit-airport---eastgate-airport",
+      "aeropuerto-internacional-de-la-ciudad-de",
+      "planet-africa",
+      "sundown-manor-guesthouse",
+      "casa-on-kei-by-totalstay"
+     ]
     },
     {
      "fecha": "2026-08-17",
@@ -1032,7 +1098,14 @@
        "lugar": "casa-on-kei-by-totalstay"
       }
      ],
-     "aviso": "En Bo-Kaap la regla es la altura: pegaos a Buitengracht y no subáis la ladera. Evitad la parte alta de Hout Street y Van Der Meulen. Rose y Chiappini son las de las fotos y las que más tirones registran: haced la foto y guardad el móvil. Si una calle se vacía, dad la vuelta, y no estéis allí al anochecer. Barrio de vecinos, no decorado: pedid permiso antes de fotografiar a nadie. Antes, a las 14:00, decidid lo del teleférico mirando la montaña y no el parte."
+     "aviso": "En Bo-Kaap la regla es la altura: pegaos a Buitengracht y no subáis la ladera. Evitad la parte alta de Hout Street y Van Der Meulen. Rose y Chiappini son las de las fotos y las que más tirones registran: haced la foto y guardad el móvil. Si una calle se vacía, dad la vuelta, y no estéis allí al anochecer. Barrio de vecinos, no decorado: pedid permiso antes de fotografiar a nadie. Antes, a las 14:00, decidid lo del teleférico mirando la montaña y no el parte.",
+     "lugares": [
+      "juno",
+      "iziko-bo-kaap-museum",
+      "greenmarket-square",
+      "mojo-market",
+      "casa-on-kei-by-totalstay"
+     ]
     },
     {
      "fecha": "2026-08-18",
@@ -1096,7 +1169,22 @@
        "lugar": "casa-on-kei-by-totalstay"
       }
      ],
-     "aviso": "Sin barco a Duiker Island: se fue directo por Chapman's Peak y las focas se vieron después en el cabo. El orden se invirtió respecto a la ruta clásica —pingüinos antes que el cabo—, lo que obliga a cruzar la península desde Scarborough hasta Simon's Town y volver luego al sur."
+     "aviso": "Sin barco a Duiker Island: se fue directo por Chapman's Peak y las focas se vieron después en el cabo. El orden se invirtió respecto a la ruta clásica —pingüinos antes que el cabo—, lo que obliga a cruzar la península desde Scarborough hasta Simon's Town y volver luego al sur.",
+     "lugares": [
+      "juno",
+      "casa-on-kei-by-totalstay",
+      "camps-bay-beach-and-table-mountain-view-",
+      "chapman-s-peak-drive-lookout-point",
+      "noordhoek-beach-viewpoint",
+      "last-word-long-beach",
+      "lookout-point",
+      "witsand-beach-p",
+      "playa-de-boulders",
+      "cabo-de-buena-esperanza",
+      "muizenberg-civic-centre",
+      "the-point-mall---shopping-centre---sea-p",
+      "checkers-sea-point"
+     ]
     },
     {
      "fecha": "2026-08-19",
@@ -1146,7 +1234,22 @@
        "lugar": "karibu-restaurant"
       }
      ],
-     "aviso": "Sin parada en Stony Point: el día se quedó entero en Hermanus. La mañana empezó floja —un soplido y nada más— y la recompensa llegó en el mirador lejano, ya sin gente."
+     "aviso": "Sin parada en Stony Point: el día se quedó entero en Hermanus. La mañana empezó floja —un soplido y nada más— y la recompensa llegó en el mirador lejano, ya sin gente.",
+     "lugares": [
+      "juno",
+      "pure-bistro---opus-natural-living-lifest",
+      "hermanus-waterfront",
+      "roman-rock",
+      "bientang-s-cave-restaurant---wine-bar",
+      "gearing-s-point",
+      "birkenhead-house",
+      "ribera-de-victoria-y-alfred",
+      "karibu-restaurant",
+      "toy-kingdom-v-a-waterfront",
+      "mitchell-s-scottish-ale-house",
+      "waterfront--cape-town",
+      "casa-on-kei-by-totalstay"
+     ]
     },
     {
      "fecha": "2026-08-20",
@@ -1200,7 +1303,18 @@
        "clave": true
       }
      ],
-     "aviso": "El tranvía salió en sentido inverso al previsto —Plaisir y Vrede en Lust primero, Babylonstoren después—, así que el plan de tres bodegas no llegó a hacerse. Dos fincas y toda la tarde en Boschendal. El chófer recogió en el Cellar Door, no en el terminal, lo que ahorró el último trayecto de tranvía."
+     "aviso": "El tranvía salió en sentido inverso al previsto —Plaisir y Vrede en Lust primero, Babylonstoren después—, así que el plan de tres bodegas no llegó a hacerse. Dos fincas y toda la tarde en Boschendal. El chófer recogió en el Cellar Door, no en el terminal, lo que ahorró el último trayecto de tranvía.",
+     "lugares": [
+      "juno",
+      "groot-drakenstein-terminal--franschhoek-",
+      "vrede-en-lust-wine-estate",
+      "babylonstoren",
+      "plaisir-wine-estate",
+      "the-deli-restaurant-at-boschendal",
+      "cellar-door-wine-tasting-at-boschendal",
+      "casa-on-kei-by-totalstay",
+      "queen-s-beach"
+     ]
     }
    ]
   },
@@ -1273,7 +1387,13 @@
        "lugar": "aeropuerto-hamad-doha"
       }
      ],
-     "aviso": "Reposta cerca del aeropuerto, no en Sea Point, para que el marcador llegue lleno de verdad: si no, Avis cobra el combustible con recargo. El check-in internacional cierra 60 minutos antes de la salida y la oficina de Avis está en el aparcamiento anexo a la terminal. Comprueba en la tarjeta que liberan el depósito de la recogida."
+     "aviso": "Reposta cerca del aeropuerto, no en Sea Point, para que el marcador llegue lleno de verdad: si no, Avis cobra el combustible con recargo. El check-in internacional cierra 60 minutos antes de la salida y la oficina de Avis está en el aparcamiento anexo a la terminal. Comprueba en la tarjeta que liberan el depósito de la recogida.",
+     "lugares": [
+      "juno",
+      "casa-on-kei-by-totalstay",
+      "aeropuerto-internacional-de-la-ciudad-de",
+      "aeropuerto-hamad-doha"
+     ]
     },
     {
      "fecha": "2026-08-22",
@@ -1295,6 +1415,12 @@
        "texto": "Llegada a Madrid · 18 h 20 puerta a puerta desde Ciudad del Cabo",
        "clave": true
       }
+     ],
+     "lugares": [
+      "aeropuerto-adolfo-suárez-madrid-barajas",
+      "c--de-andrés-antón--3",
+      "supermercados-dia",
+      "aeropuerto-hamad-doha"
      ]
     }
    ]
@@ -2019,5 +2145,5 @@
   "Momento",
   "Otro"
  ],
- "version": "2026-08-23.2"
+ "version": "2026-08-23.3"
 }
