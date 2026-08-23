@@ -1,1399 +1,2023 @@
 {
-  "id": "sudafrica-2026",
-  "titulo": "Sudáfrica 2026",
-  "subtitulo": "Timbavati · Kruger · Blyde · Ciudad del Cabo",
-  "eyebrow": "Reserva RR300902 · Qatar + Airlink · 2 personas",
-  "inicio": "2026-08-07",
-  "fin": "2026-08-22",
-  "monedaBase": "EUR",
-  "cambios": [
-    {
-      "codigo": "ZAR",
-      "simbolo": "R",
-      "porUnidadBase": 18.62,
-      "nota": "Media de las recargas reales de Revolut: 300 € a 18,64 el 7 de agosto y 500 € a 18,62 el día 11."
-    }
-  ],
-  "viajeros": [
-    {
-      "id": "alvaro",
-      "nombre": "Álvaro",
-      "fichero": "gastos-alvaro.json",
-      "ficheroDiario": "diario-alvaro.json"
-    },
-    {
-      "id": "laura",
-      "nombre": "Laura",
-      "fichero": "gastos-laura.json",
-      "ficheroDiario": "diario-laura.json"
-    }
-  ],
-  "categorias": [
-    "Comida",
-    "Transporte",
-    "Combustible",
-    "Actividades",
-    "Tasas",
-    "Propinas",
-    "Souvenirs",
-    "Salud",
-    "Comisiones",
-    "Otros"
-  ],
-  "bases": {
-    "2026-08-07": "Madrid",
-    "2026-08-08": "Moditlo",
-    "2026-08-09": "Moditlo",
-    "2026-08-10": "Moditlo",
-    "2026-08-11": "Moditlo",
-    "2026-08-12": "Skukuza",
-    "2026-08-13": "Skukuza",
-    "2026-08-14": "Skukuza",
-    "2026-08-15": "Moholoholo",
-    "2026-08-16": "Ciudad del Cabo",
-    "2026-08-17": "Ciudad del Cabo",
-    "2026-08-18": "Ciudad del Cabo",
-    "2026-08-19": "Ciudad del Cabo",
-    "2026-08-20": "Ciudad del Cabo",
-    "2026-08-21": "Ciudad del Cabo",
-    "2026-08-22": "Madrid"
+ "id": "sudafrica-2026",
+ "titulo": "Sudáfrica 2026",
+ "subtitulo": "Timbavati · Kruger · Blyde · Ciudad del Cabo",
+ "eyebrow": "Reserva RR300902 · Qatar + Airlink · 2 personas",
+ "inicio": "2026-08-07",
+ "fin": "2026-08-22",
+ "monedaBase": "EUR",
+ "cambios": [
+  {
+   "codigo": "ZAR",
+   "simbolo": "R",
+   "porUnidadBase": 18.62,
+   "nota": "Media de las recargas reales de Revolut: 300 € a 18,64 el 7 de agosto y 500 € a 18,62 el día 11."
+  }
+ ],
+ "viajeros": [
+  {
+   "id": "alvaro",
+   "nombre": "Álvaro",
+   "fichero": "gastos-alvaro.json",
+   "ficheroDiario": "diario-alvaro.json"
   },
-  "franjas": [
+  {
+   "id": "laura",
+   "nombre": "Laura",
+   "fichero": "gastos-laura.json",
+   "ficheroDiario": "diario-laura.json"
+  }
+ ],
+ "categorias": [
+  "Comida",
+  "Transporte",
+  "Combustible",
+  "Actividades",
+  "Tasas",
+  "Propinas",
+  "Souvenirs",
+  "Salud",
+  "Comisiones",
+  "Otros"
+ ],
+ "bases": {
+  "2026-08-07": "Madrid",
+  "2026-08-08": "Moditlo",
+  "2026-08-09": "Moditlo",
+  "2026-08-10": "Moditlo",
+  "2026-08-11": "Moditlo",
+  "2026-08-12": "Skukuza",
+  "2026-08-13": "Skukuza",
+  "2026-08-14": "Skukuza",
+  "2026-08-15": "Moholoholo",
+  "2026-08-16": "Ciudad del Cabo",
+  "2026-08-17": "Ciudad del Cabo",
+  "2026-08-18": "Ciudad del Cabo",
+  "2026-08-19": "Ciudad del Cabo",
+  "2026-08-20": "Ciudad del Cabo",
+  "2026-08-21": "Ciudad del Cabo",
+  "2026-08-22": "Madrid"
+ },
+ "zonas": {
+  "madrid": {
+   "nombre": "Madrid",
+   "color": "día"
+  },
+  "transito": {
+   "nombre": "Tránsito y vuelos",
+   "color": "mov"
+  },
+  "timbavati": {
+   "nombre": "Timbavati · Moditlo",
+   "color": "exp"
+  },
+  "kruger-sur": {
+   "nombre": "Kruger sur · Skukuza",
+   "color": "exp"
+  },
+  "blyde": {
+   "nombre": "Blyde · Panorama",
+   "color": "exp"
+  },
+  "cabo-centro": {
+   "nombre": "Ciudad del Cabo centro",
+   "color": "día"
+  },
+  "cabo-atlantico": {
+   "nombre": "Costa atlántica · Sea Point",
+   "color": "día"
+  },
+  "peninsula": {
+   "nombre": "Península del Cabo",
+   "color": "exp"
+  },
+  "winelands": {
+   "nombre": "Winelands · Franschhoek",
+   "color": "tas"
+  },
+  "overberg": {
+   "nombre": "Overberg · Hermanus",
+   "color": "exp"
+  }
+ },
+ "lugares": {
+  "aeropuerto-adolfo-suárez-madrid-barajas": {
+   "nombre": "Aeropuerto Adolfo Suárez Madrid-Barajas",
+   "zona": "transito",
+   "lat": 40.489515,
+   "lon": -3.564276,
+   "placeID": "ChIJAQAAANAxQg0R786FD-old24"
+  },
+  "aeropuerto-internacional-de-johannesburg": {
+   "nombre": "Aeropuerto Internacional de Johannesburgo-Oliver Reginald Tambo",
+   "zona": "transito",
+   "lat": -26.139391,
+   "lon": 28.246795,
+   "placeID": "ChIJwymiBTgUlR4R1iEoeUAcv7M"
+  },
+  "hoedspruit-airport---eastgate-airport": {
+   "nombre": "Hoedspruit Airport - Eastgate Airport",
+   "zona": "transito",
+   "lat": -24.383935,
+   "lon": 31.046689,
+   "placeID": "ChIJ0V8g6uQCwx4RDX_giY1oBKo"
+  },
+  "vuyani-safari-lodge": {
+   "nombre": "Vuyani Safari Lodge",
+   "zona": "timbavati",
+   "lat": -24.475874,
+   "lon": 31.013864,
+   "placeID": "ChIJDQDyrkv8wh4R7kKW-VAOFZI"
+  },
+  "moditlo-game-reserve": {
+   "nombre": "Moditlo Game Reserve",
+   "zona": "timbavati",
+   "lat": -24.505407,
+   "lon": 30.964687,
+   "placeID": "ChIJd-fVxWP-wh4Rs_1CRkFvAbA"
+  },
+  "knp-technical-services-building": {
+   "nombre": "Skukuza · campamento",
+   "zona": "kruger-sur",
+   "lat": -24.995216,
+   "lon": 31.595936,
+   "placeID": "ChIJcyzjfQAB6B4RiCrsZGGZMZM"
+  },
+  "kruger-station-restaurant---skukuza": {
+   "nombre": "Kruger Station Restaurant @ Skukuza",
+   "zona": "kruger-sur",
+   "lat": -24.993614,
+   "lon": 31.595291,
+   "placeID": "ChIJx0bzzIAB6B4RN4y_bKdTejM"
+  },
+  "skukuza-rest-camp": {
+   "nombre": "Skukuza Rest Camp",
+   "zona": "kruger-sur",
+   "lat": -24.996475,
+   "lon": 31.591945,
+   "placeID": "ChIJHWshBzcA6B4R2wiJmdfCoXc"
+  },
+  "lake-panic-bird-hide": {
+   "nombre": "Lake Panic Bird Hide",
+   "zona": "kruger-sur",
+   "lat": -24.981366,
+   "lon": 31.566225,
+   "placeID": "ChIJAxjRenaqwh4RJxiMdn93f3w"
+  },
+  "skukuza-golf-club": {
+   "nombre": "Skukuza Golf Club",
+   "zona": "kruger-sur",
+   "lat": -24.984618,
+   "lon": 31.577253,
+   "placeID": "ChIJswH8J9QB6B4RNKLtTULFIrg"
+  },
+  "skukuza-golf-club-restaurant": {
+   "nombre": "Skukuza Golf Club Restaurant",
+   "zona": "kruger-sur",
+   "lat": -24.984504,
+   "lon": 31.577298,
+   "placeID": "ChIJ5-cD0UgB6B4RDaBTi0_qyIo",
+   "menor": true
+  },
+  "cattle-baron---skukuza-camp": {
+   "nombre": "Cattle Baron @ Skukuza Camp",
+   "zona": "kruger-sur",
+   "lat": -24.992354,
+   "lon": 31.592391,
+   "placeID": "ChIJQUudxjAA6B4RazjZxzIXUqg"
+  },
+  "mathekenyane-hill--koppie--view-point": {
+   "nombre": "Mathekenyane Hill (Koppie) View Point",
+   "zona": "kruger-sur",
+   "lat": -25.067254,
+   "lon": 31.55167,
+   "placeID": "ChIJreFlg7kB6B4RU8S9Q_bao68",
+   "menor": true
+  },
+  "parque-nacional-kruger": {
+   "nombre": "Parque nacional Kruger",
+   "zona": "kruger-sur",
+   "lat": -24.98108,
+   "lon": 31.48494,
+   "placeID": "ChIJyxnw_TWowh4ROtK5nrC-QoM",
+   "menor": true
+  },
+  "the-pinnacle-rock": {
+   "nombre": "The Pinnacle Rock",
+   "zona": "blyde",
+   "lat": -24.912048,
+   "lon": 30.854459,
+   "placeID": "ChIJHeLcyzViwh4R_N6-TlcO1N0",
+   "menor": true
+  },
+  "god-s-window": {
+   "nombre": "God’s Window",
+   "zona": "blyde",
+   "lat": -24.8769,
+   "lon": 30.888188,
+   "placeID": "ChIJz0Rmbfthwh4R5RpNEVGuqXc"
+  },
+  "lisbon-falls": {
+   "nombre": "Lisbon Falls",
+   "zona": "blyde",
+   "lat": -24.861687,
+   "lon": 30.835869,
+   "placeID": "ChIJ9YWKHxthwh4RYhp8YAl6FHw",
+   "menor": true
+  },
+  "the-chubby-pig-eatery": {
+   "nombre": "The Chubby Pig Eatery",
+   "zona": "blyde",
+   "lat": -24.701421,
+   "lon": 30.813185,
+   "placeID": "ChIJMUz7lmpZwh4RExR-CEtLRWw"
+  },
+  "dinky-falls-hike": {
+   "nombre": "Dinky Falls hike",
+   "zona": "blyde",
+   "lat": -24.672804,
+   "lon": 30.80862,
+   "placeID": "ChIJX4RM969Zwh4RVleC83lUmLE"
+  },
+  "bourke-s-luck-potholes": {
+   "nombre": "Bourke's Luck Potholes",
+   "zona": "blyde",
+   "lat": -24.674308,
+   "lon": 30.810818,
+   "placeID": "ChIJt0aDvY5Zwh4RmDBf4n8Z1wU"
+  },
+  "three-rondavels-coffee-shop": {
+   "nombre": "Three Rondavels Coffee Shop",
+   "zona": "blyde",
+   "lat": -24.57365,
+   "lon": 30.79792,
+   "placeID": "ChIJA6GQUwBRwh4RKBMZEeYVVm4"
+  },
+  "moholoholo-forest-camp": {
+   "nombre": "Moholoholo Forest Camp",
+   "zona": "blyde",
+   "lat": -24.514212,
+   "lon": 30.903795,
+   "placeID": "ChIJsZftTZ9glR4RPRB1jycaISg"
+  },
+  "le-bamba": {
+   "nombre": "Le Bamba.",
+   "zona": "timbavati",
+   "lat": -24.350893,
+   "lon": 30.955584,
+   "placeID": "ChIJ-yHKW84Gwx4RFsK4NcOsHxE",
+   "menor": true
+  },
+  "hoedspruit-wildlife-estate": {
+   "nombre": "Hoedspruit Wildlife Estate",
+   "zona": "timbavati",
+   "lat": -24.34883,
+   "lon": 30.958483,
+   "placeID": "ChIJNUUod7YGwx4Rr3-zm1Cp64g"
+  },
+  "aeropuerto-internacional-de-la-ciudad-de": {
+   "nombre": "Aeropuerto Internacional de la Ciudad del Cabo",
+   "zona": "transito",
+   "lat": -33.968871,
+   "lon": 18.599759,
+   "placeID": "ChIJvQtA90JFzB0RkF7P43l1SEA"
+  },
+  "planet-africa": {
+   "nombre": "Planet Africa",
+   "zona": "cabo-atlantico",
+   "lat": -33.921757,
+   "lon": 18.384211,
+   "placeID": "ChIJaQwX1yFnzB0RFpV5iEIFWE8",
+   "menor": true
+  },
+  "sundown-manor-guesthouse": {
+   "nombre": "Sundown Manor Guesthouse",
+   "zona": "cabo-atlantico",
+   "lat": -33.921685,
+   "lon": 18.385867,
+   "placeID": "ChIJz8oVUx9nzB0RX25cv89mQac"
+  },
+  "casa-on-kei-by-totalstay": {
+   "nombre": "Casa on Kei by Totalstay",
+   "zona": "cabo-atlantico",
+   "lat": -33.922123,
+   "lon": 18.384698,
+   "placeID": "ChIJ56vPIL9nzB0RT8dy7wdqBCo"
+  },
+  "juno": {
+   "nombre": "JUNO",
+   "zona": "cabo-atlantico",
+   "lat": -33.919308,
+   "lon": 18.386698,
+   "placeID": "ChIJReAhZwBnzB0RGNTcsHgj0Ok"
+  },
+  "iziko-bo-kaap-museum": {
+   "nombre": "Iziko Bo-Kaap Museum",
+   "zona": "cabo-centro",
+   "lat": -33.921533,
+   "lon": 18.414987,
+   "placeID": "ChIJjSQp42VnzB0R6WYFH3MPXjk"
+  },
+  "greenmarket-square": {
+   "nombre": "Greenmarket Square",
+   "zona": "cabo-centro",
+   "lat": -33.92276,
+   "lon": 18.420272,
+   "placeID": "ChIJO5eLP2RnzB0RdXzpIWbNluw"
+  },
+  "mojo-market": {
+   "nombre": "Mojo Market",
+   "zona": "cabo-atlantico",
+   "lat": -33.919297,
+   "lon": 18.385825,
+   "placeID": "ChIJETLciCFnzB0RH1qo-JSNf38",
+   "menor": true
+  },
+  "camps-bay-beach-and-table-mountain-view-": {
+   "nombre": "Camps Bay Beach and Table Mountain View Point",
+   "zona": "cabo-atlantico",
+   "lat": -33.94507,
+   "lon": 18.375908,
+   "placeID": "ChIJGelPj0NnzB0R6KCZWLW_94M",
+   "menor": true
+  },
+  "chapman-s-peak-drive-lookout-point": {
+   "nombre": "Chapman's Peak Drive Lookout Point",
+   "zona": "peninsula",
+   "lat": -34.077546,
+   "lon": 18.356536,
+   "placeID": "ChIJdVXC4d9rzB0RUSdIda-tUN0",
+   "menor": true
+  },
+  "noordhoek-beach-viewpoint": {
+   "nombre": "Noordhoek Beach viewpoint",
+   "zona": "peninsula",
+   "lat": -34.09587,
+   "lon": 18.358049,
+   "placeID": "ChIJA7KWHABrzB0RyESxBEv_dFc",
+   "menor": true
+  },
+  "last-word-long-beach": {
+   "nombre": "Last Word Long Beach",
+   "zona": "peninsula",
+   "lat": -34.137577,
+   "lon": 18.329376,
+   "placeID": "ChIJ7-StU5xszB0RVV8SA3mpjgk"
+  },
+  "lookout-point": {
+   "nombre": "Lookout Point",
+   "zona": "peninsula",
+   "lat": -34.15272,
+   "lon": 18.326629,
+   "placeID": "ChIJVUx9ttltzB0RnaLLp2QkUvM",
+   "menor": true
+  },
+  "witsand-beach-p": {
+   "nombre": "Witsand Beach P",
+   "zona": "peninsula",
+   "lat": -34.176726,
+   "lon": 18.353217,
+   "placeID": "ChIJiYLFWwAVzB0R15CtifF8p2k",
+   "menor": true
+  },
+  "playa-de-boulders": {
+   "nombre": "Playa de Boulders",
+   "zona": "peninsula",
+   "lat": -34.195615,
+   "lon": 18.450359,
+   "placeID": "ChIJKeByCDY-zB0RECn0gAHgvHw"
+  },
+  "cabo-de-buena-esperanza": {
+   "nombre": "Cabo de Buena Esperanza",
+   "zona": "peninsula",
+   "lat": -34.356842,
+   "lon": 18.473988,
+   "placeID": "ChIJZz_grPwizB0R6aJ8t_FcKDU"
+  },
+  "muizenberg-civic-centre": {
+   "nombre": "Muizenberg Civic Centre",
+   "zona": "peninsula",
+   "lat": -34.107104,
+   "lon": 18.472139,
+   "placeID": "ChIJvfI7gFZAzB0RE1ONzC3iVIQ",
+   "menor": true
+  },
+  "the-point-mall---shopping-centre---sea-p": {
+   "nombre": "The Point Mall | Shopping Centre | Sea Point",
+   "zona": "cabo-atlantico",
+   "lat": -33.920986,
+   "lon": 18.383263,
+   "placeID": "ChIJT4QVzSFnzB0ReybWqQR2uKk"
+  },
+  "checkers-sea-point": {
+   "nombre": "Checkers Sea Point",
+   "zona": "cabo-atlantico",
+   "lat": -33.920683,
+   "lon": 18.383431,
+   "placeID": "ChIJxcwIdCNnzB0RRTgJ9_XA1qc",
+   "menor": true
+  },
+  "pure-bistro---opus-natural-living-lifest": {
+   "nombre": "Pure Bistro & Opus Natural Living Lifestyle Store",
+   "zona": "overberg",
+   "lat": -34.420805,
+   "lon": 19.239397,
+   "placeID": "ChIJQWcu5qULzh0RG9d6cgHh-yU",
+   "menor": true
+  },
+  "hermanus-waterfront": {
+   "nombre": "Hermanus Waterfront",
+   "zona": "overberg",
+   "lat": -34.419227,
+   "lon": 19.243185,
+   "placeID": "ChIJwQnHYBkLzh0RcPr2W8sertM"
+  },
+  "roman-rock": {
+   "nombre": "Roman Rock",
+   "zona": "overberg",
+   "lat": -34.416771,
+   "lon": 19.248044,
+   "placeID": "ChIJ8Wv_GrALzh0RMn742559OPI"
+  },
+  "bientang-s-cave-restaurant---wine-bar": {
+   "nombre": "Bientang's Cave Restaurant & Wine Bar",
+   "zona": "overberg",
+   "lat": -34.419477,
+   "lon": 19.244646,
+   "placeID": "ChIJT1ZunqULzh0Rz0mFwvVLmPI"
+  },
+  "gearing-s-point": {
+   "nombre": "Gearing's Point",
+   "zona": "overberg",
+   "lat": -34.421859,
+   "lon": 19.243626,
+   "placeID": "ChIJCTi2mKULzh0RTKz1PH6QxXY"
+  },
+  "birkenhead-house": {
+   "nombre": "Birkenhead House",
+   "zona": "overberg",
+   "lat": -34.410007,
+   "lon": 19.280526,
+   "placeID": "ChIJWyG4xtcLzh0RSYQF6VRAFJQ"
+  },
+  "ribera-de-victoria-y-alfred": {
+   "nombre": "Ribera de Victoria y Alfred",
+   "zona": "cabo-centro",
+   "lat": -33.907992,
+   "lon": 18.420162,
+   "placeID": "ChIJpUSVz1BnzB0RgEe7eAWGwx0"
+  },
+  "karibu-restaurant": {
+   "nombre": "Karibu Restaurant",
+   "zona": "cabo-centro",
+   "lat": -33.904098,
+   "lon": 18.420947,
+   "placeID": "ChIJyXPWc6JnzB0RPDm2xYAodys"
+  },
+  "toy-kingdom-v-a-waterfront": {
+   "nombre": "Toy Kingdom V&A Waterfront",
+   "zona": "cabo-centro",
+   "lat": -33.903107,
+   "lon": 18.418909,
+   "placeID": "ChIJSzf7-FBnzB0RLfdPoUW-xGs",
+   "menor": true
+  },
+  "mitchell-s-scottish-ale-house": {
+   "nombre": "Mitchell's Scottish Ale House",
+   "zona": "cabo-centro",
+   "lat": -33.905167,
+   "lon": 18.419477,
+   "placeID": "ChIJl0XaglBnzB0RrCV6qkxOSHg",
+   "menor": true
+  },
+  "waterfront--cape-town": {
+   "nombre": "Waterfront, Cape Town",
+   "zona": "cabo-centro",
+   "lat": -33.902813,
+   "lon": 18.422357,
+   "placeID": "ChIJTWnOjq1nzB0R0eqYenNIgI0"
+  },
+  "groot-drakenstein-terminal--franschhoek-": {
+   "nombre": "Groot-Drakenstein Terminal (Franschhoek Wine Tram)",
+   "zona": "winelands",
+   "lat": -33.863737,
+   "lon": 18.976569,
+   "placeID": "ChIJ5VoPbQGvzR0RlPyKIx0SfUs"
+  },
+  "vrede-en-lust-wine-estate": {
+   "nombre": "Vrede en Lust Wine Estate",
+   "zona": "winelands",
+   "lat": -33.837701,
+   "lon": 18.953742,
+   "placeID": "ChIJ80Fzhx6vzR0RjOEqya7KzKs",
+   "menor": true
+  },
+  "babylonstoren": {
+   "nombre": "Babylonstoren",
+   "zona": "winelands",
+   "lat": -33.823935,
+   "lon": 18.92635,
+   "placeID": "ChIJF3boO8iuzR0R0tB4m80Smao"
+  },
+  "plaisir-wine-estate": {
+   "nombre": "Plaisir Wine Estate",
+   "zona": "winelands",
+   "lat": -33.842609,
+   "lon": 18.958059,
+   "placeID": "ChIJ8y3jChuvzR0RsAS1jsMkCS8"
+  },
+  "the-deli-restaurant-at-boschendal": {
+   "nombre": "The Deli Restaurant at Boschendal",
+   "zona": "winelands",
+   "lat": -33.874397,
+   "lon": 18.975782,
+   "placeID": "ChIJPVcTL6ivzR0RtM_f71yXb1g"
+  },
+  "cellar-door-wine-tasting-at-boschendal": {
+   "nombre": "Cellar Door Wine Tasting at Boschendal",
+   "zona": "winelands",
+   "lat": -33.885342,
+   "lon": 18.969612,
+   "placeID": "ChIJtfOIX-uvzR0RWYAOhS-NPjw"
+  },
+  "queen-s-beach": {
+   "nombre": "Queen's Beach",
+   "zona": "cabo-atlantico",
+   "lat": -33.921267,
+   "lon": 18.378092,
+   "placeID": "ChIJWfUTxt9mzB0RV_eLaQifnAE"
+  },
+  "c--de-andrés-antón--3": {
+   "nombre": "C. de Andrés Antón, 3",
+   "zona": "madrid",
+   "lat": 40.428587,
+   "lon": -3.651858,
+   "placeID": "ChIJefdg80UvQg0RhIblQrJ9VM0"
+  },
+  "supermercados-dia": {
+   "nombre": "Supermercados Dia",
+   "zona": "madrid",
+   "lat": 40.431691,
+   "lon": -3.653824,
+   "placeID": "ChIJre6z8UgvQg0RDYDhfbqhWDA"
+  },
+  "aeropuerto-hamad-doha": {
+   "nombre": "Aeropuerto Internacional Hamad · Doha",
+   "zona": "transito",
+   "lat": 25.273056,
+   "lon": 51.608056,
+   "fuente": "manual"
+  }
+ },
+ "franjas": [
+  {
+   "desde": "2026-08-12",
+   "hasta": "2026-08-15",
+   "etiqueta": "Puertas Kruger, agosto",
+   "detalle": "abren 06:00 · cierran 18:00"
+  }
+ ],
+ "tramos": [
+  {
+   "marca": "01",
+   "nombre": "Ida",
+   "fechas": "7–8 ago",
+   "dias": [
     {
-      "desde": "2026-08-12",
-      "hasta": "2026-08-15",
-      "etiqueta": "Puertas Kruger, agosto",
-      "detalle": "abren 06:00 · cierran 18:00"
+     "fecha": "2026-08-07",
+     "etiqueta": "Madrid",
+     "zona": "transito",
+     "eventos": [
+      {
+       "hora": "15:45",
+       "texto": "Vuelo MAD → DOH · QR150 · 15:45 → 23:30 · 6 h 45",
+       "clave": true
+      },
+      {
+       "hora": "23:30",
+       "texto": "Llegada a Doha · escala de 2 h 10",
+       "lugar": "aeropuerto-hamad-doha"
+      }
+     ]
+    },
+    {
+     "fecha": "2026-08-08",
+     "etiqueta": "En ruta",
+     "zona": "transito",
+     "zonas": [
+      "timbavati",
+      "transito"
+     ],
+     "eventos": [
+      {
+       "hora": "01:40",
+       "texto": "Vuelo DOH → JNB · QR1363 · 01:40 → 09:10 · 8 h 30",
+       "clave": true,
+       "lugar": "aeropuerto-hamad-doha"
+      },
+      {
+       "hora": "09:10",
+       "texto": "Llegada a Johannesburgo · escala de 3 h 20 · inmigración, maletas y volver a facturar"
+      },
+      {
+       "hora": "12:30",
+       "texto": "Vuelo JNB → HDS · QR5696, opera Airlink · 12:30 → 13:30 · 1 h 00",
+       "clave": true
+      },
+      {
+       "hora": "13:30",
+       "texto": "Llegada a Hoedspruit · 21 h 45 puerta a puerta desde Madrid"
+      }
+     ],
+     "aviso": "Doha ha mejorado: llegas a las 23:30 y sales a la 01:40, así que la escala pasa de 1 h 35 a 2 h 10. Johannesburgo sigue igual, 3 h 20, pero ahí es donde hay trabajo: es tu entrada a Sudáfrica, así que pasas inmigración, recoges las maletas y vuelves a facturar para Hoedspruit."
     }
-  ],
-  "tramos": [
+   ]
+  },
+  {
+   "marca": "02",
+   "nombre": "Moditlo · Vuyani",
+   "fechas": "8–12 ago",
+   "dias": [
     {
-      "marca": "01",
-      "nombre": "Ida",
-      "fechas": "7–8 ago",
-      "dias": [
-        {
-          "fecha": "2026-08-07",
-          "etiqueta": "Madrid",
-          "eventos": [
-            {
-              "hora": "15:45",
-              "texto": "Vuelo MAD → DOH · QR150 · 15:45 → 23:30 · 6 h 45",
-              "clave": true
-            },
-            {
-              "hora": "23:30",
-              "texto": "Llegada a Doha · escala de 2 h 10"
-            }
-          ]
-        },
-        {
-          "fecha": "2026-08-08",
-          "etiqueta": "En ruta",
-          "eventos": [
-            {
-              "hora": "01:40",
-              "texto": "Vuelo DOH → JNB · QR1363 · 01:40 → 09:10 · 8 h 30",
-              "clave": true
-            },
-            {
-              "hora": "09:10",
-              "texto": "Llegada a Johannesburgo · escala de 3 h 20 · inmigración, maletas y volver a facturar"
-            },
-            {
-              "hora": "12:30",
-              "texto": "Vuelo JNB → HDS · QR5696, opera Airlink · 12:30 → 13:30 · 1 h 00",
-              "clave": true
-            },
-            {
-              "hora": "13:30",
-              "texto": "Llegada a Hoedspruit · 21 h 45 puerta a puerta desde Madrid"
-            }
-          ],
-          "aviso": "Doha ha mejorado: llegas a las 23:30 y sales a la 01:40, así que la escala pasa de 1 h 35 a 2 h 10. Johannesburgo sigue igual, 3 h 20, pero ahí es donde hay trabajo: es tu entrada a Sudáfrica, así que pasas inmigración, recoges las maletas y vuelves a facturar para Hoedspruit."
-        }
-      ]
+     "fecha": "2026-08-08",
+     "etiqueta": "Vuyani Safari Lodge",
+     "zona": "transito",
+     "zonas": [
+      "timbavati",
+      "transito"
+     ],
+     "eventos": [
+      {
+       "hora": "14:00",
+       "texto": "Check-in Vuyani Safari Lodge",
+       "clave": true
+      },
+      {
+       "hora": "16:00",
+       "texto": "Safari de tarde · 16:00 a 19:00, con sundowner",
+       "clave": true,
+       "lugar": "vuyani-safari-lodge"
+      }
+     ],
+     "aviso": "Llegas a las 14:00 y el safari sale sobre las 16:00. Da tiempo, pero avisa al pedir el traslado desde Hoedspruit para que no te dejen justo."
     },
     {
-      "marca": "02",
-      "nombre": "Moditlo · Vuyani",
-      "fechas": "8–12 ago",
-      "dias": [
-        {
-          "fecha": "2026-08-08",
-          "etiqueta": "Vuyani Safari Lodge",
-          "eventos": [
-            {
-              "hora": "14:00",
-              "texto": "Check-in Vuyani Safari Lodge",
-              "clave": true
-            },
-            {
-              "hora": "16:00",
-              "texto": "Safari de tarde · 16:00 a 19:00, con sundowner",
-              "clave": true
-            }
-          ],
-          "aviso": "Llegas a las 14:00 y el safari sale sobre las 16:00. Da tiempo, pero avisa al pedir el traslado desde Hoedspruit para que no te dejen justo."
-        },
-        {
-          "fecha": "2026-08-09",
-          "etiqueta": "Vuyani · Moditlo",
-          "eventos": [
-            {
-              "hora": "06:00",
-              "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
-              "clave": true
-            },
-            {
-              "hora": "16:00",
-              "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
-              "clave": true
-            }
-          ]
-        },
-        {
-          "fecha": "2026-08-10",
-          "etiqueta": "Vuyani · Moditlo",
-          "eventos": [
-            {
-              "hora": "06:00",
-              "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
-              "clave": true
-            },
-            {
-              "hora": "16:00",
-              "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
-              "clave": true
-            }
-          ]
-        },
-        {
-          "fecha": "2026-08-11",
-          "etiqueta": "Vuyani · Moditlo",
-          "eventos": [
-            {
-              "hora": "06:00",
-              "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
-              "clave": true
-            },
-            {
-              "hora": "16:00",
-              "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
-              "clave": true
-            }
-          ]
-        }
-      ]
+     "fecha": "2026-08-09",
+     "etiqueta": "Vuyani · Moditlo",
+     "zona": "timbavati",
+     "eventos": [
+      {
+       "hora": "06:00",
+       "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
+       "clave": true
+      },
+      {
+       "hora": "16:00",
+       "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
+       "clave": true,
+       "lugar": "vuyani-safari-lodge"
+      }
+     ]
     },
     {
-      "marca": "03",
-      "nombre": "Kruger · Skukuza",
-      "fechas": "12–15 ago",
-      "dias": [
-        {
-          "fecha": "2026-08-12",
-          "etiqueta": "Traslado + Skukuza",
-          "eventos": [
-            {
-              "hora": "06:00",
-              "texto": "Safari de mañana en Vuyani · vuelta sobre las 10:00",
-              "clave": true
-            },
-            {
-              "hora": "11:00",
-              "texto": "Salida por la R40 hacia Hazyview y Paul Kruger Gate · 3 h 30",
-              "clave": true
-            },
-            {
-              "hora": "14:30",
-              "texto": "Puerta Paul Kruger · pago de tasas de conservación",
-              "clave": true
-            },
-            {
-              "hora": "15:00",
-              "texto": "Check-in tienda safari CTT2, Skukuza",
-              "clave": true
-            },
-            {
-              "hora": "16:30",
-              "texto": "Sunset Drive, unas 3 h",
-              "clave": true
-            }
-          ],
-          "aviso": "Entra por Paul Kruger, no por Orpen. Orpen queda más cerca de Hoedspruit pero te deja al otro extremo del parque: de allí a Skukuza son 4 h 30 a 50 km/h y llegarías tarde al Sunset Drive. Por la R40 hasta Hazyview y luego la R536 son 3 h 30, y de la puerta al campamento solo 12 km. Deja el equipaje en el coche antes del safari de las 06:00 para poder salir a las 11:00."
-        },
-        {
-          "fecha": "2026-08-13",
-          "etiqueta": "Skukuza · cerca del campamento",
-          "eventos": [
-            {
-              "hora": "05:00",
-              "texto": "Sunrise Drive, unas 3 h",
-              "clave": true
-            },
-            {
-              "hora": "08:30",
-              "texto": "Desayuno en el campamento"
-            },
-            {
-              "hora": "09:30",
-              "texto": "Lake Panic · escondite sobre el agua, por la H11 y pista de tierra",
-              "clave": true
-            },
-            {
-              "hora": "12:30",
-              "texto": "Comida en el Skukuza Golf Club · sin vallar, los animales entran"
-            },
-            {
-              "hora": "15:00",
-              "texto": "S3, Sabie River Road · pista de tierra junto al río hacia Paul Kruger",
-              "clave": true
-            },
-            {
-              "hora": "17:30",
-              "texto": "Vuelta al campamento antes del cierre"
-            }
-          ],
-          "aviso": "Día suave, que venís de madrugar. Lake Panic es de los pocos sitios donde puedes bajarte del coche: cocodrilos, hipopótamos y nenúfares, y con suerte el leopardo que ronda la zona. Se llega por la H11 hacia Paul Kruger y una pista de tierra que pasa por el campo de golf y el vivero."
-        },
-        {
-          "fecha": "2026-08-14",
-          "etiqueta": "Skukuza · Lower Sabie",
-          "eventos": [
-            {
-              "hora": "06:00",
-              "texto": "Salida al abrir la puerta · H4-1 hacia el este",
-              "clave": true
-            },
-            {
-              "hora": "09:00",
-              "texto": "Nkuhlu · área de picnic junto al Sabie"
-            },
-            {
-              "hora": "11:00",
-              "texto": "Sunset Dam · hipopótamos, cocodrilos y aves acuáticas"
-            },
-            {
-              "hora": "11:30",
-              "texto": "Lower Sabie · comida en la terraza sobre el río",
-              "clave": true
-            },
-            {
-              "hora": "14:00",
-              "texto": "Vuelta por la S30, Salitje Road"
-            },
-            {
-              "hora": "16:30",
-              "texto": "Mathekenyane Hill · mirador de 360° sobre el bosque",
-              "clave": true
-            },
-            {
-              "hora": "19:00",
-              "texto": "Cena en el Cattle Baron"
-            },
-            {
-              "hora": "20:00",
-              "texto": "Night Drive · ANULADO, se cambia por descansar"
-            }
-          ],
-          "aviso": "El Night Drive queda anulado: mucho cansancio, poca visibilidad y frío. Está pagado y lo normal es que SANParks no devuelva nada, pero avisa en recepción por si acaso y para liberar la plaza."
-        }
-      ]
+     "fecha": "2026-08-10",
+     "etiqueta": "Vuyani · Moditlo",
+     "zona": "timbavati",
+     "eventos": [
+      {
+       "hora": "06:00",
+       "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
+       "clave": true,
+       "lugar": "moditlo-game-reserve"
+      },
+      {
+       "hora": "16:00",
+       "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
+       "clave": true
+      }
+     ]
     },
     {
-      "marca": "04",
-      "nombre": "Blyde · Canyon",
-      "fechas": "15–16 ago",
-      "dias": [
-        {
-          "fecha": "2026-08-15",
-          "etiqueta": "Panorama Route",
-          "eventos": [
-            {
-              "hora": "07:00",
-              "texto": "Salida de Skukuza · última mañana de fauna hasta Paul Kruger Gate",
-              "clave": true
-            },
-            {
-              "hora": "08:15",
-              "texto": "Hazyview · repostar y subir el Kowyn's Pass"
-            },
-            {
-              "hora": "08:50",
-              "texto": "Graskop · desayuno en Harrie's Pancakes",
-              "clave": true
-            },
-            {
-              "hora": "09:45",
-              "texto": "Pinnacle Rock · parada de diez minutos",
-              "pte": true
-            },
-            {
-              "hora": "10:15",
-              "texto": "God's Window · 800 m de caída sobre el lowveld",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "11:15",
-              "texto": "Lisbon Falls · 94 m en cuatro saltos",
-              "pte": true
-            },
-            {
-              "hora": "11:50",
-              "texto": "Berlin Falls · parada corta",
-              "pte": true
-            },
-            {
-              "hora": "12:40",
-              "texto": "Bourke's Luck Potholes · pasarelas y comida",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "14:30",
-              "texto": "Three Rondavels · la mejor vista de la ruta",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "15:45",
-              "texto": "Abel Erasmus Pass y túnel J.G. Strijdom · bajada al lowveld"
-            },
-            {
-              "hora": "17:00",
-              "texto": "Llegada a Moholoholo Forest Camp",
-              "clave": true
-            }
-          ],
-          "aviso": "Día largo: unos 270 km de carretera de montaña más las paradas. Sal a las 07:00 aunque el check-out sea a las 10:00, con el equipaje ya en el coche. Lleva efectivo: cada parada cobra su entrada aparte y los datáfonos fallan a menudo. Si God's Window amanece con niebla no esperes, que los Three Rondavels son mejor vista. Y si vas justo de tiempo, sacrifica Berlin Falls antes que los Rondavels."
-        }
-      ]
-    },
-    {
-      "marca": "05",
-      "nombre": "Ciudad del Cabo",
-      "fechas": "16–21 ago",
-      "dias": [
-        {
-          "fecha": "2026-08-16",
-          "etiqueta": "Llegada + Casa on Kei",
-          "eventos": [
-            {
-              "hora": "08:00",
-              "texto": "Desayuno sin prisa en el Forest Camp, al pie del Mariepskop"
-            },
-            {
-              "hora": "12:00",
-              "texto": "Salida hacia el aeropuerto de Hoedspruit · unos 40 min",
-              "clave": true
-            },
-            {
-              "hora": "14:10",
-              "texto": "Vuelo HDS → CPT · Airlink 4Z656 · 14:10 → 16:55 · 2 h 45 · directo",
-              "clave": true
-            },
-            {
-              "hora": "17:30",
-              "texto": "Recogida del Toyota Corolla Quest y check-in en Casa on Kei",
-              "clave": true
-            },
-            {
-              "hora": "20:00",
-              "texto": "Cena tranquila por Sea Point"
-            }
-          ],
-          "aviso": "Es domingo y el centro de rehabilitación de Moholoholo cierra los domingos, así que la mañana da poco de sí. Con el vuelo a las 14:10 y la entrega del coche, hay que salir sobre las 12:00. Si queréis meter algo, preguntad en el camp por el Hoedspruit Endangered Species Centre, pero comprobad horario y duración antes: dos horas de visita salen muy justas."
-        },
-        {
-          "fecha": "2026-08-17",
-          "etiqueta": "Médico y ciudad",
-          "eventos": [
-            {
-              "hora": "08:35",
-              "texto": "Llamar a Sunset Pharmacy para confirmar existencias",
-              "clave": true
-            },
-            {
-              "hora": "10:30",
-              "texto": "Cita en Sea Point Medical Centre · 11 Kloof Rd, suite 404",
-              "clave": true
-            },
-            {
-              "hora": "11:30",
-              "texto": "Farmacia en el mismo edificio · abierta de 8:30 a 21:00",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "13:00",
-              "texto": "Comida por Regent Road"
-            },
-            {
-              "hora": "14:00",
-              "texto": "Mirar la montaña desde la calle antes de decidir",
-              "clave": true
-            },
-            {
-              "hora": "14:30",
-              "texto": "Si está despejada, teleférico · si no, Zeitz MOCAA",
-              "pte": true
-            },
-            {
-              "hora": "15:30",
-              "texto": "Bo-Kaap · Wale Street y los tramos bajos de Rose y Chiappini",
-              "clave": true,
-              "pte": true
-            },
-            {
-              "hora": "16:00",
-              "texto": "Casa rosa en el cruce de Rose con Wale · museo en el 71 de Wale"
-            },
-            {
-              "hora": "17:30",
-              "texto": "Vuelta antes de que caiga la tarde",
-              "clave": true
-            }
-          ],
-          "aviso": "En Bo-Kaap la regla es la altura: pegaos a Buitengracht y no subáis la ladera. Evitad la parte alta de Hout Street y Van Der Meulen. Rose y Chiappini son las de las fotos y las que más tirones registran: haced la foto y guardad el móvil. Si una calle se vacía, dad la vuelta, y no estéis allí al anochecer. Barrio de vecinos, no decorado: pedid permiso antes de fotografiar a nadie. Antes, a las 14:00, decidid lo del teleférico mirando la montaña y no el parte."
-        },
-        {
-          "fecha": "2026-08-18",
-          "etiqueta": "Península del Cabo",
-          "eventos": [
-            {
-              "hora": "08:30",
-              "texto": "Salida de Sea Point"
-            },
-            {
-              "hora": "08:50",
-              "texto": "Camps Bay · mirador de los Doce Apóstoles",
-              "clave": true
-            },
-            {
-              "hora": "09:24",
-              "texto": "Chapman's Peak Drive · peaje de R68, viento en calma",
-              "clave": true
-            },
-            {
-              "hora": "10:00",
-              "texto": "Playas de la costa oeste: Noordhoek, Kommetjie, faro de Slangkop, Witsands y Scarborough",
-              "clave": true
-            },
-            {
-              "hora": "11:50",
-              "texto": "Boulders Beach · colonia de pingüinos del Cabo, R490",
-              "clave": true
-            },
-            {
-              "hora": "12:29",
-              "texto": "Tienda de Boulders · imán de pingüino"
-            },
-            {
-              "hora": "13:31",
-              "texto": "Comida en el Seaforth, Simon's Town",
-              "clave": true
-            },
-            {
-              "hora": "14:03",
-              "texto": "Cabo de Buena Esperanza y Cape Point · R1.030, focas",
-              "clave": true
-            },
-            {
-              "hora": "17:00",
-              "texto": "Vuelta por Muizenberg y sus casetas de colores"
-            },
-            {
-              "hora": "19:30",
-              "texto": "Cena en casa con compra del Checkers"
-            }
-          ],
-          "aviso": "Sin barco a Duiker Island: se fue directo por Chapman's Peak y las focas se vieron después en el cabo. El orden se invirtió respecto a la ruta clásica —pingüinos antes que el cabo—, lo que obliga a cruzar la península desde Scarborough hasta Simon's Town y volver luego al sur."
-        },
-        {
-          "fecha": "2026-08-19",
-          "etiqueta": "Hermanus · ballenas",
-          "eventos": [
-            {
-              "hora": "06:30",
-              "texto": "Salida por la R44, la costera desde Gordon's Bay",
-              "clave": true
-            },
-            {
-              "hora": "08:15",
-              "texto": "Hermanus · Cliff Path desde Gearing Point",
-              "clave": true
-            },
-            {
-              "hora": "11:00",
-              "texto": "Segundo mirador, más alejado · una hora larga con una franca austral y su cría",
-              "clave": true
-            },
-            {
-              "hora": "13:32",
-              "texto": "Comida en Bientang's Cave, en la cueva sobre el mar",
-              "clave": true
-            },
-            {
-              "hora": "13:45",
-              "texto": "Helados en You Scream Ice"
-            },
-            {
-              "hora": "17:00",
-              "texto": "Regreso a Ciudad del Cabo"
-            },
-            {
-              "hora": "19:53",
-              "texto": "Cena en el Karibu, V&A Waterfront",
-              "clave": true
-            }
-          ],
-          "aviso": "Sin parada en Stony Point: el día se quedó entero en Hermanus. La mañana empezó floja —un soplido y nada más— y la recompensa llegó en el mirador lejano, ya sin gente."
-        },
-        {
-          "fecha": "2026-08-20",
-          "etiqueta": "Franschhoek · Orange Line",
-          "eventos": [
-            {
-              "hora": "07:35",
-              "texto": "Recogida de Kyle en Sea Point · Toyota Corolla blanco",
-              "clave": true
-            },
-            {
-              "hora": "09:35",
-              "texto": "Salida del tranvía desde Groot Drakenstein",
-              "clave": true
-            },
-            {
-              "hora": "10:19",
-              "texto": "Babylonstoren · jardín, Express Tasting y tabla de aperitivos",
-              "clave": true
-            },
-            {
-              "hora": "11:45",
-              "texto": "Enlace hacia Boschendal"
-            },
-            {
-              "hora": "13:00",
-              "texto": "Comida en The Deli · solomillo, tabla de quesos y copas de 1685",
-              "clave": true
-            },
-            {
-              "hora": "15:00",
-              "texto": "Paseo por el werf y la avenida de robles"
-            },
-            {
-              "hora": "16:06",
-              "texto": "Cellar Door · maridaje de la gama 1685 con chocolate",
-              "clave": true
-            },
-            {
-              "hora": "16:45",
-              "texto": "Recogida en el Cellar Door · el restaurante queda lejos",
-              "clave": true
-            }
-          ],
-          "aviso": "El tranvía salió en sentido inverso al previsto —Plaisir y Vrede en Lust primero, Babylonstoren después—, así que el plan de tres bodegas no llegó a hacerse. Dos fincas y toda la tarde en Boschendal. El chófer recogió en el Cellar Door, no en el terminal, lo que ahorró el último trayecto de tranvía."
-        }
-      ]
-    },
-    {
-      "marca": "06",
-      "nombre": "Vuelta",
-      "fechas": "21–22 ago",
-      "dias": [
-        {
-          "fecha": "2026-08-21",
-          "etiqueta": "Vuelta",
-          "eventos": [
-            {
-              "hora": "07:30",
-              "texto": "Despertador"
-            },
-            {
-              "hora": "07:50",
-              "texto": "Desayuno en Juno · ida, desayuno y vuelta"
-            },
-            {
-              "hora": "08:30",
-              "texto": "Maletas"
-            },
-            {
-              "hora": "09:00",
-              "texto": "Check-out de Casa on Kei"
-            },
-            {
-              "hora": "09:15",
-              "texto": "Salida hacia el aeropuerto · 22 km, entre 25 y 40 min",
-              "clave": true
-            },
-            {
-              "hora": "09:45",
-              "texto": "Repostar cerca del aeropuerto · Avis lo quiere lleno",
-              "clave": true
-            },
-            {
-              "hora": "10:00",
-              "texto": "Llegada a la terminal"
-            },
-            {
-              "hora": "10:15",
-              "texto": "Entrega del coche en Avis · comprobar la liberación del depósito",
-              "clave": true
-            },
-            {
-              "hora": "10:40",
-              "texto": "Facturación · 2 h 35 antes del vuelo"
-            },
-            {
-              "hora": "13:15",
-              "texto": "Vuelo CPT → DOH · QR1370 · 13:15 → 23:50 · 9 h 35",
-              "clave": true
-            },
-            {
-              "hora": "23:50",
-              "texto": "Llegada a Doha · escala de 1 h 35"
-            }
-          ],
-          "aviso": "Reposta cerca del aeropuerto, no en Sea Point, para que el marcador llegue lleno de verdad: si no, Avis cobra el combustible con recargo. El check-in internacional cierra 60 minutos antes de la salida y la oficina de Avis está en el aparcamiento anexo a la terminal. Comprueba en la tarjeta que liberan el depósito de la recogida."
-        },
-        {
-          "fecha": "2026-08-22",
-          "etiqueta": "Madrid",
-          "eventos": [
-            {
-              "hora": "01:25",
-              "texto": "Vuelo DOH → MAD · QR147 · 01:25 → 07:35 · 7 h 10",
-              "clave": true
-            },
-            {
-              "hora": "07:35",
-              "texto": "Llegada a Madrid · 18 h 20 puerta a puerta desde Ciudad del Cabo",
-              "clave": true
-            }
-          ]
-        }
-      ]
+     "fecha": "2026-08-11",
+     "etiqueta": "Vuyani · Moditlo",
+     "zona": "timbavati",
+     "eventos": [
+      {
+       "hora": "06:00",
+       "texto": "Safari de mañana · salida 06:00, vuelta sobre las 10:00 para desayunar",
+       "clave": true
+      },
+      {
+       "hora": "16:00",
+       "texto": "Safari de tarde · 16:00 a 19:00, con parada para el sundowner",
+       "clave": true,
+       "lugar": "vuyani-safari-lodge"
+      }
+     ]
     }
-  ],
-  "reservas": [
+   ]
+  },
+  {
+   "marca": "03",
+   "nombre": "Kruger · Skukuza",
+   "fechas": "12–15 ago",
+   "dias": [
     {
-      "concepto": "Vuelos Qatar (ida y vuelta, 2 pax)",
-      "proveedor": "Qatar Airways",
-      "importe": 3296.28,
-      "moneda": "EUR",
-      "estado": "pagado",
-      "fecha": "2026-08-07",
-      "categoria": "Vuelos",
-      "pagadoPor": "alvaro"
+     "fecha": "2026-08-12",
+     "etiqueta": "Traslado + Skukuza",
+     "zona": "timbavati",
+     "zonas": [
+      "kruger-sur",
+      "timbavati"
+     ],
+     "eventos": [
+      {
+       "hora": "06:00",
+       "texto": "Safari de mañana en Vuyani · vuelta sobre las 10:00",
+       "clave": true
+      },
+      {
+       "hora": "11:00",
+       "texto": "Salida por la R40 hacia Hazyview y Paul Kruger Gate · 3 h 30",
+       "clave": true,
+       "lugar": "knp-technical-services-building"
+      },
+      {
+       "hora": "14:30",
+       "texto": "Puerta Paul Kruger · pago de tasas de conservación",
+       "clave": true,
+       "lugar": "knp-technical-services-building"
+      },
+      {
+       "hora": "15:00",
+       "texto": "Check-in tienda safari CTT2, Skukuza",
+       "clave": true,
+       "lugar": "knp-technical-services-building"
+      },
+      {
+       "hora": "16:30",
+       "texto": "Sunset Drive, unas 3 h",
+       "clave": true,
+       "lugar": "knp-technical-services-building"
+      }
+     ],
+     "aviso": "Entra por Paul Kruger, no por Orpen. Orpen queda más cerca de Hoedspruit pero te deja al otro extremo del parque: de allí a Skukuza son 4 h 30 a 50 km/h y llegarías tarde al Sunset Drive. Por la R40 hasta Hazyview y luego la R536 son 3 h 30, y de la puerta al campamento solo 12 km. Deja el equipaje en el coche antes del safari de las 06:00 para poder salir a las 11:00."
     },
     {
-      "concepto": "Vuyani Safari Lodge, 8–12 ago",
-      "proveedor": "Booking",
-      "importe": 2744.22,
-      "moneda": "EUR",
-      "estado": "pagado",
-      "fecha": "2026-08-08",
-      "categoria": "Alojamiento",
-      "pagadoPor": "alvaro"
+     "fecha": "2026-08-13",
+     "etiqueta": "Skukuza · cerca del campamento",
+     "zona": "kruger-sur",
+     "eventos": [
+      {
+       "hora": "05:00",
+       "texto": "Sunrise Drive, unas 3 h",
+       "clave": true
+      },
+      {
+       "hora": "08:30",
+       "texto": "Desayuno en el campamento",
+       "lugar": "skukuza-rest-camp"
+      },
+      {
+       "hora": "09:30",
+       "texto": "Lake Panic · escondite sobre el agua, por la H11 y pista de tierra",
+       "clave": true,
+       "lugar": "lake-panic-bird-hide"
+      },
+      {
+       "hora": "12:30",
+       "texto": "Comida en el Skukuza Golf Club · sin vallar, los animales entran",
+       "lugar": "knp-technical-services-building"
+      },
+      {
+       "hora": "15:00",
+       "texto": "S3, Sabie River Road · pista de tierra junto al río hacia Paul Kruger",
+       "clave": true
+      },
+      {
+       "hora": "17:30",
+       "texto": "Vuelta al campamento antes del cierre"
+      }
+     ],
+     "aviso": "Día suave, que venís de madrugar. Lake Panic es de los pocos sitios donde puedes bajarte del coche: cocodrilos, hipopótamos y nenúfares, y con suerte el leopardo que ronda la zona. Se llega por la H11 hacia Paul Kruger y una pista de tierra que pasa por el campo de golf y el vivero."
     },
     {
-      "concepto": "Skukuza, tienda safari CTT2, 3 noches",
-      "proveedor": "SANParks",
-      "importe": 2698.95,
-      "moneda": "ZAR",
-      "estado": "pagado",
-      "fecha": "2026-08-12",
-      "categoria": "Alojamiento",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Sunset Drive, 12 ago",
-      "proveedor": "SANParks",
-      "importe": 900.0,
-      "moneda": "ZAR",
-      "estado": "pagado",
-      "fecha": "2026-08-12",
-      "categoria": "Actividades",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Sunrise Drive, 13 ago",
-      "proveedor": "SANParks",
-      "importe": 900.0,
-      "moneda": "ZAR",
-      "estado": "pagado",
-      "fecha": "2026-08-13",
-      "categoria": "Actividades",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Night Drive, 14 ago",
-      "proveedor": "SANParks",
-      "importe": 686.0,
-      "moneda": "ZAR",
-      "estado": "pagado",
-      "fecha": "2026-08-14",
-      "categoria": "Actividades",
-      "pagadoPor": "alvaro",
-      "nota": "No realizado. Se decidió descansar antes del día largo de la Panorama Route"
-    },
-    {
-      "concepto": "Community Fund",
-      "proveedor": "SANParks",
-      "importe": 51.85,
-      "moneda": "ZAR",
-      "estado": "pagado",
-      "fecha": "2026-08-12",
-      "categoria": "Tasas",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Moholoholo Forest Camp, 15–16 ago",
-      "proveedor": "Booking",
-      "importe": 148.81,
-      "moneda": "EUR",
-      "estado": "pagado",
-      "fecha": "2026-08-15",
-      "categoria": "Alojamiento",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Vuelo HDS → CPT, 16 ago",
-      "proveedor": "Airlink",
-      "importe": 296.0,
-      "moneda": "EUR",
-      "estado": "pagado",
-      "fecha": "2026-08-16",
-      "categoria": "Vuelos",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Casa on Kei, 16–21 ago",
-      "proveedor": "Booking",
-      "importe": 720.16,
-      "moneda": "EUR",
-      "estado": "pagado",
-      "fecha": "2026-08-16",
-      "categoria": "Alojamiento",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Coche Kruger, 12–16 ago",
-      "proveedor": "Avis",
-      "importe": 238.84,
-      "moneda": "EUR",
-      "estado": "pagado",
-      "fecha": "2026-08-12",
-      "categoria": "Coche",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Coche Ciudad del Cabo, 16–21 ago",
-      "proveedor": "Avis",
-      "importe": 185.65,
-      "moneda": "EUR",
-      "estado": "pagado",
-      "fecha": "2026-08-16",
-      "categoria": "Coche",
-      "pagadoPor": "alvaro"
-    },
-    {
-      "concepto": "Tranvía de Franschhoek · Orange Line y chófer",
-      "proveedor": "Wine Tram",
-      "fecha": "2026-08-20",
-      "categoria": "Actividades",
-      "importe": 149.69,
-      "moneda": "EUR",
-      "estado": "pagado",
-      "nota": "Reserva F6FA-5E38 · factura R2.680 · cargados 149,69 € en MyCard *7231. La tarjeta convirtió a 17,90, peor que los 18,62 de Revolut",
-      "pagadoPor": "alvaro",
-      "medio": "Tarjeta"
-    },
-    {
-      "concepto": "Depósito del coche de Kruger",
-      "proveedor": "Avis",
-      "fecha": "2026-08-12",
-      "categoria": "Coche",
-      "importe": 197.75,
-      "moneda": "EUR",
-      "estado": "deposito",
-      "medio": "Tarjeta",
-      "pagadoPor": "alvaro",
-      "nota": "Retención en MyCard *7231. Se cargaría el 1 de septiembre si no se libera"
+     "fecha": "2026-08-14",
+     "etiqueta": "Skukuza · Lower Sabie",
+     "zona": "kruger-sur",
+     "eventos": [
+      {
+       "hora": "06:00",
+       "texto": "Salida al abrir la puerta · H4-1 hacia el este",
+       "clave": true
+      },
+      {
+       "hora": "09:00",
+       "texto": "Nkuhlu · área de picnic junto al Sabie"
+      },
+      {
+       "hora": "11:00",
+       "texto": "Sunset Dam · hipopótamos, cocodrilos y aves acuáticas"
+      },
+      {
+       "hora": "11:30",
+       "texto": "Lower Sabie · comida en la terraza sobre el río",
+       "clave": true
+      },
+      {
+       "hora": "14:00",
+       "texto": "Vuelta por la S30, Salitje Road"
+      },
+      {
+       "hora": "16:30",
+       "texto": "Mathekenyane Hill · mirador de 360° sobre el bosque",
+       "clave": true
+      },
+      {
+       "hora": "19:00",
+       "texto": "Cena en el Cattle Baron",
+       "lugar": "cattle-baron---skukuza-camp"
+      },
+      {
+       "hora": "20:00",
+       "texto": "Night Drive · ANULADO, se cambia por descansar",
+       "lugar": "knp-technical-services-building"
+      }
+     ],
+     "aviso": "El Night Drive queda anulado: mucho cansancio, poca visibilidad y frío. Está pagado y lo normal es que SANParks no devuelva nada, pero avisa en recepción por si acaso y para liberar la plaza."
     }
-  ],
-  "referencias": [
+   ]
+  },
+  {
+   "marca": "04",
+   "nombre": "Blyde · Canyon",
+   "fechas": "15–16 ago",
+   "dias": [
     {
-      "titulo": "Comprobar antes de salir",
-      "filas": [],
-      "enlaces": [
-        {
-          "texto": "Table Mountain · teleférico",
-          "url": "https://www.tablemountain.net",
-          "nota": "Publican cada mañana si el cable opera. Cierra por viento, no por nubes"
-        },
-        {
-          "texto": "Chapman's Peak Drive",
-          "url": "https://www.chapmanspeakdrive.co.za",
-          "nota": "Estado de la carretera de peaje. Cierra con lluvia fuerte o desprendimientos"
-        },
-        {
-          "texto": "Viento y mar · Windy",
-          "url": "https://www.windy.com",
-          "nota": "Lo más útil para decidir barcos y teleférico. Mira ráfagas, no media"
-        },
-        {
-          "texto": "Servicio meteorológico sudafricano",
-          "url": "https://www.weathersa.co.za",
-          "nota": "Avisos oficiales de temporal para el Cabo Occidental"
-        },
-        {
-          "texto": "Cape Point y Boulders · SANParks",
-          "url": "https://www.sanparks.org",
-          "nota": "Horarios y tarifas de las dos entradas del parque"
-        },
-        {
-          "texto": "Tranvía de Franschhoek",
-          "url": "https://www.winetram.co.za",
-          "nota": "Horarios de la línea y estado de las paradas"
-        }
-      ],
-      "nota": "El teleférico cierra por viento fuerte, no por nubosidad: puede estar operando y dejarte arriba dentro de una nube. Antes de pagar, mira la montaña desde la calle. Y para los barcos de Hout Bay y Hermanus no hay web fiable: hay que llamar esa misma mañana al puerto."
-    },
-    {
-      "titulo": "Table Mountain · cuándo",
-      "filas": [
-        [
-          "Lun 17",
-          "nublado · viento NE 14"
-        ],
-        [
-          "Mar 18",
-          "nublado · viento S 21"
-        ],
-        [
-          "Mié 19",
-          "nublado · viento S 16"
-        ],
-        [
-          "Jue 20",
-          "nublado · viento S 23"
-        ],
-        [
-          "Vie 21",
-          "despejado · pero voláis"
-        ]
-      ],
-      "nota": "La única ventana con cielo limpio es el viernes, y ese día se descarta por el vuelo. Así que el teleférico queda como plan oportunista: mira la montaña cada mañana y si algún día amanece sin mantel, deja lo que estés haciendo y sube. El lunes por la tarde es la mejor apuesta por viento, aunque no por nubes. Y si no sale, tampoco pasa nada: Lion's Head y Signal Hill dan vistas parecidas sin depender de un cable."
-    },
-    {
-      "titulo": "Bo-Kaap · por dónde moverse",
-      "filas": [
-        [
-          "Wale Street",
-          "la espina · lo más seguro"
-        ],
-        [
-          "Rose y Chiappini",
-          "bajas, sí · altas, no"
-        ],
-        [
-          "Casa rosa",
-          "cruce de Rose con Wale"
-        ],
-        [
-          "Museo Bo-Kaap",
-          "71 Wale Street"
-        ],
-        [
-          "Hout Street arriba",
-          "evitar · El Kraal"
-        ],
-        [
-          "Van Der Meulen",
-          "evitar"
-        ],
-        [
-          "De noche",
-          "no, ni un momento"
-        ]
-      ],
-      "nota": "La regla es la altura: cuanto más cerca de Buitengracht y del centro, mejor; cuanto más subes la ladera, más solitario y peor. Si una calle se vacía de gente, date la vuelta. Rose y Chiappini son las de las fotos y tienen presencia policial diaria, pero son también donde más tirones sufren los turistas: haz la foto y guarda el móvil, no camines con él en la mano. Es un barrio de vecinos, no un decorado: pide permiso antes de fotografiar a nadie y no bloquees los portales. Y si aparcáis el coche, no dejéis absolutamente nada a la vista, que los robos en vehículos son el problema recurrente."
-    },
-    {
-      "titulo": "Vuelos · ida",
-      "filas": [
-        [
-          "MAD → DOH · 7 ago",
-          "15:45–23:30 · 6h45"
-        ],
-        [
-          "Qatar QR150",
-          "T4S · puerta S41"
-        ],
-        [
-          "Escala en Doha",
-          "2h10"
-        ],
-        [
-          "DOH → JNB · 8 ago",
-          "01:40–09:10 · 8h30"
-        ],
-        [
-          "Qatar QR1363",
-          "asientos 19D 19E"
-        ],
-        [
-          "Escala en Johannesburgo",
-          "3h20"
-        ],
-        [
-          "JNB → HDS · 8 ago",
-          "12:30–13:30 · 1h00"
-        ],
-        [
-          "QR5696, opera Airlink",
-          "asientos 12A 12C"
-        ],
-        [
-          "Puerta a puerta",
-          "21h45"
-        ],
-        [
-          "Localizador Qatar",
-          "8LIZM8"
-        ]
-      ],
-      "nota": "Los tres tramos van en el mismo billete, incluido el de Hoedspruit aunque lo vuele Airlink. Eso significa que si algo se retrasa, Qatar te reacomoda. En Johannesburgo tienes 3 h 20, que dan de sobra para inmigración, maletas y volver a facturar, pero no es una escala para sentarse a desayunar tranquilo."
-    },
-    {
-      "titulo": "Vuelo · interno",
-      "filas": [
-        [
-          "HDS → CPT · 16 ago",
-          "14:10–16:55 · 2h45"
-        ],
-        [
-          "Airlink 4Z656",
-          "asientos 9A 9C"
-        ],
-        [
-          "Localizador",
-          "969DJ4"
-        ]
-      ],
-      "nota": "Este va en billete aparte, con su propio localizador. Si lo pierdes no hay reacomodo por parte de Qatar: entrega el coche con margen."
-    },
-    {
-      "titulo": "Vuelos · vuelta",
-      "filas": [
-        [
-          "CPT → DOH · 21 ago",
-          "13:15–23:50 · 9h35"
-        ],
-        [
-          "Qatar QR1370",
-          "asientos 19D 19E"
-        ],
-        [
-          "Escala en Doha",
-          "1h35"
-        ],
-        [
-          "DOH → MAD · 22 ago",
-          "01:25–07:35 · 7h10"
-        ],
-        [
-          "Qatar QR147",
-          "asientos 17E 17D"
-        ],
-        [
-          "Puerta a puerta",
-          "18h20"
-        ],
-        [
-          "Localizador Qatar",
-          "8LIZM8"
-        ]
-      ],
-      "nota": "Aquí la escala de Doha sigue siendo de 1 h 35, la más justa del viaje. Mismo billete, así que estás cubierto, pero mira la puerta de embarque nada más aterrizar."
-    },
-    {
-      "titulo": "Vuyani Safari Lodge",
-      "filas": [
-        [
-          "Reserva",
-          "Moditlo, Blue Canyon"
-        ],
-        [
-          "Safaris",
-          "incluidos en la habitación"
-        ],
-        [
-          "Safari de mañana",
-          "06:00 – 10:00"
-        ],
-        [
-          "Safari de tarde",
-          "16:00 – 19:00"
-        ],
-        [
-          "Horarios",
-          "por confirmar al llegar"
-        ],
-        [
-          "Actividades extra",
-          "avisar con 24 h"
-        ]
-      ],
-      "nota": "Los safaris del lodge entran en el precio de la habitación: los únicos que pagas aparte son los tres de Skukuza. El lodge no publica los horarios exactos, los de arriba son los habituales de invierno; confírmalos en recepción el primer día. Las excursiones sí se cobran, solo se contratan allí, mínimo dos personas y con 24 h de aviso."
-    },
-    {
-      "titulo": "Ruta del 12 · a Skukuza",
-      "filas": [
-        [
-          "Por Paul Kruger",
-          "3h30 – 4h"
-        ],
-        [
-          "R40 hasta Hazyview",
-          "unos 153 km"
-        ],
-        [
-          "R536 a la puerta",
-          "10 km de Hazyview"
-        ],
-        [
-          "Puerta a Skukuza",
-          "12 km · 30 min"
-        ],
-        [
-          "Por Orpen",
-          "5h30 · descartada"
-        ],
-        [
-          "Cierre de puertas",
-          "18:00"
-        ]
-      ],
-      "nota": "La R40 es de carril único y atraviesa Acornhoek y Bushbuckridge: baches, badenes grandes, peatones y ganado. Cuenta una hora más de la que diga Google y no dejes que te desvíe por pistas de tierra, que salen más lentas. La alternativa por Orpen mete 4 h 30 dentro del parque vía Satara y Tshokwane: es un safari en sí mismo y merece la pena si algún día renuncias al safari de la mañana en Vuyani y sales a las 07:00."
-    },
-    {
-      "titulo": "Kruger por libre",
-      "filas": [
-        [
-          "Bajarse del coche",
-          "solo campamentos, picnic e hides"
-        ],
-        [
-          "Asfalto",
-          "50 km/h"
-        ],
-        [
-          "Tierra",
-          "40 km/h"
-        ],
-        [
-          "Puertas en agosto",
-          "06:00 – 18:00"
-        ],
-        [
-          "H4-1 a Lower Sabie",
-          "43 km · 2 a 3 h"
-        ],
-        [
-          "Lake Panic",
-          "10 min del campamento"
-        ],
-        [
-          "Efectivo",
-          "para las áreas de picnic"
-        ]
-      ],
-      "nota": "Las distancias engañan: 43 km con paradas se van en tres horas. Lo mejor del día es de 06:00 a 09:00 y de 16:00 a 18:00; al mediodía los animales se esconden y es el momento de Lake Panic, del campamento o de un área de picnic. En Nkuhlu, Tshokwane y Afsaal se alquilan hornillos de gas si queréis cocinar. Llevad prismáticos, agua y algo de efectivo. Llegar tarde al campamento se multa, así que calcula siempre una hora más de la que creas."
-    },
-    {
-      "titulo": "Panorama Route · día 15",
-      "filas": [
-        [
-          "Recorrido",
-          "unos 270 km"
-        ],
-        [
-          "Bourke's Luck",
-          "R65 a R130 por persona"
-        ],
-        [
-          "Three Rondavels",
-          "R25 a R75 por persona"
-        ],
-        [
-          "Cascadas",
-          "de R5 a R40 cada una"
-        ],
-        [
-          "Presupuesto del día",
-          "R150 a R400 por persona"
-        ],
-        [
-          "Graskop Gorge, opcional",
-          "R240 por persona"
-        ],
-        [
-          "Forma de pago",
-          "efectivo"
-        ]
-      ],
-      "nota": "Cada parada cobra su propia entrada y los datáfonos fallan a menudo, así que saca efectivo en Hazyview. En la primera parada pregunta por el Panorama Route Pass, un bono conjunto que puede ahorrar hasta un 40%. Agosto es estación seca: mejor probabilidad de ver despejados God's Window y los Rondavels, aunque las cascadas bajan con menos agua. Mac Mac Falls se puede saltar sin pena, se ve desde detrás de una valla y de lejos. Pilgrim's Rest, el pueblo minero, solo si vais sobrados."
-    },
-    {
-      "titulo": "Kruger",
-      "filas": [
-        [
-          "Reserva SANParks",
-          "RR300902"
-        ],
-        [
-          "Código de cliente",
-          "AGUI0097"
-        ],
-        [
-          "Puertas en agosto",
-          "06:00 – 18:00"
-        ],
-        [
-          "Límite de velocidad",
-          "50 km/h"
-        ],
-        [
-          "Check-in / check-out",
-          "14:00 / 10:00"
-        ]
-      ],
-      "nota": "Lleva la carta de confirmación impresa: hay que presentarla al llegar. Todos los mayores de 18 años necesitan pasaporte para escanear al entrar y al salir. Entra por la puerta de Phabeni, no por Numbi."
-    },
-    {
-      "titulo": "Salud",
-      "filas": [],
-      "nota": "Kruger está en zona de malaria. Si no lo has consultado ya con tu médico, hazlo antes de entrar el 12 de agosto."
-    },
-    {
-      "titulo": "Ciudad del Cabo · qué reservar",
-      "filas": [
-        [
-          "Tranvía Franschhoek",
-          "winetram.co.za"
-        ],
-        [
-          "Líneas",
-          "cinco, por colores"
-        ],
-        [
-          "Boulders Beach",
-          "R245 · solo tarjeta"
-        ],
-        [
-          "Barco Hermanus",
-          "New Harbour · reservar"
-        ],
-        [
-          "Duiker Island",
-          "desde Hout Bay"
-        ],
-        [
-          "Chapman's Peak",
-          "peaje · cierra con viento"
-        ],
-        [
-          "Table Mountain",
-          "cierra con viento"
-        ]
-      ],
-      "nota": "Agosto es invierno en el Cabo: lluvia, viento y tiempo imprevisible. El teleférico, los barcos y Chapman's Peak se cancelan sin aviso. Reserva solo el tranvía con antelación y deja lo demás abierto. En Hermanus el Cliff Path es gratis y da doce kilómetros con más de veinte miradores: en temporada de partos las ballenas pasan a metros de la orilla y el barco no añade gran cosa."
-    },
-    {
-      "titulo": "Cenas · Sea Point",
-      "filas": [
-        [
-          "Sonny and Irene",
-          "19 Kloof Rd · misma calle"
-        ],
-        [
-          "The Nines",
-          "19 Kloof Rd · piso 9"
-        ],
-        [
-          "La Mouette",
-          "78 Regent Rd · 550 m"
-        ],
-        [
-          "The Greek Fisherman",
-          "78 Regent Rd"
-        ],
-        [
-          "Zest",
-          "94 Regent Rd"
-        ],
-        [
-          "Ocean Basket",
-          "St Johns Piazza"
-        ],
-        [
-          "Camps Bay",
-          "10 min en coche"
-        ]
-      ],
-      "nota": "Station House, en el 19 de Kloof Road, es tu propia calle: Sonny and Irene abajo para algo informal hasta las 22:00, y The Nines en el piso 9 para una cena con vistas al Atlántico. La Mouette es la de ocasión especial, en una casa antigua, con menú de invierno muy bien de precio. El Greek Fisherman tiene terraza ajardinada y pescado. Reserva siempre: son sitios pequeños y se llenan."
-    },
-    {
-      "titulo": "Seguridad en Ciudad del Cabo",
-      "filas": [
-        [
-          "Tu barrio",
-          "de los más seguros"
-        ],
-        [
-          "Promenade y Main Rd",
-          "concurridas y con luz"
-        ],
-        [
-          "De noche",
-          "Uber o Bolt, son baratos"
-        ],
-        [
-          "En el coche",
-          "nada a la vista, nunca"
-        ],
-        [
-          "Aparcacoches",
-          "propina de 5 a 10 rands"
-        ],
-        [
-          "Cajeros",
-          "solo dentro de bancos"
-        ]
-      ],
-      "nota": "Sea Point es una de las zonas más tranquilas para un turista, y el paseo marítimo y Regent Road están llenos de gente hasta tarde. Dicho eso: el riesgo real no es dramático, es el tirón de móvil. No vayas con el teléfono en la mano por la calle. Kloof Road es residencial y cuesta arriba; bajar andando a cenar de día está bien, pero de noche coge un Uber, que cuesta poco más que un café. En agosto anochece sobre las 18:00, así que cualquier cena es ya de noche. En el coche no dejes absolutamente nada visible, ni una bolsa vacía. Y si subes a Lion's Head o a la montaña, hazlo de día y por rutas con gente: los asaltos en senderos solitarios sí ocurren."
-    },
-    {
-      "titulo": "Wild Card · no compensa",
-      "filas": [
-        [
-          "Wild Card pareja",
-          "R7.310"
-        ],
-        [
-          "Kruger · 4 días",
-          "R4.816"
-        ],
-        [
-          "Cape Point",
-          "R1.000 est."
-        ],
-        [
-          "Boulders Beach",
-          "R490"
-        ],
-        [
-          "Stony Point",
-          "R160 est."
-        ],
-        [
-          "Suma sin tarjeta",
-          "R6.466"
-        ],
-        [
-          "Diferencia",
-          "pierdes R844"
-        ]
-      ],
-      "nota": "Los extranjeros solo pueden comprar el International All Parks Cluster, a R7.310 la tarifa de pareja para el periodo de vuestro viaje. El punto de equilibrio está en unos cinco días de Kruger y vosotros hacéis cuatro. No cubre el teleférico de Table Mountain, que es concesión privada, ni las paradas de la Panorama Route, que son de la agencia de Mpumalanga, ni los safaris de Skukuza, que son actividades y no tasas de entrada. Solo perdona las tasas diarias de conservación."
-    },
-    {
-      "titulo": "Franschhoek · día 20",
-      "filas": [
-        [
-          "Salida",
-          "09:35 · Groot Drakenstein"
-        ],
-        [
-          "Babylonstoren",
-          "10:10 · entrada R20"
-        ],
-        [
-          "Enlace crítico",
-          "11:45"
-        ],
-        [
-          "Boschendal",
-          "12:21 · última parada"
-        ],
-        [
-          "Comida",
-          "The Deli · 13:00"
-        ],
-        [
-          "Vuelta",
-          "16:21 → 16:35"
-        ],
-        [
-          "Pago",
-          "solo tarjeta en las fincas"
-        ]
-      ],
-      "nota": "Frecuencia de una hora exacta y circuito de dos horas. Catas del día: Boschendal 1685 con cuatro vinos R90, Plaisir cuatro vinos R80, Vrede en Lust express R70 o flagship R150, Bacco desde R80. Plaisir y Vrede en Lust están junto al terminal, así que si se puede llegar andando cabe una tercera cata entre las 15:45 y las 17:00. Los vinos que compréis se recogen en la taquilla de Groot Drakenstein al terminar. Asistencia del tranvía: 076 512 6683.",
-      "enlaces": [
-        {
-          "texto": "Franschhoek Wine Tram",
-          "url": "https://www.winetram.co.za",
-          "nota": "Consultar la frecuencia real de la Orange Line"
-        }
-      ]
-    },
-    {
-      "titulo": "Efectivo · cómo funciona",
-      "filas": [
-        [
-          "Panorama Route",
-          "imprescindible"
-        ],
-        [
-          "Áreas de picnic Kruger",
-          "efectivo"
-        ],
-        [
-          "Barco de Duiker Island",
-          "efectivo"
-        ],
-        [
-          "Stony Point",
-          "efectivo"
-        ],
-        [
-          "Propinas y aparcacoches",
-          "efectivo"
-        ],
-        [
-          "Boulders Beach",
-          "solo tarjeta"
-        ],
-        [
-          "Tasas de Kruger",
-          "tarjeta en la puerta"
-        ]
-      ],
-      "nota": "La pestaña Dinero calcula sola cuánto te falta por pagar en metálico y si el margen da o no. Cada reserva pendiente lleva marcado si se espera pagar en efectivo o con tarjeta, así que la previsión se ajusta según vas contratando. La comisión del cajero son unos R50 fijos más el porcentaje de Revolut, y con la franquicia mensual gastada la siguiente retirada sale cara: saca una sola vez y de sobra. Y si un cajero o un datáfono ofrece cobrar en euros, di siempre que no y paga en rands."
+     "fecha": "2026-08-15",
+     "etiqueta": "Panorama Route",
+     "zona": "blyde",
+     "zonas": [
+      "blyde",
+      "kruger-sur"
+     ],
+     "eventos": [
+      {
+       "hora": "07:00",
+       "texto": "Salida de Skukuza · última mañana de fauna hasta Paul Kruger Gate",
+       "clave": true
+      },
+      {
+       "hora": "08:15",
+       "texto": "Hazyview · repostar y subir el Kowyn's Pass"
+      },
+      {
+       "hora": "08:50",
+       "texto": "Graskop · desayuno en Harrie's Pancakes",
+       "clave": true,
+       "lugar": "parque-nacional-kruger"
+      },
+      {
+       "hora": "09:45",
+       "texto": "Pinnacle Rock · parada de diez minutos",
+       "pte": true
+      },
+      {
+       "hora": "10:15",
+       "texto": "God's Window · 800 m de caída sobre el lowveld",
+       "clave": true,
+       "pte": true
+      },
+      {
+       "hora": "11:15",
+       "texto": "Lisbon Falls · 94 m en cuatro saltos",
+       "pte": true,
+       "lugar": "god-s-window"
+      },
+      {
+       "hora": "11:50",
+       "texto": "Berlin Falls · parada corta",
+       "pte": true,
+       "lugar": "lisbon-falls"
+      },
+      {
+       "hora": "12:40",
+       "texto": "Bourke's Luck Potholes · pasarelas y comida",
+       "clave": true,
+       "pte": true,
+       "lugar": "the-chubby-pig-eatery"
+      },
+      {
+       "hora": "14:30",
+       "texto": "Three Rondavels · la mejor vista de la ruta",
+       "clave": true,
+       "pte": true,
+       "lugar": "bourke-s-luck-potholes"
+      },
+      {
+       "hora": "15:45",
+       "texto": "Abel Erasmus Pass y túnel J.G. Strijdom · bajada al lowveld",
+       "lugar": "three-rondavels-coffee-shop"
+      },
+      {
+       "hora": "17:00",
+       "texto": "Llegada a Moholoholo Forest Camp",
+       "clave": true
+      }
+     ],
+     "aviso": "Día largo: unos 270 km de carretera de montaña más las paradas. Sal a las 07:00 aunque el check-out sea a las 10:00, con el equipaje ya en el coche. Lleva efectivo: cada parada cobra su entrada aparte y los datáfonos fallan a menudo. Si God's Window amanece con niebla no esperes, que los Three Rondavels son mejor vista. Y si vas justo de tiempo, sacrifica Berlin Falls antes que los Rondavels."
     }
-  ],
-  "etiquetasDiario": [
-    "Avistamiento",
-    "Anécdota",
-    "Gente",
-    "Lugar",
-    "Comida",
-    "Momento",
-    "Otro"
-  ]
+   ]
+  },
+  {
+   "marca": "05",
+   "nombre": "Ciudad del Cabo",
+   "fechas": "16–21 ago",
+   "dias": [
+    {
+     "fecha": "2026-08-16",
+     "etiqueta": "Llegada + Casa on Kei",
+     "zona": "transito",
+     "zonas": [
+      "cabo-atlantico",
+      "transito"
+     ],
+     "eventos": [
+      {
+       "hora": "08:00",
+       "texto": "Desayuno sin prisa en el Forest Camp, al pie del Mariepskop"
+      },
+      {
+       "hora": "12:00",
+       "texto": "Salida hacia el aeropuerto de Hoedspruit · unos 40 min",
+       "clave": true,
+       "lugar": "hoedspruit-airport---eastgate-airport"
+      },
+      {
+       "hora": "14:10",
+       "texto": "Vuelo HDS → CPT · Airlink 4Z656 · 14:10 → 16:55 · 2 h 45 · directo",
+       "clave": true
+      },
+      {
+       "hora": "17:30",
+       "texto": "Recogida del Toyota Corolla Quest y check-in en Casa on Kei",
+       "clave": true,
+       "lugar": "aeropuerto-internacional-de-la-ciudad-de"
+      },
+      {
+       "hora": "20:00",
+       "texto": "Cena tranquila por Sea Point",
+       "lugar": "casa-on-kei-by-totalstay"
+      }
+     ],
+     "aviso": "Es domingo y el centro de rehabilitación de Moholoholo cierra los domingos, así que la mañana da poco de sí. Con el vuelo a las 14:10 y la entrega del coche, hay que salir sobre las 12:00. Si queréis meter algo, preguntad en el camp por el Hoedspruit Endangered Species Centre, pero comprobad horario y duración antes: dos horas de visita salen muy justas."
+    },
+    {
+     "fecha": "2026-08-17",
+     "etiqueta": "Médico y ciudad",
+     "zona": "cabo-centro",
+     "zonas": [
+      "cabo-atlantico",
+      "cabo-centro"
+     ],
+     "eventos": [
+      {
+       "hora": "08:35",
+       "texto": "Llamar a Sunset Pharmacy para confirmar existencias",
+       "clave": true
+      },
+      {
+       "hora": "10:30",
+       "texto": "Cita en Sea Point Medical Centre · 11 Kloof Rd, suite 404",
+       "clave": true,
+       "lugar": "juno"
+      },
+      {
+       "hora": "11:30",
+       "texto": "Farmacia en el mismo edificio · abierta de 8:30 a 21:00",
+       "clave": true,
+       "pte": true,
+       "lugar": "juno"
+      },
+      {
+       "hora": "13:00",
+       "texto": "Comida por Regent Road",
+       "lugar": "greenmarket-square"
+      },
+      {
+       "hora": "14:00",
+       "texto": "Mirar la montaña desde la calle antes de decidir",
+       "clave": true,
+       "lugar": "greenmarket-square"
+      },
+      {
+       "hora": "14:30",
+       "texto": "Si está despejada, teleférico · si no, Zeitz MOCAA",
+       "pte": true
+      },
+      {
+       "hora": "15:30",
+       "texto": "Bo-Kaap · Wale Street y los tramos bajos de Rose y Chiappini",
+       "clave": true,
+       "pte": true
+      },
+      {
+       "hora": "16:00",
+       "texto": "Casa rosa en el cruce de Rose con Wale · museo en el 71 de Wale"
+      },
+      {
+       "hora": "17:30",
+       "texto": "Vuelta antes de que caiga la tarde",
+       "clave": true,
+       "lugar": "casa-on-kei-by-totalstay"
+      }
+     ],
+     "aviso": "En Bo-Kaap la regla es la altura: pegaos a Buitengracht y no subáis la ladera. Evitad la parte alta de Hout Street y Van Der Meulen. Rose y Chiappini son las de las fotos y las que más tirones registran: haced la foto y guardad el móvil. Si una calle se vacía, dad la vuelta, y no estéis allí al anochecer. Barrio de vecinos, no decorado: pedid permiso antes de fotografiar a nadie. Antes, a las 14:00, decidid lo del teleférico mirando la montaña y no el parte."
+    },
+    {
+     "fecha": "2026-08-18",
+     "etiqueta": "Península del Cabo",
+     "zona": "peninsula",
+     "zonas": [
+      "cabo-atlantico",
+      "peninsula"
+     ],
+     "eventos": [
+      {
+       "hora": "08:30",
+       "texto": "Salida de Sea Point",
+       "lugar": "casa-on-kei-by-totalstay"
+      },
+      {
+       "hora": "08:50",
+       "texto": "Camps Bay · mirador de los Doce Apóstoles",
+       "clave": true,
+       "lugar": "camps-bay-beach-and-table-mountain-view-"
+      },
+      {
+       "hora": "09:24",
+       "texto": "Chapman's Peak Drive · peaje de R68, viento en calma",
+       "clave": true
+      },
+      {
+       "hora": "10:00",
+       "texto": "Playas de la costa oeste: Noordhoek, Kommetjie, faro de Slangkop, Witsands y Scarborough",
+       "clave": true
+      },
+      {
+       "hora": "11:50",
+       "texto": "Boulders Beach · colonia de pingüinos del Cabo, R490",
+       "clave": true,
+       "lugar": "playa-de-boulders"
+      },
+      {
+       "hora": "12:29",
+       "texto": "Tienda de Boulders · imán de pingüino",
+       "lugar": "playa-de-boulders"
+      },
+      {
+       "hora": "13:31",
+       "texto": "Comida en el Seaforth, Simon's Town",
+       "clave": true,
+       "lugar": "playa-de-boulders"
+      },
+      {
+       "hora": "14:03",
+       "texto": "Cabo de Buena Esperanza y Cape Point · R1.030, focas",
+       "clave": true
+      },
+      {
+       "hora": "17:00",
+       "texto": "Vuelta por Muizenberg y sus casetas de colores"
+      },
+      {
+       "hora": "19:30",
+       "texto": "Cena en casa con compra del Checkers",
+       "lugar": "casa-on-kei-by-totalstay"
+      }
+     ],
+     "aviso": "Sin barco a Duiker Island: se fue directo por Chapman's Peak y las focas se vieron después en el cabo. El orden se invirtió respecto a la ruta clásica —pingüinos antes que el cabo—, lo que obliga a cruzar la península desde Scarborough hasta Simon's Town y volver luego al sur."
+    },
+    {
+     "fecha": "2026-08-19",
+     "etiqueta": "Hermanus · ballenas",
+     "zona": "overberg",
+     "zonas": [
+      "cabo-atlantico",
+      "cabo-centro",
+      "overberg"
+     ],
+     "eventos": [
+      {
+       "hora": "06:30",
+       "texto": "Salida por la R44, la costera desde Gordon's Bay",
+       "clave": true
+      },
+      {
+       "hora": "08:15",
+       "texto": "Hermanus · Cliff Path desde Gearing Point",
+       "clave": true,
+       "lugar": "juno"
+      },
+      {
+       "hora": "11:00",
+       "texto": "Segundo mirador, más alejado · una hora larga con una franca austral y su cría",
+       "clave": true
+      },
+      {
+       "hora": "13:32",
+       "texto": "Comida en Bientang's Cave, en la cueva sobre el mar",
+       "clave": true,
+       "lugar": "bientang-s-cave-restaurant---wine-bar"
+      },
+      {
+       "hora": "13:45",
+       "texto": "Helados en You Scream Ice",
+       "lugar": "gearing-s-point"
+      },
+      {
+       "hora": "17:00",
+       "texto": "Regreso a Ciudad del Cabo"
+      },
+      {
+       "hora": "19:53",
+       "texto": "Cena en el Karibu, V&A Waterfront",
+       "clave": true,
+       "lugar": "karibu-restaurant"
+      }
+     ],
+     "aviso": "Sin parada en Stony Point: el día se quedó entero en Hermanus. La mañana empezó floja —un soplido y nada más— y la recompensa llegó en el mirador lejano, ya sin gente."
+    },
+    {
+     "fecha": "2026-08-20",
+     "etiqueta": "Franschhoek · Orange Line",
+     "zona": "winelands",
+     "zonas": [
+      "cabo-atlantico",
+      "winelands"
+     ],
+     "eventos": [
+      {
+       "hora": "07:35",
+       "texto": "Recogida de Kyle en Sea Point · Toyota Corolla blanco",
+       "clave": true
+      },
+      {
+       "hora": "09:35",
+       "texto": "Salida del tranvía desde Groot Drakenstein",
+       "clave": true
+      },
+      {
+       "hora": "10:19",
+       "texto": "Babylonstoren · jardín, Express Tasting y tabla de aperitivos",
+       "clave": true,
+       "lugar": "babylonstoren"
+      },
+      {
+       "hora": "11:45",
+       "texto": "Enlace hacia Boschendal"
+      },
+      {
+       "hora": "13:00",
+       "texto": "Comida en The Deli · solomillo, tabla de quesos y copas de 1685",
+       "clave": true,
+       "lugar": "the-deli-restaurant-at-boschendal"
+      },
+      {
+       "hora": "15:00",
+       "texto": "Paseo por el werf y la avenida de robles",
+       "lugar": "cellar-door-wine-tasting-at-boschendal"
+      },
+      {
+       "hora": "16:06",
+       "texto": "Cellar Door · maridaje de la gama 1685 con chocolate",
+       "clave": true,
+       "lugar": "cellar-door-wine-tasting-at-boschendal"
+      },
+      {
+       "hora": "16:45",
+       "texto": "Recogida en el Cellar Door · el restaurante queda lejos",
+       "clave": true
+      }
+     ],
+     "aviso": "El tranvía salió en sentido inverso al previsto —Plaisir y Vrede en Lust primero, Babylonstoren después—, así que el plan de tres bodegas no llegó a hacerse. Dos fincas y toda la tarde en Boschendal. El chófer recogió en el Cellar Door, no en el terminal, lo que ahorró el último trayecto de tranvía."
+    }
+   ]
+  },
+  {
+   "marca": "06",
+   "nombre": "Vuelta",
+   "fechas": "21–22 ago",
+   "dias": [
+    {
+     "fecha": "2026-08-21",
+     "etiqueta": "Vuelta",
+     "zona": "transito",
+     "zonas": [
+      "cabo-atlantico",
+      "transito"
+     ],
+     "eventos": [
+      {
+       "hora": "07:30",
+       "texto": "Despertador"
+      },
+      {
+       "hora": "07:50",
+       "texto": "Desayuno en Juno · ida, desayuno y vuelta",
+       "lugar": "juno"
+      },
+      {
+       "hora": "08:30",
+       "texto": "Maletas"
+      },
+      {
+       "hora": "09:00",
+       "texto": "Check-out de Casa on Kei",
+       "lugar": "casa-on-kei-by-totalstay"
+      },
+      {
+       "hora": "09:15",
+       "texto": "Salida hacia el aeropuerto · 22 km, entre 25 y 40 min",
+       "clave": true,
+       "lugar": "casa-on-kei-by-totalstay"
+      },
+      {
+       "hora": "09:45",
+       "texto": "Repostar cerca del aeropuerto · Avis lo quiere lleno",
+       "clave": true
+      },
+      {
+       "hora": "10:00",
+       "texto": "Llegada a la terminal"
+      },
+      {
+       "hora": "10:15",
+       "texto": "Entrega del coche en Avis · comprobar la liberación del depósito",
+       "clave": true,
+       "lugar": "aeropuerto-internacional-de-la-ciudad-de"
+      },
+      {
+       "hora": "10:40",
+       "texto": "Facturación · 2 h 35 antes del vuelo",
+       "lugar": "aeropuerto-internacional-de-la-ciudad-de"
+      },
+      {
+       "hora": "13:15",
+       "texto": "Vuelo CPT → DOH · QR1370 · 13:15 → 23:50 · 9 h 35",
+       "clave": true
+      },
+      {
+       "hora": "23:50",
+       "texto": "Llegada a Doha · escala de 1 h 35",
+       "lugar": "aeropuerto-hamad-doha"
+      }
+     ],
+     "aviso": "Reposta cerca del aeropuerto, no en Sea Point, para que el marcador llegue lleno de verdad: si no, Avis cobra el combustible con recargo. El check-in internacional cierra 60 minutos antes de la salida y la oficina de Avis está en el aparcamiento anexo a la terminal. Comprueba en la tarjeta que liberan el depósito de la recogida."
+    },
+    {
+     "fecha": "2026-08-22",
+     "etiqueta": "Madrid",
+     "zona": "madrid",
+     "zonas": [
+      "madrid",
+      "transito"
+     ],
+     "eventos": [
+      {
+       "hora": "01:25",
+       "texto": "Vuelo DOH → MAD · QR147 · 01:25 → 07:35 · 7 h 10",
+       "clave": true,
+       "lugar": "aeropuerto-hamad-doha"
+      },
+      {
+       "hora": "07:35",
+       "texto": "Llegada a Madrid · 18 h 20 puerta a puerta desde Ciudad del Cabo",
+       "clave": true
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reservas": [
+  {
+   "concepto": "Vuelos Qatar (ida y vuelta, 2 pax)",
+   "proveedor": "Qatar Airways",
+   "importe": 3296.28,
+   "moneda": "EUR",
+   "estado": "pagado",
+   "fecha": "2026-08-07",
+   "categoria": "Vuelos",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Vuyani Safari Lodge, 8–12 ago",
+   "proveedor": "Booking",
+   "importe": 2744.22,
+   "moneda": "EUR",
+   "estado": "pagado",
+   "fecha": "2026-08-08",
+   "categoria": "Alojamiento",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Skukuza, tienda safari CTT2, 3 noches",
+   "proveedor": "SANParks",
+   "importe": 2698.95,
+   "moneda": "ZAR",
+   "estado": "pagado",
+   "fecha": "2026-08-12",
+   "categoria": "Alojamiento",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Sunset Drive, 12 ago",
+   "proveedor": "SANParks",
+   "importe": 900.0,
+   "moneda": "ZAR",
+   "estado": "pagado",
+   "fecha": "2026-08-12",
+   "categoria": "Actividades",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Sunrise Drive, 13 ago",
+   "proveedor": "SANParks",
+   "importe": 900.0,
+   "moneda": "ZAR",
+   "estado": "pagado",
+   "fecha": "2026-08-13",
+   "categoria": "Actividades",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Night Drive, 14 ago",
+   "proveedor": "SANParks",
+   "importe": 686.0,
+   "moneda": "ZAR",
+   "estado": "pagado",
+   "fecha": "2026-08-14",
+   "categoria": "Actividades",
+   "pagadoPor": "alvaro",
+   "nota": "No realizado. Se decidió descansar antes del día largo de la Panorama Route"
+  },
+  {
+   "concepto": "Community Fund",
+   "proveedor": "SANParks",
+   "importe": 51.85,
+   "moneda": "ZAR",
+   "estado": "pagado",
+   "fecha": "2026-08-12",
+   "categoria": "Tasas",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Moholoholo Forest Camp, 15–16 ago",
+   "proveedor": "Booking",
+   "importe": 148.81,
+   "moneda": "EUR",
+   "estado": "pagado",
+   "fecha": "2026-08-15",
+   "categoria": "Alojamiento",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Vuelo HDS → CPT, 16 ago",
+   "proveedor": "Airlink",
+   "importe": 296.0,
+   "moneda": "EUR",
+   "estado": "pagado",
+   "fecha": "2026-08-16",
+   "categoria": "Vuelos",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Casa on Kei, 16–21 ago",
+   "proveedor": "Booking",
+   "importe": 720.16,
+   "moneda": "EUR",
+   "estado": "pagado",
+   "fecha": "2026-08-16",
+   "categoria": "Alojamiento",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Coche Kruger, 12–16 ago",
+   "proveedor": "Avis",
+   "importe": 238.84,
+   "moneda": "EUR",
+   "estado": "pagado",
+   "fecha": "2026-08-12",
+   "categoria": "Coche",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Coche Ciudad del Cabo, 16–21 ago",
+   "proveedor": "Avis",
+   "importe": 185.65,
+   "moneda": "EUR",
+   "estado": "pagado",
+   "fecha": "2026-08-16",
+   "categoria": "Coche",
+   "pagadoPor": "alvaro"
+  },
+  {
+   "concepto": "Tranvía de Franschhoek · Orange Line y chófer",
+   "proveedor": "Wine Tram",
+   "fecha": "2026-08-20",
+   "categoria": "Actividades",
+   "importe": 149.69,
+   "moneda": "EUR",
+   "estado": "pagado",
+   "nota": "Reserva F6FA-5E38 · factura R2.680 · cargados 149,69 € en MyCard *7231. La tarjeta convirtió a 17,90, peor que los 18,62 de Revolut",
+   "pagadoPor": "alvaro",
+   "medio": "Tarjeta"
+  },
+  {
+   "concepto": "Depósito del coche de Kruger",
+   "proveedor": "Avis",
+   "fecha": "2026-08-12",
+   "categoria": "Coche",
+   "importe": 197.75,
+   "moneda": "EUR",
+   "estado": "deposito",
+   "medio": "Tarjeta",
+   "pagadoPor": "alvaro",
+   "nota": "Retención en MyCard *7231. Se cargaría el 1 de septiembre si no se libera"
+  }
+ ],
+ "referencias": [
+  {
+   "titulo": "Comprobar antes de salir",
+   "filas": [],
+   "enlaces": [
+    {
+     "texto": "Table Mountain · teleférico",
+     "url": "https://www.tablemountain.net",
+     "nota": "Publican cada mañana si el cable opera. Cierra por viento, no por nubes"
+    },
+    {
+     "texto": "Chapman's Peak Drive",
+     "url": "https://www.chapmanspeakdrive.co.za",
+     "nota": "Estado de la carretera de peaje. Cierra con lluvia fuerte o desprendimientos"
+    },
+    {
+     "texto": "Viento y mar · Windy",
+     "url": "https://www.windy.com",
+     "nota": "Lo más útil para decidir barcos y teleférico. Mira ráfagas, no media"
+    },
+    {
+     "texto": "Servicio meteorológico sudafricano",
+     "url": "https://www.weathersa.co.za",
+     "nota": "Avisos oficiales de temporal para el Cabo Occidental"
+    },
+    {
+     "texto": "Cape Point y Boulders · SANParks",
+     "url": "https://www.sanparks.org",
+     "nota": "Horarios y tarifas de las dos entradas del parque"
+    },
+    {
+     "texto": "Tranvía de Franschhoek",
+     "url": "https://www.winetram.co.za",
+     "nota": "Horarios de la línea y estado de las paradas"
+    }
+   ],
+   "nota": "El teleférico cierra por viento fuerte, no por nubosidad: puede estar operando y dejarte arriba dentro de una nube. Antes de pagar, mira la montaña desde la calle. Y para los barcos de Hout Bay y Hermanus no hay web fiable: hay que llamar esa misma mañana al puerto."
+  },
+  {
+   "titulo": "Table Mountain · cuándo",
+   "filas": [
+    [
+     "Lun 17",
+     "nublado · viento NE 14"
+    ],
+    [
+     "Mar 18",
+     "nublado · viento S 21"
+    ],
+    [
+     "Mié 19",
+     "nublado · viento S 16"
+    ],
+    [
+     "Jue 20",
+     "nublado · viento S 23"
+    ],
+    [
+     "Vie 21",
+     "despejado · pero voláis"
+    ]
+   ],
+   "nota": "La única ventana con cielo limpio es el viernes, y ese día se descarta por el vuelo. Así que el teleférico queda como plan oportunista: mira la montaña cada mañana y si algún día amanece sin mantel, deja lo que estés haciendo y sube. El lunes por la tarde es la mejor apuesta por viento, aunque no por nubes. Y si no sale, tampoco pasa nada: Lion's Head y Signal Hill dan vistas parecidas sin depender de un cable."
+  },
+  {
+   "titulo": "Bo-Kaap · por dónde moverse",
+   "filas": [
+    [
+     "Wale Street",
+     "la espina · lo más seguro"
+    ],
+    [
+     "Rose y Chiappini",
+     "bajas, sí · altas, no"
+    ],
+    [
+     "Casa rosa",
+     "cruce de Rose con Wale"
+    ],
+    [
+     "Museo Bo-Kaap",
+     "71 Wale Street"
+    ],
+    [
+     "Hout Street arriba",
+     "evitar · El Kraal"
+    ],
+    [
+     "Van Der Meulen",
+     "evitar"
+    ],
+    [
+     "De noche",
+     "no, ni un momento"
+    ]
+   ],
+   "nota": "La regla es la altura: cuanto más cerca de Buitengracht y del centro, mejor; cuanto más subes la ladera, más solitario y peor. Si una calle se vacía de gente, date la vuelta. Rose y Chiappini son las de las fotos y tienen presencia policial diaria, pero son también donde más tirones sufren los turistas: haz la foto y guarda el móvil, no camines con él en la mano. Es un barrio de vecinos, no un decorado: pide permiso antes de fotografiar a nadie y no bloquees los portales. Y si aparcáis el coche, no dejéis absolutamente nada a la vista, que los robos en vehículos son el problema recurrente."
+  },
+  {
+   "titulo": "Vuelos · ida",
+   "filas": [
+    [
+     "MAD → DOH · 7 ago",
+     "15:45–23:30 · 6h45"
+    ],
+    [
+     "Qatar QR150",
+     "T4S · puerta S41"
+    ],
+    [
+     "Escala en Doha",
+     "2h10"
+    ],
+    [
+     "DOH → JNB · 8 ago",
+     "01:40–09:10 · 8h30"
+    ],
+    [
+     "Qatar QR1363",
+     "asientos 19D 19E"
+    ],
+    [
+     "Escala en Johannesburgo",
+     "3h20"
+    ],
+    [
+     "JNB → HDS · 8 ago",
+     "12:30–13:30 · 1h00"
+    ],
+    [
+     "QR5696, opera Airlink",
+     "asientos 12A 12C"
+    ],
+    [
+     "Puerta a puerta",
+     "21h45"
+    ],
+    [
+     "Localizador Qatar",
+     "8LIZM8"
+    ]
+   ],
+   "nota": "Los tres tramos van en el mismo billete, incluido el de Hoedspruit aunque lo vuele Airlink. Eso significa que si algo se retrasa, Qatar te reacomoda. En Johannesburgo tienes 3 h 20, que dan de sobra para inmigración, maletas y volver a facturar, pero no es una escala para sentarse a desayunar tranquilo."
+  },
+  {
+   "titulo": "Vuelo · interno",
+   "filas": [
+    [
+     "HDS → CPT · 16 ago",
+     "14:10–16:55 · 2h45"
+    ],
+    [
+     "Airlink 4Z656",
+     "asientos 9A 9C"
+    ],
+    [
+     "Localizador",
+     "969DJ4"
+    ]
+   ],
+   "nota": "Este va en billete aparte, con su propio localizador. Si lo pierdes no hay reacomodo por parte de Qatar: entrega el coche con margen."
+  },
+  {
+   "titulo": "Vuelos · vuelta",
+   "filas": [
+    [
+     "CPT → DOH · 21 ago",
+     "13:15–23:50 · 9h35"
+    ],
+    [
+     "Qatar QR1370",
+     "asientos 19D 19E"
+    ],
+    [
+     "Escala en Doha",
+     "1h35"
+    ],
+    [
+     "DOH → MAD · 22 ago",
+     "01:25–07:35 · 7h10"
+    ],
+    [
+     "Qatar QR147",
+     "asientos 17E 17D"
+    ],
+    [
+     "Puerta a puerta",
+     "18h20"
+    ],
+    [
+     "Localizador Qatar",
+     "8LIZM8"
+    ]
+   ],
+   "nota": "Aquí la escala de Doha sigue siendo de 1 h 35, la más justa del viaje. Mismo billete, así que estás cubierto, pero mira la puerta de embarque nada más aterrizar."
+  },
+  {
+   "titulo": "Vuyani Safari Lodge",
+   "filas": [
+    [
+     "Reserva",
+     "Moditlo, Blue Canyon"
+    ],
+    [
+     "Safaris",
+     "incluidos en la habitación"
+    ],
+    [
+     "Safari de mañana",
+     "06:00 – 10:00"
+    ],
+    [
+     "Safari de tarde",
+     "16:00 – 19:00"
+    ],
+    [
+     "Horarios",
+     "por confirmar al llegar"
+    ],
+    [
+     "Actividades extra",
+     "avisar con 24 h"
+    ]
+   ],
+   "nota": "Los safaris del lodge entran en el precio de la habitación: los únicos que pagas aparte son los tres de Skukuza. El lodge no publica los horarios exactos, los de arriba son los habituales de invierno; confírmalos en recepción el primer día. Las excursiones sí se cobran, solo se contratan allí, mínimo dos personas y con 24 h de aviso."
+  },
+  {
+   "titulo": "Ruta del 12 · a Skukuza",
+   "filas": [
+    [
+     "Por Paul Kruger",
+     "3h30 – 4h"
+    ],
+    [
+     "R40 hasta Hazyview",
+     "unos 153 km"
+    ],
+    [
+     "R536 a la puerta",
+     "10 km de Hazyview"
+    ],
+    [
+     "Puerta a Skukuza",
+     "12 km · 30 min"
+    ],
+    [
+     "Por Orpen",
+     "5h30 · descartada"
+    ],
+    [
+     "Cierre de puertas",
+     "18:00"
+    ]
+   ],
+   "nota": "La R40 es de carril único y atraviesa Acornhoek y Bushbuckridge: baches, badenes grandes, peatones y ganado. Cuenta una hora más de la que diga Google y no dejes que te desvíe por pistas de tierra, que salen más lentas. La alternativa por Orpen mete 4 h 30 dentro del parque vía Satara y Tshokwane: es un safari en sí mismo y merece la pena si algún día renuncias al safari de la mañana en Vuyani y sales a las 07:00."
+  },
+  {
+   "titulo": "Kruger por libre",
+   "filas": [
+    [
+     "Bajarse del coche",
+     "solo campamentos, picnic e hides"
+    ],
+    [
+     "Asfalto",
+     "50 km/h"
+    ],
+    [
+     "Tierra",
+     "40 km/h"
+    ],
+    [
+     "Puertas en agosto",
+     "06:00 – 18:00"
+    ],
+    [
+     "H4-1 a Lower Sabie",
+     "43 km · 2 a 3 h"
+    ],
+    [
+     "Lake Panic",
+     "10 min del campamento"
+    ],
+    [
+     "Efectivo",
+     "para las áreas de picnic"
+    ]
+   ],
+   "nota": "Las distancias engañan: 43 km con paradas se van en tres horas. Lo mejor del día es de 06:00 a 09:00 y de 16:00 a 18:00; al mediodía los animales se esconden y es el momento de Lake Panic, del campamento o de un área de picnic. En Nkuhlu, Tshokwane y Afsaal se alquilan hornillos de gas si queréis cocinar. Llevad prismáticos, agua y algo de efectivo. Llegar tarde al campamento se multa, así que calcula siempre una hora más de la que creas."
+  },
+  {
+   "titulo": "Panorama Route · día 15",
+   "filas": [
+    [
+     "Recorrido",
+     "unos 270 km"
+    ],
+    [
+     "Bourke's Luck",
+     "R65 a R130 por persona"
+    ],
+    [
+     "Three Rondavels",
+     "R25 a R75 por persona"
+    ],
+    [
+     "Cascadas",
+     "de R5 a R40 cada una"
+    ],
+    [
+     "Presupuesto del día",
+     "R150 a R400 por persona"
+    ],
+    [
+     "Graskop Gorge, opcional",
+     "R240 por persona"
+    ],
+    [
+     "Forma de pago",
+     "efectivo"
+    ]
+   ],
+   "nota": "Cada parada cobra su propia entrada y los datáfonos fallan a menudo, así que saca efectivo en Hazyview. En la primera parada pregunta por el Panorama Route Pass, un bono conjunto que puede ahorrar hasta un 40%. Agosto es estación seca: mejor probabilidad de ver despejados God's Window y los Rondavels, aunque las cascadas bajan con menos agua. Mac Mac Falls se puede saltar sin pena, se ve desde detrás de una valla y de lejos. Pilgrim's Rest, el pueblo minero, solo si vais sobrados."
+  },
+  {
+   "titulo": "Kruger",
+   "filas": [
+    [
+     "Reserva SANParks",
+     "RR300902"
+    ],
+    [
+     "Código de cliente",
+     "AGUI0097"
+    ],
+    [
+     "Puertas en agosto",
+     "06:00 – 18:00"
+    ],
+    [
+     "Límite de velocidad",
+     "50 km/h"
+    ],
+    [
+     "Check-in / check-out",
+     "14:00 / 10:00"
+    ]
+   ],
+   "nota": "Lleva la carta de confirmación impresa: hay que presentarla al llegar. Todos los mayores de 18 años necesitan pasaporte para escanear al entrar y al salir. Entra por la puerta de Phabeni, no por Numbi."
+  },
+  {
+   "titulo": "Salud",
+   "filas": [],
+   "nota": "Kruger está en zona de malaria. Si no lo has consultado ya con tu médico, hazlo antes de entrar el 12 de agosto."
+  },
+  {
+   "titulo": "Ciudad del Cabo · qué reservar",
+   "filas": [
+    [
+     "Tranvía Franschhoek",
+     "winetram.co.za"
+    ],
+    [
+     "Líneas",
+     "cinco, por colores"
+    ],
+    [
+     "Boulders Beach",
+     "R245 · solo tarjeta"
+    ],
+    [
+     "Barco Hermanus",
+     "New Harbour · reservar"
+    ],
+    [
+     "Duiker Island",
+     "desde Hout Bay"
+    ],
+    [
+     "Chapman's Peak",
+     "peaje · cierra con viento"
+    ],
+    [
+     "Table Mountain",
+     "cierra con viento"
+    ]
+   ],
+   "nota": "Agosto es invierno en el Cabo: lluvia, viento y tiempo imprevisible. El teleférico, los barcos y Chapman's Peak se cancelan sin aviso. Reserva solo el tranvía con antelación y deja lo demás abierto. En Hermanus el Cliff Path es gratis y da doce kilómetros con más de veinte miradores: en temporada de partos las ballenas pasan a metros de la orilla y el barco no añade gran cosa."
+  },
+  {
+   "titulo": "Cenas · Sea Point",
+   "filas": [
+    [
+     "Sonny and Irene",
+     "19 Kloof Rd · misma calle"
+    ],
+    [
+     "The Nines",
+     "19 Kloof Rd · piso 9"
+    ],
+    [
+     "La Mouette",
+     "78 Regent Rd · 550 m"
+    ],
+    [
+     "The Greek Fisherman",
+     "78 Regent Rd"
+    ],
+    [
+     "Zest",
+     "94 Regent Rd"
+    ],
+    [
+     "Ocean Basket",
+     "St Johns Piazza"
+    ],
+    [
+     "Camps Bay",
+     "10 min en coche"
+    ]
+   ],
+   "nota": "Station House, en el 19 de Kloof Road, es tu propia calle: Sonny and Irene abajo para algo informal hasta las 22:00, y The Nines en el piso 9 para una cena con vistas al Atlántico. La Mouette es la de ocasión especial, en una casa antigua, con menú de invierno muy bien de precio. El Greek Fisherman tiene terraza ajardinada y pescado. Reserva siempre: son sitios pequeños y se llenan."
+  },
+  {
+   "titulo": "Seguridad en Ciudad del Cabo",
+   "filas": [
+    [
+     "Tu barrio",
+     "de los más seguros"
+    ],
+    [
+     "Promenade y Main Rd",
+     "concurridas y con luz"
+    ],
+    [
+     "De noche",
+     "Uber o Bolt, son baratos"
+    ],
+    [
+     "En el coche",
+     "nada a la vista, nunca"
+    ],
+    [
+     "Aparcacoches",
+     "propina de 5 a 10 rands"
+    ],
+    [
+     "Cajeros",
+     "solo dentro de bancos"
+    ]
+   ],
+   "nota": "Sea Point es una de las zonas más tranquilas para un turista, y el paseo marítimo y Regent Road están llenos de gente hasta tarde. Dicho eso: el riesgo real no es dramático, es el tirón de móvil. No vayas con el teléfono en la mano por la calle. Kloof Road es residencial y cuesta arriba; bajar andando a cenar de día está bien, pero de noche coge un Uber, que cuesta poco más que un café. En agosto anochece sobre las 18:00, así que cualquier cena es ya de noche. En el coche no dejes absolutamente nada visible, ni una bolsa vacía. Y si subes a Lion's Head o a la montaña, hazlo de día y por rutas con gente: los asaltos en senderos solitarios sí ocurren."
+  },
+  {
+   "titulo": "Wild Card · no compensa",
+   "filas": [
+    [
+     "Wild Card pareja",
+     "R7.310"
+    ],
+    [
+     "Kruger · 4 días",
+     "R4.816"
+    ],
+    [
+     "Cape Point",
+     "R1.000 est."
+    ],
+    [
+     "Boulders Beach",
+     "R490"
+    ],
+    [
+     "Stony Point",
+     "R160 est."
+    ],
+    [
+     "Suma sin tarjeta",
+     "R6.466"
+    ],
+    [
+     "Diferencia",
+     "pierdes R844"
+    ]
+   ],
+   "nota": "Los extranjeros solo pueden comprar el International All Parks Cluster, a R7.310 la tarifa de pareja para el periodo de vuestro viaje. El punto de equilibrio está en unos cinco días de Kruger y vosotros hacéis cuatro. No cubre el teleférico de Table Mountain, que es concesión privada, ni las paradas de la Panorama Route, que son de la agencia de Mpumalanga, ni los safaris de Skukuza, que son actividades y no tasas de entrada. Solo perdona las tasas diarias de conservación."
+  },
+  {
+   "titulo": "Franschhoek · día 20",
+   "filas": [
+    [
+     "Salida",
+     "09:35 · Groot Drakenstein"
+    ],
+    [
+     "Babylonstoren",
+     "10:10 · entrada R20"
+    ],
+    [
+     "Enlace crítico",
+     "11:45"
+    ],
+    [
+     "Boschendal",
+     "12:21 · última parada"
+    ],
+    [
+     "Comida",
+     "The Deli · 13:00"
+    ],
+    [
+     "Vuelta",
+     "16:21 → 16:35"
+    ],
+    [
+     "Pago",
+     "solo tarjeta en las fincas"
+    ]
+   ],
+   "nota": "Frecuencia de una hora exacta y circuito de dos horas. Catas del día: Boschendal 1685 con cuatro vinos R90, Plaisir cuatro vinos R80, Vrede en Lust express R70 o flagship R150, Bacco desde R80. Plaisir y Vrede en Lust están junto al terminal, así que si se puede llegar andando cabe una tercera cata entre las 15:45 y las 17:00. Los vinos que compréis se recogen en la taquilla de Groot Drakenstein al terminar. Asistencia del tranvía: 076 512 6683.",
+   "enlaces": [
+    {
+     "texto": "Franschhoek Wine Tram",
+     "url": "https://www.winetram.co.za",
+     "nota": "Consultar la frecuencia real de la Orange Line"
+    }
+   ]
+  },
+  {
+   "titulo": "Efectivo · cómo funciona",
+   "filas": [
+    [
+     "Panorama Route",
+     "imprescindible"
+    ],
+    [
+     "Áreas de picnic Kruger",
+     "efectivo"
+    ],
+    [
+     "Barco de Duiker Island",
+     "efectivo"
+    ],
+    [
+     "Stony Point",
+     "efectivo"
+    ],
+    [
+     "Propinas y aparcacoches",
+     "efectivo"
+    ],
+    [
+     "Boulders Beach",
+     "solo tarjeta"
+    ],
+    [
+     "Tasas de Kruger",
+     "tarjeta en la puerta"
+    ]
+   ],
+   "nota": "La pestaña Dinero calcula sola cuánto te falta por pagar en metálico y si el margen da o no. Cada reserva pendiente lleva marcado si se espera pagar en efectivo o con tarjeta, así que la previsión se ajusta según vas contratando. La comisión del cajero son unos R50 fijos más el porcentaje de Revolut, y con la franquicia mensual gastada la siguiente retirada sale cara: saca una sola vez y de sobra. Y si un cajero o un datáfono ofrece cobrar en euros, di siempre que no y paga en rands."
+  }
+ ],
+ "etiquetasDiario": [
+  "Avistamiento",
+  "Anécdota",
+  "Gente",
+  "Lugar",
+  "Comida",
+  "Momento",
+  "Otro"
+ ],
+ "version": "2026-08-23.2"
 }
