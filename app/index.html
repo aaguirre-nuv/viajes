@@ -220,11 +220,14 @@ footer{margin-top:34px;padding:16px 0 8px;border-top:1px solid var(--line);
   padding:6px 11px;border:1px solid var(--line);background:var(--bone3);color:var(--green2);cursor:pointer}
 .mapa-pie button[aria-pressed="true"]{background:var(--ochre);color:var(--bone3);border-color:var(--ochre)}
 .pista{opacity:.6;margin-left:auto}
-.zoombar{background:var(--bone3);border:1px solid var(--line);padding:8px 5px;
-  box-shadow:0 1px 4px rgba(22,54,42,.18)}
-.zoombar input{-webkit-appearance:slider-vertical;appearance:slider-vertical;
-  writing-mode:vertical-lr;direction:rtl;width:16px;height:104px;margin:0;cursor:pointer;
-  accent-color:var(--green)}
+/* Control de zoom de Leaflet, con la paleta de la app */
+.leaflet-bar{border:1px solid var(--line);box-shadow:0 1px 4px rgba(22,54,42,.18)}
+.leaflet-bar a,.leaflet-bar a:hover{background:var(--bone3);color:var(--green);
+  border-bottom:1px solid var(--line);width:32px;height:32px;line-height:32px;
+  font-family:var(--disp);font-weight:600;font-size:20px}
+.leaflet-bar a:hover{background:var(--bone2)}
+.leaflet-bar a:last-child{border-bottom:0}
+.leaflet-bar a.leaflet-disabled{background:var(--bone2);color:var(--mute);opacity:.55}
 .zleyenda{display:flex;flex-wrap:wrap;gap:4px 11px;margin-top:9px}
 .zleyenda span{font-family:var(--mono);font-size:10px;color:var(--mute);display:flex;align-items:center;gap:5px}
 .zleyenda i{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
@@ -1103,23 +1106,6 @@ function engancharMapa(){
   };
 }
 
-/* Barra de zoom: la misma acción que + y -, pero de un gesto */
-function barraZoom(){
-  return new (L.Control.extend({
-    options:{ position:"topleft" },
-    onAdd: function(m){
-      const d = L.DomUtil.create("div", "zoombar");
-      d.innerHTML = '<input type="range" aria-label="Zoom" min="' + m.getMinZoom()
-        + '" max="' + m.getMaxZoom() + '" step="1" value="' + m.getZoom() + '">';
-      const r = d.querySelector("input");
-      L.DomEvent.disableClickPropagation(d);
-      L.DomEvent.on(r, "input", () => m.setZoom(Number(r.value)));
-      m.on("zoomend", () => { r.value = m.getZoom(); });
-      return d;
-    }
-  }))();
-}
-
 async function pintarMapa(){
   const sec = document.getElementById("p-mapa");
   /* Al arrancar se pintan todos los paneles. Este no: esperaría a
@@ -1140,8 +1126,7 @@ async function pintarMapa(){
       + 'El resto de la app funciona sin ella.</div>';
     return;
   }
-  mapa = L.map("lienzo", { scrollWheelZoom:false, zoomControl:false });
-  barraZoom().addTo(mapa);
+  mapa = L.map("lienzo", { scrollWheelZoom:false });
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom:18, attribution:"&copy; OpenStreetMap"
   }).addTo(mapa);
