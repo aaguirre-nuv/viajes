@@ -181,6 +181,35 @@ footer{margin-top:34px;padding:16px 0 8px;border-top:1px solid var(--line);
   background:rgba(198,138,46,.35);border-left:2px solid var(--ochre)
 }
 
+
+/* Mapa ------------------------------------------------------------ */
+#lienzo{height:62vh;min-height:340px;border:1px solid var(--line);background:var(--bone2)}
+.leaflet-container{font-family:var(--body);background:var(--bone2)}
+.leaflet-popup-content-wrapper{border-radius:0;background:var(--bone3);border:1px solid var(--line)}
+.leaflet-popup-content{margin:11px 13px;font-size:13px;line-height:1.45}
+.leaflet-popup-tip{background:var(--bone3)}
+.pop-n{font-family:var(--disp);font-weight:700;font-size:18px;text-transform:uppercase;
+  line-height:1.05;color:var(--green)}
+.pop-z{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ochre2);margin:3px 0 6px}
+.pop-e{display:flex;gap:7px;margin-top:4px;font-size:12.5px}
+.pop-e b{font-family:var(--mono);font-weight:500;font-size:11px;color:var(--green2);flex:0 0 38px}
+.chips{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;padding-bottom:7px;margin-bottom:9px}
+.chips::-webkit-scrollbar{display:none}
+.chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 10px;border:1px solid var(--line);background:var(--bone3);color:var(--green2);
+  cursor:pointer;white-space:nowrap;flex:0 0 auto}
+.chip[aria-pressed="true"]{background:var(--green);color:var(--bone3);border-color:var(--green)}
+.chip-z{display:block;font-size:9px;opacity:.7;letter-spacing:.04em;text-transform:none}
+.mapa-pie{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:9px;
+  font-family:var(--mono);font-size:10.5px;color:var(--mute)}
+.mapa-pie button{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 11px;border:1px solid var(--line);background:var(--bone3);color:var(--green2);cursor:pointer}
+.mapa-pie button[aria-pressed="true"]{background:var(--ochre);color:var(--bone3);border-color:var(--ochre)}
+.zleyenda{display:flex;flex-wrap:wrap;gap:4px 11px;margin-top:9px}
+.zleyenda span{font-family:var(--mono);font-size:10px;color:var(--mute);display:flex;align-items:center;gap:5px}
+.zleyenda i{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
+
 /* Tabla de detalle, ajustada al ancho de la pantalla */
 .tdet{width:100%;border-collapse:collapse;table-layout:fixed}
 .tdet col.w-fec{width:44px}
@@ -329,6 +358,7 @@ th.sortable:hover{color:var(--green2)}
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" data-p="hoy" aria-selected="true">Hoy</button>
       <button class="tab" role="tab" data-p="ruta" aria-selected="false">Ruta</button>
+      <button class="tab" role="tab" data-p="mapa" aria-selected="false">Mapa</button>
       <button class="tab" role="tab" data-p="diario" aria-selected="false">Diario</button>
       <button class="tab" role="tab" data-p="gastos" aria-selected="false">Gastos</button>
       <button class="tab" role="tab" data-p="dinero" aria-selected="false">Dinero</button>
@@ -340,6 +370,7 @@ th.sortable:hover{color:var(--green2)}
 
   <section id="p-hoy"></section>
   <section id="p-ruta" hidden></section>
+  <section id="p-mapa" hidden></section>
   <section id="p-diario" hidden></section>
   <section id="p-gastos" hidden></section>
   <section id="p-dinero" hidden></section>
@@ -862,6 +893,176 @@ function pintarRuta(){
     + '<span class="leg-name">' + esc(t.nombre) + '</span>'
     + '<span class="leg-dates">' + esc(t.fechas || "") + '</span></div>'
     + (t.dias || []).map(d => tarjetaDia(d, hoy)).join("") + '</div>').join("");
+}
+
+/* =========================================================
+   Mapa — Leaflet y OpenStreetMap, ambos cargados a demanda.
+   Nada de esto se descarga hasta que se abre la pestaña.
+   ========================================================= */
+const LEAFLET = "https://unpkg.com/leaflet@1.9.4/dist/leaflet";
+let L_ok = false, mapa = null, gPuntos = null, gTraza = null;
+let track = null, mapaDia = "todo", verTraza = false, mapaPintado = false;
+
+function cargarLeaflet(){
+  if(L_ok) return Promise.resolve();
+  return new Promise((ok, fail) => {
+    const css = document.createElement("link");
+    css.rel = "stylesheet"; css.href = LEAFLET + ".css";
+    document.head.appendChild(css);
+    const js = document.createElement("script");
+    js.src = LEAFLET + ".js";
+    js.onload  = () => { L_ok = true; ok(); };
+    js.onerror = () => fail(new Error("no se pudo descargar Leaflet"));
+    document.head.appendChild(js);
+  });
+}
+
+async function cargarTrack(){
+  if(track) return track;
+  const r = await fetch(BASE_DATA + "track.json", { cache:"force-cache" });
+  if(!r.ok) throw new Error("respuesta " + r.status);
+  track = await r.json();
+  return track;
+}
+
+const zonaDe   = k => (V.lugares && V.lugares[k]) ? V.lugares[k].zona : "";
+const colorZona = z => (V.zonas && V.zonas[z]) ? V.zonas[z].color : "#6B6A5E";
+const nombreZona = z => (V.zonas && V.zonas[z]) ? V.zonas[z].nombre : z;
+
+/* Días que tienen algo que enseñar */
+function diasConMapa(){
+  return todosLosDias().filter(d => (d.lugares || []).length);
+}
+
+/* Los lugares a pintar, según el día elegido */
+function lugaresVisibles(){
+  if(mapaDia === "todo"){
+    const vistos = new Set();
+    diasConMapa().forEach(d => (d.lugares || []).forEach(k => vistos.add(k)));
+    return [...vistos];
+  }
+  const d = todosLosDias().find(x => x.fecha === mapaDia);
+  return d ? (d.lugares || []) : [];
+}
+
+/* Eventos de ese día que ocurren en ese lugar */
+function eventosDe(clave){
+  const dias = mapaDia === "todo" ? diasConMapa()
+             : todosLosDias().filter(d => d.fecha === mapaDia);
+  const out = [];
+  dias.forEach(d => (d.eventos || []).forEach(e => {
+    if(e.lugar === clave) out.push({ hora:e.hora, texto:e.texto, fecha:d.fecha });
+  }));
+  return out;
+}
+
+function dibujarPuntos(){
+  if(!mapa) return;
+  if(gPuntos) mapa.removeLayer(gPuntos);
+  const marcas = [];
+  lugaresVisibles().forEach(k => {
+    const l = V.lugares[k];
+    if(!l || l.lat == null) return;
+    const c = colorZona(l.zona), menor = !!l.menor;
+    const m = L.circleMarker([l.lat, l.lon], {
+      radius: menor ? 5 : 8, color:c, weight:2,
+      fillColor:c, fillOpacity: menor ? .35 : .75
+    });
+    const evs = eventosDe(k).map(e =>
+      '<div class="pop-e"><b>' + esc(e.hora || "—") + '</b><span>'
+      + esc(e.texto) + '</span></div>').join("");
+    m.bindPopup('<div class="pop-n">' + esc(l.nombre) + '</div>'
+      + '<div class="pop-z">' + esc(nombreZona(l.zona)) + '</div>' + evs);
+    marcas.push(m);
+  });
+  gPuntos = L.layerGroup(marcas).addTo(mapa);
+  if(marcas.length){
+    mapa.fitBounds(L.featureGroup(marcas).getBounds(), { padding:[34,34], maxZoom:14 });
+  }
+}
+
+/* La traza real del móvil: sale del track, no del itinerario */
+async function dibujarTraza(){
+  if(gTraza){ mapa.removeLayer(gTraza); gTraza = null; }
+  if(!verTraza) return;
+  const t = await cargarTrack();
+  const lineas = [];
+  t.forEach(s => {
+    if(!s.timelinePath) return;
+    if(mapaDia !== "todo" && s.startTime.slice(0,10) !== mapaDia) return;
+    const pts = s.timelinePath.map(p => {
+      const [la, lo] = p.point.replace("geo:","").split(",").map(Number);
+      return [la, lo];
+    });
+    if(pts.length > 1) lineas.push(L.polyline(pts, {
+      color:"#C68A2E", weight:2.5, opacity:.75, smoothFactor:1.4 }));
+  });
+  if(lineas.length) gTraza = L.layerGroup(lineas).addTo(mapa);
+}
+
+function marcoMapa(){
+  const dias = diasConMapa();
+  const chip = (val, txt, sub, on) =>
+    '<button class="chip" data-d="' + val + '" aria-pressed="' + on + '">'
+    + esc(txt) + (sub ? '<span class="chip-z">' + esc(sub) + '</span>' : "") + '</button>';
+  const chips = chip("todo", "Todo el viaje", "", mapaDia === "todo")
+    + dias.map(d => chip(d.fecha, fmtCorta(d.fecha), nombreZona(d.zona), mapaDia === d.fecha)).join("");
+  const zonasVistas = [...new Set(lugaresVisibles().map(zonaDe))].filter(Boolean);
+  const leyenda = zonasVistas.map(z =>
+    '<span><i style="background:' + colorZona(z) + '"></i>' + esc(nombreZona(z)) + '</span>').join("");
+
+  return '<h2>Dónde</h2><div class="chips">' + chips + '</div>'
+    + '<div id="lienzo"></div>'
+    + '<div class="mapa-pie">'
+      + '<button id="btraza" aria-pressed="' + verTraza + '">Traza real</button>'
+      + '<span id="mnota">' + lugaresVisibles().length + ' lugares</span></div>'
+    + '<div class="zleyenda">' + leyenda + '</div>';
+}
+
+function engancharMapa(){
+  document.querySelectorAll("#p-mapa .chip").forEach(c => c.onclick = () => {
+    mapaDia = c.dataset.d; mapaPintado = false; pintarMapa();
+  });
+  const bt = document.getElementById("btraza");
+  if(bt) bt.onclick = async () => {
+    verTraza = !verTraza;
+    bt.setAttribute("aria-pressed", verTraza);
+    const nota = document.getElementById("mnota");
+    if(verTraza && !track && nota) nota.textContent = "cargando la traza…";
+    try{ await dibujarTraza(); }
+    catch(e){ if(nota) nota.textContent = "no se pudo cargar la traza"; return; }
+    if(nota) nota.textContent = lugaresVisibles().length + " lugares";
+  };
+}
+
+async function pintarMapa(){
+  const sec = document.getElementById("p-mapa");
+  /* Al arrancar se pintan todos los paneles. Este no: esperaría a
+     descargar Leaflet sin que nadie lo haya pedido. */
+  if(sec.hidden || mapaPintado) return;
+
+  if(!V.lugares || !Object.keys(V.lugares).length){
+    sec.innerHTML = '<div class="empty">Este viaje todavía no tiene lugares con coordenadas.</div>';
+    return;
+  }
+  sec.innerHTML = marcoMapa();
+  engancharMapa();
+
+  try{ await cargarLeaflet(); }
+  catch(e){
+    document.getElementById("lienzo").innerHTML =
+      '<div class="empty" style="padding:34px 16px">El mapa necesita conexión.<br>'
+      + 'El resto de la app funciona sin ella.</div>';
+    return;
+  }
+  if(mapa){ mapa.remove(); mapa = null; gPuntos = gTraza = null; }
+  mapa = L.map("lienzo", { scrollWheelZoom:false });
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom:18, attribution:"&copy; OpenStreetMap"
+  }).addTo(mapa);
+  dibujarPuntos();
+  if(verTraza) await dibujarTraza();
+  mapaPintado = true;
 }
 
 function nombreDe(id){
@@ -1502,7 +1703,7 @@ function pintarEstado(){
 
 /* ---------------- arranque ---------------- */
 const paneles = {
-  hoy:pintarHoy, ruta:pintarRuta, diario:pintarDiario, gastos:pintarGastos,
+  hoy:pintarHoy, ruta:pintarRuta, mapa:pintarMapa, diario:pintarDiario, gastos:pintarGastos,
   dinero:pintarDinero, detalle:pintarDetalle, datos:pintarDatos, ajustes:pintarAjustes
 };
 let actual = "hoy";
